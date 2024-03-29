@@ -1,5 +1,8 @@
 package it.ecommerce.bookshop.model;
 
+import java.math.BigDecimal;
+import java.util.Date;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -16,5 +19,18 @@ public class Order {
 	@Column(name = "order_id")
 	private int id;
 	
+	private Date orderDate;
+	
+	private Date shippingDate;
+	
+	private String shippingMethod;
+	
+	private String orderStatus;
+	
+	private BigDecimal orderTotal;
+	
+	private ShippingAddress shippingAddress;
+	
+	private BillingAddress billingAddress;
 	
 }

@@ -111,4 +111,11 @@ public class BillingAddress {
 	public void setZipCode(String zipCode) {
 		this.zipCode = zipCode;
 	}
+
+	@Override
+	public String toString() {
+		return "BillingAddress [id=" + id + ", addressName=" + addressName + ", street1=" + street1 + ", street2="
+				+ street2 + ", city=" + city + ", country=" + country + ", state=" + state + ", zipCode=" + zipCode
+				+ "]";
+	}
 }
