@@ -1,5 +1,6 @@
 package it.ecommerce.bookshop.model;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import jakarta.persistence.Column;
@@ -11,8 +12,10 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "books")
-public class Book {
+public class Book implements Serializable {
 	
+	private static final long serialVersionUID = 1L;
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "book_id")
