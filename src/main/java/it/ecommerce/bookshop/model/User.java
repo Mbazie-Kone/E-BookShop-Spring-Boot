@@ -32,6 +32,11 @@ public class User implements UserDetails, Serializable{
 	
 	private String username;
 	private String password;
+	private String email;
+	private String phone;	
+	private boolean enabled = true;
+	
+	private ShoppingCart shoppingCart;
 
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
@@ -71,9 +76,6 @@ public class User implements UserDetails, Serializable{
 
 	@Override
 	public boolean isEnabled() {
-		// TODO Auto-generated method stub
-		return false;
+		return enabled;
 	}
-	
-	
 }
