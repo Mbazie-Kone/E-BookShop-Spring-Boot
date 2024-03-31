@@ -24,23 +24,4 @@ public class CartItem implements Serializable {
 	private int qty;
 	
 	private BigDecimal subtotal;
-	
-	private Book book;
-	
-	private ShoppingCart shoppingCart;
-	
-	private Order order;
-
-	public CartItem() {
-		super();
-	}
-
-	public CartItem(int qty, BigDecimal subtotal, Book book, ShoppingCart shoppingCart, Order order) {
-		super();
-		this.qty = qty;
-		this.subtotal = subtotal;
-		this.book = book;
-		this.shoppingCart = shoppingCart;
-		this.order = order;
-	}
 }

@@ -19,18 +19,4 @@ public class BookToCartItem implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "book_to_cart_id")
 	private int id;
-	
-	private Book book;
-	
-	private CartItem cartItem;
-
-	public BookToCartItem() {
-		super();
-	}
-
-	public BookToCartItem(Book book, CartItem cartItem) {
-		super();
-		this.book = book;
-		this.cartItem = cartItem;
-	}
 }
