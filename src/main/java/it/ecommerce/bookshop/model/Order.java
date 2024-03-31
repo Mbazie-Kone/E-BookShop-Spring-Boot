@@ -22,18 +22,18 @@ public class Order implements Serializable {
 	@Column(name = "order_id")
 	private int id;
 	
+	@Column(name = "order_date")
 	private Date orderDate;
 	
+	@Column(name = "shipping_date")
 	private Date shippingDate;
 	
+	@Column(name = "shipping_method")
 	private String shippingMethod;
 	
+	@Column(name = "order_status")
 	private String orderStatus;
 	
+	@Column(name = "order_total")
 	private BigDecimal orderTotal;
-	
-	private ShippingAddress shippingAddress;
-	
-	private BillingAddress billingAddress;
-	
 }

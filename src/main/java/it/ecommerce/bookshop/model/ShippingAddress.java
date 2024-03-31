@@ -40,24 +40,4 @@ public class ShippingAddress implements Serializable {
 	
 	@Column(name = "shipping_address_zip_code")
 	private String shippingAddressZipCode;
-	
-	private Order order;
-
-	public ShippingAddress() {
-		super();
-	}
-
-	public ShippingAddress(String shippingAddressName, String shippingAddressStreet1, String shippingAddressStreet2,
-			String shippingAddressCity, String shippingAddressCountry, String shippingAddressState,
-			String shippingAddressZipCode, Order order) {
-		super();
-		this.shippingAddressName = shippingAddressName;
-		this.shippingAddressStreet1 = shippingAddressStreet1;
-		this.shippingAddressStreet2 = shippingAddressStreet2;
-		this.shippingAddressCity = shippingAddressCity;
-		this.shippingAddressCountry = shippingAddressCountry;
-		this.shippingAddressState = shippingAddressState;
-		this.shippingAddressZipCode = shippingAddressZipCode;
-		this.order = order;
-	}
 }

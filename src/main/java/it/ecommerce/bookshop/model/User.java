@@ -35,8 +35,6 @@ public class User implements UserDetails, Serializable{
 	private String email;
 	private String phone;	
 	private boolean enabled = true;
-	
-	private ShoppingCart shoppingCart;
 
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
