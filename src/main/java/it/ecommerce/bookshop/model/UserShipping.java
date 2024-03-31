@@ -19,5 +19,28 @@ public class UserShipping implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "user_shipping_id")
 	private int id;
-
+	
+	@Column(name = "user_shipping_name")
+	private String userShippingName;
+	
+	@Column(name = "user_shipping_street_1")
+	private String userShippingStreet1;
+	
+	@Column(name = "user_shipping_street_2")
+	private String userShippingStreet2;
+	
+	@Column(name = "user_shipping_city")
+	private String userShippingCity;
+	
+	@Column(name = "user_shipping_country")
+	private String userShippingCountry;
+	
+	@Column(name = "user_shipping_zip_code")
+	private String userShippingZipCode;
+	
+	@Column(name = "user_shipping_state")
+	private String userShippingState;
+	
+	@Column(name = "user_shipping_default")
+	private boolean userShippingDefault;
 }

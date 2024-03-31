@@ -19,5 +19,19 @@ public class UserPayment implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "user_payment_id")
 	private int id;
+	
+	private String type;
+	private String cardName;
+	private String cardNumber;
+	
+	private int expiryMonth;
+	
+	private int expiryYear;
+	
+	private int cvc;
+	
+	private String holderName;
+	
+	private boolean defaultPayment;
 
 }
