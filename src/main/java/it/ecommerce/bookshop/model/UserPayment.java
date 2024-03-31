@@ -21,17 +21,25 @@ public class UserPayment implements Serializable {
 	private int id;
 	
 	private String type;
+	
+	@Column(name = "card_name")
 	private String cardName;
+	
+	@Column(name = "card_number")
 	private String cardNumber;
 	
+	@Column(name = "expire_month")
 	private int expiryMonth;
 	
+	@Column(name = "expire_year")
 	private int expiryYear;
 	
 	private int cvc;
 	
+	@Column(name = "holder_name")
 	private String holderName;
 	
+	@Column(name = "default_payment")
 	private boolean defaultPayment;
 
 }
