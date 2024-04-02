@@ -122,4 +122,10 @@ public class CartItem implements Serializable {
 
 		return bookToCartItem;
 	}
+
+	@Override
+	public String toString() {
+		return "CartItem [id=" + id + ", qty=" + qty + ", subtotal=" + subtotal + ", bookToCartItems=" + bookToCartItems
+				+ ", book=" + book + ", order=" + order + ", shoppingCart=" + shoppingCart + "]";
+	}
 }
