@@ -9,9 +9,13 @@ import java.util.Set;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import it.ecommerce.bookshop.model.security.UserRole;
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -34,7 +38,7 @@ public class User implements UserDetails, Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "user_id")
-	private int id;
+	private Long id;
 	
 	@Column(name = "first_name")
 	private String fistName;
@@ -55,27 +59,28 @@ public class User implements UserDetails, Serializable{
 	private boolean enabled = true;
 	
 	//bi-directional many-to-one association to Order
-	@OneToMany(mappedBy = "user")
+	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
 	private List<Order> orders;
 	
 	//bi-directional many-to-one association to PasswordResetToken
-	@OneToMany(mappedBy="user")
+	@OneToMany(mappedBy="user", cascade = CascadeType.ALL)
 	private List<PasswordResetToken> passwordResetTokens;
 	
 	//bi-directional many-to-one association to ShoppingCart
-	@OneToMany(mappedBy = "user")
+	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
 	private List<ShoppingCart> shoppingCarts;
 	
 	//bi-directional many-to-one association to UserPayment
-	@OneToMany(mappedBy = "user")
+	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
 	private List<UserPayment> userPayments;
 	
 	//bi-directional many-to-one association to UserRole
-	@OneToMany(mappedBy = "user")
+	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	@JsonIgnore
 	private List<UserRole> userRoles;
 	
 	//bi-directional many-to-one association to UserShipping
-	@OneToMany(mappedBy = "user")
+	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
 	private List<UserShipping> userShippings;
 	
 	//bi-directional many-to-one association to ShoppingCart
@@ -83,11 +88,11 @@ public class User implements UserDetails, Serializable{
 	@JoinColumn(name = "shopping_cart_id")
 	private ShoppingCart shoppingCart;
 	
-	public int getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
@@ -286,6 +291,7 @@ public class User implements UserDetails, Serializable{
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
 		Set<GrantedAuthority> authorities = new HashSet<>();
+		userRoles.forEach(ur -> authorities.add(new Authority(ur.getRole().getName())));
 		
 		return authorities ;
 	}
@@ -318,5 +324,11 @@ public class User implements UserDetails, Serializable{
 	@Override
 	public String getUsername() {
 		return null;
+	}
+
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", fistName=" + fistName + ", lastName=" + lastName + ", userName=" + userName
+				+ ", passWord=" + passWord + ", email=" + email + ", phone=" + phone + ", enabled=" + enabled + "]";
 	}
 }

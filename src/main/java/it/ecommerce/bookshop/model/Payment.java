@@ -3,6 +3,7 @@ package it.ecommerce.bookshop.model;
 import java.io.Serializable;
 import java.util.List;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -27,7 +28,7 @@ public class Payment implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "payment_id")
-	private int id;
+	private Long id;
 	
 	private String type;
 	
@@ -49,7 +50,7 @@ public class Payment implements Serializable {
 	private String holderName;
 	
 	//bi-directional many-to-one association to Order
-	@OneToMany(mappedBy = "payment")
+	@OneToMany(mappedBy = "payment", cascade = CascadeType.ALL)
 	private List<Order> orders;
 	
 	//bi-directional many-to-one association to Order
@@ -62,11 +63,11 @@ public class Payment implements Serializable {
 	@JoinColumn(name = "user_billing_id")
 	private UserBilling userBilling;
 
-	public int getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 

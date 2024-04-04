@@ -5,6 +5,7 @@ import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -31,7 +32,7 @@ public class Order implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "order_id")
-	private int id;
+	private Long id;
 	
 	@Temporal(TemporalType.DATE)
 	@Column(name = "order_date")
@@ -51,11 +52,11 @@ public class Order implements Serializable {
 	private BigDecimal orderTotal;
 	
 	//bi-directional many-to-one association to BillingAddress
-	@OneToMany(mappedBy = "order")
+	@OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
 	private List<BillingAddress> billingAddresses;
 	
 	//bi-directional many-to-one association to CartItem
-	@OneToMany(mappedBy = "order")
+	@OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
 	private List<CartItem> cartItems;
 	
 	//bi-directional many-to-one association to BillingAddress
@@ -79,18 +80,18 @@ public class Order implements Serializable {
 	private User user;
 	
 	//bi-directional many-to-one association to Payment
-	@OneToMany(mappedBy = "order")
+	@OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
 	private List<Payment> payments;
 	
 	//bi-directional many-to-one association to ShippingAddress
-	@OneToMany(mappedBy = "order")
+	@OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
 	private List<ShippingAddress> shippingAddresses;
 
-	public int getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 

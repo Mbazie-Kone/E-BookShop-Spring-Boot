@@ -3,6 +3,7 @@ package it.ecommerce.bookshop.model;
 import java.io.Serializable;
 import java.util.List;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -27,7 +28,7 @@ public class ShippingAddress implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "shipping_address_id")
-	private int id;
+	private Long id;
 	
 	@Column(name = "shipping_address_name")
 	private String shippingAddressName;
@@ -51,7 +52,7 @@ public class ShippingAddress implements Serializable {
 	private String shippingAddressZipCode;
 	
 	//bi-directional many-to-one association to Order
-	@OneToMany(mappedBy = "shippingAddress")
+	@OneToMany(mappedBy = "shippingAddress", cascade = CascadeType.ALL)
 	private List<Order> orders;
 	
 	//bi-directional many-to-one association to Order
@@ -59,11 +60,11 @@ public class ShippingAddress implements Serializable {
 	@JoinColumn(name = "order_id")
 	private Order order;
 
-	public int getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 

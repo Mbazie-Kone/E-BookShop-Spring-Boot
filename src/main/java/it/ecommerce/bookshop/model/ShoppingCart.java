@@ -4,8 +4,12 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -28,13 +32,14 @@ public class ShoppingCart implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "shopping_cart_id")
-	private int id;
+	private Long id;
 	
 	@Column(name = "grand_total")
 	private BigDecimal granTotal;
 	
 	//bi-directional many-to-one association to CartItem
-	@OneToMany(mappedBy = "shoppingCart")
+	@OneToMany(mappedBy = "shoppingCart", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	@JsonIgnore
 	private List<CartItem> cartItems;
 	
 	//bi-directional many-to-one association to User
@@ -43,14 +48,14 @@ public class ShoppingCart implements Serializable {
 	private User user;
 	
 	//bi-directional many-to-one association to User
-	@OneToMany(mappedBy = "shoppingCart")
+	@OneToMany(mappedBy = "shoppingCart", cascade = CascadeType.ALL)
 	private List<User> users;
 
-	public int getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
