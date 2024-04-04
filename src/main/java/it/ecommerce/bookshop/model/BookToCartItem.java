@@ -25,7 +25,7 @@ public class BookToCartItem implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "book_to_cart_id")
-	private int id;
+	private Long id;
 	
 	//bi-directional many-to-one association to Book
 	@ManyToOne
@@ -37,11 +37,11 @@ public class BookToCartItem implements Serializable {
 	@JoinColumn(name = "cart_item_id")
 	private CartItem cartItem;
 
-	public int getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 

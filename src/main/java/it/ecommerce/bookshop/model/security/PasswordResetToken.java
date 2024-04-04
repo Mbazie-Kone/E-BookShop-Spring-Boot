@@ -7,10 +7,12 @@ import java.util.Date;
 import it.ecommerce.bookshop.model.User;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
@@ -31,7 +33,7 @@ public class PasswordResetToken implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "password_reset_token_id")
-	private int id;
+	private Long id;
 	
 	private String token;
 	
@@ -39,8 +41,8 @@ public class PasswordResetToken implements Serializable {
 	@Column(name = "expiry_date")
 	private Date expiryDate;
 	
-	
-	@JoinColumn(name = "user_id")
+	@OneToOne(targetEntity = User.class, fetch = FetchType.EAGER)
+	@JoinColumn(nullable = false, name = "user_id")
 	private User user;
 	
 	public PasswordResetToken() {
@@ -54,11 +56,11 @@ public class PasswordResetToken implements Serializable {
 		this.expiryDate = calculateExpiryDate(EXPIRATION);
 	}
 	
-	public int getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
@@ -97,5 +99,11 @@ public class PasswordResetToken implements Serializable {
 	public void updateToken(final String token) {
 		this.token = token;
 		this.expiryDate = calculateExpiryDate(EXPIRATION);
+	}
+
+	@Override
+	public String toString() {
+		return "PasswordResetToken [id=" + id + ", token=" + token + ", expiryDate=" + expiryDate + ", user=" + user
+				+ "]";
 	}
 }

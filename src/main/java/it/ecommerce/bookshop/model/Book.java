@@ -6,6 +6,9 @@ import java.util.List;
 
 import org.springframework.web.multipart.MultipartFile;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -31,7 +34,7 @@ public class Book implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "book_id")
-	private int id;
+	private Long id;
 	
 	private String title;
 	
@@ -74,18 +77,20 @@ public class Book implements Serializable {
 	private MultipartFile bookImage;
 	
 	//bi-directional many-to-one association to BookToCartItem
-	@OneToMany(mappedBy = "book")
+	@OneToMany(mappedBy = "book", cascade = CascadeType.ALL)
+	@JsonIgnore
 	private List<BookToCartItem> bookToCartItems;
 	
 	//bi-directional many-to-one association to CartItem
-	@OneToMany(mappedBy = "book")
+	@OneToMany(mappedBy = "book", cascade = CascadeType.ALL)
+	@JsonIgnore
 	private List<CartItem> cartItems;
 
-	public int getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
@@ -267,7 +272,7 @@ public class Book implements Serializable {
 				+ ", publicationDate=" + publicationDate + ", language=" + language + ", category=" + category
 				+ ", numberOfPages=" + numberOfPages + ", format=" + format + ", isbn=" + isbn + ", shippingWeight="
 				+ shippingWeight + ", listPrice=" + listPrice + ", ourPrice=" + ourPrice + ", active=" + active
-				+ ", description=" + description + ", inStockNumber=" + inStockNumber + ", bookImage=" + bookImage
+				+ ", description=" + description + ", inStockNumber=" + inStockNumber + ""
 				+ ", bookToCartItems=" + bookToCartItems + ", cartItems=" + cartItems + "]";
 	}
 }

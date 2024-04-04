@@ -6,6 +6,7 @@ import java.util.List;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -27,7 +28,7 @@ public class BillingAddress implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "address_id")
-	private int id;
+	private Long id;
 	
 	@Column(name = "address_name")
 	private String addressName;
@@ -53,14 +54,14 @@ public class BillingAddress implements Serializable {
 	private Order order;
 	
 	//bi-directional many-to-one association to Order
-	@OneToMany(mappedBy = "billingAddress")
+	@OneToMany(mappedBy = "billingAddress", cascade = CascadeType.ALL)
 	private List<Order> orders;
 
-	public int getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
