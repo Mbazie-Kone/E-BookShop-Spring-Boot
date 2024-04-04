@@ -11,8 +11,6 @@ import it.ecommerce.bookshop.model.security.PasswordResetToken;
 import java.util.Date;
 
 
-
-
 public interface PasswordResetTokenRepository extends JpaRepository<PasswordResetToken, Long> {
 	
 	
