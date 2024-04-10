@@ -10,6 +10,6 @@ public interface BookRepository extends CrudRepository<Book, Long> {
 	
 	public List<Book> findByCategory(String category);
 	
-	public List<Book> findByTitleContaining(String title);
+	public List<Book> findByTitle(String title);
 	
 }
