@@ -65,26 +65,4 @@ public class BookServiceImpl implements BookService {
 		
 		return activeBooks;
 	}
-
-	@Override
-	public Book addBook(Book book) {
-		
-		Book b = bookRepository.save(book);
-		
-		return b;
-	}
-
-	@Override
-	public Book updateBook(Book book) {
-		
-		Book b = bookRepository.save(book);
-		
-		return b;
-	}
-
-	@Override
-	public void deleteBook(Book book) {
-		
-		bookRepository.delete(book);
-	}
 }

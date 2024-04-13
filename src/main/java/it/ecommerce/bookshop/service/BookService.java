@@ -13,11 +13,5 @@ public interface BookService {
 	public List<Book> findByCategory(String category);
 	
 	public List<Book> findByTitle(String title);
-	
-	public Book addBook(Book book);
-	
-	public Book updateBook(Book book);
-	
-	public void deleteBook(Book book);
 
 }

@@ -62,12 +62,6 @@ public class CartItemServiceImpl implements CartItemService {
 	}
 
 	@Override
-	public void deleteCartItem(CartItem cartItem) {
-		
-		cartItemRepository.delete(cartItem);
-	}
-
-	@Override
 	public CartItem addBookToCartItem(Book book, User user, int qty) {
 		
 		List<CartItem> cartItems = findByShoppingCart(user.getShoppingCart());

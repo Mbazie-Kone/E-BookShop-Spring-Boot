@@ -20,8 +20,6 @@ public interface CartItemService {
 	
 	public CartItem updateCartItem(CartItem cartItem);
 	
-	public void deleteCartItem(CartItem cartItem);
-	
 	public CartItem addBookToCartItem(Book book, User user, int qty);
 	
 	public void removeCartItem(CartItem cartItem);

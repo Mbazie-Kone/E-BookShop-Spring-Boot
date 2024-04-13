@@ -7,10 +7,15 @@ import org.springframework.stereotype.Controller;
 import it.ecommerce.bookshop.model.BillingAddress;
 import it.ecommerce.bookshop.model.Payment;
 import it.ecommerce.bookshop.model.ShippingAddress;
+import it.ecommerce.bookshop.service.BillingAddressService;
 import it.ecommerce.bookshop.service.CartItemService;
+import it.ecommerce.bookshop.service.OrderService;
+import it.ecommerce.bookshop.service.PaymentService;
 import it.ecommerce.bookshop.service.ShippingAddressService;
 import it.ecommerce.bookshop.service.ShoppingCartService;
+import it.ecommerce.bookshop.service.UserPaymentService;
 import it.ecommerce.bookshop.service.UserService;
+import it.ecommerce.bookshop.service.UserShippingService;
 import it.ecommerce.bookshop.utility.MailConstructor;
 
 @Controller
@@ -40,7 +45,19 @@ public class CheckoutController {
 	@Autowired
 	private ShippingAddressService shippingAddressService;
 	
+	@Autowired
+	private BillingAddressService billingAddressService;
 	
+	@Autowired
+	private PaymentService paymentService;
 	
+	@Autowired
+	private UserShippingService userShippingService;
+	
+	@Autowired
+	private UserPaymentService userPaymentService;
+	
+	@Autowired
+	private OrderService ordeService;
 
 }
