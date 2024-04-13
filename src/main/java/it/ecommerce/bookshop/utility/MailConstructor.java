@@ -56,7 +56,6 @@ public class MailConstructor {
 				email.setText(text, true);
 				email.setFrom(new InternetAddress("mbazie.ebookshop@gmail.com"));
 			}
-
 		};
 		
 		return messagePreparator;
