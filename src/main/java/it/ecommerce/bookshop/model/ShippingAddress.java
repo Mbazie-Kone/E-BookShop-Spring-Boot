@@ -1,19 +1,14 @@
 package it.ecommerce.bookshop.model;
 
 import java.io.Serializable;
-import java.util.List;
 
-import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
-
 
 /**
  * The persistent class for the shipping_addresses database table.
@@ -51,13 +46,7 @@ public class ShippingAddress implements Serializable {
 	@Column(name = "shipping_address_zip_code")
 	private String shippingAddressZipCode;
 	
-	//bi-directional many-to-one association to Order
-	@OneToMany(mappedBy = "shippingAddress", cascade = CascadeType.ALL)
-	private List<Order> orders;
-	
-	//bi-directional many-to-one association to Order
-	@ManyToOne
-	@JoinColumn(name = "order_id")
+	@OneToOne
 	private Order order;
 
 	public Long getId() {
@@ -124,34 +113,12 @@ public class ShippingAddress implements Serializable {
 		this.shippingAddressZipCode = shippingAddressZipCode;
 	}
 
-	public List<Order> getOrders() {
-		return orders;
-	}
-
-	public void setOrders(List<Order> orders) {
-		this.orders = orders;
-	}
-
 	public Order getOrder() {
 		return order;
 	}
 
 	public void setOrder(Order order) {
 		this.order = order;
-	}
-	
-	public Order addOrder(Order order) {
-		getOrders().add(order);
-		order.setShippingAddress(this);
-
-		return order;
-	}
-
-	public Order removeOrder(Order order) {
-		getOrders().remove(order);
-		order.setShippingAddress(null);
-
-		return order;
 	}
 
 	@Override
@@ -160,7 +127,6 @@ public class ShippingAddress implements Serializable {
 				+ ", shippingAddressStreet1=" + shippingAddressStreet1 + ", shippingAddressStreet2="
 				+ shippingAddressStreet2 + ", shippingAddressCity=" + shippingAddressCity + ", shippingAddressCountry="
 				+ shippingAddressCountry + ", shippingAddressState=" + shippingAddressState
-				+ ", shippingAddressZipCode=" + shippingAddressZipCode + ", orders=" + orders + ", order=" + order
-				+ "]";
+				+ ", shippingAddressZipCode=" + shippingAddressZipCode + ", order=" + order + "]";
 	}
 }

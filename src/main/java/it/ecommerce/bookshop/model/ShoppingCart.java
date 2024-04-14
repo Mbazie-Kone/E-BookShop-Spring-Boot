@@ -13,11 +13,9 @@ import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
-
 
 /**
  * The persistent class for the shopping_carts database table.
@@ -37,19 +35,12 @@ public class ShoppingCart implements Serializable {
 	@Column(name = "grand_total")
 	private BigDecimal granTotal;
 	
-	//bi-directional many-to-one association to CartItem
 	@OneToMany(mappedBy = "shoppingCart", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	@JsonIgnore
 	private List<CartItem> cartItems;
 	
-	//bi-directional many-to-one association to User
-	@ManyToOne
-	@JoinColumn(name = "user_id")
+	@OneToOne(cascade = CascadeType.ALL)
 	private User user;
-	
-	//bi-directional many-to-one association to User
-	@OneToMany(mappedBy = "shoppingCart", cascade = CascadeType.ALL)
-	private List<User> users;
 
 	public Long getId() {
 		return id;
@@ -83,45 +74,9 @@ public class ShoppingCart implements Serializable {
 		this.user = user;
 	}
 
-	public List<User> getUsers() {
-		return users;
-	}
-
-	public void setUsers(List<User> users) {
-		this.users = users;
-	}
-	
-	public CartItem addCartItem(CartItem cartItem) {
-		getCartItems().add(cartItem);
-		cartItem.setShoppingCart(this);
-
-		return cartItem;
-	}
-
-	public CartItem removeCartItem(CartItem cartItem) {
-		getCartItems().remove(cartItem);
-		cartItem.setShoppingCart(null);
-
-		return cartItem;
-	}
-	
-	public User addUser(User user) {
-		getUsers().add(user);
-		user.setShoppingCart(this);
-
-		return user;
-	}
-
-	public User removeUser(User user) {
-		getUsers().remove(user);
-		user.setShoppingCart(null);
-
-		return user;
-	}
-
 	@Override
 	public String toString() {
 		return "ShoppingCart [id=" + id + ", granTotal=" + granTotal + ", cartItems=" + cartItems + ", user=" + user
-				+ ", users=" + users + "]";
+				+ "]";
 	}
 }

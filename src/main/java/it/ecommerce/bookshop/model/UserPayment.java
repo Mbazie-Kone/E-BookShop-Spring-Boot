@@ -1,7 +1,6 @@
 package it.ecommerce.bookshop.model;
 
 import java.io.Serializable;
-import java.util.List;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
@@ -11,9 +10,8 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
-
 
 /**
  * The persistent class for the user_payments database table.
@@ -52,18 +50,11 @@ public class UserPayment implements Serializable {
 	@Column(name = "default_payment")
 	private boolean defaultPayment;
 	
-	//bi-directional many-to-one association to UserBilling
-	@OneToMany(mappedBy = "userPayment", cascade = CascadeType.ALL)
-	private List<UserBilling> userBillings;
-	
-	//bi-directional many-to-one association to User
 	@ManyToOne
 	@JoinColumn(name = "user_id")
 	private User user;
 	
-	//bi-directional many-to-one association to UserBilling
-	@ManyToOne
-	@JoinColumn(name = "user_billing_id")
+	@OneToOne(mappedBy = "userPayment", cascade = CascadeType.ALL, orphanRemoval = true)
 	private UserBilling userBilling;
 
 	public Long getId() {
@@ -138,14 +129,6 @@ public class UserPayment implements Serializable {
 		this.defaultPayment = defaultPayment;
 	}
 
-	public List<UserBilling> getUserBillings() {
-		return userBillings;
-	}
-
-	public void setUserBillings(List<UserBilling> userBillings) {
-		this.userBillings = userBillings;
-	}
-
 	public User getUser() {
 		return user;
 	}
@@ -161,26 +144,12 @@ public class UserPayment implements Serializable {
 	public void setUserBilling(UserBilling userBilling) {
 		this.userBilling = userBilling;
 	}
-	
-	public UserBilling addUserBilling(UserBilling userBilling) {
-		getUserBillings().add(userBilling);
-		userBilling.setUserPayment(this);
-
-		return userBilling;
-	}
-
-	public UserBilling removeUserBilling(UserBilling userBilling) {
-		getUserBillings().remove(userBilling);
-		userBilling.setUserPayment(null);
-
-		return userBilling;
-	}
 
 	@Override
 	public String toString() {
 		return "UserPayment [id=" + id + ", type=" + type + ", cardName=" + cardName + ", cardNumber=" + cardNumber
 				+ ", expiryMonth=" + expiryMonth + ", expiryYear=" + expiryYear + ", cvc=" + cvc + ", holderName="
-				+ holderName + ", defaultPayment=" + defaultPayment + ", userBillings=" + userBillings + ", user="
-				+ user + ", userBilling=" + userBilling + "]";
+				+ holderName + ", defaultPayment=" + defaultPayment + ", user=" + user + ", userBilling=" + userBilling
+				+ "]";
 	}
 }

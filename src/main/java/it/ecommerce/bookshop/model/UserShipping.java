@@ -11,7 +11,6 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
-
 /**
  * The persistent class for the user_shippings database table.
  * 
@@ -51,7 +50,6 @@ public class UserShipping implements Serializable {
 	@Column(name = "user_shipping_default")
 	private boolean userShippingDefault;
 	
-	//bi-directional many-to-one association to User
 	@ManyToOne
 	@JoinColumn(name = "user_id")
 	private User user;
