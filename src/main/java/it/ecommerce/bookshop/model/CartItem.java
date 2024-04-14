@@ -6,7 +6,6 @@ import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -15,8 +14,8 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
-
 
 /**
  * The persistent class for the cart_items database table.
@@ -37,25 +36,20 @@ public class CartItem implements Serializable {
 	
 	private BigDecimal subtotal;
 	
-	//bi-directional many-to-one association to BookToCartItem
-	@OneToMany(mappedBy = "cartItem", cascade = CascadeType.ALL)
+	@OneToOne
+	private Book book;
+	
+	@OneToMany(mappedBy = "cartItem")
 	@JsonIgnore
 	private List<BookToCartItem> bookToCartItems;
 	
-	//bi-directional many-to-one association to Book
-	@ManyToOne
-	@JoinColumn(name = "book_id")
-	private Book book;
-	
-	//bi-directional many-to-one association to Order
-	@ManyToOne
-	@JoinColumn(name = "order_id")
-	private Order order;
-	
-	//bi-directional many-to-one association to ShoppingCart
 	@ManyToOne
 	@JoinColumn(name = "shopping_cart_id")
 	private ShoppingCart shoppingCart;
+	
+	@ManyToOne
+	@JoinColumn(name = "order_id")
+	private Order order;
 
 	public Long getId() {
 		return id;
@@ -81,6 +75,14 @@ public class CartItem implements Serializable {
 		this.subtotal = subtotal;
 	}
 
+	public Book getBook() {
+		return book;
+	}
+
+	public void setBook(Book book) {
+		this.book = book;
+	}
+
 	public List<BookToCartItem> getBookToCartItems() {
 		return bookToCartItems;
 	}
@@ -89,12 +91,12 @@ public class CartItem implements Serializable {
 		this.bookToCartItems = bookToCartItems;
 	}
 
-	public Book getBook() {
-		return book;
+	public ShoppingCart getShoppingCart() {
+		return shoppingCart;
 	}
 
-	public void setBook(Book book) {
-		this.book = book;
+	public void setShoppingCart(ShoppingCart shoppingCart) {
+		this.shoppingCart = shoppingCart;
 	}
 
 	public Order getOrder() {
@@ -105,31 +107,9 @@ public class CartItem implements Serializable {
 		this.order = order;
 	}
 
-	public ShoppingCart getShoppingCart() {
-		return shoppingCart;
-	}
-
-	public void setShoppingCart(ShoppingCart shoppingCart) {
-		this.shoppingCart = shoppingCart;
-	}
-	
-	public BookToCartItem addBookToCartItem(BookToCartItem bookToCartItem) {
-		getBookToCartItems().add(bookToCartItem);
-		bookToCartItem.setCartItem(this);
-
-		return bookToCartItem;
-	}
-
-	public BookToCartItem removeBookToCartItem(BookToCartItem bookToCartItem) {
-		getBookToCartItems().remove(bookToCartItem);
-		bookToCartItem.setCartItem(null);
-
-		return bookToCartItem;
-	}
-
 	@Override
 	public String toString() {
-		return "CartItem [id=" + id + ", qty=" + qty + ", subtotal=" + subtotal + ", bookToCartItems=" + bookToCartItems
-				+ ", book=" + book + ", order=" + order + ", shoppingCart=" + shoppingCart + "]";
+		return "CartItem [id=" + id + ", qty=" + qty + ", subtotal=" + subtotal + ", book=" + book
+				+ ", bookToCartItems=" + bookToCartItems + ", shoppingCart=" + shoppingCart + ", order=" + order + "]";
 	}
 }

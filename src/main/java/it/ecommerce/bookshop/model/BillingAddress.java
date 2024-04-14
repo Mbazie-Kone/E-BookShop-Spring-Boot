@@ -1,19 +1,14 @@
 package it.ecommerce.bookshop.model;
 
 import java.io.Serializable;
-import java.util.List;
 
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
-
 
 /**
  * The persistent class for the billing_addresses database table.
@@ -48,14 +43,8 @@ public class BillingAddress implements Serializable {
 	@Column(name = "zip_code")
 	private String zipCode;
 	
-	//bi-directional many-to-one association to Order
-	@ManyToOne
-	@JoinColumn(name="order_id")
+	@OneToOne
 	private Order order;
-	
-	//bi-directional many-to-one association to Order
-	@OneToMany(mappedBy = "billingAddress", cascade = CascadeType.ALL)
-	private List<Order> orders;
 
 	public Long getId() {
 		return id;
@@ -129,32 +118,10 @@ public class BillingAddress implements Serializable {
 		this.order = order;
 	}
 
-	public List<Order> getOrders() {
-		return orders;
-	}
-
-	public void setOrders(List<Order> orders) {
-		this.orders = orders;
-	}
-	
-	public Order addOrder(Order order) {
-		getOrders().add(order);
-		order.setBillingAddress(this);
-		
-		return order;
-	}
-	
-	public Order removeOrder(Order order) {
-		getOrders().remove(order);
-		order.setBillingAddress(null);
-		
-		return order;
-	}
-
 	@Override
 	public String toString() {
 		return "BillingAddress [id=" + id + ", addressName=" + addressName + ", street1=" + street1 + ", street2="
 				+ street2 + ", city=" + city + ", country=" + country + ", state=" + state + ", zipCode=" + zipCode
-				+ ", order=" + order + ", orders=" + orders + "]";
+				+ ", order=" + order + "]";
 	}
 }

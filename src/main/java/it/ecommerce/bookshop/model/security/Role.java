@@ -1,7 +1,8 @@
 package it.ecommerce.bookshop.model.security;
 
 import java.io.Serializable;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
@@ -28,7 +29,7 @@ public class Role implements Serializable {
 	
 	//bi-directional many-to-one association to UserRole
 	@OneToMany(mappedBy = "role", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-	private List<UserRole> userRoles;
+	private Set<UserRole> userRoles = new HashSet<>();
 
 	public Long getId() {
 		return id;
@@ -45,15 +46,15 @@ public class Role implements Serializable {
 	public void setName(String name) {
 		this.name = name;
 	}
-
-	public List<UserRole> getUserRoles() {
+	
+	public Set<UserRole> getUserRoles() {
 		return userRoles;
 	}
 
-	public void setUserRoles(List<UserRole> userRoles) {
+	public void setUserRoles(Set<UserRole> userRoles) {
 		this.userRoles = userRoles;
 	}
-	
+
 	public UserRole addUserRole(UserRole userRole) {
 		getUserRoles().add(userRole);
 		userRole.setRole(this);

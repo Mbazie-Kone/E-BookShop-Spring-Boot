@@ -8,7 +8,6 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -19,7 +18,6 @@ import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
 import jakarta.persistence.Transient;
-
 
 /**
  * The persistent class for the books database table.
@@ -68,6 +66,7 @@ public class Book implements Serializable {
 	
 	private boolean active = true;
 	
+	@Column(columnDefinition = "text")
 	private String description;
 	
 	@Column(name = "in_stock_number")
@@ -76,15 +75,9 @@ public class Book implements Serializable {
 	@Transient
 	private MultipartFile bookImage;
 	
-	//bi-directional many-to-one association to BookToCartItem
-	@OneToMany(mappedBy = "book", cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "book")
 	@JsonIgnore
 	private List<BookToCartItem> bookToCartItems;
-	
-	//bi-directional many-to-one association to CartItem
-	@OneToMany(mappedBy = "book", cascade = CascadeType.ALL)
-	@JsonIgnore
-	private List<CartItem> cartItems;
 
 	public Long getId() {
 		return id;
@@ -230,49 +223,14 @@ public class Book implements Serializable {
 		this.bookToCartItems = bookToCartItems;
 	}
 
-	public List<CartItem> getCartItems() {
-		return cartItems;
-	}
-
-	public void setCartItems(List<CartItem> cartItems) {
-		this.cartItems = cartItems;
-	}
-	
-	public BookToCartItem addBookToCartItem(BookToCartItem bookToCartItem) {
-		getBookToCartItems().add(bookToCartItem);
-		bookToCartItem.setBook(this);
-
-		return bookToCartItem;
-	}
-
-	public BookToCartItem removeBookToCartItem(BookToCartItem bookToCartItem) {
-		getBookToCartItems().remove(bookToCartItem);
-		bookToCartItem.setBook(null);
-
-		return bookToCartItem;
-	}
-	
-	public CartItem addCartItem(CartItem cartItem) {
-		getCartItems().add(cartItem);
-		cartItem.setBook(this);
-
-		return cartItem;
-	}
-
-	public CartItem removeCartItem(CartItem cartItem) {
-		getCartItems().remove(cartItem);
-		cartItem.setBook(null);
-
-		return cartItem;
-	}
-
 	@Override
 	public String toString() {
 		return "Book [id=" + id + ", title=" + title + ", author=" + author + ", publisher=" + publisher
 				+ ", publicationDate=" + publicationDate + ", language=" + language + ", category=" + category
 				+ ", numberOfPages=" + numberOfPages + ", format=" + format + ", isbn=" + isbn + ", shippingWeight="
 				+ shippingWeight + ", listPrice=" + listPrice + ", ourPrice=" + ourPrice + ", active=" + active
-				+ ", description=" + description + ", inStockNumber=" + inStockNumber + ""
-				+ ", bookToCartItems=" + bookToCartItems + ", cartItems=" + cartItems + "]";
+				+ ", description=" + description + ", inStockNumber=" + inStockNumber + ", bookImage=" + bookImage
+				+ ", bookToCartItems=" + bookToCartItems + "]";
 	}
+	
 }
