@@ -23,7 +23,7 @@ public interface UserService {
 	
 	public User addUser(User user, Set<UserRole> userRoles) throws Exception;
 	
-	public User update(User user);
+	public User save(User user);
 	
 	public void updateUserBilling(UserBilling userBilling, UserPayment userPayment, User user);
 	
