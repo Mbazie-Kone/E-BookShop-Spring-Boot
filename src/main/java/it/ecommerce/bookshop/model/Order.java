@@ -11,13 +11,12 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
-
 
 /**
  * The persistent class for the orders database table.
@@ -51,41 +50,20 @@ public class Order implements Serializable {
 	@Column(name = "order_total")
 	private BigDecimal orderTotal;
 	
-	//bi-directional many-to-one association to BillingAddress
-	@OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
-	private List<BillingAddress> billingAddresses;
-	
-	//bi-directional many-to-one association to CartItem
 	@OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
 	private List<CartItem> cartItems;
 	
-	//bi-directional many-to-one association to BillingAddress
-	@ManyToOne
-	@JoinColumn(name = "billing_address_id")
-	private BillingAddress billingAddress;
-	
-	//bi-directional many-to-one association to Payment
-	@ManyToOne
-	@JoinColumn(name = "payment_id")
-	private Payment payment;
-	
-	//bi-directional many-to-one association to ShippingAddres
-	@ManyToOne
-	@JoinColumn(name = "shipping_address_id")
+	@OneToOne(cascade = CascadeType.ALL)
 	private ShippingAddress shippingAddress;
 	
-	//bi-directional many-to-one association to User
+	@OneToOne(cascade = CascadeType.ALL)
+	private BillingAddress billingAddress;
+	
+	@OneToOne(cascade = CascadeType.ALL)
+	private Payment payment;
+	
 	@ManyToOne
-	@JoinColumn(name = "user_id")
 	private User user;
-	
-	//bi-directional many-to-one association to Payment
-	@OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
-	private List<Payment> payments;
-	
-	//bi-directional many-to-one association to ShippingAddress
-	@OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
-	private List<ShippingAddress> shippingAddresses;
 
 	public Long getId() {
 		return id;
@@ -135,20 +113,20 @@ public class Order implements Serializable {
 		this.orderTotal = orderTotal;
 	}
 
-	public List<BillingAddress> getBillingAddresses() {
-		return billingAddresses;
-	}
-
-	public void setBillingAddresses(List<BillingAddress> billingAddresses) {
-		this.billingAddresses = billingAddresses;
-	}
-
 	public List<CartItem> getCartItems() {
 		return cartItems;
 	}
 
 	public void setCartItems(List<CartItem> cartItems) {
 		this.cartItems = cartItems;
+	}
+
+	public ShippingAddress getShippingAddress() {
+		return shippingAddress;
+	}
+
+	public void setShippingAddress(ShippingAddress shippingAddress) {
+		this.shippingAddress = shippingAddress;
 	}
 
 	public BillingAddress getBillingAddress() {
@@ -167,14 +145,6 @@ public class Order implements Serializable {
 		this.payment = payment;
 	}
 
-	public ShippingAddress getShippingAddress() {
-		return shippingAddress;
-	}
-
-	public void setShippingAddress(ShippingAddress shippingAddress) {
-		this.shippingAddress = shippingAddress;
-	}
-
 	public User getUser() {
 		return user;
 	}
@@ -183,84 +153,11 @@ public class Order implements Serializable {
 		this.user = user;
 	}
 
-	public List<Payment> getPayments() {
-		return payments;
-	}
-
-	public void setPayments(List<Payment> payments) {
-		this.payments = payments;
-	}
-
-	public List<ShippingAddress> getShippingAddresses() {
-		return shippingAddresses;
-	}
-
-	public void setShippingAddresses(List<ShippingAddress> shippingAddresses) {
-		this.shippingAddresses = shippingAddresses;
-	}
-	
-	public BillingAddress addBillingAddress(BillingAddress billingAddress) {
-		getBillingAddresses().add(billingAddress);
-		billingAddress.setOrder(this);
-
-		return billingAddress;
-	}
-
-	public BillingAddress removeBillingAddress(BillingAddress billingAddress) {
-		getBillingAddresses().remove(billingAddress);
-		billingAddress.setOrder(null);
-
-		return billingAddress;
-	}
-	
-	public ShippingAddress addShippingAddress(ShippingAddress shippingAddress) {
-		getShippingAddresses().add(shippingAddress);
-		shippingAddress.setOrder(this);
-
-		return shippingAddress;
-	}
-
-	public ShippingAddress removeShippingAddress(ShippingAddress shippingAddress) {
-		getShippingAddresses().remove(shippingAddress);
-		shippingAddress.setOrder(null);
-
-		return shippingAddress;
-	}
-	
-	public CartItem addCartItem(CartItem cartItem) {
-		getCartItems().add(cartItem);
-		cartItem.setOrder(this);
-
-		return cartItem;
-	}
-
-	public CartItem removeCartItem(CartItem cartItem) {
-		getCartItems().remove(cartItem);
-		cartItem.setOrder(null);
-
-		return cartItem;
-	}
-	
-	public Payment addPayment(Payment payment) {
-		getPayments().add(payment);
-		payment.setOrder(this);
-
-		return payment;
-	}
-
-	public Payment removePayment(Payment payment) {
-		getPayments().remove(payment);
-		payment.setOrder(null);
-
-		return payment;
-	}
-
 	@Override
 	public String toString() {
 		return "Order [id=" + id + ", orderDate=" + orderDate + ", shippingDate=" + shippingDate + ", shippingMethod="
-				+ shippingMethod + ", orderStatus=" + orderStatus + ", orderTotal=" + orderTotal + ", billingAddresses="
-				+ billingAddresses + ", cartItemts=" + cartItems + ", billingAddress=" + billingAddress + ", payment="
-				+ payment + ", shippingAddress=" + shippingAddress + ", user=" + user + ", payments=" + payments
-				+ ", shippingAddresses=" + shippingAddresses + "]";
+				+ shippingMethod + ", orderStatus=" + orderStatus + ", orderTotal=" + orderTotal + ", cartItems="
+				+ cartItems + ", shippingAddress=" + shippingAddress + ", billingAddress=" + billingAddress
+				+ ", payment=" + payment + ", user=" + user + "]";
 	}
 }
