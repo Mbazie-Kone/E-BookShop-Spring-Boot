@@ -15,13 +15,13 @@ public class SecurityUtility {
 	private static final String SALT = "salt";
 
 	@Bean
-	static BCryptPasswordEncoder passwordEncoder() {
+	public static BCryptPasswordEncoder passwordEncoder() {
 
 		return new BCryptPasswordEncoder(12, new SecureRandom(SALT.getBytes()));
 	}
 
 	@Bean
-	static String randomPassword() {
+	public static String randomPassword() {
 
 		String saltString = "ABCEFGHIJKLMNOPQRSTUVWXYZ1234567890";
 		StringBuilder salt = new StringBuilder();

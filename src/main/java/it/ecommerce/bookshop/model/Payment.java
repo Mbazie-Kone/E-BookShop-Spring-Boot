@@ -48,7 +48,7 @@ public class Payment implements Serializable {
 	@OneToOne
 	private Order order;
 	
-	@OneToOne(mappedBy = "userPayment", cascade = CascadeType.ALL)
+	//@OneToOne(cascade = CascadeType.ALL, mappedBy = "userPayment")
 	private UserBilling userBilling;
 
 	public Long getId() {
