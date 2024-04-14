@@ -17,68 +17,78 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public PasswordResetToken gePasswordResetToken(String token) {
-		// TODO Auto-generated method stub
+		
+		
+		
 		return null;
 	}
 
 	@Override
 	public void creatPasswordResetTokenForUser(User user, String token) {
-		// TODO Auto-generated method stub
+		
 
 	}
 
 	@Override
 	public User findByUsername(String username) {
-		// TODO Auto-generated method stub
+		
+		
+		
 		return null;
 	}
 
 	@Override
 	public User findByEmail(String mail) {
-		// TODO Auto-generated method stub
+		
+		
 		return null;
 	}
 
 	@Override
 	public User findById(Long id) {
-		// TODO Auto-generated method stub
+		
+		
+		
 		return null;
 	}
 
 	@Override
 	public User addUser(User user, Set<UserRole> userRoles) throws Exception {
-		// TODO Auto-generated method stub
+		
+		
+		
 		return null;
 	}
 
 	@Override
 	public User update(User user) {
-		// TODO Auto-generated method stub
+		
+		
+		
 		return null;
 	}
 
 	@Override
 	public void updateUserBilling(UserBilling userBilling, UserPayment userPayment, User user) {
-		// TODO Auto-generated method stub
+		
 
 	}
 
 	@Override
 	public void updatUserShipping(UserShipping userShipping, User user) {
-		// TODO Auto-generated method stub
+		
 
 	}
 
 	@Override
 	public void setUserDefaultPayment(Long userPaymentId, User user) {
-		// TODO Auto-generated method stub
+		
 
 	}
 
 	@Override
 	public void setUserDefaultShipping(Long userShippingid, User user) {
-		// TODO Auto-generated method stub
+		
 
 	}
-
 }

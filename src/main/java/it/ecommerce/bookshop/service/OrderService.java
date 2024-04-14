@@ -12,4 +12,6 @@ public interface OrderService {
 	public Order addOrder(ShoppingCart shoppingCart, ShippingAddress shippingAddress, 
 			BillingAddress billingAddress, Payment payment, String shippingmethod, User user);
 	
+	public Order findOrderById(Long id);
+	
 }
