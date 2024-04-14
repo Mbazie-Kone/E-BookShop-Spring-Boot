@@ -54,7 +54,7 @@ public class UserPayment implements Serializable {
 	@JoinColumn(name = "user_id")
 	private User user;
 	
-	@OneToOne(mappedBy = "userPayment", cascade = CascadeType.ALL, orphanRemoval = true)
+	@OneToOne(cascade = CascadeType.ALL, mappedBy = "userPayment", orphanRemoval = true)
 	private UserBilling userBilling;
 
 	public Long getId() {

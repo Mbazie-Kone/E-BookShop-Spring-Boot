@@ -114,12 +114,14 @@ public class UserBilling implements Serializable{
 		this.userBillingState = userBillingState;
 	}
 
-	public UserPayment getUserPayment() {
-		return userPayment;
+	public UserPayment getUserPayment() { 
+		 
+		return userPayment; 
 	}
-
+	  
 	public void setUserPayment(UserPayment userPayment) {
-		this.userPayment = userPayment;
+		 
+		this.userPayment = userPayment; 
 	}
 
 	@Override
@@ -127,6 +129,6 @@ public class UserBilling implements Serializable{
 		return "UserBilling [id=" + id + ", userBillingName=" + userBillingName + ", userBillingStreet1="
 				+ userBillingStreet1 + ", userBillingStreet2=" + userBillingStreet2 + ", userBillingCity="
 				+ userBillingCity + ", userBillingCountry=" + userBillingCountry + ", userBillingZipCode="
-				+ userBillingZipCode + ", userBillingState=" + userBillingState + ", userPayment=" + userPayment + "]";
+				+ userBillingZipCode + ", userBillingState=" + userBillingState + ", UserPayment=" + userPayment + "]";
 	}	
 }
