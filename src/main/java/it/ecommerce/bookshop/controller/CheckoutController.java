@@ -58,6 +58,6 @@ public class CheckoutController {
 	private UserPaymentService userPaymentService;
 	
 	@Autowired
-	private OrderService ordeService;
+	private OrderService orderService;
 
 }

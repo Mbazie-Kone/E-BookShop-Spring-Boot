@@ -12,7 +12,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
-import it.ecommerce.bookshop.service.impl.UserSecurityServiceImpl;
+import it.ecommerce.bookshop.service.impl.UserSecurityService;
 import it.ecommerce.bookshop.utility.SecurityUtility;
 
 @SuppressWarnings("deprecation")
@@ -25,7 +25,7 @@ public class SecurityConfig {
 	private Environment env;
 
 	@Autowired
-	private UserSecurityServiceImpl userSecurityServiceImpl;
+	private UserSecurityService userSecurityService;
 
 	private static final String[] PUBLIC_MATCHERS = {
 
@@ -69,6 +69,6 @@ public class SecurityConfig {
 	
 	@Autowired
 	public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-		auth.userDetailsService(userSecurityServiceImpl).passwordEncoder(passwordEncoder());
+		auth.userDetailsService(userSecurityService).passwordEncoder(passwordEncoder());
 	}
 }
