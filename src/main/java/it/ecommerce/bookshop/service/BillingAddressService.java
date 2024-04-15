@@ -6,6 +6,6 @@ import it.ecommerce.bookshop.model.UserBilling;
 
 public interface BillingAddressService {
 	
-	public BillingAddress setByUserBilling(BillingAddress billingAddress, UserBilling userBilling);
+	public BillingAddress setByUserBilling(UserBilling userBilling,BillingAddress billingAddress);
 	
 }

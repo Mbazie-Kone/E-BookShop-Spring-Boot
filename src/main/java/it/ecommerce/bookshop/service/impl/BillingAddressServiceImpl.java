@@ -10,7 +10,7 @@ import it.ecommerce.bookshop.service.BillingAddressService;
 public class BillingAddressServiceImpl implements BillingAddressService {
 
 	@Override
-	public BillingAddress setByUserBilling(BillingAddress billingAddress, UserBilling userBilling) {
+	public BillingAddress setByUserBilling(UserBilling userBilling, BillingAddress billingAddress) {
 		
 		billingAddress.setAddressName(userBilling.getUserBillingName());
 		billingAddress.setStreet1(userBilling.getUserBillingStreet1());
