@@ -205,12 +205,61 @@ public class CheckoutController {
 			
 		if(shippingMethod.equals("groungShipping")) {
 			estimatedDeliveryDate = today.plusDays(5);
-		}else {
+		}
+		else {
 			estimatedDeliveryDate = today.plusDays(3);
 		}
 		
 		model.addAttribute("estimatedDeliveryDate", estimatedDeliveryDate);
 		
 		return "orderSubmittedPage";
+	}
+	
+	@GetMapping("/setShippingAddress")
+	public String setShippingAddress(@RequestParam("userShippingId") Long userShippingId, Principal principal, Model model) {
+		
+		User user = userService.findByUsername(principal.getName());
+		
+		UserShipping userShipping = userShippingService.findById(userShippingId);
+		
+		if(userShipping.getUser().getId() != user.getId()) {
+			
+			return "badRequestPage";
+		}
+		else {
+			shippingAddressService.setByUserShipping(userShipping, shippingAddress);
+			
+			List<CartItem> cartItems = cartItemService.findByShoppingCart(user.getShoppingCart());
+			
+			model.addAttribute("shippingAddress", shippingAddress);
+			model.addAttribute("payment", payment);
+			model.addAttribute("billingAddress", billingAddress);
+			model.addAttribute("cartItems", cartItems);
+			model.addAttribute("shoppingCart", user.getShoppingCart());
+			
+			List<String> stateList = ITConstants.lisOfStatesCode;
+			Collections.sort(stateList);
+			
+			model.addAttribute("stateList", stateList);
+			
+			List<UserShipping> userShippings = user.getUserShippings();
+			List<UserPayment> userPayments = user.getUserPayments();
+			
+			model.addAttribute("userShippings", userShippings );
+			model.addAttribute("userPayments", userPayments);
+			model.addAttribute("shippingAddress", shippingAddress);
+			model.addAttribute("classActiveShipping", true);
+			
+			if(userPayments.size() == 0) {
+				model.addAttribute("emptyPayments", true);
+			}
+			else {
+				model.addAttribute("emptyPayments", false);
+			}
+			
+			model.addAttribute("emptyShippings", false);
+			
+			return "checkout";
+		}	
 	}
 }
