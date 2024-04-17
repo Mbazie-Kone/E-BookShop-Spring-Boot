@@ -50,23 +50,23 @@ public class User implements UserDetails, Serializable{
 	@Column(name = "password")
 	private String passWord;
 	
-	@Column(nullable = false, updatable = false)
+	@Column(name="email", nullable = false, updatable = false)
 	private String email;
 	
 	private String phone;
 	
 	private boolean enabled = true;
 	
-	@OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
+	@OneToOne(cascade = CascadeType.ALL ,mappedBy = "user")
 	private ShoppingCart shoppingCart;
 	
-	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
 	private List<UserShipping> userShippings;
 	
-	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
 	private List<UserPayment> userPayments;
 	
-	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "user")
 	private List<Order> orders;
 	
 	@OneToMany(mappedBy = "user", cascade = CascadeType.MERGE, fetch = FetchType.EAGER)

@@ -22,6 +22,7 @@ import it.ecommerce.bookshop.model.Payment;
 import it.ecommerce.bookshop.model.ShippingAddress;
 import it.ecommerce.bookshop.model.ShoppingCart;
 import it.ecommerce.bookshop.model.User;
+import it.ecommerce.bookshop.model.UserBilling;
 import it.ecommerce.bookshop.model.UserPayment;
 import it.ecommerce.bookshop.model.UserShipping;
 import it.ecommerce.bookshop.service.BillingAddressService;
@@ -125,7 +126,7 @@ public class CheckoutController {
 			model.addAttribute("emptyShippingList", false);
 		}
 		
-		ShoppingCart shoppingCart = user.getShoppingCart();
+		user.getShoppingCart();
 		
 		for (UserShipping userShipping : userShippings) {
 			if(userShipping.isUserShippingDefault()) {
@@ -261,5 +262,56 @@ public class CheckoutController {
 			
 			return "checkout";
 		}	
+	}
+	
+	@GetMapping("/setPaymentMethod")
+	public String setPaymentMethod(@RequestParam("userPaymentId") Long userPaymentId, Principal principal, Model model) {
+		
+		User user = userService.findByUsername(principal.getName());
+		
+		UserPayment userPayment = userPaymentService.findById(userPaymentId);
+		
+		UserBilling userBilling = userPayment.getUserBilling();
+		
+		if(userPayment.getUser().getId() != user.getId()) {
+			
+			return"badRequestPage";
+		}
+		else {
+			paymentService.setByUserPayment(userPayment, payment);
+			
+			List<CartItem> cartItems = cartItemService.findByShoppingCart(user.getShoppingCart());
+			
+			billingAddressService.setByUserBilling(userBilling, billingAddress);
+			
+			model.addAttribute("shippingAddress", shippingAddress);
+			model.addAttribute("payment", payment);
+			model.addAttribute("billingAddress", billingAddress);
+			model.addAttribute("cartItems", cartItems);
+			model.addAttribute("shoppingCart", user.getShoppingCart());
+			
+			List<String> stateList = ITConstants.lisOfStatesCode;
+			Collections.sort(stateList);
+			
+			model.addAttribute("stateList", stateList);
+			
+			List<UserShipping> userShippings = user.getUserShippings();
+			List<UserPayment> userPayments = user.getUserPayments();
+			
+			model.addAttribute("userShippings", userShippings);
+			model.addAttribute("userPayments", userPayments);
+			model.addAttribute("shippingAddress", shippingAddress);
+			model.addAttribute("classActivePayment", true);
+			model.addAttribute("emptyPaymentList", false);
+			
+			if(userShippings.size() == 0) {
+				model.addAttribute("emptyShippingList", true);
+			}
+			else {
+				model.addAttribute("emptyShippingList", false);
+			}
+		}
+		
+		return "checkout";	
 	}
 }
