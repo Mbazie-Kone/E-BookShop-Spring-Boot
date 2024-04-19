@@ -36,8 +36,16 @@
 								class="caret"></span></a>
 							<ul class="dropdown-menu">
 								<li><a th:href="@{/bookshelf}"><span class="glyphicon glyphicon-th-list"></span>Browse All Books</a>
-								<li><a th:href="@{/searchByCategory(Category='programming')}" class="list-group-item"><span class="glyphicon glyphicon-book">
+								<li><a th:href="@{/searchByCategory(Category='Programming')}" class="list-group-item"><span class="glyphicon glyphicon-book">
 								</span>Programming</a></li>
+								<li><a th:href="@{/searchByCategory(category='Engineering')}" class="list-group-item"><span 
+								class="glyphicon glyphicon-book"></span>Engineering</a></li>
+								<li><a th:href="@{/searchByCategory(category='Fiction')}" class="list-group-item"><span 
+								class="glyphicon glyphicon-book"></span>Fiction</a></li>
+								<li><a th:href="@{/searchByCategory(category='Management')}" class="list-group-item"><span 
+								class="glyphicon glyphicon-book"></span>Management</a></li>
+								<li><a th:href="@{/faq)}" class="list-group-item"><span 
+								class="glyphicon glyphicon-question-sign"></span>FAQ</a></li>
 							</ul>
 						</ul>
 					</div>
