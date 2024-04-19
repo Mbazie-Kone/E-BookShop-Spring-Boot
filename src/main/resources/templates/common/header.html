@@ -18,10 +18,31 @@
 	</head>
 	
 	<body>
-		<div id="navbar">
+		<div th:fragment="navbar">
 			<div class="page-top" style="width: 100%; height: 10px; background-color: #008080;"></div>
 			<!-- Static navbar -->
-			
+			<nav class="navbar navbar-default navbar-inverse">
+				<div class="container-fluid">
+					<div class="navbar-header">
+						<a class="navbar-brand" th:href="@{/}"><span 
+							class="glyphicon glyphicon-home"></span>E-BookShop</a>
+					</div>
+					<div id="navbar">
+						<ul class="nav navbar-nav navbar-left">
+							<li class="dropdown"><a th:href="@{/bookshelf}" 
+							class="dropdown-toggle" data-toggle="dropdown" role="button"
+							aria-haspopup="true" aria-expanded="false"><span
+								class="glyphicon glyphicon-list-alt"></span>BOOKS<span
+								class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a th:href="@{/bookshelf}"><span class="glyphicon glyphicon-th-list"></span>Browse All Books</a>
+								<li><a th:href="@{/searchByCategory(Category='programming')}" class="list-group-item"><span class="glyphicon glyphicon-book">
+								</span>Programming</a></li>
+							</ul>
+						</ul>
+					</div>
+				</div>
+			</nav>
 		</div>
 	</body>
 </html>
