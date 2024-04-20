@@ -61,48 +61,63 @@
 					</div>
 				</div>
 			</nav>
-			<div th:fragment="footer">
-				<br><br>
-				<footer>
-					<div class="row">
-						<div class="col-xs-3 footerleft">
-							<div class="logofooter">
-								<a th:href="@{/}"><img class="img-responsive" src="/image/logo.png" style="width: 200px;"></a>				
-							</div>
+		</div>
+		<div th:fragment="footer">
+			<br><br>
+			<footer>
+				<div class="row">
+					<div class="col-xs-3 footerleft">
+						<div class="logofooter">
+							<a th:href="@{/}"><img class="img-responsive" src="/image/logo.png" style="width: 200px;"></a>				
+						</div>
+						<p>
+							E-BookShop
+						</p>					
+					</div>
+					<div class="col-xs-3 paddingtop-bottom">
+						<h6 class="heading7">CONTACT</h6>
+						<ul class="post">
 							<p>
-								E-BookShop
-							</p>					
-						</div>
-						<div class="col-xs-3 paddingtop-bottom">
-							<h6 class="heading7">CONTACT</h6>
-							<ul class="post">
-								<p>
-									<i class="fa fa-map-pin"></i> Via Lazzaris 34<br>Spresiano,
-								</p>
-								<p>
-									<i class="fa fa-phone"></i> Phone (IT) :+39 3386558739
-								</p>
-								<p>
-									<i class="fa fa-envelope"></i> E-mail : mbazie89@gmail.com
-								</p>
-							</ul>
-						</div>
-						<div class="col-xs-3 paddingtop-bottom">
-							<h6 class="heading7">LINKS</h6>
-							<ul class="footer-ul">
-								<li><a href="#">Privacy Policy</a></li>
-								<li><a href="#">Terms &#38; Conditions</a></li>
-								<li><a href="#">Frequently Ask Questions</a></li>
-							</ul>
-						</div>
+								<i class="fa fa-map-pin"></i> Via Lazzaris 34<br>Spresiano,
+							</p>
+							<p>
+								<i class="fa fa-phone"></i> Phone (IT) :+39 3386558739
+							</p>
+							<p>
+								<i class="fa fa-envelope"></i> E-mail : mbazie89@gmail.com
+							</p>
+						</ul>
 					</div>
-				</footer>
-				<div class="copyright">
-					<div class="col-mb-6">
-						<p>© 2024 - All Rights Reserved</p>
+					<div class="col-xs-3 paddingtop-bottom">
+						<h6 class="heading7">LINKS</h6>
+						<ul class="footer-ul">
+							<li><a href="#">Privacy Policy</a></li>
+							<li><a href="#">Terms &#38; Conditions</a></li>
+							<li><a href="#">Frequently Ask Questions</a></li>
+						</ul>
 					</div>
+				</div>
+			</footer>
+			<div class="copyright">
+				<div class="col-md-6">
+					<p>© 2024 - All Rights Reserved</p>
+				</div>
+				<div class="col-md-6">
+					<ul class="bottom_ul">
+						<li><a th:href="badRequestPage.html">About us</a></li>
+						<li><a href="#">M'bazie</a></li>
+						<li><a href="#">Kone</a></li>
+					</ul>
 				</div>
 			</div>
 		</div>
+		<div th:fragment="body-bottom-scripts">
+			<script th:src="@{/js/jquery.min.css}"></script>
+			<script src="/js/bootstrap.min.js"></script>
+			<script th:src="@{/js/scripts.js}"></script>
+			<!-- Data table -->
+			<script th:src="@{/js/jquery.dataTables.min.js}"></script>
+			<script th:src="@{/js/dataTables.bootstrap.min.js}"></script>
+		</div>	
 	</body>
 </html>
