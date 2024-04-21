@@ -2,6 +2,7 @@ package it.ecommerce.bookshop.controller;
 
 import java.security.Principal;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.UUID;
 
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 
 import it.ecommerce.bookshop.model.Book;
 import it.ecommerce.bookshop.model.User;
+import it.ecommerce.bookshop.model.UserShipping;
 import it.ecommerce.bookshop.service.BookService;
 import it.ecommerce.bookshop.service.CartItemService;
 import it.ecommerce.bookshop.service.OrderService;
@@ -22,6 +24,7 @@ import it.ecommerce.bookshop.service.UserPaymentService;
 import it.ecommerce.bookshop.service.UserService;
 import it.ecommerce.bookshop.service.UserShippingService;
 import it.ecommerce.bookshop.service.impl.UserSecurityService;
+import it.ecommerce.bookshop.utility.ITConstants;
 import it.ecommerce.bookshop.utility.MailConstructor;
 import it.ecommerce.bookshop.utility.SecurityUtility;
 import jakarta.servlet.http.HttpServletRequest;
@@ -148,5 +151,29 @@ public class HomeController {
 		model.addAttribute("forgetPasswordEmailSent", true);
 		
 		return "myAccount";	
+	}
+	
+	@GetMapping("/myProfile")
+	public String myProfile(Model model, Principal principal) {
+		
+		User user = userService.findByUsername(principal.getName());
+		
+		model.addAttribute("user", user);
+		model.addAttribute("userPaymens", user.getUserPayments());
+		model.addAttribute("userShippings", user.getUserShippings());
+		model.addAttribute("userOrders", user.getOrders());
+		
+		UserShipping userShipping = new UserShipping();
+		
+		model.addAttribute("listOfCreditCards", true);
+		model.addAttribute("listOfShippingAddresses", true);
+		
+		List<String> stateList = ITConstants.lisOfStatesCode;
+		Collections.sort(stateList);
+		
+		model.addAttribute("statelist", stateList);
+		model.addAttribute("classActiveEdit", true);
+		
+		return "myProfile";	
 	}
 }
