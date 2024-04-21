@@ -387,6 +387,23 @@ public class HomeController {
 		return "myProfile";	
 	}
 	
+	@PostMapping("/setDefaultShippingAddress")
+	public String setDefaultShippingAddress(@ModelAttribute("defaultShippingAddressId") Long defaultShippingId, Principal principal, Model model) {
+		
+		User user = userService.findByUsername(principal.getName());
+		
+		userService.setUserDefaultShipping(defaultShippingId, user);
+		
+		model.addAttribute("user", user);
+		model.addAttribute("listOfCreditCards", true);
+		model.addAttribute("classActiveShipping", true);
+		model.addAttribute("listOfShippingAddresses", true);	
+		model.addAttribute("userPayments", user.getUserPayments());
+		model.addAttribute("userShippings", user.getUserShippings());
+		model.addAttribute("orderList", user.getOrders());
+		
+		return "myProfile";
+	}
 	
 	
 } 
