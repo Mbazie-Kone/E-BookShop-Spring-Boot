@@ -3,10 +3,10 @@ package it.ecommerce.bookshop.controller;
 import java.security.Principal;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import java.util.UUID;
-
-import javax.swing.table.TableStringConverter;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.SimpleMailMessage;
@@ -22,6 +22,8 @@ import it.ecommerce.bookshop.model.User;
 import it.ecommerce.bookshop.model.UserBilling;
 import it.ecommerce.bookshop.model.UserPayment;
 import it.ecommerce.bookshop.model.UserShipping;
+import it.ecommerce.bookshop.model.security.Role;
+import it.ecommerce.bookshop.model.security.UserRole;
 import it.ecommerce.bookshop.service.BookService;
 import it.ecommerce.bookshop.service.CartItemService;
 import it.ecommerce.bookshop.service.OrderService;
@@ -460,6 +462,58 @@ public class HomeController {
 		}	
 	}
 	
-	
-	
+	@PostMapping("/newUserPost")
+	public String newUserPost(HttpServletRequest request, @ModelAttribute("userEmail") String userEmail, 
+			@ModelAttribute("username") String username, Model model) throws Exception {
+		
+		model.addAttribute("classActiveNewAccount", true);
+		model.addAttribute("userEmail", userEmail);
+		model.addAttribute("username", username);
+		
+		if(userService.findByUsername(username) != null ) {
+			model.addAttribute("usernameExists", true);
+			
+			return "myAccount";
+		}
+		
+		if(userService.findByEmail(userEmail) != null) {
+			model.addAttribute("emailExists", true);
+			
+			return "myAccount";
+		}
+		
+		User user = new User();
+		user.setUserName(username);
+		user.setEmail(userEmail);
+		
+		String password = SecurityUtility.randomPassword();
+		
+		String encryptedPassword = SecurityUtility.passwordEncoder().encode(password);
+		
+		user.setPassWord(encryptedPassword);
+		
+		Role role = new Role();
+		role.setId(1);
+		role.setName("ROLE_USER");
+		
+		Set<UserRole> userRoles = new HashSet<>();
+		userRoles.add(new UserRole(role, user));
+		
+		userService.addUser(user, userRoles);
+		
+		String token = UUID.randomUUID().toString();
+		
+		userService.creatPasswordResetTokenForUser(user, token);
+		
+		String appUrl = "http://"+request.getServerName()+":"+request.getServerPort()+request.getContextPath();
+		
+		SimpleMailMessage email = mailConstructor.constructResetTokenEmail(appUrl, request.getLocale(), token, user, password);
+		
+		mailSender.send(email);
+		
+		model.addAttribute("emailSent", "true");
+		model.addAttribute("orderList", user.getOrders());
+		
+		return "myAccount";
+	}
 }

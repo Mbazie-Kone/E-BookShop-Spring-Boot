@@ -23,7 +23,7 @@ public class Role implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "role_id")
-	private Long id;
+	private int id;
 	
 	private String name;
 	
@@ -31,11 +31,11 @@ public class Role implements Serializable {
 	@OneToMany(mappedBy = "role", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	private Set<UserRole> userRoles = new HashSet<>();
 
-	public Long getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
@@ -49,24 +49,6 @@ public class Role implements Serializable {
 	
 	public Set<UserRole> getUserRoles() {
 		return userRoles;
-	}
-
-	public void setUserRoles(Set<UserRole> userRoles) {
-		this.userRoles = userRoles;
-	}
-
-	public UserRole addUserRole(UserRole userRole) {
-		getUserRoles().add(userRole);
-		userRole.setRole(this);
-
-		return userRole;
-	}
-
-	public UserRole removeUserRole(UserRole userRole) {
-		getUserRoles().remove(userRole);
-		userRole.setRole(null);
-
-		return userRole;
 	}
 
 	@Override
