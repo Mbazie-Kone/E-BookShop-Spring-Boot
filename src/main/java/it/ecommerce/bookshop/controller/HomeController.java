@@ -209,7 +209,7 @@ public class HomeController {
 		model.addAttribute("userOrders", user.getOrders());
 		
 		model.addAttribute("listOfCreditCards", true);
-		model.addAttribute("classActiveBilling", true);
+		model.addAttribute("classActiveShipping", true);
 		model.addAttribute("listOfShippingAddresses", true);
 		
 		return "myProfile";	
@@ -298,7 +298,7 @@ public class HomeController {
 		model.addAttribute("userPayments", user.getUserPayments());
 		model.addAttribute("userShippings", user.getUserShippings());
 		model.addAttribute("listOfShippingAddresses", true);
-		model.addAttribute("classActiveBilling", true);
+		model.addAttribute("classActiveShipping", true);
 		model.addAttribute("listOfCreditCards", true);
 		model.addAttribute("orderList", user.getOrders());
 		
@@ -312,7 +312,7 @@ public class HomeController {
 		
 		UserPayment userPayment = userPaymentService.findById(creditCard);
 		
-		if(user.getId() != userPayment.getUser().getId()) {
+		if(user.getId()!= userPayment.getUser().getId()) {
 			
 			return "badRequestPage";
 		}
@@ -337,5 +337,35 @@ public class HomeController {
 			
 			return "myProfile";
 		}		
+	}
+	
+	@GetMapping("/updateUserShipping")
+	public String updateUserShipping(@ModelAttribute("id") Long shippingAddressId, Principal principal, Model model) {
+		
+		User user = userService.findByUsername(principal.getName());
+		
+		UserShipping userShipping = userShippingService.findById(shippingAddressId);
+		
+		if(user.getId()!= userShipping.getUser().getId()) {
+			
+			return "badRequestPage";
+		}
+		else {
+			model.addAttribute("user", user);	
+			model.addAttribute("userShipping", userShipping);
+			
+			List<String> stateList = ITConstants.lisOfStatesCode;
+			Collections.sort(stateList);
+			
+			model.addAttribute("stateList", stateList);
+			model.addAttribute("addNewShippingAddress", true);
+			model.addAttribute("classActiveShipping", true);
+			model.addAttribute("listOfCreditCards", true);
+			model.addAttribute("userPayments", user.getUserPayments());
+			model.addAttribute("userShippings", user.getUserShippings());
+			model.addAttribute("orderList", user.getOrders());
+			
+			return "myProfile";
+		}	
 	}
 } 
