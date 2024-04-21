@@ -13,6 +13,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import it.ecommerce.bookshop.model.Book;
 import it.ecommerce.bookshop.model.User;
@@ -248,9 +249,9 @@ public class HomeController {
 		User user = userService.findByUsername(principal.getName());
 		
 		model.addAttribute("user", user);
-		model.addAttribute("addNewShippingAddresses", true);
+		model.addAttribute("addNewShippingAddress", true);
 		model.addAttribute("classActiveBilling", true);
-		model.addAttribute("listOfShippingAddresses", true);
+		model.addAttribute("listOfCreditCards", true);
 		
 		UserShipping userShipping = new UserShipping();
 		
@@ -267,6 +268,22 @@ public class HomeController {
 		return "myProfile";
 	}
 	
-	
-	
+	@PostMapping("/addNewCreditCard")
+	public String addNewCreditCard(@ModelAttribute("userPayment") UserPayment userPayment, 
+			@ModelAttribute("userBilling") UserBilling userBilling, Principal principal, Model model) {
+		
+		User user = userService.findByUsername(principal.getName());
+		
+		userService.updateUserBilling(userBilling, userPayment, user);
+		
+		model.addAttribute("user", user);
+		model.addAttribute("userPayments", user.getUserPayments());
+		model.addAttribute("userShippings", user.getUserShippings());
+		model.addAttribute("listOfCreditCards", true);
+		model.addAttribute("classActiveBilling", true);
+		model.addAttribute("listOfShippingAddresses", true);
+		model.addAttribute("orderList", user.getOrders());
+		
+		return "myProfile";
+	}	
 }
