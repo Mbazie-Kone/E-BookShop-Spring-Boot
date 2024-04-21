@@ -304,4 +304,38 @@ public class HomeController {
 		
 		return "myProfile";
 	}
+	
+	@GetMapping("/updateCreditCard")
+	public String updateCreditCard(@ModelAttribute("id") Long creditCard, Principal principal, Model model) {
+		
+		User user = userService.findByUsername(principal.getName());
+		
+		UserPayment userPayment = userPaymentService.findById(creditCard);
+		
+		if(user.getId() != userPayment.getUser().getId()) {
+			
+			return "badRequestPage";
+		}
+		else {
+			model.addAttribute("user", user);
+			
+			UserBilling userBilling = userPayment.getUserBilling();
+			
+			model.addAttribute("userPayment", userPayment);
+			model.addAttribute("userBilling", userBilling);
+			
+			List<String> stateList = ITConstants.lisOfStatesCode;
+			Collections.sort(stateList);
+			
+			model.addAttribute("stateList", stateList);
+			model.addAttribute("addNewCreditCard", true);
+			model.addAttribute("classActiveBilling", true);
+			model.addAttribute("listOfShippingAddresses", true);
+			model.addAttribute("userPayments", user.getUserPayments());
+			model.addAttribute("userShippings", user.getUserShippings());
+			model.addAttribute("orderList", user.getOrders());
+			
+			return "myProfile";
+		}		
+	}
 } 
