@@ -16,6 +16,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 
 import it.ecommerce.bookshop.model.Book;
 import it.ecommerce.bookshop.model.User;
+import it.ecommerce.bookshop.model.UserBilling;
+import it.ecommerce.bookshop.model.UserPayment;
 import it.ecommerce.bookshop.model.UserShipping;
 import it.ecommerce.bookshop.service.BookService;
 import it.ecommerce.bookshop.service.CartItemService;
@@ -159,7 +161,7 @@ public class HomeController {
 		User user = userService.findByUsername(principal.getName());
 		
 		model.addAttribute("user", user);
-		model.addAttribute("userPaymens", user.getUserPayments());
+		model.addAttribute("userPayments", user.getUserPayments());
 		model.addAttribute("userShippings", user.getUserShippings());
 		model.addAttribute("userOrders", user.getOrders());
 		
@@ -184,7 +186,7 @@ public class HomeController {
 		User user = userService.findByUsername(principal.getName());
 		
 		model.addAttribute("user", user);
-		model.addAttribute("userPaymens", user.getUserPayments());
+		model.addAttribute("userPayments", user.getUserPayments());
 		model.addAttribute("userShippings", user.getUserShippings());
 		model.addAttribute("userOrders", user.getOrders());
 		
@@ -201,7 +203,7 @@ public class HomeController {
 		User user = userService.findByUsername(principal.getName());
 		
 		model.addAttribute("user", user);
-		model.addAttribute("userPaymens", user.getUserPayments());
+		model.addAttribute("userPayments", user.getUserPayments());
 		model.addAttribute("userShippings", user.getUserShippings());
 		model.addAttribute("userOrders", user.getOrders());
 		
@@ -210,5 +212,34 @@ public class HomeController {
 		model.addAttribute("listOfShippingAddresses", true);
 		
 		return "myProfile";	
+	}
+	
+	@GetMapping("/addNewCreditCard")
+	public String addNewCreditCard(Model model, Principal principal) {
+		
+		User user = userService.findByUsername(principal.getName());
+		
+		model.addAttribute("user", user);
+		
+		model.addAttribute("addNewCreditCard", true);
+		model.addAttribute("classActiveBilling", true);
+		model.addAttribute("listOfShippingAddresses", true);
+		
+		UserBilling userBilling = new UserBilling();
+		
+		UserPayment userPayment = new UserPayment();
+		
+		model.addAttribute("userBilling", userBilling);
+		model.addAttribute("userPayment", userPayment);
+		
+		List<String> stateList = ITConstants.lisOfStatesCode;
+		Collections.sort(stateList);
+		
+		model.addAttribute("stateList", stateList);
+		model.addAttribute("userPayments", user.getUserPayments());
+		model.addAttribute("userShippings", user.getUserShippings());
+		model.addAttribute("orderList", user.getOrders());
+		
+		return "myProfile";
 	}
 }
