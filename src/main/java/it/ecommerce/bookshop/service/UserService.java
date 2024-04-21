@@ -27,7 +27,7 @@ public interface UserService {
 	
 	public void updateUserBilling(UserBilling userBilling, UserPayment userPayment, User user);
 	
-	public void updatUserShipping(UserShipping userShipping, User user);
+	public void updateUserShipping(UserShipping userShipping, User user);
 	
 	public void setUserDefaultPayment(Long userPaymentId, User user);
 	

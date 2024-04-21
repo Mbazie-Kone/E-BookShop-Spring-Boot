@@ -285,5 +285,23 @@ public class HomeController {
 		model.addAttribute("orderList", user.getOrders());
 		
 		return "myProfile";
-	}	
-}
+	}
+	
+	@PostMapping("/addNewShippingAddress")
+	public String addNewShippingAddressPost(@ModelAttribute("userShipping") UserShipping userShipping, Principal principal, Model model) {
+		
+		User user = userService.findByUsername(principal.getName());
+		
+		userService.updateUserShipping(userShipping, user);
+		
+		model.addAttribute("user", user);
+		model.addAttribute("userPayments", user.getUserPayments());
+		model.addAttribute("userShippings", user.getUserShippings());
+		model.addAttribute("listOfShippingAddresses", true);
+		model.addAttribute("classActiveBilling", true);
+		model.addAttribute("listOfCreditCards", true);
+		model.addAttribute("orderList", user.getOrders());
+		
+		return "myProfile";
+	}
+} 

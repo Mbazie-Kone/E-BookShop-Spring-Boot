@@ -123,7 +123,7 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public void updatUserShipping(UserShipping userShipping, User user) {
+	public void updateUserShipping(UserShipping userShipping, User user) {
 		
 		userShipping.setUser(user);
 		userShipping.setUserShippingDefault(true);
