@@ -6,6 +6,8 @@ import java.util.Collections;
 import java.util.List;
 import java.util.UUID;
 
+import javax.swing.table.TableStringConverter;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
@@ -431,4 +433,33 @@ public class HomeController {
 			return "myProfile";
 		}	
 	}
-} 
+	
+	@GetMapping("/removeUserShipping")
+	public String removeUserShipping(@ModelAttribute("id") Long userShippingId, Principal principal, Model model) {
+		
+		User user = userService.findByUsername(principal.getName());
+		
+		UserShipping userShipping = userShippingService.findById(userShippingId);
+		
+		if(user.getId()!= userShipping.getUser().getId()) {
+			
+			return "badRequestPage";
+		}
+		else {
+			model.addAttribute("user", user);
+			
+			userShippingService.deleteById(userShippingId);
+			
+			model.addAttribute("listOfShippingAddresses", true);
+			model.addAttribute("classActiveShipping", true);
+			model.addAttribute("userPayments", user.getUserPayments());
+			model.addAttribute("userShippings", user.getUserShippings());
+			model.addAttribute("orderList", user.getOrders());
+			
+			return "myProfile";
+		}	
+	}
+	
+	
+	
+}
