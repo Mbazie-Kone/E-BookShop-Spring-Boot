@@ -220,7 +220,6 @@ public class HomeController {
 		User user = userService.findByUsername(principal.getName());
 		
 		model.addAttribute("user", user);
-		
 		model.addAttribute("addNewCreditCard", true);
 		model.addAttribute("classActiveBilling", true);
 		model.addAttribute("listOfShippingAddresses", true);
@@ -242,4 +241,32 @@ public class HomeController {
 		
 		return "myProfile";
 	}
+	
+	@GetMapping("/addNewShippingAddresses")
+	public String addNewShippingAddresses(Model model, Principal principal) {
+		
+		User user = userService.findByUsername(principal.getName());
+		
+		model.addAttribute("user", user);
+		model.addAttribute("addNewShippingAddresses", true);
+		model.addAttribute("classActiveBilling", true);
+		model.addAttribute("listOfShippingAddresses", true);
+		
+		UserShipping userShipping = new UserShipping();
+		
+		model.addAttribute("userShipping", userShipping);
+		
+		List<String> stateList = ITConstants.lisOfStatesCode;
+		Collections.sort(stateList);
+		
+		model.addAttribute("stateList", stateList);
+		model.addAttribute("userPayments", user.getUserPayments());
+		model.addAttribute("userShippings", user.getUserShippings());
+		model.addAttribute("orderList", user.getOrders());
+		
+		return "myProfile";
+	}
+	
+	
+	
 }
