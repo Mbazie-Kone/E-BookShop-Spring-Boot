@@ -164,6 +164,7 @@ public class HomeController {
 		model.addAttribute("userOrders", user.getOrders());
 		
 		UserShipping userShipping = new UserShipping();
+		model.addAttribute("userShipping", userShipping);
 		
 		model.addAttribute("listOfCreditCards", true);
 		model.addAttribute("listOfShippingAddresses", true);
@@ -173,6 +174,40 @@ public class HomeController {
 		
 		model.addAttribute("statelist", stateList);
 		model.addAttribute("classActiveEdit", true);
+		
+		return "myProfile";
+	}
+	
+	@GetMapping("/listOfCreditCards")
+	public String listOfCreditCards(Model model, Principal principal, HttpServletRequest request) {
+		
+		User user = userService.findByUsername(principal.getName());
+		
+		model.addAttribute("user", user);
+		model.addAttribute("userPaymens", user.getUserPayments());
+		model.addAttribute("userShippings", user.getUserShippings());
+		model.addAttribute("userOrders", user.getOrders());
+		
+		model.addAttribute("listOfCreditCards", true);
+		model.addAttribute("classActiveBilling", true);
+		model.addAttribute("listOfShippingAddresses", true);
+		
+		return "myProfile";	
+	}
+	
+	@GetMapping("/listOfShippingAddresses")
+	public String listOfShippingAddresses(Model model, Principal principal, HttpServletRequest request) {
+		
+		User user = userService.findByUsername(principal.getName());
+		
+		model.addAttribute("user", user);
+		model.addAttribute("userPaymens", user.getUserPayments());
+		model.addAttribute("userShippings", user.getUserShippings());
+		model.addAttribute("userOrders", user.getOrders());
+		
+		model.addAttribute("listOfCreditCards", true);
+		model.addAttribute("classActiveBilling", true);
+		model.addAttribute("listOfShippingAddresses", true);
 		
 		return "myProfile";	
 	}
