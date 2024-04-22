@@ -16,6 +16,7 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -551,6 +552,51 @@ public class HomeController {
 		model.addAttribute("orderList", user.getOrders());
 		
 		return "myProfile";
+	}
+	
+	@PostMapping("/updateUserInfo")
+	public String updateUserInfo(@ModelAttribute("user") User user, @ModelAttribute("newPassword") String newPassword, Model model) throws Exception{
+		
+		User currentUser = userService.findById(user.getId());
+		
+		if(currentUser == null) {
+			throw new Exception("User not found");
+		}
+		
+		// Check email already exists
+		if(userService.findByEmail(user.getEmail()) != null) {
+			if(userService.findByEmail(user.getEmail()).getId() != currentUser.getId()) {
+				model.addAttribute("emailExists", true);
+				
+				return "myProfile";
+			}
+		}
+		
+		// Check username already exists
+		if(userService.findByUsername(user.getUsername()) != null) {
+			if(userService.findByUsername(user.getUsername()).getId() != currentUser.getId()) {
+				model.addAttribute("usernameExists", true);
+				
+				return "myProfile";
+			}
+		}
+		
+		// Update password
+		if(newPassword != null && !newPassword.isEmpty() && !newPassword.equals("")) {
+			BCryptPasswordEncoder passwordEncoder = SecurityUtility.passwordEncoder();
+			String dbPassword = currentUser.getPassword();
+			
+			if(passwordEncoder.matches(user.getPassword(), dbPassword)) {
+				currentUser.setPassWord(passwordEncoder.encode(newPassword));
+			}
+			else {
+				model.addAttribute("incorrectPassword", true);
+				
+				return "myProfile";
+			}
+		}
+			
+		return null;	
 	}
 	
 }
