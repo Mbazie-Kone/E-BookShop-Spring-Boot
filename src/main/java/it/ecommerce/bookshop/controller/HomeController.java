@@ -25,6 +25,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import it.ecommerce.bookshop.model.Book;
+import it.ecommerce.bookshop.model.CartItem;
+import it.ecommerce.bookshop.model.Order;
 import it.ecommerce.bookshop.model.User;
 import it.ecommerce.bookshop.model.UserBilling;
 import it.ecommerce.bookshop.model.UserPayment;
@@ -618,7 +620,41 @@ public class HomeController {
 		return "myProfile";	
 	}
 	
-	
-	
-	
+	@GetMapping("/orderDetail")
+	public String orderDetail(@RequestParam("id") Long orderId, Principal principal, Model model) {
+		
+		User user = userService.findByUsername(principal.getName());
+		
+		Order order = orderService.findOrderById(orderId);
+		
+		if(order.getUser().getId() != user.getId()) {
+			
+			return "badRequestPage";
+		}
+		else {
+			List<CartItem> cartItems = cartItemService.findByOrder(order);
+			
+			model.addAttribute("cartItems", cartItems);
+			model.addAttribute("user", user);
+			model.addAttribute("order", order);
+			model.addAttribute("userPayments", user.getUserPayments());
+			model.addAttribute("userShippings", user.getUserShippings());
+			model.addAttribute("orderList", user.getOrders());
+			
+			UserShipping userShipping = new UserShipping();
+			
+			model.addAttribute("userShipping", userShipping);
+			
+			List<String> stateList = ITConstants.lisOfStatesCode;
+			Collections.sort(stateList);
+			
+			model.addAttribute("stateList", stateList);
+			model.addAttribute("listOfShippingAddresses", true);
+			model.addAttribute("classActiveOrders", true);
+			model.addAttribute("listOfCreditCards", true);
+			model.addAttribute("displayOrderDetail", true);
+			
+			return "myProfile";	
+		}	
+	}
 }
