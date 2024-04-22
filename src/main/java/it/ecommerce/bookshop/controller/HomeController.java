@@ -595,8 +595,30 @@ public class HomeController {
 				return "myProfile";
 			}
 		}
-			
-		return null;	
+		
+		currentUser.setFistName(user.getFistName());
+		currentUser.setLastName(user.getLastName());
+		currentUser.setUserName(user.getUserName());
+		currentUser.setEmail(user.getEmail());
+		
+		userService.save(currentUser);
+		
+		model.addAttribute("updateSuccess", true);
+		model.addAttribute("user", currentUser);
+		model.addAttribute("classActiveEdit", true);
+		
+		UserDetails userDetails = userSecurityService.loadUserByUsername(currentUser.getUsername());
+		
+		Authentication authentication = new UsernamePasswordAuthenticationToken(userDetails, userDetails.getPassword(), userDetails.getAuthorities());
+
+		SecurityContextHolder.getContext().setAuthentication(authentication);
+		
+		model.addAttribute("orderList", user.getOrders());
+		
+		return "myProfile";	
 	}
+	
+	
+	
 	
 }
