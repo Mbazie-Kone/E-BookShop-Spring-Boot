@@ -654,7 +654,7 @@ public class HomeController {
 			model.addAttribute("listOfCreditCards", true);
 			model.addAttribute("displayOrderDetail", true);
 			
-			return "myProfile";	
+			return "myProfile";
 		}	
 	}
 }
