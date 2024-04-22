@@ -5,6 +5,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Locale;
 import java.util.Set;
 import java.util.UUID;
 
@@ -16,12 +17,14 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import it.ecommerce.bookshop.model.Book;
 import it.ecommerce.bookshop.model.User;
 import it.ecommerce.bookshop.model.UserBilling;
 import it.ecommerce.bookshop.model.UserPayment;
 import it.ecommerce.bookshop.model.UserShipping;
+import it.ecommerce.bookshop.model.security.PasswordResetToken;
 import it.ecommerce.bookshop.model.security.Role;
 import it.ecommerce.bookshop.model.security.UserRole;
 import it.ecommerce.bookshop.service.BookService;
@@ -462,7 +465,7 @@ public class HomeController {
 		}	
 	}
 	
-	@PostMapping("/newUserPost")
+	@PostMapping("/newUser")
 	public String newUserPost(HttpServletRequest request, @ModelAttribute("userEmail") String userEmail, 
 			@ModelAttribute("username") String username, Model model) throws Exception {
 		
@@ -517,6 +520,21 @@ public class HomeController {
 		return "myAccount";
 	}
 	
-	
+	@GetMapping("/newUser")
+	public String newUser(Locale locale, @RequestParam("token") String token, Model model) {
+		
+		PasswordResetToken passToken = userService.gePasswordResetToken(token);
+		
+		if(passToken == null) {
+			String message = "Invalid token";
+			model.addAttribute("message", message);
+			
+			return "redirect:/badRequest";
+		}
+		
+		User user = passToken.getUser();
+		
+		return token;
+	}
 	
 }
