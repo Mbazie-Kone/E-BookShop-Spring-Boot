@@ -12,6 +12,10 @@ import java.util.UUID;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -534,7 +538,19 @@ public class HomeController {
 		
 		User user = passToken.getUser();
 		
-		return token;
+		String username = user.getUsername();
+		
+		UserDetails userDetails = userSecurityService.loadUserByUsername(username);
+		
+		Authentication authentication = new UsernamePasswordAuthenticationToken(userDetails, userDetails.getPassword(), userDetails.getAuthorities());
+		
+		SecurityContextHolder.getContext().setAuthentication(authentication);
+		
+		model.addAttribute("user", user);
+		model.addAttribute("classActiveEdit", true);
+		model.addAttribute("orderList", user.getOrders());
+		
+		return "myProfile";
 	}
 	
 }
