@@ -16,6 +16,11 @@ public class HelloWorldController {
 		return "HelloWorld";
 	}
 	
-	
+	@GetMapping("/")
+	@ResponseBody
+	public String helloWorldTestTwo() {
+		
+		return "HelloWorldTwo";
+	}
 	
 }
