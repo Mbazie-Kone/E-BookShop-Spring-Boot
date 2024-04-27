@@ -7,6 +7,7 @@ import { IndexComponent } from './index/index.component';
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatButtonModule,
   ],
   providers: [
     provideAnimationsAsync()
