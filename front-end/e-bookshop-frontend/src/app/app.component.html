@@ -1,8 +1,18 @@
-<a routerLink="/">Index</a>
-<a routerLink="dashboard">Dashboard</a>
-<a routerLink="login">Login</a>
-<router-outlet></router-outlet>
-<br>
-<div class="example-button-row">
-  <button mat-raised-button color="primary">Primary</button>
+<div class="button-example">
+  <a routerLink="/" style="margin-right: 10px;">
+    <div class="example-button-row">
+      <button mat-raised-button color="primary">Index</button>
+    </div>
+  </a>
+  <a routerLink="dashboard" style="margin-right: 10px;">
+    <div class="example-button-row">
+      <button mat-raised-button color="primary">Dashboard</button>
+    </div>
+  </a>
+  <a routerLink="login" style="margin-right: 10px;">
+    <div class="example-button-row">
+      <button mat-raised-button color="primary">Login</button>
+    </div>
+  </a>
 </div>
+<router-outlet></router-outlet>

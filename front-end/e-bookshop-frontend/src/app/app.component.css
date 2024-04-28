@@ -6,3 +6,7 @@
 .example-disabled {
   display: inline-block;
 }
+
+.button-example {
+    display: flex;
+}
