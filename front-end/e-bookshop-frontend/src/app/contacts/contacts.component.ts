@@ -15,8 +15,15 @@ export class ContactsComponent implements OnInit {
   constructor(private contactsService: ContactsServiceService, private route: ActivatedRoute){}
 
   ngOnInit(): void {
-    this.people = this.contactsService.getPeople();
-    this.isProfile = !this.route.snapshot.paramMap.get('id') ? false : true;
+    if(this.route.snapshot.paramMap.get('id')) {
+      this.isProfile = true;
+      this.people = this.contactsService.getPeople();
+    }
+    else {
+      this.isProfile = false;
+      this.people = this.contactsService.getPeople(); 
+    }
+   
     console.log(this.route.snapshot.paramMap.get('id'));
     console.log(this.isProfile);
   }
