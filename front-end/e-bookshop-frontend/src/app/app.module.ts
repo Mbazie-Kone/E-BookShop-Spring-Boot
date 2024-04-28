@@ -9,7 +9,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import {MatButtonModule} from '@angular/material/button';
 import { ContactsComponent } from './contacts/contacts.component';
-import { SingleContactsComponent } from './single-contact/single-contacts.component';
+import { SingleContactsComponent } from './single-contacts/single-contacts.component';
 
 @NgModule({
   declarations: [
