@@ -7,9 +7,7 @@ import { ContactsServiceService } from '../contacts-service.service';
   styleUrl: './contacts.component.css'
 })
 export class ContactsComponent implements OnInit {
-
   people: any;
-  person: any;
 
   constructor(private contactsService: ContactsServiceService){}
 

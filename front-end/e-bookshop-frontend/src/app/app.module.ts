@@ -10,6 +10,7 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import {MatButtonModule} from '@angular/material/button';
 import { ContactsComponent } from './contacts/contacts.component';
 import { SingleContactsComponent } from './single-contacts/single-contacts.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { SingleContactsComponent } from './single-contacts/single-contacts.compo
     BrowserModule,
     AppRoutingModule,
     MatButtonModule,
+    HttpClientModule,
   ],
   providers: [
     provideAnimationsAsync()

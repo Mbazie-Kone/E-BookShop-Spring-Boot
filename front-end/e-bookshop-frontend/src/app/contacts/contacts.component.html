@@ -1,6 +1,10 @@
-<h3>Contacts list</h3>
-<div *ngFor="let person of people; let i = index" style="margin-top: 10px; margin-left: 10px;">
-    {{i}}: <a routerLink="/contacts/{{i}}">{{person.name}} {{person.surname}}</a>
+<div>
+    <h3>Contacts list</h3>
+    <div>
+        <div *ngFor="let person of people; let i = index" style="margin-top: 10px; margin-left: 10px;">
+            {{i}}: <a routerLink="/contacts/{{i}}">{{person.name}} {{person.surname}}</a>
+        </div>
+    </div>
 </div>
 <router-outlet></router-outlet>
 <!-- <ng-template #userContact>

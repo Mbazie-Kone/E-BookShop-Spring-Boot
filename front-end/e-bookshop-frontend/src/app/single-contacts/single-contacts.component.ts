@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, ParamMap } from '@angular/router';
 import { ContactsServiceService } from '../contacts-service.service';
 
 @Component({
@@ -14,9 +14,9 @@ export class SingleContactsComponent implements OnInit {
   constructor(private route: ActivatedRoute, private contactService: ContactsServiceService) {}
 
   ngOnInit(): void {
-    this.id = +this.route.snapshot.paramMap.get('id')!
-    if(this.route.snapshot.paramMap.get('id')) {
+    this.route.paramMap.subscribe((params: ParamMap)=>{
+      this.id = +params.get('id')!;
       this.person = this.contactService.getPerson(this.id);
-    }
+    })  
   }
 }
