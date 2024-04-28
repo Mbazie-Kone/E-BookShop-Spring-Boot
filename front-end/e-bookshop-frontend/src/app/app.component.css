@@ -10,3 +10,12 @@
 .button-example {
     display: flex;
 }
+
+.button {
+    margin-right: 10px;
+}
+
+.button-index {
+    margin-left: 10px;
+    margin-right: 10px;
+}
