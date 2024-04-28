@@ -1,9 +1,8 @@
-<div *ngIf="!isProfile; else userContact">
-    <h3>Contacts list</h3>
-    <div *ngFor="let person of people; let i = index" style="margin-top: 10px; margin-left: 10px;">
-        {{i}}: <a routerLink="/contacts/{{i}}">{{person.name}} {{person.surname}}</a>
-    </div>
+<h3>Contacts list</h3>
+<div *ngFor="let person of people; let i = index" style="margin-top: 10px; margin-left: 10px;">
+    {{i}}: <a routerLink="/contacts/{{i}}">{{person.name}} {{person.surname}}</a>
 </div>
-<ng-template #userContact>
+<router-outlet></router-outlet>
+<!-- <ng-template #userContact>
     <app-single-contacts [person]="person"></app-single-contacts>
-</ng-template>
+</ng-template> -->
