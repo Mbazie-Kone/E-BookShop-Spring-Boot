@@ -1,9 +1,9 @@
 <div *ngIf="!isProfile; else userContact">
     <h3>Contacts list</h3>
     <div *ngFor="let person of people; let i = index" style="margin-top: 10px; margin-left: 10px;">
-        {{i}}: {{person.name}} {{person.surname}}
+        {{i}}: <a routerLink="/contacts/{{i}}">{{person.name}} {{person.surname}}</a>
     </div>
 </div>
 <ng-template #userContact>
-    <p style="margin-left: 10px; margin-top: 10px;">{{people.name}} {{people.surname}}</p>
+    <p style="margin-left: 10px; margin-top: 10px;">{{person.name}} {{person.surname}} profile</p>
 </ng-template>

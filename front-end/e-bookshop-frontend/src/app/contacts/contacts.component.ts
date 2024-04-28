@@ -10,6 +10,7 @@ import { ActivatedRoute } from '@angular/router';
 export class ContactsComponent implements OnInit {
 
   people: any;
+  person: any;
   isProfile: boolean;
 
   constructor(private contactsService: ContactsServiceService, private route: ActivatedRoute){}
@@ -17,15 +18,14 @@ export class ContactsComponent implements OnInit {
   ngOnInit(): void {
     if(this.route.snapshot.paramMap.get('id')) {
       this.isProfile = true;
-      this.people = this.contactsService.getPeople();
+      this.person = this.contactsService.getPerson(parseInt(this.route.snapshot.paramMap.get('id')!));
     }
     else {
       this.isProfile = false;
       this.people = this.contactsService.getPeople(); 
     }
-   
-    console.log(this.route.snapshot.paramMap.get('id'));
-    console.log(this.isProfile);
+    // console.log(this.route.snapshot.paramMap.get('id'));
+    // console.log(this.isProfile);
   }
 
 }
