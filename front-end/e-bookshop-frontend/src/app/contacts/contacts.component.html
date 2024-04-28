@@ -1,5 +1,9 @@
-<h3>Contacts list</h3>
-
-<div *ngFor="let person of people">
-    
+<div *ngIf="!isProfile; else userContact">
+    <h3>Contacts list</h3>
+    <div *ngFor="let person of people; let i = index" style="margin-top: 10px; margin-left: 10px;">
+        {{i}}: {{person.name}} {{person.surname}}
+    </div>
 </div>
+<ng-template #userContact>
+    <p style="margin-left: 10px; margin-top: 10px;">Demo profile</p>
+</ng-template>
