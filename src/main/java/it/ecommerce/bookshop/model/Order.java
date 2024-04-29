@@ -1,5 +1,6 @@
 package it.ecommerce.bookshop.model;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 
@@ -14,8 +15,10 @@ import jakarta.persistence.TemporalType;
 
 @Entity
 @Table(name = "orders")
-public class Order {
-	
+public class Order implements Serializable {
+
+	private static final long serialVersionUID = 1L;
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "order_id")
