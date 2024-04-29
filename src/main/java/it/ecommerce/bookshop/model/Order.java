@@ -8,19 +8,13 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "customers")
-public class Customer {
+@Table(name = "orders")
+public class Order {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "customer_id")
+	@Column(name = "order_id")
 	private Long id;
 	
-	@Column(name = "first_name")
-	private String firstName;
 	
-	@Column(name = "last_name")
-	private String lastName;
-	
-	private String email;
 }

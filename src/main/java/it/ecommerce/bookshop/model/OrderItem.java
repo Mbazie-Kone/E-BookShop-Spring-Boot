@@ -1,5 +1,7 @@
 package it.ecommerce.bookshop.model;
 
+import java.math.BigDecimal;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -8,19 +10,24 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "customers")
-public class Customer {
+@Table(name = "orders_item")
+public class OrderItem {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "customer_id")
+	@Column(name = "order_item_id")
 	private Long id;
 	
-	@Column(name = "first_name")
-	private String firstName;
+	@Column(name = "image_url")
+	private String imageUrl;
 	
-	@Column(name = "last_name")
-	private String lastName;
+	@Column(name = "unit_price")
+	private BigDecimal unitPrice;
 	
-	private String email;
+	private int qty;
+	
+	@Column(name = "product_id")
+	private Long productId;
+	
+	private Order order;
 }
