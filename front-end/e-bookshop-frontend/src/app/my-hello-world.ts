@@ -1,1 +1,4 @@
-console.log("Hello World")
+class Book {
+    private name: string;
+    isbn: string;
+}
