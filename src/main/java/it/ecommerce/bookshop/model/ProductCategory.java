@@ -8,12 +8,15 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 // We will use the Lombok setup for this entity
 @Entity
 @Table(name = "product_categories")
-@Data
+// @Data known bug
+@Getter
+@Setter
 public class ProductCategory implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
@@ -22,5 +25,6 @@ public class ProductCategory implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "product_category_id")
 	private Long id;
+	
 	
 }
