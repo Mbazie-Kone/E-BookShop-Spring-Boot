@@ -1,6 +1,8 @@
 package it.ecommerce.bookshop.model;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
+import java.util.Date;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -19,4 +21,22 @@ public class Product implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "product_id")
 	private Long id;
+	
+	private String sku;
+	
+	private String name;
+	
+	private String description;
+	
+	private BigDecimal unitPrice;
+	
+	private String imageUrl;
+	
+	private int unitsInStock;
+	
+	private Date dateCreated;
+	
+	private Date lastUpdate;
+	
+	private ProductCategory productCategory;
 }
