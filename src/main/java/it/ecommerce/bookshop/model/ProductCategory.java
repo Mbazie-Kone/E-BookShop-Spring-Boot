@@ -1,6 +1,7 @@
 package it.ecommerce.bookshop.model;
 
 import java.io.Serializable;
+import java.util.Set;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -14,7 +15,7 @@ import lombok.Setter;
 // We will use the Lombok setup for this entity
 @Entity
 @Table(name = "product_categories")
-// @Data known bug
+// @Data -- known bug
 @Getter
 @Setter
 public class ProductCategory implements Serializable {
@@ -26,5 +27,8 @@ public class ProductCategory implements Serializable {
 	@Column(name = "product_category_id")
 	private Long id;
 	
+	@Column(name = "category_name")
+	private String categoryName;
 	
+	private Set<Product> products; // or List<Product> products it's the same
 }
