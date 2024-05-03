@@ -9,14 +9,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
-import { LeftbarComponent } from './leftbar/leftbar.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
-    LeftbarComponent,
   ],
   imports: [
     BrowserModule,
