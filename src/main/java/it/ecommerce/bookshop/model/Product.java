@@ -5,6 +5,7 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.ManyToAny;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import jakarta.persistence.Column;
@@ -50,8 +51,9 @@ public class Product implements Serializable {
 	@UpdateTimestamp
 	private Date lastUpdate;
 	
+	@ManyToAny
 	@Column(name = "product_category_id")
-	private ProductCategory productCategory;
+	private ProductCategory category;
 	
 	
 }
