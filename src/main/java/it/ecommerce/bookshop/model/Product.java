@@ -4,6 +4,9 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -34,13 +37,17 @@ public class Product implements Serializable {
 	@Column(name = "image_url")
 	private String imageUrl;
 	
+	private boolean active;
+	
 	@Column(name = "units_in_stock")
 	private int unitsInStock;
 	
 	@Column(name = "date_created")
+	@CreationTimestamp
 	private Date dateCreated;
 	
 	@Column(name = "last_update")
+	@UpdateTimestamp
 	private Date lastUpdate;
 	
 	@Column(name = "product_category_id")
