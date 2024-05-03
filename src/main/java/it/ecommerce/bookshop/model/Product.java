@@ -28,15 +28,23 @@ public class Product implements Serializable {
 	
 	private String description;
 	
+	@Column(name = "unit_price")
 	private BigDecimal unitPrice;
 	
+	@Column(name = "image_url")
 	private String imageUrl;
 	
+	@Column(name = "units_in_stock")
 	private int unitsInStock;
 	
+	@Column(name = "date_created")
 	private Date dateCreated;
 	
+	@Column(name = "last_update")
 	private Date lastUpdate;
 	
+	@Column(name = "product_category_id")
 	private ProductCategory productCategory;
+	
+	
 }
