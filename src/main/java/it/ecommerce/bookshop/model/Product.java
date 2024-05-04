@@ -6,7 +6,6 @@ import java.util.Date;
 import java.util.Objects;
 
 import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.ManyToAny;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import jakarta.persistence.Column;
