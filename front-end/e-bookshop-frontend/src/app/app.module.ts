@@ -6,11 +6,13 @@ import { AppComponent } from './app.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { MatButtonModule } from '@angular/material/button';
 import { HttpClientModule } from '@angular/common/http';
+import { ProductListComponent } from './components/product-list/product-list.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    ProductListComponent,
   ],
   imports: [
     BrowserModule,
