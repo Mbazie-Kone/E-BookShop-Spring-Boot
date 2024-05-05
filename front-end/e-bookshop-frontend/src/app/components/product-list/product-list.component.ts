@@ -9,13 +9,17 @@ import { Product } from '../../common/product';
 })
 export class ProductListComponent implements OnInit {
 
-  products: Product;
+  products: Product[] = [];
 
   constructor(private productService: ProductService) {
 
   }
 
   ngOnInit() {
-
+    this.listProducts();
+  }
+  
+  listProducts() {
+    throw new Error('Method not implemented.');
   }
 }
