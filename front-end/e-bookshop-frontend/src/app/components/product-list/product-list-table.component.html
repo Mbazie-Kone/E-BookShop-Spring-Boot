@@ -8,7 +8,8 @@
     </thead>
     <tbody>
         <tr *ngFor="let tempProduct of products">
-
+            <td>{{tempProduct.name}}</td>
+            <td>{{tempProduct.unitPrice | currency:'EUR'}}</td>
         </tr>
 
     </tbody>
