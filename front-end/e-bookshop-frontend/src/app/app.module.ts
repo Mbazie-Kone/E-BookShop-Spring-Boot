@@ -7,7 +7,11 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { HttpClientModule } from '@angular/common/http';
 import { ProductListComponent } from './components/product-list/product-list.component';
 import { ProductService } from './services/product.service';
+import { Routes } from '@angular/router';
 
+const routes: Routes = [
+  
+]
 
 @NgModule({
   declarations: [
