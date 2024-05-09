@@ -5,13 +5,11 @@ import { Product } from '../../common/product';
 @Component({
   selector: 'app-product-list',
   templateUrl: './product-list-grid.component.html',
-  //templateUrl: './product-list-table.component.html',
-  //templateUrl: './product-list.component.html',
   styleUrl: './product-list.component.css'
 })
 export class ProductListComponent implements OnInit {
 
-  products: Product[] = [];
+  products: Product[];
 
   constructor(private productService: ProductService) {
 
