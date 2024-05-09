@@ -14,7 +14,7 @@
       <nav class="navbar-sidebar">
         <ul class="list-unstyled navbar-list">
           <li>
-            <a href="#">Books</a>
+            <a routerLink="/category/1" routerLinkActive="active-link">Books</a>
           </li>
         </ul>
         <ul class="list-unstyled navbar-list">
@@ -53,12 +53,12 @@
         </div>
       </div>
     </header>
-    <!-- END HEADER DESKTOP-->
+    <!-- END HEADER DESKTOP -->
 
-    <!-- MAIN CONTENT-->
-    <app-product-list></app-product-list>
+    <!-- MAIN CONTENT -->
+    <router-outlet></router-outlet>
   </div>
-
+</div>
   <!-- END PAGE CONTAINER-->
   <footer>
     <ul>
@@ -67,4 +67,3 @@
       <li><a href="#">Help</a></li>
     </ul>
   </footer>
-</div>

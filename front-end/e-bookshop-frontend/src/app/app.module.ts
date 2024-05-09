@@ -14,7 +14,7 @@ const routes: Routes = [
   {path: 'category', component: ProductListComponent},
   {path: 'products', component: ProductListComponent},
   {path: '', redirectTo: "/products", pathMatch: 'full'},
-  {path: 'category/:id', component: ProductListComponent},
+  {path: '**', redirectTo: "/products", pathMatch: 'full'}
 ];
 
 @NgModule({
@@ -23,6 +23,7 @@ const routes: Routes = [
     ProductListComponent,
   ],
   imports: [
+    RouterModule.forRoot(routes),
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
