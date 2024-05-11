@@ -13,6 +13,7 @@ import it.ecommerce.bookshop.model.Product;
 @CrossOrigin("http://localhost:4200")
 public interface ProductRepository extends JpaRepository<Product, Long> {
 	
-	Page<Product> findByCategoryId(@Param("id") Long id, Pageable pageable);
+	// behind the scenes, Spring will execute a query similar to this: SELECT * FROM product WHERE category_id = ?
+	Page<Product> findByCategoryId(@Param("id") Long id, Pageable pageable); 
 
 }
