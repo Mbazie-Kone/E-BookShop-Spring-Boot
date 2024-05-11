@@ -17,8 +17,8 @@ public class DataRestConfig implements RepositoryRestConfigurer {
 	private EntityManager entityManager;
 	
 	@Autowired
-	public DataRestConfig(EntityManager thEntityManager) {
-		
+	public DataRestConfig(EntityManager theEntityManager) {
+		entityManager = theEntityManager;
 	}
 
 	@Override
@@ -33,5 +33,7 @@ public class DataRestConfig implements RepositoryRestConfigurer {
 		// disable HTTP methods for ProductCategory: PUT, POST and DELETE
 		config.getExposureConfiguration().forDomainType(ProductCategory.class).withItemExposure((metadata, httpMethods) -> httpMethods.disable(theUnsupportedActions))
 		.withCollectionExposure((metadata, httpMethods) -> httpMethods.disable(theUnsupportedActions));
+		
+		// call an internal helper method
 	}
 }
