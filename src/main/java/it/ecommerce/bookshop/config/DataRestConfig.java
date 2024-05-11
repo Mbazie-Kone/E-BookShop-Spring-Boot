@@ -1,5 +1,7 @@
 package it.ecommerce.bookshop.config;
 
+import java.util.Set;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
@@ -35,5 +37,13 @@ public class DataRestConfig implements RepositoryRestConfigurer {
 		.withCollectionExposure((metadata, httpMethods) -> httpMethods.disable(theUnsupportedActions));
 		
 		// call an internal helper method
+		exposeIds(config);
+	}
+
+	private void exposeIds(RepositoryRestConfiguration config) {
+	
+		// get a list of all entity classes from the entity manager
+		Set<EntityManager>
+		
 	}
 }
