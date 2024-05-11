@@ -1,5 +1,7 @@
 package it.ecommerce.bookshop.config;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,6 +47,9 @@ public class DataRestConfig implements RepositoryRestConfigurer {
 	
 		// get a list of all entity classes from the entity manager
 		Set<EntityType<?>> entities = entityManager.getMetamodel().getEntities();
+		
+		// create an array of the entity type
+		List<Class> entityClasses = new ArrayList<>();
 		
 	}
 }
