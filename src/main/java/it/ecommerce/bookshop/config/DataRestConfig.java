@@ -1,5 +1,6 @@
 package it.ecommerce.bookshop.config;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
 import org.springframework.data.rest.webmvc.config.RepositoryRestConfigurer;
@@ -8,9 +9,17 @@ import org.springframework.web.servlet.config.annotation.CorsRegistry;
 
 import it.ecommerce.bookshop.model.Product;
 import it.ecommerce.bookshop.model.ProductCategory;
+import jakarta.persistence.EntityManager;
 
 @Configuration
 public class DataRestConfig implements RepositoryRestConfigurer {
+	
+	private EntityManager entityManager;
+	
+	@Autowired
+	public DataRestConfig(EntityManager thEntityManager) {
+		
+	}
 
 	@Override
 	public void configureRepositoryRestConfiguration(RepositoryRestConfiguration config, CorsRegistry cors) {
