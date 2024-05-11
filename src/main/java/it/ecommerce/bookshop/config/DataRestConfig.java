@@ -12,6 +12,7 @@ import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import it.ecommerce.bookshop.model.Product;
 import it.ecommerce.bookshop.model.ProductCategory;
 import jakarta.persistence.EntityManager;
+import jakarta.persistence.metamodel.EntityType;
 
 @Configuration
 public class DataRestConfig implements RepositoryRestConfigurer {
@@ -43,7 +44,7 @@ public class DataRestConfig implements RepositoryRestConfigurer {
 	private void exposeIds(RepositoryRestConfiguration config) {
 	
 		// get a list of all entity classes from the entity manager
-		Set<EntityManager>
+		Set<EntityType<?>> entities = entityManager.getMetamodel().getEntities();
 		
 	}
 }
