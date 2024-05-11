@@ -51,5 +51,11 @@ public class DataRestConfig implements RepositoryRestConfigurer {
 		// create an array of the entity type
 		List<Class> entityClasses = new ArrayList<>();
 		
+		// get the entity types for the entities
+		for (EntityType tempEntityType : entities) {
+			
+		}
+		
+		
 	}
 }
