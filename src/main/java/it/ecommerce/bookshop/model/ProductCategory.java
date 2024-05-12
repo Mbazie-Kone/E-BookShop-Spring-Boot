@@ -33,5 +33,5 @@ public class ProductCategory implements Serializable {
 	private String categoryName;
 	
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "category")
-	private Set<Product> products; // or 'List<Product> products' it's the same
+	private Set<Product> products;
 }
