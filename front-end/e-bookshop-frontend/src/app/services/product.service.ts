@@ -11,6 +11,7 @@ import { ProductCategory } from '../common/product-category';
 export class ProductService {
 
   private baseUrl = 'http://localhost:8080/api/products';
+  private categoryUrl = '';
 
   constructor(private httpClient: HttpClient) { }
 
@@ -23,8 +24,8 @@ export class ProductService {
     return this.httpClient.get<GetResponseProducts>(searchUrl).pipe(map(response => response._embedded.products));
   }
 
-  getProductCategories() {
-    
+  getProductCategories(): Observable<ProductCategory[]> {
+    return this.httpClient.get<GetResponseProductCategory>(searchUrl).pipe(map(response => response._embedded.productCategory));
   }
 }
 
