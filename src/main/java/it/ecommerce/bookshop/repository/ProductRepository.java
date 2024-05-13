@@ -13,6 +13,8 @@ import it.ecommerce.bookshop.model.Product;
 public interface ProductRepository extends JpaRepository<Product, Long> {
 	
 	// behind the scenes, Spring will execute a query similar to this: SELECT * FROM product WHERE category_id = ?
-	Page<Product> findByCategoryId(@Param("id") Long id, Pageable pageable); 
+	Page<Product> findByCategoryId(@Param("id") Long id, Pageable pageable);
+	
+	Page<Product> findByNameContaining(@Param("name") String name, Pageable pageable);
 
 }
