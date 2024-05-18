@@ -9,7 +9,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrl: './product-list.component.css',
 })
 export class ProductListComponent implements OnInit {
-  products: Product[] = [];
+  products: Product[];
   currentCategoryId: number = 1;
   previousCategoryId: number = 1;
   searchMode: boolean = false;
