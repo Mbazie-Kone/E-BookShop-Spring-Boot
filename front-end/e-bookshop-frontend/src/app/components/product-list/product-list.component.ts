@@ -11,13 +11,14 @@ import { ActivatedRoute } from '@angular/router';
 export class ProductListComponent implements OnInit {
   products: Product[] = [];
   currentCategoryId: number = 1;
+  previousCategoryId: number = 1;
   searchMode: boolean = false;
 
   // new properties for pagination
   thePageNumber: number = 1;
   thePageSize: number = 10;
   theTotalElements: number = 0;
-
+ 
   constructor(
     private productService: ProductService,
     private route: ActivatedRoute
@@ -71,6 +72,9 @@ export class ProductListComponent implements OnInit {
     if(this.previousCategoryId != this.currentCategoryId) {
       this.thePageNumber = 1;
     }
+
+    this.previousCategoryId = this.currentCategoryId;
+    console.log(`currentCategoryId=${this.currentCategoryId}`);
 
     // now get the products for given the category id
     this.productService
