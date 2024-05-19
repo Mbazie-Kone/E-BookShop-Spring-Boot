@@ -50,12 +50,12 @@ export class ProductListComponent implements OnInit {
       this.thePageNumber = 1;
     }
 
+    this.previousKeyword = theKeyWord;
+
+    console.log(`keyword=${theKeyWord}, thePageNumber=${theKeyWord}`);
+
     // now search for the products using keyword
-    this.productService.searchProducts(theKeyWord).subscribe(
-      data => {
-        this.products = data;
-      }
-    );
+    this.productService.searchProductsPaginate(this.thePageNumber -1, this.thePageSize, theKeyWord).subscribe(this.processResult());
   }
 
   handleListProduct() {
@@ -96,5 +96,11 @@ export class ProductListComponent implements OnInit {
     this.thePageSize = +pageSize;
     this.thePageNumber = 1;
     this.listProducts();
+  }
+
+  processResult() {
+    return (data: any) => {
+      
+    }
   }
 }
