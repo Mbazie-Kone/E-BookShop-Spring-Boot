@@ -86,9 +86,7 @@ export class ProductListComponent implements OnInit {
     console.log(`currentCategoryId=${this.currentCategoryId}, thePageNumber=${this.thePageNumber}`);
 
     // now get the products for given the category id
-    this.productService.getProductListPaginate(this.thePageNumber - 1, this.thePageSize, this.currentCategoryId).subscribe(data => {
-      this.products = data._embedded.products; this.thePageNumber = data.page.number + 1; this.thePageSize = data.page.size; this.theTotalElements = data.page.totalElements;
-    });
+    this.productService.getProductListPaginate(this.thePageNumber - 1, this.thePageSize, this.currentCategoryId).subscribe(this.processResult());
      
   }
 
@@ -100,7 +98,10 @@ export class ProductListComponent implements OnInit {
 
   processResult() {
     return (data: any) => {
-      
-    }
+      this.products = data._embedded.products;
+      this.thePageNumber = data.page.number + 1;
+      this.thePageSize = data.page.size;
+      this.theTotalElements = data.page.totalElements;
+    };
   }
 }
