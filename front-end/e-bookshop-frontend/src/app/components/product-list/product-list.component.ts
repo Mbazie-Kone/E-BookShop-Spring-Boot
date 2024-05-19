@@ -83,4 +83,8 @@ export class ProductListComponent implements OnInit {
     });
      
   }
+
+  updatePageSize(pageSize: string) {
+    
+  }
 }
