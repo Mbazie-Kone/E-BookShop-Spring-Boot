@@ -16,7 +16,7 @@ export class ProductListComponent implements OnInit {
 
   // new properties for pagination
   thePageNumber: number = 1;
-  thePageSize: number = 10;
+  thePageSize: number = 5;
   theTotalElements: number = 0;
  
   constructor(
@@ -78,7 +78,7 @@ export class ProductListComponent implements OnInit {
     console.log(`currentCategoryId=${this.currentCategoryId}, thePageNumber=${this.thePageNumber}`);
 
     // now get the products for given the category id
-    this.productService.getProductListPaginate(this.thePageNumber - 1,this.thePageSize, this.currentCategoryId).subscribe(data => {
+    this.productService.getProductListPaginate(this.thePageNumber - 1, this.thePageSize, this.currentCategoryId).subscribe(data => {
       this.products = data._embedded.products; this.thePageNumber = data.page.number + 1; this.thePageSize = data.page.size; this.theTotalElements = data.page.totalElements;
     });
      
