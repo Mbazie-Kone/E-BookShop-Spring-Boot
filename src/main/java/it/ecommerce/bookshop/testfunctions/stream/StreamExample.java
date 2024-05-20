@@ -14,6 +14,8 @@ public class StreamExample {
 		StreamExample streamExample = new StreamExample();
 		
 		List<String> textList = Arrays.asList("Wow", "Wow", "Wow", "Hi", "Hello", "Bye");
+		
+		textList.stream().filter(b -> b == "Wow" && b == "Hello").forEach(streamExample::test);
 	}
 
 }
