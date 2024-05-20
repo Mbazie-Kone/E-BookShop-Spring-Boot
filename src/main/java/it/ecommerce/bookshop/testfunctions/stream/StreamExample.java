@@ -1,5 +1,8 @@
 package it.ecommerce.bookshop.testfunctions.stream;
 
+import java.util.Arrays;
+import java.util.List;
+
 public class StreamExample {
 
 	public void test(String a) {
@@ -9,6 +12,8 @@ public class StreamExample {
 	public static void main(String[] args) {
 		
 		StreamExample streamExample = new StreamExample();
+		
+		List<String> textList = Arrays.asList("Wow", "Wow", "Wow", "Hi", "Hello", "Bye");
 	}
 
 }
