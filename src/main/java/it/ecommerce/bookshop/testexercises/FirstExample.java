@@ -1,4 +1,4 @@
-package it.ecommerce.bookshop.test;
+package it.ecommerce.bookshop.testexercises;
 
 public class FirstExample {
 
