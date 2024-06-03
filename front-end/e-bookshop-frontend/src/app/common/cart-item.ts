@@ -13,5 +13,7 @@ export class CartItem {
         this.name = product.name;
         this.imageUrl = product.imageUrl;
         this.unitPrince = product.unitPrice;
+
+        this.quantity = 1;
     }
 }
