@@ -13,4 +13,13 @@ export class CartService {
   totalQuantity: Subject<number> = new Subject<number>();
 
   constructor() { }
+
+  addToCart(theCartItem: CartItem) {
+    
+    // check if we already have the item in our cart
+
+    // find the item in the cart based on item id
+
+    // check if we found it
+  }
 }
