@@ -73,7 +73,13 @@ export class CartService {
   decrementQuantity(theCartItem: CartItem) {
     theCartItem.quantity--;
     if(theCartItem.quantity == 0) {
-      
+      this.remove(theCartItem);
     }
+    else {
+      this.computeCartTotals();
+    }
+  }
+  remove(theCartItem: CartItem) {
+    
   }
 }
