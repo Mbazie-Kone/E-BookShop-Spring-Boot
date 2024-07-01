@@ -71,6 +71,9 @@ export class CartService {
   }
 
   decrementQuantity(theCartItem: CartItem) {
-    
+    theCartItem.quantity--;
+    if(theCartItem.quantity == 0) {
+      
+    }
   }
 }
