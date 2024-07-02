@@ -16,7 +16,8 @@ export class CheckoutComponent implements OnInit{
     this.checkoutFormGroup = this.formBuilder.group({
       customer: this.formBuilder.group({
         firstName: [''],
-        lastName: ['']
+        lastName: [''],
+        email: ['']
       })
     });
   }
