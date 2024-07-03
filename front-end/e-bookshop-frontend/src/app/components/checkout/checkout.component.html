@@ -83,7 +83,8 @@
                  <!-- add check box to copy the shipping to address -->
                   <div class="input-space">
                     <label class="au-checkbox">
-                        <input type="checkbox">
+                        <input type="checkbox" (change)="copyShippingAddressToBillingAddress($event)">
+                        <span class="au-checkmark"></span>
                     </label>
                   </div>
 
