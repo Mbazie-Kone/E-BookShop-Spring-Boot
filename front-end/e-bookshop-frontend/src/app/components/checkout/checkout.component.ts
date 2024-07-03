@@ -45,12 +45,15 @@ export class CheckoutComponent implements OnInit{
     });
   }
 
-  copyShippingAddressToBillingAddress(event) {
+  copyShippingAddressToBillingAddress(event:any):void {
     if(event.target.checked) {
-      this.checkoutFormGroup.controls.billingAddress.setValue(this.checkoutFormGroup.controls.shippingAddress.value);
+      const billingAddress = (this.checkoutFormGroup.get('billingAddress') as FormGroup);
+      const shippingAddress = (this.checkoutFormGroup.get('shippingAddress') as FormGroup);
+      billingAddress.setValue(shippingAddress.value);
     }
     else {
-      this.checkoutFormGroup.controls.billingAddress.reset();
+      const billingAddress = (this.checkoutFormGroup.get('billingAddress') as FormGroup);
+      billingAddress.reset();
     }
   }
 
