@@ -16,7 +16,7 @@ export class CheckoutComponent implements OnInit{
   totalQuantity: number = 0;
 
   creditCardyears: number[] = [];
-  creditCardmonths: number[] = [];
+  creditCardMonths: number[] = [];
 
   constructor(private formBuilder: FormBuilder, private ebookshopFormService: EbookshopFormServiceService) {}
 
@@ -57,7 +57,7 @@ export class CheckoutComponent implements OnInit{
     this.ebookshopFormService.getCreditCardMonths(startMonth).subscribe (
       data => {
         console.log("Retrieved credit card months: "+ JSON.stringify(data));
-        this.creditCardmonths = data;
+        this.creditCardMonths = data;
       }
     )
 
