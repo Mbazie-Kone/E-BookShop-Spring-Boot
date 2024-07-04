@@ -17,4 +17,14 @@ export class EbookshopFormServiceService {
     }
     return of(data);
   }
+
+  getCreditCardYears(startMonth: number): Observable<number[]> {
+    let data: number[] = [];
+    // build an array for "Year" dropdown list
+    // - start at current month and loop until
+    for(let theMonth = startMonth; theMonth <= 12; theMonth++) {
+      data.push(theMonth);
+    }
+    return of(data);
+  }
 }
