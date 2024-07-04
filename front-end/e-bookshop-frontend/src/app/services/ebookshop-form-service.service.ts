@@ -24,6 +24,9 @@ export class EbookshopFormServiceService {
     // - start at current year and loop for next 10 years
     const startYear: number = new Date().getFullYear();
     const endYear: number = startYear + 10;
+    for(let theYear = startYear; theYear <= endYear; theYear++) {
+
+    }
     return of(data);
   }
 }
