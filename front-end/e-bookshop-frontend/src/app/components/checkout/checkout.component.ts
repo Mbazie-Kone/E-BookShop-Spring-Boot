@@ -99,6 +99,10 @@ export class CheckoutComponent implements OnInit{
     else {
       startMonth = 1;
     }
-    this.ebookshopFormService.getCreditCardMonths(startMonth).subscribe;
+    this.ebookshopFormService.getCreditCardMonths(startMonth).subscribe(
+      data => {
+
+      }
+    );
   }
 }
