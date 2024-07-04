@@ -14,6 +14,9 @@ export class CheckoutComponent implements OnInit{
   totalPrice: number = 0;
   totalQuantity: number = 0;
 
+  creditCardyears: number[] = [];
+  creditCardmonths: number[] = [];
+
   constructor(private formBuilder: FormBuilder) {}
 
   ngOnInit(): void {
