@@ -9,7 +9,6 @@ import { EbookshopFormServiceService } from '../../services/ebookshop-form-servi
 })
 export class CheckoutComponent implements OnInit{
 
-
   checkoutFormGroup: FormGroup;
 
   totalPrice: number = 0;
@@ -86,5 +85,9 @@ export class CheckoutComponent implements OnInit{
     console.log("Handling the submit button");
     console.log(this.checkoutFormGroup.get('customer')?.value);
     console.log("the email address is "+ this.checkoutFormGroup.get('customer')?.value.email);
+  }
+
+  handleMonthsAndYears() {
+    
   }
 }
