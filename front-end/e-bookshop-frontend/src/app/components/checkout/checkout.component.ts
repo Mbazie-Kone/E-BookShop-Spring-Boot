@@ -50,6 +50,11 @@ export class CheckoutComponent implements OnInit{
         expirationYear: ['']
       })
     });
+
+    // populate credit card months
+    const startMonth: number = new Date().getMonth();
+
+    // populate credit card years
   }
 
   copyShippingAddressToBillingAddress(event:any):void {
