@@ -88,6 +88,7 @@ export class CheckoutComponent implements OnInit{
   }
 
   handleMonthsAndYears() {
-    const creditCardFormGroup = this.checkoutFormGroup
+    const creditCardFormGroup = this.checkoutFormGroup.get('creditCard');
+    const currentYear: number = new Date().getFullYear();
   }
 }
