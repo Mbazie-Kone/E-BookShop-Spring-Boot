@@ -54,7 +54,7 @@ export class CheckoutComponent implements OnInit{
     // populate credit card months
     const startMonth: number = new Date().getMonth() + 1;
     console.log("startMonth: "+ startMonth);
-    this.ebookshopFormService.getCreditCardMonths(startMonth).subscribe(
+    this.ebookshopFormService.getCreditCardMonths(startMonth).subscribe (
       data => {
         console.log("Retrieved credit card months: "+ JSON.stringify(data));
         this.creditCardmonths = data;
@@ -62,6 +62,12 @@ export class CheckoutComponent implements OnInit{
     )
 
     // populate credit card years
+    this.ebookshopFormService.getCreditCardYears().subscribe (
+      data => {
+        console.log("retrived credit card years: " + JSON.stringify(data));
+        this.creditCardyears = data;
+      }
+    )
   }
 
   copyShippingAddressToBillingAddress(event:any):void {
