@@ -22,9 +22,7 @@ export class EbookshopFormServiceService {
     let data: number[] = [];
     // build an array for "Year" downlist list
     // - start at current year and loop for next 10 years
-    for(let theMonth = startMonth; theMonth <= 12; theMonth++) {
-      data.push(theMonth);
-    }
+    const startYear: number = new Date().getFullYear();
     return of(data);
   }
 }
