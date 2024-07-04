@@ -54,6 +54,11 @@ export class CheckoutComponent implements OnInit{
     // populate credit card months
     const startMonth: number = new Date().getMonth() + 1;
     console.log("startMonth: "+ startMonth);
+    this.ebookshopFormService.getCreditCardMonths(startMonth).subscribe(
+      data => {
+        console.log("Retrieved credit card months: "+ JSON.stringify);
+      }
+    )
 
     // populate credit card years
   }
