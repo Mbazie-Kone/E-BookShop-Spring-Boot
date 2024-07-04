@@ -52,7 +52,8 @@ export class CheckoutComponent implements OnInit{
     });
 
     // populate credit card months
-    const startMonth: number = new Date().getMonth();
+    const startMonth: number = new Date().getMonth() + 1;
+    console.log("startMonth: "+ startMonth);
 
     // populate credit card years
   }
