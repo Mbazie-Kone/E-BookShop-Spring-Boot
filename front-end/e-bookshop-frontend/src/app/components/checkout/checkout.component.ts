@@ -101,7 +101,7 @@ export class CheckoutComponent implements OnInit{
     }
     this.ebookshopFormService.getCreditCardMonths(startMonth).subscribe(
       data => {
-
+        console.log("Retrieved credit card months: " + JSON.stringify(data));
       }
     );
   }
