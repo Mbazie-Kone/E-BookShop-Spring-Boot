@@ -94,7 +94,7 @@ export class CheckoutComponent implements OnInit{
     // if the current year equals the selected year, then start with the current month
     let startMonth: number;
     if(currentYear === selectedYear) {
-      
+      startMonth = new Date().getMonth() + 1;
     }
   }
 }
