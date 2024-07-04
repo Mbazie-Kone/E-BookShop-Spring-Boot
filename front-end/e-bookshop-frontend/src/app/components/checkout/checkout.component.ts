@@ -56,7 +56,8 @@ export class CheckoutComponent implements OnInit{
     console.log("startMonth: "+ startMonth);
     this.ebookshopFormService.getCreditCardMonths(startMonth).subscribe(
       data => {
-        console.log("Retrieved credit card months: "+ JSON.stringify);
+        console.log("Retrieved credit card months: "+ JSON.stringify(data));
+        this.creditCardmonths = data;
       }
     )
 
