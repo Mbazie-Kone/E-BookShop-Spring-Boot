@@ -69,7 +69,9 @@ public class State implements Serializable {
 		State other = (State) obj;
 		return Objects.equals(id, other.id) && Objects.equals(name, other.name);
 	}
-	
-	
-	
+
+	@Override
+	public String toString() {
+		return "State [id=" + id + ", name=" + name + ", country=" + country + "]";
+	}
 }
