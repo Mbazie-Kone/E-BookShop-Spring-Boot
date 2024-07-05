@@ -70,7 +70,10 @@ public class Country implements Serializable {
 		Country other = (Country) obj;
 		return Objects.equals(code, other.code) && Objects.equals(id, other.id) && Objects.equals(name, other.name);
 	}
-	
-	
 
+	@Override
+	public String toString() {
+		return "Country [id=" + id + ", code=" + code + ", name=" + name + ", states=" + states + "]";
+	}
+	
 }
