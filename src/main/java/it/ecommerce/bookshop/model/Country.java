@@ -2,6 +2,7 @@ package it.ecommerce.bookshop.model;
 
 import java.io.Serializable;
 import java.util.List;
+import java.util.Objects;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -51,6 +52,23 @@ public class Country implements Serializable {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(code, id, name);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Country other = (Country) obj;
+		return Objects.equals(code, other.code) && Objects.equals(id, other.id) && Objects.equals(name, other.name);
 	}
 	
 	
