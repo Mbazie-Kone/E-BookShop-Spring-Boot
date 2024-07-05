@@ -1,5 +1,14 @@
 package it.ecommerce.bookshop.model;
 
-public class Country {
+import java.io.Serializable;
+
+import jakarta.persistence.Entity;
+
+@Entity
+public class Country implements Serializable {
+
+	private static final long serialVersionUID = 1L;
+	
+	
 
 }
