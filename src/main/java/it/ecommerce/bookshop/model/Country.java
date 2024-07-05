@@ -1,6 +1,7 @@
 package it.ecommerce.bookshop.model;
 
 import java.io.Serializable;
+import java.util.List;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -26,5 +27,6 @@ public class Country implements Serializable {
 	private String name;
 	
 	@OneToMany(mappedBy = "country")
+	private List<State> states;
 
 }
