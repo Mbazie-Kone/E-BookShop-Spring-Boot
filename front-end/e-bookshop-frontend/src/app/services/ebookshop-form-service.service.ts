@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { map, Observable, of } from 'rxjs';
+import { Observable, of } from 'rxjs';
+import { map } from 'rxjs/operators';
 import { Country } from '../common/country';
 
 @Injectable({
@@ -44,6 +45,6 @@ export class EbookshopFormServiceService {
 
 interface GetResponseCountries {
   _embedded: {
-    
+    countries: Country[];
   }
 }
