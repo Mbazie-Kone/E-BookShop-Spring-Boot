@@ -20,8 +20,9 @@ export class EbookshopFormServiceService {
     );
   }
 
-  getStates(theCountryCode: string): Observable<Country[]> {
-
+  getStates(theCountryCode: string): Observable<State[]> {
+    // search url
+    const searchStatesUrl = `${this.statesUrl}`;
   }
 
   getCreditCardMonths(startMonth: number): Observable<number[]> {
