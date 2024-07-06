@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { EbookshopFormServiceService } from '../../services/ebookshop-form-service.service';
+import { Country } from '../../common/country';
 
 @Component({
   selector: 'app-checkout',
@@ -16,6 +17,8 @@ export class CheckoutComponent implements OnInit{
 
   creditCardyears: number[] = [];
   creditCardMonths: number[] = [];
+
+  countries: Country[] = [];
 
   constructor(private formBuilder: FormBuilder, private ebookshopFormService: EbookshopFormServiceService) {}
 
