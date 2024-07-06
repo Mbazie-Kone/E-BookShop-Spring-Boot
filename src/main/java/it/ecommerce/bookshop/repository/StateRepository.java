@@ -1,5 +1,9 @@
 package it.ecommerce.bookshop.repository;
 
-public interface StateRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import it.ecommerce.bookshop.model.State;
+
+public interface StateRepository extends JpaRepository<State, Long>{
 
 }
