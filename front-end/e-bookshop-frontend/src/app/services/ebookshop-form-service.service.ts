@@ -20,6 +20,10 @@ export class EbookshopFormServiceService {
     );
   }
 
+  getStates() {
+    
+  }
+
   getCreditCardMonths(startMonth: number): Observable<number[]> {
     let data: number[] = [];
     // build an array for "Month" dropdown list
