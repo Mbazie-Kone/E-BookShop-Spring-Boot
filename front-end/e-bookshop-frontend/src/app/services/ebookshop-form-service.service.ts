@@ -6,6 +6,8 @@ import { Observable, of } from 'rxjs';
 })
 export class EbookshopFormServiceService {
 
+  private countriesUrl = 'http://localhost:8080/api/countries'
+
   constructor() { }
 
   getCreditCardMonths(startMonth: number): Observable<number[]> {
