@@ -117,4 +117,8 @@ export class CheckoutComponent implements OnInit{
       }
     );
   }
+
+  getStates(formGroupName: string) {
+    const formGroup = this.checkoutFormGroup.get(formGroupName);
+  }
 }
