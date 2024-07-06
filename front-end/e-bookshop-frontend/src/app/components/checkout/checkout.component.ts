@@ -69,7 +69,10 @@ export class CheckoutComponent implements OnInit{
         console.log("retrived credit card years: " + JSON.stringify(data));
         this.creditCardyears = data;
       }
-    )
+    );
+
+    // populate countries
+    this.ebookshopFormService.getCountries().subscribe;
   }
 
   copyShippingAddressToBillingAddress(event:any):void {
