@@ -23,6 +23,9 @@ export class EbookshopFormServiceService {
   getStates(theCountryCode: string): Observable<State[]> {
     // search url
     const searchStatesUrl = `${this.statesUrl}/search/findByCountryCode?code=${theCountryCode}`;
+    return this.httpClient.get<GetResponseStates>(searchStatesUrl).pipe(
+      map(response)
+    );
   }
 
   getCreditCardMonths(startMonth: number): Observable<number[]> {
