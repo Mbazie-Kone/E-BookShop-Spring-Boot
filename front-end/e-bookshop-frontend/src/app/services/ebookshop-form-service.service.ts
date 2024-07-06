@@ -22,7 +22,7 @@ export class EbookshopFormServiceService {
 
   getStates(theCountryCode: string): Observable<State[]> {
     // search url
-    const searchStatesUrl = `${this.statesUrl}`;
+    const searchStatesUrl = `${this.statesUrl}/search/findByCountryCode?code=${theCountryCode}`;
   }
 
   getCreditCardMonths(startMonth: number): Observable<number[]> {
