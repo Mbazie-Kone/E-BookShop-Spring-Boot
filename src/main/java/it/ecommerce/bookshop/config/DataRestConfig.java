@@ -11,8 +11,10 @@ import org.springframework.data.rest.webmvc.config.RepositoryRestConfigurer;
 import org.springframework.http.HttpMethod;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 
+import it.ecommerce.bookshop.model.Country;
 import it.ecommerce.bookshop.model.Product;
 import it.ecommerce.bookshop.model.ProductCategory;
+import it.ecommerce.bookshop.model.State;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.metamodel.EntityType;
 
@@ -31,8 +33,11 @@ public class DataRestConfig implements RepositoryRestConfigurer {
 		
 		HttpMethod[] theUnsupportedActions = {HttpMethod.PUT, HttpMethod.POST, HttpMethod.DELETE};
 		
+		// disable http methods
 		disableHttpMethods(Product.class, config, theUnsupportedActions);
 		disableHttpMethods(ProductCategory.class, config, theUnsupportedActions);
+		disableHttpMethods(Country.class, config, theUnsupportedActions);
+		disableHttpMethods(State.class, config, theUnsupportedActions);
 		
 		// call an internal helper method
 		exposeIds(config);
