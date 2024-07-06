@@ -72,7 +72,11 @@ export class CheckoutComponent implements OnInit{
     );
 
     // populate countries
-    this.ebookshopFormService.getCountries().subscribe;
+    this.ebookshopFormService.getCountries().subscribe(
+      data => {
+        console.log("Retrieved countries: " + JSON.stringify(data));
+      }
+    );
   }
 
   copyShippingAddressToBillingAddress(event:any):void {
