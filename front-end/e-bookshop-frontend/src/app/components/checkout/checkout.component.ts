@@ -123,5 +123,6 @@ export class CheckoutComponent implements OnInit{
     const countryCode = formGroup?.value.country.code;
     const countryName = formGroup?.value.country.name;
     console.log(`{formGroupName} country code: ${countryCode}`);
+    console.log(`{formGroupName} country name: ${countryName}`);
   }
 }
