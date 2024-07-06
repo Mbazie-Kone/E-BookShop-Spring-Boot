@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import it.ecommerce.bookshop.model.Country;
 
 @CrossOrigin("http://localhost:4200")
-@RepositoryRestResource
+@RepositoryRestResource(collectionResourceRel = "countries", path = "countries")
 public interface CountryRepository extends JpaRepository<Country, Long> {
 
 }
