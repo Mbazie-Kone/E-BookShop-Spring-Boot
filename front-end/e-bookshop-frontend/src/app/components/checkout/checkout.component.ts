@@ -22,6 +22,7 @@ export class CheckoutComponent implements OnInit{
   countries: Country[] = [];
 
   shippingAddressStates: State[] = [];
+  billingAddressStates: State[] = [];
 
   constructor(private formBuilder: FormBuilder, private ebookshopFormService: EbookshopFormServiceService) {}
 
