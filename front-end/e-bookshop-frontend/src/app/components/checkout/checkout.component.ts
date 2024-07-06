@@ -120,5 +120,6 @@ export class CheckoutComponent implements OnInit{
 
   getStates(formGroupName: string) {
     const formGroup = this.checkoutFormGroup.get(formGroupName);
+    const countryCode = formGroup?.value.country.code;
   }
 }
