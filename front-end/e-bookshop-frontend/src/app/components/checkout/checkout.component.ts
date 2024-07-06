@@ -124,5 +124,10 @@ export class CheckoutComponent implements OnInit{
     const countryName = formGroup?.value.country.name;
     console.log(`{formGroupName} country code: ${countryCode}`);
     console.log(`{formGroupName} country name: ${countryName}`);
+    this.ebookshopFormService.getStates(countryCode).subscribe(
+      data => {
+        
+      }
+    );
   }
 }
