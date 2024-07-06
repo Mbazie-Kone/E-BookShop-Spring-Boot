@@ -43,5 +43,7 @@ export class EbookshopFormServiceService {
 }
 
 interface GetResponseCountries {
-  
+  _embedded: {
+    
+  }
 }
