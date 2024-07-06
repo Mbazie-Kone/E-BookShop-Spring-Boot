@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { EbookshopFormServiceService } from '../../services/ebookshop-form-service.service';
 import { Country } from '../../common/country';
+import { State } from '../../common/state';
 
 @Component({
   selector: 'app-checkout',
@@ -19,6 +20,8 @@ export class CheckoutComponent implements OnInit{
   creditCardMonths: number[] = [];
 
   countries: Country[] = [];
+
+  shippingAddressStates: State[] = [];
 
   constructor(private formBuilder: FormBuilder, private ebookshopFormService: EbookshopFormServiceService) {}
 
@@ -126,7 +129,9 @@ export class CheckoutComponent implements OnInit{
     console.log(`{formGroupName} country name: ${countryName}`);
     this.ebookshopFormService.getStates(countryCode).subscribe(
       data => {
-        
+        if( formGroupName === 'shippingAddress') {
+          this.
+        }
       }
     );
   }
