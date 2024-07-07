@@ -133,6 +133,11 @@ export class CheckoutComponent implements OnInit{
         if( formGroupName === 'shippingAddress') {
           this.shippingAddressStates = data;
         }
+        else {
+          this.billingAddressStates = data;
+        }
+        // select first item by default
+        
       }
     );
   }
