@@ -10,6 +10,9 @@
                         <div class="col-md-9">
                             <div class="input-space">
                                 <input formControlName="firstName" type="text">
+                                <div *ngIf="firstName?.invalid && (firstName?.dirty || firstName?.touched)">
+
+                                </div>
                             </div>
                         </div>
                     </div>
