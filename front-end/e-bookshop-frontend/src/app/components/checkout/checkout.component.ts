@@ -84,6 +84,10 @@ export class CheckoutComponent implements OnInit{
     );
   }
 
+  get firstName() {
+    
+  }
+
   copyShippingAddressToBillingAddress(event:any):void {
     if(event.target.checked) {
       const billingAddress = (this.checkoutFormGroup.get('billingAddress') as FormGroup);
