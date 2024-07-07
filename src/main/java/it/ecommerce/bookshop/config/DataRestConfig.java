@@ -65,6 +65,5 @@ public class DataRestConfig implements RepositoryRestConfigurer {
 		// expose the entity id for the array of entity/domain types
 		Class[] domainTypes = entityClasses.toArray(new Class[0]);
 		config.exposeIdsFor(domainTypes);
-		
 	}
 }
