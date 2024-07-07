@@ -31,7 +31,7 @@ export class CheckoutComponent implements OnInit{
       customer: this.formBuilder.group({
         firstName: new FormControl('', [Validators.required, Validators.minLength(2)]),
         lastName: new FormControl('', [Validators.required, Validators.minLength(2)]),
-        email: ['']
+        email: new FormControl('',)
       }),
       shippingAddress: this.formBuilder.group({
         street: [''],
