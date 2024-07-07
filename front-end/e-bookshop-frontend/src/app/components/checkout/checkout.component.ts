@@ -85,7 +85,7 @@ export class CheckoutComponent implements OnInit{
   }
 
   get firstName() {
-    
+    return this.checkoutFormGroup.get('customer.firstName');
   }
 
   copyShippingAddressToBillingAddress(event:any):void {
