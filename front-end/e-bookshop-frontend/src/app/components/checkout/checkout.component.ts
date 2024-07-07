@@ -131,7 +131,7 @@ export class CheckoutComponent implements OnInit{
     this.ebookshopFormService.getStates(countryCode).subscribe(
       data => {
         if( formGroupName === 'shippingAddress') {
-          this.
+          this.shippingAddressStates = data;
         }
       }
     );
