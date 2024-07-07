@@ -137,7 +137,7 @@ export class CheckoutComponent implements OnInit{
           this.billingAddressStates = data;
         }
         // select first item by default
-        
+        formGroup?.get('state')?.setValue(data[0]);
       }
     );
   }
