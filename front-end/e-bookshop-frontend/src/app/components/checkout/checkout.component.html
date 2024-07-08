@@ -179,6 +179,11 @@
                         <div class="col-md-9">
                             <div class="input-space">
                                 <input formControlName="city" type="text">
+                                <div *ngIf="billingAddressCity?.invalid && (billingAddressCity?.dirty || billingAddressCity?.touched)" class="alert alert-danger mt-1">
+                                    <div *ngIf="billingAddressCity?.hasError('required') || billingAddressCity?.hasError('notOnlyWhitespace')">
+                                        City is required
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
