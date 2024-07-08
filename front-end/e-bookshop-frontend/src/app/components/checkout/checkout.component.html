@@ -68,7 +68,7 @@
                                     </option>
                                 </select>
                                 <div *ngIf="shippingAddressCountry?.invalid && (shippingAddressCountry?.dirty || shippingAddressCountry?.touched)" class="alert alert-danger mt-1">
-                                    <div *ngIf="shippingAddressCountry?.hasError('required') || shippingAddressCountry?.hasError('notOnlyWhitespace')">
+                                    <div *ngIf="shippingAddressCountry?.hasError('required')">
                                         Shipping Address is required
                                     </div>
                                     <div *ngIf="shippingAddressCountry?.hasError('minlength')">
