@@ -11,7 +11,7 @@
                             <div class="input-space">
                                 <input formControlName="firstName" type="text">
                                 <div *ngIf="firstName?.invalid && (firstName?.dirty || firstName?.touched)" class="alert alert-danger mt-1">
-                                    <div *ngIf="firstName?.errors?.['required']">
+                                    <div *ngIf="firstName?.hasError('required')">
                                         First name is required
                                     </div>
                                     <div *ngIf="firstName?.errors?.['minlength']">
