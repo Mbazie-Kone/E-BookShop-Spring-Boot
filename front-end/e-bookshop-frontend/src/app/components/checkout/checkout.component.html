@@ -71,9 +71,6 @@
                                     <div *ngIf="shippingAddressCountry?.hasError('required')">
                                         Shipping Address is required
                                     </div>
-                                    <div *ngIf="shippingAddressCountry?.hasError('minlength')">
-                                        Shipping Address must be at least {{ shippingAddressCountry?.getError('minlength')?.requiredLength }} characters long
-                                    </div>
                                 </div>
                             </div>
                         </div>
