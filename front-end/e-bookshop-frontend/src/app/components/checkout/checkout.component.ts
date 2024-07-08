@@ -88,11 +88,19 @@ export class CheckoutComponent implements OnInit{
   get firstName() {return this.checkoutFormGroup.get('customer.firstName');}
   get lastName() {return this.checkoutFormGroup.get('customer.lastName');}
   get email() {return this.checkoutFormGroup.get('customer.email');}
+
   get shippingAddressStreet() {return this.checkoutFormGroup.get('shippingAddress.street');}
   get shippingAddressCity() {return this.checkoutFormGroup.get('shippingAddress.city');}
   get shippingAddressState() {return this.checkoutFormGroup.get('shippingAddress.state');}
   get shippingAddressCountry() {return this.checkoutFormGroup.get('shippingAddress.country');}
   get shippingAddressZipCode() {return this.checkoutFormGroup.get('shippingAddress.zipCode');}
+
+  get shippingAddressStreet() {return this.checkoutFormGroup.get('shippingAddress.street');}
+  get shippingAddressCity() {return this.checkoutFormGroup.get('shippingAddress.city');}
+  get shippingAddressState() {return this.checkoutFormGroup.get('shippingAddress.state');}
+  get shippingAddressCountry() {return this.checkoutFormGroup.get('shippingAddress.country');}
+  get shippingAddressZipCode() {return this.checkoutFormGroup.get('shippingAddress.zipCode');}
+
 
   copyShippingAddressToBillingAddress(event:any):void {
     if(event.target.checked) {
