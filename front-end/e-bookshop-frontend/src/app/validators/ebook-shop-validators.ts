@@ -1,7 +1,9 @@
+import { FormControl } from "@angular/forms";
+
 export class EbookShopValidators {
 
     // whitespace validator
-    static notOnlyWhiteSpace() {
-        
+    static notOnlyWhitespace(control: FormControl) {
+
     }
 }
