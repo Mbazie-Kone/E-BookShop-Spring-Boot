@@ -46,8 +46,8 @@
                                     <div *ngIf="email?.hasError('required')">
                                         E-mail is required
                                     </div>
-                                    <div *ngIf="email?.hasError('minlength')">
-                                        E-mail must be at least {{ email?.getError('minlength')?.requiredLength }} characters long
+                                    <div *ngIf="email?.hasError('pattern')">
+                                        E-mail must be at least characters long
                                     </div>
                                 </div>
                             </div>
