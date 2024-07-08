@@ -84,9 +84,6 @@
                                     <div *ngIf="shippingAddressStreet?.hasError('required') || shippingAddressStreet?.hasError('notOnlyWhitespace')">
                                         Street is required
                                     </div>
-                                    <div *ngIf="shippingAddressStreet?.hasError('minlength')">
-                                        Street must be at least {{ shippingAddressStreet?.getError('minlength')?.requiredLength }} characters long
-                                    </div>
                                 </div>
                             </div>
                         </div>
