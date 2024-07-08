@@ -127,6 +127,9 @@
                                     <div *ngIf="shippingAddressZipCode?.hasError('required') || shippingAddressZipCode?.hasError('notOnlyWhitespace')">
                                         Zip code is required
                                     </div>
+                                    <div *ngIf="shippingAddressZipCode?.hasError('minlength')">
+                                        Zip code must be at least {{ shippingAddressZipCode?.getError('minlength')?.requiredLength }} characters long
+                                    </div>
                                 </div>
                             </div>
                         </div>
