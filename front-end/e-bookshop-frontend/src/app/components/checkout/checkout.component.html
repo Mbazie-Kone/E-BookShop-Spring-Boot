@@ -110,9 +110,9 @@
                                         {{ state.name }}
                                     </option>
                                 </select>
-                                <div *ngIf="shippingAddressCountry?.invalid && (shippingAddressCountry?.dirty || shippingAddressCountry?.touched)" class="alert alert-danger mt-1">
-                                    <div *ngIf="shippingAddressCountry?.hasError('required')">
-                                        Country is required
+                                <div *ngIf="shippingAddressState?.invalid && (shippingAddressState?.dirty || shippingAddressState?.touched)" class="alert alert-danger mt-1">
+                                    <div *ngIf="shippingAddressState?.hasError('required')">
+                                        State is required
                                     </div>
                                 </div>
                             </div>
