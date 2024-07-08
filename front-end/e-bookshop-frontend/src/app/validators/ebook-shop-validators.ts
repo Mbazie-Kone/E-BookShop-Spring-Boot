@@ -9,6 +9,9 @@ export class EbookShopValidators {
             // ivalid, return error object
             return { 'notOnlyWhitespace': true};
         }
-        return null;
+        else {
+            // valid return null
+            return null;
+        }
     }
 }
