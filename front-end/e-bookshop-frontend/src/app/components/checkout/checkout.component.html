@@ -216,6 +216,9 @@
                                     <div *ngIf="billingAddressZipCode?.hasError('required') || billingAddressZipCode?.hasError('notOnlyWhitespace')">
                                         Zip code is required
                                     </div>
+                                    <div *ngIf="billingAddressZipCode?.hasError('minlength')">
+                                        Zip code must be at least {{ billingAddressZipCode?.getError('minlength')?.requiredLength }} characters long
+                                    </div>
                                 </div>
                             </div>
                         </div>
