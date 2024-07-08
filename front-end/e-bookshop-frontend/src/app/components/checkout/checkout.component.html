@@ -123,6 +123,11 @@
                         <div class="col-md-9">
                             <div class="input-space">
                                 <input formControlName="zipCode" type="text">
+                                <div *ngIf="shippingAddressZipCode?.invalid && (shippingAddressZipCode?.dirty || shippingAddressZipCode?.touched)" class="alert alert-danger mt-1">
+                                    <div *ngIf="shippingAddressZipCode?.hasError('required') || shippingAddressZipCode?.hasError('notOnlyWhitespace')">
+                                        Zip Code is required
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
