@@ -95,11 +95,11 @@ export class CheckoutComponent implements OnInit{
   get shippingAddressCountry() {return this.checkoutFormGroup.get('shippingAddress.country');}
   get shippingAddressZipCode() {return this.checkoutFormGroup.get('shippingAddress.zipCode');}
 
-  get shippingAddressStreet() {return this.checkoutFormGroup.get('shippingAddress.street');}
-  get shippingAddressCity() {return this.checkoutFormGroup.get('shippingAddress.city');}
-  get shippingAddressState() {return this.checkoutFormGroup.get('shippingAddress.state');}
-  get shippingAddressCountry() {return this.checkoutFormGroup.get('shippingAddress.country');}
-  get shippingAddressZipCode() {return this.checkoutFormGroup.get('shippingAddress.zipCode');}
+  get billingAddressStreet() {return this.checkoutFormGroup.get('shippingAddress.street');}
+  get billingAddressCity() {return this.checkoutFormGroup.get('shippingAddress.city');}
+  get billingAddressState() {return this.checkoutFormGroup.get('shippingAddress.state');}
+  get billingAddressCountry() {return this.checkoutFormGroup.get('shippingAddress.country');}
+  get billingAddressZipCode() {return this.checkoutFormGroup.get('shippingAddress.zipCode');}
 
 
   copyShippingAddressToBillingAddress(event:any):void {
