@@ -84,6 +84,9 @@
                                     <div *ngIf="shippingAddressStreet?.hasError('required')">
                                         Street is required
                                     </div>
+                                    <div *ngIf="lastName?.hasError('minlength')">
+                                        Last name must be at least {{ lastName?.getError('minlength')?.requiredLength }} characters long
+                                    </div>
                                 </div>
                             </div>
                         </div>
