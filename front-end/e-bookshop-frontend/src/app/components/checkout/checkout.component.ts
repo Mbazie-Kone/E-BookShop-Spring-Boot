@@ -50,7 +50,7 @@ export class CheckoutComponent implements OnInit{
       }),
       creditCard: this.formBuilder.group({
         cardType: new FormControl('', [Validators.required]),
-        nameOnCard: new FormControl('', [Validators.required]),
+        nameOnCard: new FormControl('', [Validators.required, Validators.minLength(2), EbookShopValidators.notOnlyWhitespace]),
         cardNumber: new FormControl('', [Validators.required]),
         securityCode: new FormControl('', [Validators.required]),
         expirationMonth: new FormControl('', [Validators.required]),
