@@ -90,7 +90,9 @@ export class CheckoutComponent implements OnInit{
 
   reviewCartDetails() {
     // subscribe to cartService.totalQuantity
-    this.cartService.totalQuantity;
+    this.cartService.totalQuantity.subscribe(
+      
+    );
 
     // subscribe to cartService.totalPrice
   }
