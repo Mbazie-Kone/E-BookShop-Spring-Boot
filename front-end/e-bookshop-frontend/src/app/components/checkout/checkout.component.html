@@ -278,8 +278,8 @@
                             <div class="input-space">
                                 <input formControlName="cardNumber" type="text">
                                 <div *ngIf="creditCardNumber?.invalid && (creditCardNumber?.dirty || creditCardNumber?.touched)" class="alert alert-danger mt-1">
-                                    <div *ngIf="creditCardType?.hasError('required')">
-                                        Card type is required
+                                    <div *ngIf="creditCardNumber?.hasError('required')">
+                                        Card number is required
                                     </div>
                                 </div>
                                 <div *ngIf="creditCardNumber?.hasError('pattern')">
