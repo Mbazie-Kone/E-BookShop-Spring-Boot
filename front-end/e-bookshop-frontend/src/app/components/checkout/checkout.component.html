@@ -273,7 +273,7 @@
                         <div class="col-md-9">
                             <div class="input-space">
                                 <input formControlName="cardNumber" type="text">
-                                <div *ngIf="creditCardNumber?.hasError('required') || creditCardNumber?.hasError('notOnlyWhitespace')">
+                                <div *ngIf="creditCardNumber?.hasError('required')">
                                     Card number is required
                                 </div>
                             </div>
