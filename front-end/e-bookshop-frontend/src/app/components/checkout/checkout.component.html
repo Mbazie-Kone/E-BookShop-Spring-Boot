@@ -248,7 +248,7 @@
                                     <option>Visa</option>
                                     <option>Mastercard</option>
                                 </select>
-                                <div *ngIf="creditCardType?.hasError('required') || creditCardType?.hasError('notOnlyWhitespace')">
+                                <div *ngIf="creditCardType?.hasError('required')">
                                     Credit card type is required
                                 </div>
                             </div>
@@ -260,7 +260,7 @@
                             <div class="input-space">
                                 <input formControlName="nameOnCard" type="text">
                                 <div *ngIf="creditCardNameOnCard?.hasError('required') || creditCardNameOnCard?.hasError('notOnlyWhitespace')">
-                                    Name on card is required
+                                    Name is required
                                 </div>
                             </div>
                         </div>
