@@ -297,9 +297,9 @@
                                     <div *ngIf="creditCardSecurityCode?.hasError('required') || creditCardSecurityCode?.hasError('notOnlyWhitespace')">
                                         Security code is required
                                     </div>
-                                </div>
-                                <div *ngIf="creditCardSecurityCode?.hasError('pattern')">
-                                    Security code must be 3 digits long
+                                    <div *ngIf="creditCardSecurityCode?.hasError('pattern')">
+                                        Security code must be 3 digits long
+                                    </div>
                                 </div>
                             </div>
                         </div>
