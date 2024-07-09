@@ -261,9 +261,9 @@
                         <div class="col-md-9">
                             <div class="input-space">
                                 <input formControlName="nameOnCard" type="text">
-                                <div *ngIf="creditCardNameOnCard?.invalid && (creditCardType?.dirty || creditCardType?.touched)" class="alert alert-danger mt-1">
-                                    <div *ngIf="creditCardType?.hasError('required')">
-                                        Card type is required
+                                <div *ngIf="creditCardNameOnCard?.invalid && (creditCardNameOnCard?.dirty || creditCardNameOnCard?.touched)" class="alert alert-danger mt-1">
+                                    <div *ngIf="creditCardNameOnCard?.hasError('required')">
+                                        Name is required
                                     </div>
                                 </div>
                                 <div *ngIf="creditCardNameOnCard?.hasError('minlength')">
