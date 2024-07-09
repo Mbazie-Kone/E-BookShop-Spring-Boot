@@ -261,8 +261,10 @@
                         <div class="col-md-9">
                             <div class="input-space">
                                 <input formControlName="nameOnCard" type="text">
-                                <div *ngIf="creditCardNameOnCard?.hasError('required') || creditCardNameOnCard?.hasError('notOnlyWhitespace')">
-                                    Name is required
+                                <div *ngIf="creditCardNameOnCard?.invalid && (creditCardType?.dirty || creditCardType?.touched)" class="alert alert-danger mt-1">
+                                    <div *ngIf="creditCardType?.hasError('required')">
+                                        Card type is required
+                                    </div>
                                 </div>
                                 <div *ngIf="creditCardNameOnCard?.hasError('minlength')">
                                     Name must be at least {{ creditCardNameOnCard?.getError('minlength')?.requiredLength }} characters long
