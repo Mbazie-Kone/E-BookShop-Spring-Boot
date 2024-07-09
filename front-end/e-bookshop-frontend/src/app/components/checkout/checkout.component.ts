@@ -87,6 +87,10 @@ export class CheckoutComponent implements OnInit{
       }
     );
   }
+  
+  reviewCartDetails() {
+    
+  }
 
   get firstName() {return this.checkoutFormGroup.get('customer.firstName');}
   get lastName() {return this.checkoutFormGroup.get('customer.lastName');}
