@@ -265,9 +265,9 @@
                                     <div *ngIf="creditCardNameOnCard?.hasError('required') || creditCardNameOnCard?.hasError('notOnlyWhitespace')">
                                         Name is required
                                     </div>
-                                </div>
-                                <div *ngIf="creditCardNameOnCard?.hasError('minlength')">
-                                    Name must be at least {{ creditCardNameOnCard?.getError('minlength')?.requiredLength }} characters long
+                                    <div *ngIf="creditCardNameOnCard?.hasError('minlength')">
+                                        Name must be at least {{ creditCardNameOnCard?.getError('minlength')?.requiredLength }} characters long
+                                    </div>
                                 </div>
                             </div>
                         </div>
