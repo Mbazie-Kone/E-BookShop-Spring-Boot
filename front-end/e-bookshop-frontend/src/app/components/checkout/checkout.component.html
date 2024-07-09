@@ -294,7 +294,7 @@
                             <div class="input-space">
                                 <input formControlName="securityCode" type="text">
                                 <div *ngIf="creditCardSecurityCode?.invalid && (creditCardSecurityCode?.dirty || creditCardSecurityCode?.touched)" class="alert alert-danger mt-1">
-                                    <div *ngIf="creditCardNameOnCard?.hasError('required') || creditCardNameOnCard?.hasError('notOnlyWhitespace')">
+                                    <div *ngIf="creditCardSecurityCode?.hasError('required') || creditCardSecurityCode?.hasError('notOnlyWhitespace')">
                                         Name is required
                                     </div>
                                 </div>
