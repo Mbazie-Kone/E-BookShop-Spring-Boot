@@ -98,7 +98,6 @@ export class CheckoutComponent implements OnInit{
     this.cartService.totalPrice.subscribe(
       totalPrice => this.totalPrice = totalPrice
     );
-
   }
 
   get firstName() {return this.checkoutFormGroup.get('customer.firstName');}
