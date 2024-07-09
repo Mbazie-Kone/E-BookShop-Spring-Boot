@@ -29,6 +29,8 @@ export class CheckoutComponent implements OnInit{
   constructor(private formBuilder: FormBuilder, private ebookshopFormService: EbookshopFormServiceService, private cartService: CartService) {}
 
   ngOnInit(): void {
+    this.reviewCartDetails();
+
     this.checkoutFormGroup = this.formBuilder.group({
       customer: this.formBuilder.group({
         firstName: new FormControl('', [Validators.required, Validators.minLength(2), EbookShopValidators.notOnlyWhitespace]),
