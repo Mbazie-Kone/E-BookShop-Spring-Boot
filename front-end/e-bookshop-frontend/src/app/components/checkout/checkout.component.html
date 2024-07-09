@@ -248,6 +248,9 @@
                                     <option>Visa</option>
                                     <option>Mastercard</option>
                                 </select>
+                                <div *ngIf="billingAddressZipCode?.hasError('required') || billingAddressZipCode?.hasError('notOnlyWhitespace')">
+                                    Zip code is required
+                                </div>
                             </div>
                         </div>
                     </div>
