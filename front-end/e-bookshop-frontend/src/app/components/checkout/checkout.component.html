@@ -281,9 +281,9 @@
                                     <div *ngIf="creditCardNumber?.hasError('required')">
                                         Card number is required
                                     </div>
-                                </div>
-                                <div *ngIf="creditCardNumber?.hasError('pattern')">
-                                    Card number must be 16 digits long
+                                    <div *ngIf="creditCardNumber?.hasError('pattern')">
+                                        Card number must be 16 digits long
+                                    </div>
                                 </div>
                             </div>
                         </div>
