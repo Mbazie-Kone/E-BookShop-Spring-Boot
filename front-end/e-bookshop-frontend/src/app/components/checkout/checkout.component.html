@@ -262,7 +262,7 @@
                             <div class="input-space">
                                 <input formControlName="nameOnCard" type="text">
                                 <div *ngIf="creditCardNameOnCard?.invalid && (creditCardNameOnCard?.dirty || creditCardNameOnCard?.touched)" class="alert alert-danger mt-1">
-                                    <div *ngIf="creditCardNameOnCard?.hasError('required')">
+                                    <div *ngIf="creditCardNameOnCard?.hasError('required') || creditCardNameOnCard?.hasError('notOnlyWhitespace')">
                                         Name is required
                                     </div>
                                 </div>
