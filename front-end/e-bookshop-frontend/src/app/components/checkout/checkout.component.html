@@ -284,6 +284,9 @@
                         <div class="col-md-9">
                             <div class="input-space">
                                 <input formControlName="securityCode" type="text">
+                                <div *ngIf="creditCardSecurityCode?.hasError('required') || creditCardSecurityCode?.hasError('notOnlyWhitespace')">
+                                    Security code is required
+                                </div>
                             </div>
                         </div>
                     </div>
