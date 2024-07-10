@@ -1,6 +1,7 @@
 package it.ecommerce.bookshop.model;
 
 import java.io.Serializable;
+import java.util.Objects;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -62,6 +63,27 @@ public class Customer implements Serializable {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	
-	
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(email, firstName, id, lastName);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Customer other = (Customer) obj;
+		return Objects.equals(email, other.email) && Objects.equals(firstName, other.firstName)
+				&& Objects.equals(id, other.id) && Objects.equals(lastName, other.lastName);
+	}
+
+	@Override
+	public String toString() {
+		return "Customer [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email + "]";
+	}
 }
