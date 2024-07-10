@@ -28,6 +28,7 @@ public class Address implements Serializable {
 	
 	private String country;
 	
+	@Column(name = "zip_code")
 	private String zipCode;
 	
 	private Order order;
