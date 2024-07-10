@@ -29,5 +29,7 @@ public class Address implements Serializable {
 	private String country;
 	
 	private String zipCode;
+	
+	private Order order;
 
 }
