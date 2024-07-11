@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 
 import org.hibernate.annotations.CreationTimestamp;
@@ -113,7 +114,34 @@ public class Order implements Serializable {
 	public void setLastUpdate(Date lastUpdate) {
 		this.lastUpdate = lastUpdate;
 	}
-	
-	
 
+	@Override
+	public int hashCode() {
+		return Objects.hash(dateCreated, id, lastUpdate, orderItems, orderTrackingNumber, status, totalPrice,
+				totalQuantity);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Order other = (Order) obj;
+		return Objects.equals(dateCreated, other.dateCreated) && Objects.equals(id, other.id)
+				&& Objects.equals(lastUpdate, other.lastUpdate) && Objects.equals(orderItems, other.orderItems)
+				&& Objects.equals(orderTrackingNumber, other.orderTrackingNumber)
+				&& Objects.equals(status, other.status) && Objects.equals(totalPrice, other.totalPrice)
+				&& totalQuantity == other.totalQuantity;
+	}
+
+	@Override
+	public String toString() {
+		return "Order [id=" + id + ", orderTrackingNumber=" + orderTrackingNumber + ", totalQuantity=" + totalQuantity
+				+ ", totalPrice=" + totalPrice + ", status=" + status + ", dateCreated=" + dateCreated + ", lastUpdate="
+				+ lastUpdate + ", orderItems=" + orderItems + "]";
+	}
+	
 }
