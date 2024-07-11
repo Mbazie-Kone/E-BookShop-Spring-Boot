@@ -31,19 +31,6 @@ public class Address implements Serializable {
 	@Column(name = "zip_code")
 	private String zipCode;
 
-	public Address() {
-		super();
-	}
-
-	public Address(String street, String city, String state, String country, String zipCode) {
-		super();
-		this.street = street;
-		this.city = city;
-		this.state = state;
-		this.country = country;
-		this.zipCode = zipCode;
-	}
-
 	public String getStreet() {
 		return street;
 	}
