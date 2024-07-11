@@ -5,6 +5,7 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -40,7 +41,7 @@ public class Order implements Serializable {
 	private Date dateCreated;
 	
 	@Column(name = "last_update")
-	@CreationTimestamp
+	@UpdateTimestamp
 	private Date lastUpdate;
 	
 	private Customer customer;
