@@ -144,4 +144,7 @@ public class Order implements Serializable {
 				+ lastUpdate + ", orderItems=" + orderItems + "]";
 	}
 	
+	public void add(OrderItem item) {
+		
+	}
 }
