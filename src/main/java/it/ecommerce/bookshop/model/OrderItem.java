@@ -27,5 +27,7 @@ public class OrderItem implements Serializable{
 	
 	private int quantity;
 	
+	private Long productId;
+	
 
 }
