@@ -31,6 +31,50 @@ public class OrderItem implements Serializable{
 	
 	@Column(name = "product_id")
 	private Long productId;
+
+	public OrderItem() {
+		super();
+	}
+
+	public OrderItem(String imageUrl, BigDecimal unitPrice, int quantity, Long productId) {
+		super();
+		this.imageUrl = imageUrl;
+		this.unitPrice = unitPrice;
+		this.quantity = quantity;
+		this.productId = productId;
+	}
+
+	public String getImageUrl() {
+		return imageUrl;
+	}
+
+	public void setImageUrl(String imageUrl) {
+		this.imageUrl = imageUrl;
+	}
+
+	public BigDecimal getUnitPrice() {
+		return unitPrice;
+	}
+
+	public void setUnitPrice(BigDecimal unitPrice) {
+		this.unitPrice = unitPrice;
+	}
+
+	public int getQuantity() {
+		return quantity;
+	}
+
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
+	}
+
+	public Long getProductId() {
+		return productId;
+	}
+
+	public void setProductId(Long productId) {
+		this.productId = productId;
+	}
 	
 	
 
