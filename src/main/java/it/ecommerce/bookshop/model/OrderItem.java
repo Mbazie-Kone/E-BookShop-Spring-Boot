@@ -2,6 +2,7 @@ package it.ecommerce.bookshop.model;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.util.Objects;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -75,7 +76,30 @@ public class OrderItem implements Serializable{
 	public void setProductId(Long productId) {
 		this.productId = productId;
 	}
-	
-	
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(id, imageUrl, productId, quantity, unitPrice);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		OrderItem other = (OrderItem) obj;
+		return Objects.equals(id, other.id) && Objects.equals(imageUrl, other.imageUrl)
+				&& Objects.equals(productId, other.productId) && quantity == other.quantity
+				&& Objects.equals(unitPrice, other.unitPrice);
+	}
+
+	@Override
+	public String toString() {
+		return "OrderItem [id=" + id + ", imageUrl=" + imageUrl + ", unitPrice=" + unitPrice + ", quantity=" + quantity
+				+ ", productId=" + productId + "]";
+	}
 
 }
