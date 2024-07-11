@@ -1,5 +1,10 @@
 package it.ecommerce.bookshop.model;
 
-public class OrderItem {
+import java.io.Serializable;
+
+import jakarta.persistence.Entity;
+
+@Entity
+public class OrderItem implements Serializable{
 
 }
