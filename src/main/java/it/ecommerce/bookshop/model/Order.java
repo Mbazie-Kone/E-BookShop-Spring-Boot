@@ -149,6 +149,8 @@ public class Order implements Serializable {
 			if( orderItems == null ) {
 				orderItems = new HashSet<>();
 			}
+			orderItems.add(item);
+			item.setOrder(this);
 		}
 	}
 }

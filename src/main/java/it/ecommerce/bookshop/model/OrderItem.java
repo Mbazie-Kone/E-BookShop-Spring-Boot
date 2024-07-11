@@ -32,6 +32,8 @@ public class OrderItem implements Serializable{
 	
 	@Column(name = "product_id")
 	private Long productId;
+	
+	private Order order;
 
 	public OrderItem() {
 		super();
