@@ -4,6 +4,8 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 
+import org.hibernate.annotations.CreationTimestamp;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -34,9 +36,11 @@ public class Order implements Serializable {
 	private String status;
 	
 	@Column(name = "date_created")
+	@CreationTimestamp
 	private Date dateCreated;
 	
 	@Column(name = "last_update")
+	@CreationTimestamp
 	private Date lastUpdate;
 	
 	private Customer customer;
