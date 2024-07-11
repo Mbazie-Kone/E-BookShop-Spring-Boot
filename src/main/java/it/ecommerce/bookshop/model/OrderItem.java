@@ -25,5 +25,7 @@ public class OrderItem implements Serializable{
 	
 	private BigDecimal unitPrice;
 	
+	private int quantity;
+	
 
 }
