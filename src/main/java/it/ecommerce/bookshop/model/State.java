@@ -20,7 +20,6 @@ public class State implements Serializable {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "state_id")
 	private Long id;
 	
 	private String name;

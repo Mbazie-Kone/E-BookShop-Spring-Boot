@@ -22,7 +22,6 @@ public class ProductCategory implements Serializable {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "product_category_id")
 	private Long id;
 	
 	@Column(name = "category_name")
@@ -30,14 +29,6 @@ public class ProductCategory implements Serializable {
 	
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "category")
 	private Set<Product> products;
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
 
 	public Set<Product> getProducts() {
 		return products;
@@ -77,5 +68,4 @@ public class ProductCategory implements Serializable {
 	public String toString() {
 		return "ProductCategory [id=" + id + ", categoryName=" + categoryName + ", products=" + products + "]";
 	}
-	
 }
