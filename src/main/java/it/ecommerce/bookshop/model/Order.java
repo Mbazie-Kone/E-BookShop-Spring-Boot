@@ -29,5 +29,13 @@ public class Order implements Serializable {
 	
 	@Column(name = "total_price")
 	private BigDecimal totalPrice;
+	
+	private String status;
+	
+	
+	
+	
+	
+	private Customer customer;
 
 }
