@@ -51,4 +51,69 @@ public class Order implements Serializable {
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "order")
 	private Set<OrderItem> orderItems = new HashSet<>();
 
+	public Order() {
+		super();
+	}
+
+	public Order(String orderTrackingNumber, int totalQuantity, BigDecimal totalPrice, String status, Date dateCreated,
+			Date lastUpdate) {
+		super();
+		this.orderTrackingNumber = orderTrackingNumber;
+		this.totalQuantity = totalQuantity;
+		this.totalPrice = totalPrice;
+		this.status = status;
+		this.dateCreated = dateCreated;
+		this.lastUpdate = lastUpdate;
+	}
+
+	public String getOrderTrackingNumber() {
+		return orderTrackingNumber;
+	}
+
+	public void setOrderTrackingNumber(String orderTrackingNumber) {
+		this.orderTrackingNumber = orderTrackingNumber;
+	}
+
+	public int getTotalQuantity() {
+		return totalQuantity;
+	}
+
+	public void setTotalQuantity(int totalQuantity) {
+		this.totalQuantity = totalQuantity;
+	}
+
+	public BigDecimal getTotalPrice() {
+		return totalPrice;
+	}
+
+	public void setTotalPrice(BigDecimal totalPrice) {
+		this.totalPrice = totalPrice;
+	}
+
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+	public Date getDateCreated() {
+		return dateCreated;
+	}
+
+	public void setDateCreated(Date dateCreated) {
+		this.dateCreated = dateCreated;
+	}
+
+	public Date getLastUpdate() {
+		return lastUpdate;
+	}
+
+	public void setLastUpdate(Date lastUpdate) {
+		this.lastUpdate = lastUpdate;
+	}
+	
+	
+
 }
