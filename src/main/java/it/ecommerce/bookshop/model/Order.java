@@ -22,5 +22,8 @@ public class Order implements Serializable {
 	
 	@Column(name = "order_tracking_number")
 	private String orderTrackingNumber;
+	
+	@Column(name = "total_quantity")
+	private int totalQuantity;
 
 }
