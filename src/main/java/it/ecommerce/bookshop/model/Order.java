@@ -3,6 +3,8 @@ package it.ecommerce.bookshop.model;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
@@ -44,6 +46,6 @@ public class Order implements Serializable {
 	@UpdateTimestamp
 	private Date lastUpdate;
 	
-	private Customer customer;
+	private Set<OrderItem> orderItems = new HashSet<>();
 
 }
