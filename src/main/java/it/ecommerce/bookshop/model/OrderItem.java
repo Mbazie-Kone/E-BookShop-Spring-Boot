@@ -79,6 +79,14 @@ public class OrderItem implements Serializable{
 		this.productId = productId;
 	}
 
+	public Order getOrder() {
+		return order;
+	}
+
+	public void setOrder(Order order) {
+		this.order = order;
+	}
+
 	@Override
 	public int hashCode() {
 		return Objects.hash(id, imageUrl, productId, quantity, unitPrice);
