@@ -48,7 +48,7 @@ public class Order implements Serializable {
 	@UpdateTimestamp
 	private Date lastUpdate;
 	
-	@OneToMany(cascade = CascadeType.ALL)
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "order")
 	private Set<OrderItem> orderItems = new HashSet<>();
 
 }
