@@ -1,6 +1,7 @@
 package it.ecommerce.bookshop.model;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -25,5 +26,8 @@ public class Order implements Serializable {
 	
 	@Column(name = "total_quantity")
 	private int totalQuantity;
+	
+	@Column(name = "total_price")
+	private BigDecimal totalPrice;
 
 }
