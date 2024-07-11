@@ -24,10 +24,12 @@ public class OrderItem implements Serializable{
 	@Column(name = "image_url")
 	private String imageUrl;
 	
+	@Column(name = "unit_price")
 	private BigDecimal unitPrice;
 	
 	private int quantity;
 	
+	@Column(name = "product_id")
 	private Long productId;
 	
 
