@@ -21,6 +21,7 @@ public class OrderItem implements Serializable{
 	@Column(name = "order_item_id")
 	private Long id;
 	
+	@Column(name = "image_url")
 	private String imageUrl;
 	
 	private BigDecimal unitPrice;
