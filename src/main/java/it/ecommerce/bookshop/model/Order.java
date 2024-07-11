@@ -145,6 +145,10 @@ public class Order implements Serializable {
 	}
 	
 	public void add(OrderItem item) {
-		
+		if( item != null ) {
+			if( orderItems == null ) {
+				orderItems = new HashSet<>();
+			}
+		}
 	}
 }
