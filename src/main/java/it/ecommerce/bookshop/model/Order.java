@@ -2,6 +2,7 @@ package it.ecommerce.bookshop.model;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.util.Date;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -32,7 +33,8 @@ public class Order implements Serializable {
 	
 	private String status;
 	
-	
+	@Column(name = "date_created")
+	private Date dateCreated;
 	
 	
 	
