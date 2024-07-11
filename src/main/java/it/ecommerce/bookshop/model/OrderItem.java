@@ -21,7 +21,6 @@ public class OrderItem implements Serializable{
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "order_item_id")
 	private Long id;
 	
 	@Column(name = "image_url")

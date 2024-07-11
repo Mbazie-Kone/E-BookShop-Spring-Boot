@@ -27,7 +27,6 @@ public class Order implements Serializable {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "order_id")
 	private Long id;
 	
 	@Column(name = "order_tracking_number")
