@@ -1,6 +1,7 @@
 package it.ecommerce.bookshop.model;
 
 import java.io.Serializable;
+import java.util.Objects;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -83,7 +84,30 @@ public class Address implements Serializable {
 	public void setZipCode(String zipCode) {
 		this.zipCode = zipCode;
 	}
-	
-	
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(city, country, id, state, street, zipCode);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Address other = (Address) obj;
+		return Objects.equals(city, other.city) && Objects.equals(country, other.country)
+				&& Objects.equals(id, other.id) && Objects.equals(state, other.state)
+				&& Objects.equals(street, other.street) && Objects.equals(zipCode, other.zipCode);
+	}
+
+	@Override
+	public String toString() {
+		return "Address [id=" + id + ", street=" + street + ", city=" + city + ", state=" + state + ", country="
+				+ country + ", zipCode=" + zipCode + "]";
+	}
 
 }
