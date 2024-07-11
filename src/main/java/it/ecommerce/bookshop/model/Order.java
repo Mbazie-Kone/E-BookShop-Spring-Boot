@@ -36,7 +36,8 @@ public class Order implements Serializable {
 	@Column(name = "date_created")
 	private Date dateCreated;
 	
-	
+	@Column(name = "last_update")
+	private Date lastUpdate;
 	
 	private Customer customer;
 
