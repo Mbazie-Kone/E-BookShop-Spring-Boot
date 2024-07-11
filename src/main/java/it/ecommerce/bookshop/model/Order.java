@@ -52,6 +52,10 @@ public class Order implements Serializable {
 	private Set<OrderItem> orderItems = new HashSet<>();
 	
 	private Customer customer;
+	
+	private Address shippingAddress;
+	
+	private Address billingAddress;
 
 	public String getOrderTrackingNumber() {
 		return orderTrackingNumber;
