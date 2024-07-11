@@ -38,18 +38,6 @@ public class OrderItem implements Serializable{
 	@JoinColumn(name = "order_id")
 	private Order order;
 
-	public OrderItem() {
-		super();
-	}
-
-	public OrderItem(String imageUrl, BigDecimal unitPrice, int quantity, Long productId) {
-		super();
-		this.imageUrl = imageUrl;
-		this.unitPrice = unitPrice;
-		this.quantity = quantity;
-		this.productId = productId;
-	}
-
 	public String getImageUrl() {
 		return imageUrl;
 	}
