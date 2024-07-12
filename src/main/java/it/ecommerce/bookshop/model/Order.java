@@ -59,6 +59,7 @@ public class Order implements Serializable {
 	private Customer customer;
 	
 	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "shipping_address_id")
 	private Address shippingAddress;
 	
 	private Address billingAddress;
