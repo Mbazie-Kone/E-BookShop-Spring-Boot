@@ -55,7 +55,7 @@ public class Order implements Serializable {
 	private Set<OrderItem> orderItems = new HashSet<>();
 	
 	@ManyToOne
-	@JoinColumn(name = "custumer_id")
+	@JoinColumn(name = "customer_id")
 	private Customer customer;
 	
 	@OneToOne(cascade = CascadeType.ALL)
