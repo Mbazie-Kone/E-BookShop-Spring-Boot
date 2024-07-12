@@ -85,7 +85,7 @@ public class Customer implements Serializable {
 	public void add(Order order) {
 		if(order != null) {
 			if(orders == null) {
-				
+				orders = new HashSet<>();
 			}
 		}
 	}
