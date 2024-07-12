@@ -19,7 +19,7 @@ public class State implements Serializable {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+	private int id;
 	
 	private String name;
 	
@@ -27,11 +27,11 @@ public class State implements Serializable {
 	@JoinColumn(name = "country_id")
 	private Country country;
 
-	public Long getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
