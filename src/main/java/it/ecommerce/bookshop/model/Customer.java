@@ -2,6 +2,7 @@ package it.ecommerce.bookshop.model;
 
 import java.io.Serializable;
 import java.util.Objects;
+import java.util.Set;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -27,6 +28,8 @@ public class Customer implements Serializable {
 	private String lastName;
 	
 	private String email;
+	
+	private Set<Order> orders;
 
 	public String getFirstName() {
 		return firstName;
