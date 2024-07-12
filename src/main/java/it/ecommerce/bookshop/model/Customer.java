@@ -81,4 +81,8 @@ public class Customer implements Serializable {
 	public String toString() {
 		return "Customer [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email + "]";
 	}
+	
+	public void add(Order order) {
+		
+	}
 }
