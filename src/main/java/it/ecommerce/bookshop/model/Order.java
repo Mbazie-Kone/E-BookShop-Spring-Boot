@@ -109,6 +109,14 @@ public class Order implements Serializable {
 		this.lastUpdate = lastUpdate;
 	}
 
+	public Customer getCustomer() {
+		return customer;
+	}
+
+	public void setCustomer(Customer customer) {
+		this.customer = customer;
+	}
+
 	@Override
 	public int hashCode() {
 		return Objects.hash(dateCreated, id, lastUpdate, orderItems, orderTrackingNumber, status, totalPrice,
