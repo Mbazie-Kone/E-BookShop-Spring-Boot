@@ -19,6 +19,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -57,6 +58,7 @@ public class Order implements Serializable {
 	@JoinColumn(name = "custumer_id")
 	private Customer customer;
 	
+	@OneToOne(cascade = CascadeType.ALL)
 	private Address shippingAddress;
 	
 	private Address billingAddress;
