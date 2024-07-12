@@ -30,6 +30,9 @@ public class Address implements Serializable {
 	
 	@Column(name = "zip_code")
 	private String zipCode;
+	
+	
+	private Order order;
 
 	public String getStreet() {
 		return street;
