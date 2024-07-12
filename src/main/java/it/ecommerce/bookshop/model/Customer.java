@@ -1,6 +1,7 @@
 package it.ecommerce.bookshop.model;
 
 import java.io.Serializable;
+import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 
@@ -32,7 +33,7 @@ public class Customer implements Serializable {
 	private String email;
 	
 	@OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
-	private Set<Order> orders;
+	private Set<Order> orders = new HashSet<>();
 
 	public String getFirstName() {
 		return firstName;
