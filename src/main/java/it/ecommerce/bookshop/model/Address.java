@@ -8,6 +8,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToOne;
+import jakarta.persistence.PrimaryKeyJoinColumn;
 import jakarta.persistence.Table;
 
 @Entity
@@ -31,7 +33,8 @@ public class Address implements Serializable {
 	@Column(name = "zip_code")
 	private String zipCode;
 	
-	
+	@OneToOne
+	@PrimaryKeyJoinColumn
 	private Order order;
 
 	public String getStreet() {
