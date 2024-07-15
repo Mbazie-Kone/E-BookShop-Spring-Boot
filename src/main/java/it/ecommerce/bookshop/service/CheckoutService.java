@@ -5,6 +5,6 @@ import it.ecommerce.bookshop.dto.PurchaseResponse;
 
 public interface CheckoutService {
 	
-	PurchaseResponse placeOrder(Purchase purchase)
+	PurchaseResponse placeOrder(Purchase purchase);
 
 }
