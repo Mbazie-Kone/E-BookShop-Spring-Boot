@@ -29,6 +29,8 @@ public class CheckoutServiceImpl implements CheckoutService {
 		// populate order with billingAddress and shippingAddress
 		
 		// populate customer with order
+		
+		// save to the database
 	}
 
 }
