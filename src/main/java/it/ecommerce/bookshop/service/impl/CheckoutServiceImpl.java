@@ -31,6 +31,8 @@ public class CheckoutServiceImpl implements CheckoutService {
 		// populate customer with order
 		
 		// save to the database
+		
+		// return a response
 	}
 
 }
