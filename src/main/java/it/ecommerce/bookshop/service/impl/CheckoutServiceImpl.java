@@ -27,7 +27,7 @@ public class CheckoutServiceImpl implements CheckoutService {
 		
 		// generate tracking number
 		String orderTrackingNumber = generateOrderTrackingNumber();
-		order.setOrderTrackingNumber(orderTrackingNumber);
+		order.setOrderTrackingNumber(orderTrackingNumber	);
 		
 		// populate order with orderItems
 		
@@ -38,6 +38,11 @@ public class CheckoutServiceImpl implements CheckoutService {
 		// save to the database
 		
 		// return a response
+		return null;
+	}
+
+	private String generateOrderTrackingNumber() {
+		// TODO Auto-generated method stub
 		return null;
 	}
 
