@@ -42,7 +42,8 @@ public class CheckoutServiceImpl implements CheckoutService {
 	}
 
 	private String generateOrderTrackingNumber() {
-		// TODO Auto-generated method stub
+		
+		// generate a random UUID
 		return null;
 	}
 
