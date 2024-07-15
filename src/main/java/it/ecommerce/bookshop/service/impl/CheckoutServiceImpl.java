@@ -1,5 +1,7 @@
 package it.ecommerce.bookshop.service.impl;
 
+import java.util.UUID;
+
 import org.springframework.stereotype.Service;
 
 import it.ecommerce.bookshop.dto.Purchase;
@@ -45,7 +47,7 @@ public class CheckoutServiceImpl implements CheckoutService {
 		
 		// generate a random UUID number (UUID version-4)
 		// for details see: https://en.wikipedia.org/wiki/Universally_unique_identifier
-		return null;
+		return UUID.randomUUID().toString();
 	}
 
 }
