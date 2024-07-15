@@ -4,6 +4,7 @@ import org.springframework.stereotype.Service;
 
 import it.ecommerce.bookshop.dto.Purchase;
 import it.ecommerce.bookshop.dto.PurchaseResponse;
+import it.ecommerce.bookshop.model.Order;
 import it.ecommerce.bookshop.repository.CustomerRepository;
 import it.ecommerce.bookshop.service.CheckoutService;
 import jakarta.transaction.Transactional;
@@ -20,7 +21,9 @@ public class CheckoutServiceImpl implements CheckoutService {
 	@Override
 	@Transactional
 	public PurchaseResponse placeOrder(Purchase purchase) {
+		
 		// retrieve the order info from dto
+		Order order = purchase.getOrder()
 		
 		// generate tracking number
 		
