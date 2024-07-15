@@ -11,6 +11,8 @@ import it.ecommerce.bookshop.service.CheckoutService;
 public class CheckoutServiceImpl implements CheckoutService {
 	
 	private CustomerRepository customerRepository;
+	
+	public CheckoutServiceImpl(CustomerRepository customerRepository)
 
 	@Override
 	public PurchaseResponse placeOrder(Purchase purchase) {
