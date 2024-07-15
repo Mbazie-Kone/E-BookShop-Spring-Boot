@@ -13,6 +13,8 @@ public class CheckoutController {
 	
 	private CheckoutService checkoutService;
 	
-	public CheckoutController()
+	public CheckoutController(CheckoutService checkoutService) {
+		
+	}
 
 }
