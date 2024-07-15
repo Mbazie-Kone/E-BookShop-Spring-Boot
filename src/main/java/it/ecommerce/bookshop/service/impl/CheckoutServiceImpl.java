@@ -47,7 +47,7 @@ public class CheckoutServiceImpl implements CheckoutService {
 		customer.add(order);
 		
 		// save to the database
-		customerRepository.save(null);
+		customerRepository.save(customer);
 		
 		// return a response
 		return null;
