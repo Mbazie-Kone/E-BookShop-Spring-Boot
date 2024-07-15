@@ -1,6 +1,7 @@
 package it.ecommerce.bookshop.controller;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -16,5 +17,8 @@ public class CheckoutController {
 	public CheckoutController(CheckoutService checkoutService) {
 		this.checkoutService = checkoutService;
 	}
+	
+	@PostMapping("/purchase")
+	
 
 }
