@@ -39,6 +39,7 @@ public class CheckoutServiceImpl implements CheckoutService {
 		orderItems.forEach(Item -> order.add(Item));
 		
 		// populate order with billingAddress and shippingAddress
+		order.setBillingAddress
 		
 		// populate customer with order
 		
