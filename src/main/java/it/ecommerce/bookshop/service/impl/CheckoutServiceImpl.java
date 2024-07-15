@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import it.ecommerce.bookshop.dto.Purchase;
 import it.ecommerce.bookshop.dto.PurchaseResponse;
+import it.ecommerce.bookshop.model.Customer;
 import it.ecommerce.bookshop.model.Order;
 import it.ecommerce.bookshop.model.OrderItem;
 import it.ecommerce.bookshop.repository.CustomerRepository;
@@ -43,6 +44,7 @@ public class CheckoutServiceImpl implements CheckoutService {
 		order.setShippingAddress(purchase.getShippingAddress());
 		
 		// populate customer with order
+		Customer customer = purchase.getCustomer();
 		
 		// save to the database
 		
