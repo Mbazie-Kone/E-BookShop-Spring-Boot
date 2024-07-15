@@ -32,7 +32,7 @@ public class CheckoutServiceImpl implements CheckoutService {
 		
 		// generate tracking number
 		String orderTrackingNumber = generateOrderTrackingNumber();
-		order.setOrderTrackingNumber(orderTrackingNumber	);
+		order.setOrderTrackingNumber(orderTrackingNumber);
 		
 		// populate order with orderItems
 		Set<OrderItem> orderItems = purchase.getOrderItems();
@@ -50,7 +50,7 @@ public class CheckoutServiceImpl implements CheckoutService {
 		customerRepository.save(customer);
 		
 		// return a response
-		return new PurchaseResponse();
+		return new PurchaseResponse(orderTrackingNumber);
 	}
 
 	private String generateOrderTrackingNumber() {
