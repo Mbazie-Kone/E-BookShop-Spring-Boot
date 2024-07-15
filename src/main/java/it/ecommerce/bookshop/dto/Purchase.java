@@ -6,9 +6,7 @@ import it.ecommerce.bookshop.model.Address;
 import it.ecommerce.bookshop.model.Customer;
 import it.ecommerce.bookshop.model.Order;
 import it.ecommerce.bookshop.model.OrderItem;
-import lombok.Data;
 
-@Data
 public class Purchase {
 	
 	private Customer customer;
