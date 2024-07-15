@@ -2,9 +2,11 @@ package it.ecommerce.bookshop.controller;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import it.ecommerce.bookshop.dto.Purchase;
 import it.ecommerce.bookshop.dto.PurchaseResponse;
 import it.ecommerce.bookshop.service.CheckoutService;
 
@@ -20,8 +22,8 @@ public class CheckoutController {
 	}
 	
 	@PostMapping("/purchase")
-	public PurchaseResponse placeOrder() {
-		
+	public PurchaseResponse placeOrder(@RequestBody Purchase purchase) {
+		PurchaseResponse purchaseResponse
 	}
 	
 
