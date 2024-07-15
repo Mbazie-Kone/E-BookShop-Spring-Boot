@@ -3,6 +3,7 @@ package it.ecommerce.bookshop.service.impl;
 import java.util.Set;
 import java.util.UUID;
 
+import org.hibernate.cache.spi.support.AbstractReadWriteAccess.Item;
 import org.springframework.stereotype.Service;
 
 import it.ecommerce.bookshop.dto.Purchase;
@@ -35,6 +36,7 @@ public class CheckoutServiceImpl implements CheckoutService {
 		
 		// populate order with orderItems
 		Set<OrderItem> orderItems = purchase.getOrderItems();
+		orderItems.forEach(Item -> order.add(Item));
 		
 		// populate order with billingAddress and shippingAddress
 		
