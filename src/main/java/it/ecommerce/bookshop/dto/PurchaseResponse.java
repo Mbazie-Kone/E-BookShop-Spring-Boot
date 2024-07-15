@@ -1,11 +1,12 @@
 package it.ecommerce.bookshop.dto;
 
-import lombok.NonNull;
-
 public class PurchaseResponse {
 	
-	@NonNull
 	private String orderTrackingNumber;
+	
+	public PurchaseResponse(String orderTrackingNumber) {
+		this.orderTrackingNumber = orderTrackingNumber;
+	}
 
 	public String getOrderTrackingNumber() {
 		return orderTrackingNumber;
@@ -14,5 +15,4 @@ public class PurchaseResponse {
 	public void setOrderTrackingNumber(String orderTrackingNumber) {
 		this.orderTrackingNumber = orderTrackingNumber;
 	}
-
 }
