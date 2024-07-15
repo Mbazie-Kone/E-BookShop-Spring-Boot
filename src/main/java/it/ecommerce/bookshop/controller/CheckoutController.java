@@ -14,7 +14,7 @@ public class CheckoutController {
 	private CheckoutService checkoutService;
 	
 	public CheckoutController(CheckoutService checkoutService) {
-		
+		this.checkoutService = checkoutService;
 	}
 
 }
