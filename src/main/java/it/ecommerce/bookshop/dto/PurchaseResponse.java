@@ -5,6 +5,6 @@ import lombok.Data;
 @Data
 public class PurchaseResponse {
 	
-	private String orderTracking;
+	private String orderTrackingNumber;
 
 }
