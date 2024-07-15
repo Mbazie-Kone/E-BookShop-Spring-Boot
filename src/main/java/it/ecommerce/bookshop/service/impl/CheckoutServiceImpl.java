@@ -20,8 +20,13 @@ public class CheckoutServiceImpl implements CheckoutService {
 	@Override
 	@Transactional
 	public PurchaseResponse placeOrder(Purchase purchase) {
-		// TODO Auto-generated method stub
-		return null;
+		// retrieve the order info from dto
+		
+		// generate tracking number
+		
+		// populate order with orderItems
+		
+		// populate order with billingAddress
 	}
 
 }
