@@ -1,7 +1,12 @@
 package it.ecommerce.bookshop.dto;
 
+import lombok.NonNull;
+
 public class PurchaseResponse {
 	
-	private final String orderTrackingNumber = "";
+	@NonNull
+	private String orderTrackingNumber;
+	
+	
 
 }
