@@ -3,7 +3,6 @@ package it.ecommerce.bookshop.service.impl;
 import java.util.Set;
 import java.util.UUID;
 
-import org.hibernate.cache.spi.support.AbstractReadWriteAccess.Item;
 import org.springframework.stereotype.Service;
 
 import it.ecommerce.bookshop.dto.Purchase;
@@ -48,6 +47,7 @@ public class CheckoutServiceImpl implements CheckoutService {
 		customer.add(order);
 		
 		// save to the database
+		customerRepository.save(null);
 		
 		// return a response
 		return null;
