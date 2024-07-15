@@ -13,7 +13,6 @@ public class CheckoutServiceImpl implements CheckoutService {
 	
 	private CustomerRepository customerRepository;
 	
-	@Autowired
 	public CheckoutServiceImpl(CustomerRepository customerRepository) {
 		this.customerRepository = customerRepository;
 	}
