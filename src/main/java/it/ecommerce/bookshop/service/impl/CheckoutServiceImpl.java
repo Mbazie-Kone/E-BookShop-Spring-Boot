@@ -50,7 +50,7 @@ public class CheckoutServiceImpl implements CheckoutService {
 		customerRepository.save(customer);
 		
 		// return a response
-		return null;
+		return new PurchaseResponse();
 	}
 
 	private String generateOrderTrackingNumber() {
