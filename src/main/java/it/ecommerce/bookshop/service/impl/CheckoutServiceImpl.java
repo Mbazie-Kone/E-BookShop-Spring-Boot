@@ -1,5 +1,6 @@
 package it.ecommerce.bookshop.service.impl;
 
+import java.util.Set;
 import java.util.UUID;
 
 import org.springframework.stereotype.Service;
@@ -7,6 +8,7 @@ import org.springframework.stereotype.Service;
 import it.ecommerce.bookshop.dto.Purchase;
 import it.ecommerce.bookshop.dto.PurchaseResponse;
 import it.ecommerce.bookshop.model.Order;
+import it.ecommerce.bookshop.model.OrderItem;
 import it.ecommerce.bookshop.repository.CustomerRepository;
 import it.ecommerce.bookshop.service.CheckoutService;
 import jakarta.transaction.Transactional;
@@ -32,6 +34,7 @@ public class CheckoutServiceImpl implements CheckoutService {
 		order.setOrderTrackingNumber(orderTrackingNumber	);
 		
 		// populate order with orderItems
+		Set<OrderItem> orderItems = purchase.getOrderItems();
 		
 		// populate order with billingAddress and shippingAddress
 		
