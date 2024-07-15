@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import it.ecommerce.bookshop.dto.PurchaseResponse;
 import it.ecommerce.bookshop.service.CheckoutService;
 
 @CrossOrigin("http://localhost:4200")
@@ -19,6 +20,9 @@ public class CheckoutController {
 	}
 	
 	@PostMapping("/purchase")
+	public PurchaseResponse placeOrder() {
+		
+	}
 	
 
 }
