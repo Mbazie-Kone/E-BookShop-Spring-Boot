@@ -43,7 +43,7 @@ public class CheckoutServiceImpl implements CheckoutService {
 
 	private String generateOrderTrackingNumber() {
 		
-		// generate a random UUID
+		// generate a random UUID number (UUID version-4)
 		return null;
 	}
 
