@@ -9,6 +9,6 @@ export class OrderItem {
     constructor(cartItem: CartItem) {
         this.imageUrl = cartItem.imageUrl;
         this.quantity = cartItem.quantity;
-        
+        this.unitPrice = cartItem.unitPrice;
     }
 }
