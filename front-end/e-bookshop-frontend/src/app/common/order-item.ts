@@ -7,6 +7,6 @@ export class OrderItem {
     productId: string;
 
     constructor(cartItem: CartItem) {
-
+        this.imageUrl = cartItem.imageUrl;
     }
 }
