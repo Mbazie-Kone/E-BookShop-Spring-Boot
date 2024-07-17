@@ -1,3 +1,3 @@
 export class Order {
-    totalQuantity: number;
+    totalQuantity: number; 
 }
