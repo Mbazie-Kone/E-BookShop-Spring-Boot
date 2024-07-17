@@ -5,5 +5,6 @@ import { Injectable } from '@angular/core';
 })
 export class CheckoutService {
 
+  private purchaseUrl = 'http//localhost:8080'
   constructor() { }
 }
