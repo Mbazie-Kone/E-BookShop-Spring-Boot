@@ -158,6 +158,8 @@ export class CheckoutComponent implements OnInit{
    // populate purchase - customer
 
    // populate purchase - shipping address
+
+   // populate purchase - billing address
   }
 
   handleMonthsAndYears() {
