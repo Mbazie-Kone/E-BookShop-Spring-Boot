@@ -148,6 +148,16 @@ export class CheckoutComponent implements OnInit{
       return;
     }
    // set up order
+
+   // get cart items
+
+   // create orderItems from cartItems
+
+   // set up purchase
+
+   // populate purchase - customer
+
+   // populate purchase - shipping address
   }
 
   handleMonthsAndYears() {
