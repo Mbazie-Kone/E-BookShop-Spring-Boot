@@ -159,7 +159,7 @@ export class CheckoutComponent implements OnInit{
 
    // create orderItems from cartItems
    // - long way
-    let orderItems: OrderItem[];
+    let orderItems: OrderItem[] = [];
 
    // set up purchase
 
