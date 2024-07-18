@@ -9,6 +9,7 @@ import { CheckoutService } from '../../services/checkout.service';
 import { Router } from '@angular/router';
 import { Order } from '../../common/order';
 import { OrderItem } from '../../common/order-item';
+import { Purchase } from '../../common/purchase';
 
 @Component({
   selector: 'app-checkout',
@@ -166,10 +167,10 @@ export class CheckoutComponent implements OnInit{
     }
     */
    // - short way of doing the same things
-   let orderItemsShort: OrderItem[] = cartItems.map(tempCartItem => new OrderItem(tempCartItem));
-
+   let orderItems: OrderItem[] = cartItems.map(tempCartItem => new OrderItem(tempCartItem));
 
    // set up purchase
+   let purchase = new Purchase();
 
    // populate purchase - customer
 
