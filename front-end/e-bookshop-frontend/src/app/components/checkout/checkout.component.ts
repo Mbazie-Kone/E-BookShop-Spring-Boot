@@ -147,7 +147,7 @@ export class CheckoutComponent implements OnInit{
       this.checkoutFormGroup.markAllAsTouched();
       return;
     }
-   
+   // set up order
   }
 
   handleMonthsAndYears() {
