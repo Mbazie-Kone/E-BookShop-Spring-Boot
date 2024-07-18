@@ -8,6 +8,7 @@ import { CartService } from '../../services/cart.service';
 import { CheckoutService } from '../../services/checkout.service';
 import { Router } from '@angular/router';
 import { Order } from '../../common/order';
+import { OrderItem } from '../../common/order-item';
 
 @Component({
   selector: 'app-checkout',
@@ -158,6 +159,7 @@ export class CheckoutComponent implements OnInit{
 
    // create orderItems from cartItems
    // - long way
+    let orderItems: OrderItem[];
 
    // set up purchase
 
