@@ -173,6 +173,7 @@ export class CheckoutComponent implements OnInit{
    let purchase = new Purchase();
 
    // populate purchase - customer
+   purchase.shippingAddress = this.checkoutFormGroup.controls['shippingAddress']
 
    // populate purchase - shipping address
 
