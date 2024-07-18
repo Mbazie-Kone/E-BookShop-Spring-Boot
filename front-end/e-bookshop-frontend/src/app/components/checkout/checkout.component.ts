@@ -145,6 +145,7 @@ export class CheckoutComponent implements OnInit{
     console.log("Handling the submit button");
     if(this.checkoutFormGroup.invalid) {
       this.checkoutFormGroup.markAllAsTouched();
+      return;
     }
     console.log(this.checkoutFormGroup.get('customer')?.value);
     console.log("the email address is "+ this.checkoutFormGroup.get('customer')?.value.email);
