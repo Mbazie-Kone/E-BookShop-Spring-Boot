@@ -7,6 +7,7 @@ import { EbookShopValidators } from '../../validators/ebook-shop-validators';
 import { CartService } from '../../services/cart.service';
 import { CheckoutService } from '../../services/checkout.service';
 import { Router } from '@angular/router';
+import { Order } from '../../common/order';
 
 @Component({
   selector: 'app-checkout',
@@ -148,7 +149,7 @@ export class CheckoutComponent implements OnInit{
       return;
     }
    // set up order
-
+    let order = new Order();
    // get cart items
 
    // create orderItems from cartItems
