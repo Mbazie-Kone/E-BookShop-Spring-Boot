@@ -174,7 +174,7 @@ export class CheckoutComponent implements OnInit{
 
    // populate purchase - customer
    purchase.shippingAddress = this.checkoutFormGroup.controls['shippingAddress'].value;
-   const shippingState: State = JSON.parse(JSON.stringify(purchase.shippingAddress));
+   const shippingState: State = JSON.parse(JSON.stringify(purchase.shippingAddress.state));
 
    // populate purchase - shipping address
 
