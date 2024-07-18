@@ -6,6 +6,7 @@ import { State } from '../../common/state';
 import { EbookShopValidators } from '../../validators/ebook-shop-validators';
 import { CartService } from '../../services/cart.service';
 import { CheckoutService } from '../../services/checkout.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-checkout',
@@ -27,7 +28,8 @@ export class CheckoutComponent implements OnInit{
   shippingAddressStates: State[] = [];
   billingAddressStates: State[] = [];
 
-  constructor(private formBuilder: FormBuilder, private ebookshopFormService: EbookshopFormServiceService, private cartService: CartService, private checkoutService: CheckoutService) {}
+  constructor(private formBuilder: FormBuilder, private ebookshopFormService: EbookshopFormServiceService, 
+    private cartService: CartService, private checkoutService: CheckoutService, private router: Router) {}
 
   ngOnInit(): void {
     this.reviewCartDetails();
