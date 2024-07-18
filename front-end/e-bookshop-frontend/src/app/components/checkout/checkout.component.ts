@@ -152,8 +152,9 @@ export class CheckoutComponent implements OnInit{
     let order = new Order();
     order.totalPrice = this.totalPrice;
     order.totalQuantity = this.totalQuantity;
-    
+
    // get cart items
+   const cartItems = this.cartService.cartItems;
 
    // create orderItems from cartItems
 
