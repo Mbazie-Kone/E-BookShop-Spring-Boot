@@ -163,7 +163,7 @@ export class CheckoutComponent implements OnInit{
 
    // populate purchase - order and orderItems
 
-   // call REST API
+   // call REST API via the checkoutService
   }
 
   handleMonthsAndYears() {
