@@ -162,6 +162,8 @@ export class CheckoutComponent implements OnInit{
    // populate purchase - billing address
 
    // populate purchase - order and orderItems
+
+   // call REST API
   }
 
   handleMonthsAndYears() {
