@@ -208,7 +208,9 @@ export class CheckoutComponent implements OnInit{
    );
   }
   resetCart() {
-    
+    // reset cart data
+
+    //
   }
 
   handleMonthsAndYears() {
