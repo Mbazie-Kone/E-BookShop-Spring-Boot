@@ -190,6 +190,7 @@ export class CheckoutComponent implements OnInit{
    purchase.billingAddress.country = billingCountry.name;
 
    // populate purchase - order and orderItems
+   purchase.order = 
 
    // call REST API via the checkoutService
   }
