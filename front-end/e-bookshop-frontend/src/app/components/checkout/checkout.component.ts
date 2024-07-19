@@ -216,7 +216,8 @@ export class CheckoutComponent implements OnInit{
     // reset the form
     this.checkoutFormGroup.reset();
 
-    // navigate back to the products page 
+    // navigate back to the products page
+    this.router.navigateByUrl();
   }
 
   handleMonthsAndYears() {
