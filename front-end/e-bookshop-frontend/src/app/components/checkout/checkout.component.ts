@@ -194,6 +194,7 @@ export class CheckoutComponent implements OnInit{
    purchase.orderItems = orderItems;
 
    // call REST API via the checkoutService
+   this.checkoutService.placeOrder
   }
 
   handleMonthsAndYears() {
