@@ -199,6 +199,7 @@ export class CheckoutComponent implements OnInit{
       next: responese => {
         alert(`Your order has been received.\nOrder tracking number: ${responese.orderTrackingNumber}`); 
         // reset cart
+        this.resetCart();
       },
       error: err => {
         alert(`There was an error: ${err.message}`);
