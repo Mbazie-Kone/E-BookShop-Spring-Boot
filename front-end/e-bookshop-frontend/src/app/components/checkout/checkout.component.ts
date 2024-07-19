@@ -197,8 +197,8 @@ export class CheckoutComponent implements OnInit{
    this.checkoutService.placeOrder(purchase).subscribe(
     {
       next: responese => {
-        
-      }
+        alert(`Your order has been received`)
+      },
       error:
     }
    );
