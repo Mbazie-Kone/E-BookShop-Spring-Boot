@@ -201,7 +201,7 @@ export class CheckoutComponent implements OnInit{
         // reset cart
       },
       error: err => {
-        alert(`There was an error: ${responese.orderTrackingNumber}`);
+        alert(`There was an error: ${err.message}`);
       }
     }
    );
