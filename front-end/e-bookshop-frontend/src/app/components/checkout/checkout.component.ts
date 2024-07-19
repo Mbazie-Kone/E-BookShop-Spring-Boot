@@ -195,7 +195,9 @@ export class CheckoutComponent implements OnInit{
 
    // call REST API via the checkoutService
    this.checkoutService.placeOrder(purchase).subscribe(
-    
+    {
+      
+    }
    );
   }
 
