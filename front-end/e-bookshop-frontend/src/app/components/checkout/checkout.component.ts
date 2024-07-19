@@ -214,6 +214,7 @@ export class CheckoutComponent implements OnInit{
     this.cartService.totalQuantity.next(0);
 
     // reset the form
+    this.checkoutFormGroup.reset();
 
     // navigate back to the products page 
   }
