@@ -208,7 +208,7 @@ export class CheckoutComponent implements OnInit{
    );
   }
   resetCart() {
-    throw new Error('Method not implemented.');
+    
   }
 
   handleMonthsAndYears() {
