@@ -207,6 +207,9 @@ export class CheckoutComponent implements OnInit{
     }
    );
   }
+  resetCart() {
+    throw new Error('Method not implemented.');
+  }
 
   handleMonthsAndYears() {
     const creditCardFormGroup = this.checkoutFormGroup.get('creditCard');
