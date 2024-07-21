@@ -21,7 +21,7 @@ import jakarta.persistence.metamodel.EntityType;
 @Configuration
 public class DataRestConfig implements RepositoryRestConfigurer {
 	
-	private EntityManager entityManager;
+	private EntityManager entityManage;
 	
 	@Autowired
 	public DataRestConfig(EntityManager theEntityManager) {
