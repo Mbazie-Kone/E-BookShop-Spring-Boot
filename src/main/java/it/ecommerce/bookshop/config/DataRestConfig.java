@@ -26,7 +26,7 @@ public class DataRestConfig implements RepositoryRestConfigurer {
 		entityManager = theEntityManager;
 	}
 
-	@Override
+	@Overrid
 	public void configureRepositoryRestConfiguration(RepositoryRestConfiguration config, CorsRegistry cors) {
 		
 		HttpMethod[] theUnsupportedActions = {HttpMethod.PUT, HttpMethod.POST, HttpMethod.DELETE};
