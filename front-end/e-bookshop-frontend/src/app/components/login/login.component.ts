@@ -39,6 +39,6 @@ export class LoginComponent implements OnInit {
       (error: any) => {
         throw error;
       }
-    )
+    );
   }
 }
