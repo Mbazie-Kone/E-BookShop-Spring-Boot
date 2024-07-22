@@ -36,4 +36,8 @@ export class LoginStatusComponent implements OnInit {
     }
   }
 
+  logout() {
+    
+  }
+
 }
