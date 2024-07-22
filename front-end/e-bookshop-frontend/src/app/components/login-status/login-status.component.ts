@@ -25,7 +25,7 @@ export class LoginStatusComponent implements OnInit {
   }
   getUserDetails() {
     if (this.isAuthenticated) {
-      
+      // fetch the logged in user details
     }
   }
 
