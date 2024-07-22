@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import myAppConfig from '../../config/my-app-config';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
