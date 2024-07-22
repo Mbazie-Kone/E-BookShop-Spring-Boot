@@ -16,7 +16,11 @@ export class LoginStatusComponent implements OnInit {
 
   ngOnInit(): void {
     // subscribe to authentication state changes
-    this.oktaAuthService.authState$.subscribe
+    this.oktaAuthService.authState$.subscribe(
+      (result) => {
+        
+      }
+    );
   }
 
 }
