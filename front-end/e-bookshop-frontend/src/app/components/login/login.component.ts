@@ -9,6 +9,8 @@ import myAppConfig from '../../config/my-app-config';
 })
 export class LoginComponent implements OnInit {
 
+  oktaSignin: any;
+
   constructor() {}
 
   ngOnInit(): void {
