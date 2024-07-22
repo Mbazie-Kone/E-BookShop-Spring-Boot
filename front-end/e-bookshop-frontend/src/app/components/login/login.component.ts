@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit {
   constructor(@Inject(OKTA_AUTH) private oktaAuth: OktaAuth) {
     this.oktaSignin = new this.oktaSignin({
       logo: 'assets/images/logo.png',
-      baseUrl: myAppConfig.oidc.issuer.split('/oauth2')
+      baseUrl: myAppConfig.oidc.issuer.split('/oauth2')[0 ],
     });
   }
 
