@@ -21,7 +21,8 @@ export class LoginComponent implements OnInit {
       redirectUri: myAppConfig.oidc.redirectUri,
       authParams: {
         pkce: true,
-        issuer: myAppConfig.oidc.issuer
+        issuer: myAppConfig.oidc.issuer,
+        scope: myAppConfig.oidc.scopes
       }
     });
   }
