@@ -1,5 +1,6 @@
 export default {
     oidc: {
-        clientId: '';
+        clientId: '',
+        issuer: '',
     }
 }
