@@ -28,7 +28,9 @@ export class LoginStatusComponent implements OnInit {
       // fetch the logged in user details (user's claims)
       //
       // user full name is exposed as a property name
-      this.oktaAuth.getUser
+      this.oktaAuth.getUser().then(
+        
+      )
     }
   }
 
