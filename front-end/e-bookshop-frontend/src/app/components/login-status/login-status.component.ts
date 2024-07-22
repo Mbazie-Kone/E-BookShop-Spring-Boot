@@ -18,7 +18,7 @@ export class LoginStatusComponent implements OnInit {
     // subscribe to authentication state changes
     this.oktaAuthService.authState$.subscribe(
       (result) => {
-        
+        this.isAuthenticated = result.isAuthenticated!;
       }
     );
   }
