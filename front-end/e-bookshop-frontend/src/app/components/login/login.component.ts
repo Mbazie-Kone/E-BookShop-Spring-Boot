@@ -30,7 +30,7 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
     this.oktaSignin.remove();
     this.oktaSignin.renderEl({
-      
-    })
+      el: 'okta-sign-in-widget'}, // this name should be same as div tag id in login.component.html
+    )
   }
 }
