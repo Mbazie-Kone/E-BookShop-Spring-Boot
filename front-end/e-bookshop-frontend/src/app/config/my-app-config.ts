@@ -3,6 +3,6 @@ export default {
         clientId: '',
         issuer: '',
         redirectUri: 'http://localhost:4200/login/callback',
-        scopes: ['openid', 'profile']
+        scopes: ['openid', 'profile', 'email']
     }
 }
