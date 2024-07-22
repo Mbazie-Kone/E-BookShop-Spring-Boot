@@ -18,7 +18,10 @@ export class LoginComponent implements OnInit {
       logo: 'assets/images/logo.png',
       baseUrl: myAppConfig.oidc.issuer.split('/oauth2')[0 ], 
       clientId: myAppConfig.oidc.clientId,
-      redirectUri: myAppConfig.oidc.redirectUri
+      redirectUri: myAppConfig.oidc.redirectUri,
+      authParams: {
+        
+      }
     });
   }
 
