@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, Inject, inject, OnInit } from '@angular/core';
 
 import myAppConfig from '../../config/my-app-config';
 import { OKTA_AUTH } from '@okta/okta-angular';
@@ -13,7 +13,7 @@ export class LoginComponent implements OnInit {
 
   oktaSignin: any;
 
-  constructor(@inject(OKTA_AUTH) private oktaAuth: OktaAuth) {}
+  constructor(@Inject(OKTA_AUTH) private oktaAuth: OktaAuth) {}
 
   ngOnInit(): void {
     
