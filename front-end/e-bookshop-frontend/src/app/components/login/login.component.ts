@@ -14,7 +14,9 @@ export class LoginComponent implements OnInit {
   oktaSignin: any;
 
   constructor(@Inject(OKTA_AUTH) private oktaAuth: OktaAuth) {
-    this.oktaSignin = new this.oktaSignin();
+    this.oktaSignin = new this.oktaSignin({
+      
+    });
   }
 
   ngOnInit(): void {
