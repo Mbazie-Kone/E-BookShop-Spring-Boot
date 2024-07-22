@@ -7,8 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginStatusComponent implements OnInit {
 
+  constructor() {}
 
-  
   ngOnInit(): void {
     
   }
