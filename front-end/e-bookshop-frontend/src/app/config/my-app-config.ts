@@ -2,6 +2,6 @@ export default {
     oidc: {
         clientId: '',
         issuer: '',
-        redirectUril: '',
+        redirectUri: 'http://localhost:4200',
     }
 }
