@@ -24,7 +24,9 @@ export class LoginStatusComponent implements OnInit {
     );
   }
   getUserDetails() {
-    
+    if (this.isAuthenticated) {
+      
+    }
   }
 
 }
