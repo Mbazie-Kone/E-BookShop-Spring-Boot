@@ -25,6 +25,7 @@ import { OktaAuth } from '@okta/okta-auth-js';
 import myAppConfig from './config/my-app-config';
 
 const oktaConfig = myAppConfig.oidc;
+const oktaAuth = new OktaAuth(oktaConfig);
 
 const routes: Routes = [
   {path: 'checkout', component: CheckoutComponent},
