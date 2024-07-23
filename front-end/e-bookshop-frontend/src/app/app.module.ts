@@ -55,13 +55,13 @@ const routes: Routes = [
     LoginStatusComponent,
   ],
     
-    imports: [RouterModule.forRoot(routes),
-        BrowserModule,
-        AppRoutingModule,
-        NgbModule,
-        ReactiveFormsModule,
-        OktaAuthModule
-    ], 
+  imports: [RouterModule.forRoot(routes),
+    BrowserModule,
+    AppRoutingModule,
+    NgbModule,
+    ReactiveFormsModule,
+    OktaAuthModule
+  ], 
   providers: [provideAnimationsAsync(), ProductService, { provide: OKTA_CONFIG, useValue: { oktaAuth } }, provideHttpClient(withInterceptorsFromDi())]}), 
   bootstrap: [AppComponent]
 })
