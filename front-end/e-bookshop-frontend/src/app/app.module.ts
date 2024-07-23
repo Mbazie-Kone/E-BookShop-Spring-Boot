@@ -64,8 +64,8 @@ const routes: Routes = [
     AppRoutingModule,
   ],  
   providers: [
-    provideAnimationsAsync(),ProductService, { provide: OKTA_CONFIG, useValue: { oktaAuth } }, provideHttpClient(withInterceptorsFromDi())
-  ]})
+    provideAnimationsAsync(),ProductService, { provide: OKTA_CONFIG, useValue: oktaAuth }, provideHttpClient(withInterceptorsFromDi())
+  ],
   bootstrap: [AppComponent]
-
+})
 export class AppModule { }
