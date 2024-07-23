@@ -27,3 +27,8 @@
     display:-ms-flexbox;
     display:flex
 }
+/*
+    Copy from styles.css -> .form-header
+    Rename as .login-status-header
+    Change border to 10px
+*/
