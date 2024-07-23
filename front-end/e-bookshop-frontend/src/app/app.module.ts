@@ -9,7 +9,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { ProductCategoryMenuComponent } from './components/product-category-menu/product-category-menu.component';
 import { SearchComponent } from './components/search/search.component';
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CartStatusComponent } from './components/cart-status/cart-status.component';
@@ -62,10 +62,10 @@ const routes: Routes = [
     OktaAuthModule,
     RouterModule.forRoot(routes),
     AppRoutingModule,
-    HttpClientModule,
+    
   ],  
   providers: [
-    ProductService, { provide: OKTA_CONFIG, useValue: oktaAuth }
+    ProductService, { provide: OKTA_CONFIG, useValue: oktaAuth }, provideHttpClient( withInterceptorsFromDi ),
   ],
   bootstrap: [AppComponent]
 })
