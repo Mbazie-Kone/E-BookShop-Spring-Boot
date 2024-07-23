@@ -63,7 +63,11 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     AppRoutingModule,
   ],  
-  providers: [provideAnimationsAsync(),ProductService, { provide: OKTA_CONFIG, useValue: { oktaAuth } }, provideHttpClient(withInterceptorsFromDi())]})
+  providers: [
+    provideAnimationsAsync(),ProductService, 
+    { provide: OKTA_CONFIG, useValue: { oktaAuth } }, 
+    provideHttpClient(withInterceptorsFromDi())
+  ],
   bootstrap: [AppComponent]
-
+})
 export class AppModule { }
