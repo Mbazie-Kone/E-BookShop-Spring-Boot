@@ -29,6 +29,7 @@ const oktaAuth = new OktaAuth(oktaConfig);
 
 const routes: Routes = [
   {path: 'login/callback', component: OktaCallbackComponent},
+  {path: 'login', component: OktaCallbackComponent},
   {path: 'checkout', component: CheckoutComponent},
   {path: 'cart-details', component: CartDetailsComponent},
   {path: 'products/:id', component: ProductDetailsComponent},
