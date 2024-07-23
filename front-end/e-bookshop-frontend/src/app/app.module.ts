@@ -3,8 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
-import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { ProductListComponent } from './components/product-list/product-list.component';
 import { ProductService } from './services/product.service';
 import { Routes, RouterModule } from '@angular/router';
@@ -64,7 +62,7 @@ const routes: Routes = [
     AppRoutingModule,
   ],  
   providers: [
-    provideAnimationsAsync(),ProductService, { provide: OKTA_CONFIG, useValue: oktaAuth }, provideHttpClient(withInterceptorsFromDi())
+    ProductService, { provide: OKTA_CONFIG, useValue: oktaAuth }
   ],
   bootstrap: [AppComponent]
 })
