@@ -3,7 +3,7 @@
     Rename as .security-btn
     Change border to 10px
 */
-.security-btn{
+.security-btn {
     position:relative;
     right:0;
     min-width:95px;
@@ -17,6 +17,13 @@
 
 /*
     Copy from styles.css -> .form-header
-    Rename as .security-btn
+    Rename as .login-status-header
     Change border to 10px
 */
+.login-status-header {
+    display:-webkit-box;
+    display:-webkit-flex;
+    display:-moz-box;
+    display:-ms-flexbox;
+    display:flex
+}
