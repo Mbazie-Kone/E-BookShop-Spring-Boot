@@ -56,7 +56,6 @@ const routes: Routes = [
   ],
     
   imports: [
-    
     BrowserModule,
     NgbModule,
     ReactiveFormsModule,
@@ -64,7 +63,7 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     AppRoutingModule,
   ],  
-  providers: [provideAnimationsAsync(), provideHttpClient(withInterceptorsFromDi()), ProductService, { provide: OKTA_CONFIG, useValue: { oktaAuth } }],
+  providers: [provideAnimationsAsync(),ProductService, { provide: OKTA_CONFIG, useValue: { oktaAuth } }, provideHttpClient(withInterceptorsFromDi())]})
   bootstrap: [AppComponent]
-})
+
 export class AppModule { }
