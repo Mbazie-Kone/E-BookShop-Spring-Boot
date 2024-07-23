@@ -18,7 +18,6 @@
 /*
     Copy from styles.css -> .form-header
     Rename as .login-status-header
-    Change border to 10px
 */
 .login-status-header {
     display:-webkit-box;
@@ -30,7 +29,7 @@
 /*
     Copy from styles.css -> .au-input
     Rename as .login-status-user-info
-    Change border to 10px
+    - Remove 'solid', 'font-size'
 */
 .au-input{
     line-height:43px;
