@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { ProductListComponent } from './components/product-list/product-list.component';
 import { ProductService } from './services/product.service';
 import { Routes, RouterModule } from '@angular/router';
@@ -41,29 +41,22 @@ const routes: Routes = [
   {path: '**', redirectTo: "/products", pathMatch: 'full'}
 ];
 
-@NgModule({
-  declarations: [
-    AppComponent,
-    ProductListComponent,
-    ProductCategoryMenuComponent,
-    SearchComponent,
-    ProductDetailsComponent,
-    CartStatusComponent,
-    CartDetailsComponent,
-    CheckoutComponent,
-    LoginComponent,
-    LoginStatusComponent,
-  ],
-  imports: [
-    RouterModule.forRoot(routes),
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    NgbModule,
-    ReactiveFormsModule,
-    OktaAuthModule,
-  ],
-  providers: [ provideAnimationsAsync(), ProductService, {provide: OKTA_CONFIG, useValue: {oktaAuth}}],
-  bootstrap: [AppComponent]
-})
+@NgModule({ declarations: [
+        AppComponent,
+        ProductListComponent,
+        ProductCategoryMenuComponent,
+        SearchComponent,
+        ProductDetailsComponent,
+        CartStatusComponent,
+        CartDetailsComponent,
+        CheckoutComponent,
+        LoginComponent,
+        LoginStatusComponent,
+    ],
+    bootstrap: [AppComponent], imports: [RouterModule.forRoot(routes),
+        BrowserModule,
+        AppRoutingModule,
+        NgbModule,
+        ReactiveFormsModule,
+        OktaAuthModule], providers: [provideAnimationsAsync(), ProductService, { provide: OKTA_CONFIG, useValue: { oktaAuth } }, provideHttpClient(withInterceptorsFromDi())] })
 export class AppModule { }
