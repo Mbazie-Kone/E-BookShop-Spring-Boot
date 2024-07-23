@@ -41,18 +41,19 @@ const routes: Routes = [
   {path: '**', redirectTo: "/products", pathMatch: 'full'}
 ];
 
-@NgModule({ declarations: [
-        AppComponent,
-        ProductListComponent,
-        ProductCategoryMenuComponent,
-        SearchComponent,
-        ProductDetailsComponent,
-        CartStatusComponent,
-        CartDetailsComponent,
-        CheckoutComponent,
-        LoginComponent,
-        LoginStatusComponent,
-    ],
+@NgModule({ 
+  declarations: [
+    AppComponent,
+    ProductListComponent,
+    ProductCategoryMenuComponent,
+    SearchComponent,
+    ProductDetailsComponent,
+    CartStatusComponent,
+    CartDetailsComponent,
+    CheckoutComponent,
+    LoginComponent,
+    LoginStatusComponent,
+  ],
     
     imports: [RouterModule.forRoot(routes),
         BrowserModule,
