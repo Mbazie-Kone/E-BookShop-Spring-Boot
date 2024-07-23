@@ -65,7 +65,7 @@ const routes: Routes = [
     
   ],  
   providers: [
-    ProductService, { provide: OKTA_CONFIG, useValue: oktaAuth }, provideHttpClient( withInterceptorsFromDi ),
+    ProductService, { provide: OKTA_CONFIG, useValue: oktaAuth }, provideHttpClient( withInterceptorsFromDi()),
   ],
   bootstrap: [AppComponent]
 })
