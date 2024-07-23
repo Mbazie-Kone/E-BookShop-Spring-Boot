@@ -63,7 +63,7 @@ const routes: Routes = [
     ReactiveFormsModule,
     OktaAuthModule,
   ],
-  providers: [ provideAnimationsAsync(), ProductService, {provide: OKTA_CONFIG, useValue: {}}],
+  providers: [ provideAnimationsAsync(), ProductService, {provide: OKTA_CONFIG, useValue: {oktaAuth}}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
