@@ -49,7 +49,7 @@ const routes: Routes = [
     AppRoutingModule,
   ],  
   providers: [
-    ProductService, 
+    ProductService, [provideHttpClient(withInterceptorsFromDi())],
   ],
   bootstrap: [AppComponent]
 })
