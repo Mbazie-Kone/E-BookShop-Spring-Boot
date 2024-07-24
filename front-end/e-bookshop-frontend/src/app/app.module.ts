@@ -45,13 +45,12 @@ const routes: Routes = [
     BrowserModule,
     NgbModule,
     ReactiveFormsModule,
-    OktaAuthModule,
     RouterModule.forRoot(routes),
     AppRoutingModule,
     
   ],  
   providers: [
-    ProductService, { provide: OKTA_CONFIG, useValue: {oktaAuth} }, provideHttpClient( withInterceptorsFromDi()),
+    ProductService,
   ],
   bootstrap: [AppComponent]
 })
