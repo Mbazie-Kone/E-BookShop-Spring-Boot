@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 
 import it.ecommerce.bookshop.model.security.Admin;
 
-@CrossOrigin
+@CrossOrigin()
 public interface AdminRepository extends JpaRepository<Admin, Long> {
 
 }
