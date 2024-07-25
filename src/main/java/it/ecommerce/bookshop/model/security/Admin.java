@@ -17,5 +17,7 @@ public class Admin implements Serializable {
 	private Long id;
 	
 	private String username;
+	
+	private String password;
 
 }
