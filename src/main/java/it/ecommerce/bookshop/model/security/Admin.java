@@ -1,6 +1,7 @@
 package it.ecommerce.bookshop.model.security;
 
 import java.io.Serializable;
+import java.util.Objects;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -35,7 +36,28 @@ public class Admin implements Serializable {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	
-	
 
+	@Override
+	public int hashCode() {
+		return Objects.hash(id, password, username);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Admin other = (Admin) obj;
+		return Objects.equals(id, other.id) && Objects.equals(password, other.password)
+				&& Objects.equals(username, other.username);
+	}
+
+	@Override
+	public String toString() {
+		return "Admin [id=" + id + ", username=" + username + ", password=" + password + "]";
+	}
+	
 }
