@@ -6,6 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrl: './login.component.css'
 })
 export class LoginComponent implements OnInit {
+
+  constructor() {}
+
   ngOnInit(): void {
     throw new Error('Method not implemented.');
   }
