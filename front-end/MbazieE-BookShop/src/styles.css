@@ -98,3 +98,24 @@ a,a:hover{
     -moz-transition:all .3s ease;
     transition:all .3s ease
 }
+
+/*Layout Css*/
+.section-content-p35{
+    padding:0 35px
+}
+
+.page-wrapper{
+    overflow:hidden;
+    background:#e5e5e5;
+    padding-bottom:8vh
+}
+
+.page-container{
+    background:#e5e5e5;
+    padding-left:200px
+}
+
+.main-content{
+    padding-top:116px;
+    min-height:100vh
+}
