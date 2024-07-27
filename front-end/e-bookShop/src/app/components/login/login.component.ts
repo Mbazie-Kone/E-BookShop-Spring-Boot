@@ -19,7 +19,14 @@ export class LoginComponent implements OnInit {
   }
 
   onLogin() {
-
+    this.authService.login(this.username, this.password).subscribe(
+      response => {
+        if(response) {
+          this.router.navigate(['/products']);
+        }
+        else {
+          alert('Invalid credentials');
+        }
+      });
   }
-
 }
