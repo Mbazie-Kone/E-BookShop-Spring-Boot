@@ -3,5 +3,6 @@
     <form (submit)="onLogin()">
         <div class="form-group">
             <label for="username">Username</label>
+            <input type="text" class="form-control" id="username" [(ngModel)]="username" name="username" required>
         </div>
     </form>
