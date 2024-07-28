@@ -20,7 +20,10 @@ public class AuthController {
 	
 	
 	public List<Product> getAllProducts() {
-		return productRepository.findAll()
+		return productRepository.findAll();
 	}
+	
+	
+	
 	
 }
