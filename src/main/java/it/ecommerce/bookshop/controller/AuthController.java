@@ -43,6 +43,7 @@ public class AuthController {
 		product.setName(productDetails.getName());
 		product.setName(productDetails.getName());
 		product.setDescription(productDetails.getDescription());
+		product.setUnitPrice(productDetails.getUnitPrice());
 		return ResponseEntity.ok(productRepository.save(product));
 	}
 	
