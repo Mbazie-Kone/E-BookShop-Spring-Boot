@@ -32,7 +32,7 @@ public class AuthServiceImpl implements AuthService {
 
 	@Override
 	public User login(String username, String password) {
-		
+		User user = userRepository.findByUsername(username).orElseThrow(()-> new RuntimeException())
 	}
 
 }
