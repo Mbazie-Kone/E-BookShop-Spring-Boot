@@ -26,7 +26,7 @@ public class AuthController {
 	}
 	
 	public Product createProduct(@RequestBody Product product) {
-		
+		return productRepository.save(product);
 	}
 	
 	
