@@ -39,11 +39,15 @@ public class User implements Serializable {
 		this.password = password;
 	}
 
-	@Override
-	public int hashCode() {
-		return Objects.hash(id, password, username);
+	public String getRole() {
+		return role;
 	}
 
+	public void setRole(String role) {
+		this.role = role;
+	}
+
+	
 	
 		
 }
