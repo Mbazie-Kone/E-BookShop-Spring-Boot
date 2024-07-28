@@ -44,22 +44,6 @@ public class User implements Serializable {
 		return Objects.hash(id, password, username);
 	}
 
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		User other = (User) obj;
-		return Objects.equals(id, other.id) && Objects.equals(password, other.password)
-				&& Objects.equals(username, other.username);
-	}
-
-	@Override
-	public String toString() {
-		return "Admin [id=" + id + ", username=" + username + ", password=" + password + "]";
-	}
+	
 		
 }
