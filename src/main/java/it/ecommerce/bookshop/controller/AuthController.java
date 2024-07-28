@@ -21,7 +21,8 @@ public class AuthController {
 	
 	
 	public ResponseEntity<?> signup(@RequestBody Map<String, String> user) {
-		
+		authService.signup(user.get("username"), user.get("password"));
+		return ResponseEntity.ok().build();
 	}
 	
 }
