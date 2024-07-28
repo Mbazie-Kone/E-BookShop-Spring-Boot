@@ -4,5 +4,5 @@ import it.ecommerce.bookshop.model.security.User;
 
 public interface AuthService {
 	
-	public User signup(String username)
+	public User signup(String username, String password);
 }
