@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import it.ecommerce.bookshop.model.security.User;
 import it.ecommerce.bookshop.service.AuthService;
 
 @RestController
