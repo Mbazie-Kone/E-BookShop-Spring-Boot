@@ -35,7 +35,10 @@ public class AuthServiceImpl implements AuthService {
 		User user = userRepository.findByUsername(username).orElseThrow(()-> new RuntimeException("User not found"));
 		if(passwordEncoder.matches(password, user.getPassword())) {
 			return user;
-		};
+		}
+		else {
+			throw new RuntimeException("Invalid credentials");
+		}
 	}
 
 }
