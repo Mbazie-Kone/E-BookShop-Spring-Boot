@@ -45,6 +45,9 @@ public class AuthController {
 		product.setDescription(productDetails.getDescription());
 		product.setUnitPrice(productDetails.getUnitPrice());
 		product.setImageUrl(productDetails.getImageUrl());
+		product.setActive(productDetails.isActive());
+		product.setUnitsInStock(productDetails.getUnitsInStock());
+		
 		return ResponseEntity.ok(productRepository.save(product));
 	}
 	
