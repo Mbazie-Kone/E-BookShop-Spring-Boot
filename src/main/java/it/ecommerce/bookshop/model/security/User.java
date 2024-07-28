@@ -9,7 +9,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity
-public class Admin implements Serializable {
+public class User implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	
@@ -50,7 +50,7 @@ public class Admin implements Serializable {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Admin other = (Admin) obj;
+		User other = (User) obj;
 		return Objects.equals(id, other.id) && Objects.equals(password, other.password)
 				&& Objects.equals(username, other.username);
 	}
