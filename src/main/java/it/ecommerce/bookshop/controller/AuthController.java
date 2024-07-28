@@ -25,7 +25,9 @@ public class AuthController {
 		return productRepository.findAll();
 	}
 	
-	public Product createProduct(@RequestBody)	
+	public Product createProduct(@RequestBody Product product) {
+		
+	}
 	
 	
 }
