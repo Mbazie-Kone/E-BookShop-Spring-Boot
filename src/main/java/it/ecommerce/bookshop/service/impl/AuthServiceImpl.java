@@ -20,7 +20,7 @@ public class AuthServiceImpl implements AuthService {
 	@Override
 	public User signup(String username, String password) {
 		if(userRepository.findByUsername(username).isPresent()) {
-			throw new runti
+			throw new RuntimeException("User already exists");
 		}
 	}
 
