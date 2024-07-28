@@ -67,7 +67,8 @@ public class User implements Serializable {
 				&& Objects.equals(role, other.role) && Objects.equals(username, other.username);
 	}
 
-	
-	
-		
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", username=" + username + ", password=" + password + ", role=" + role + "]";
+	}	
 }
