@@ -26,4 +26,9 @@ public class AuthController {
 		return ResponseEntity.ok().build();
 	}
 	
+	@PostMapping("/login")
+	public ResponseEntity<?> login(@RequestBody Map<String, String> user) {
+		
+	}
+	
 }
