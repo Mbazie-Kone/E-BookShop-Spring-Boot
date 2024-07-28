@@ -1,5 +1,8 @@
 package it.ecommerce.bookshop.service;
 
-public interface AuthService {
+import it.ecommerce.bookshop.model.security.User;
 
+public interface AuthService {
+	
+	public User signup(String username)
 }
