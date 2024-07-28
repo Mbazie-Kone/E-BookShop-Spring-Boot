@@ -23,6 +23,7 @@ public class AuthServiceImpl implements AuthService {
 			throw new RuntimeException("User already exists");
 		}
 		User user = new User();
+		user.setPassword(password);
 	}
 
 	@Override
