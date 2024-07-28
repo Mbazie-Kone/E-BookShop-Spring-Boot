@@ -22,6 +22,7 @@ public class AuthServiceImpl implements AuthService {
 		if(userRepository.findByUsername(username).isPresent()) {
 			throw new RuntimeException("User already exists");
 		}
+		User user = new User();
 	}
 
 	@Override
