@@ -25,6 +25,7 @@ public class AuthServiceImpl implements AuthService {
 		User user = new User();
 		user.setUsername(username);;
 		user.setPassword(passwordEncoder.encode(password));
+		user.setRole("ADMIN");
 	}
 
 	@Override
