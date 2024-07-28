@@ -37,9 +37,11 @@ public class AuthController {
 	
 	// Update the product in the DB
 	@PostMapping("/{id}")
-	public ResponseEntity<Void> deleteProduct(@PathVariable Long id, @RequestBody Product productDetails) {
+	public ResponseEntity<Product> deleteProduct(@PathVariable Long id, @RequestBody Product productDetails) {
 		Product product = productRepository.findById(id).orElseThrow(() -> new RuntimeException("Product not found"));
 		product.setSku(productDetails.getSku());
+		product.setName(productDetails.getName());
+		return ResponseEntity.ok(productRepository.save(product));
 	}
 	
 	// Delete the product from the DB
