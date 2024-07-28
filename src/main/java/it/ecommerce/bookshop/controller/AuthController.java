@@ -41,6 +41,8 @@ public class AuthController {
 		Product product = productRepository.findById(id).orElseThrow(() -> new RuntimeException("Product not found"));
 		product.setSku(productDetails.getSku());
 		product.setName(productDetails.getName());
+		product.setName(productDetails.getName());
+		product.setDescription(productDetails.getDescription());
 		return ResponseEntity.ok(productRepository.save(product));
 	}
 	
