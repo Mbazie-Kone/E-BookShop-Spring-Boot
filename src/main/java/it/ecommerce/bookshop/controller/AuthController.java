@@ -29,9 +29,18 @@ public class AuthController {
 		return productRepository.findAll();
 	}
 	
+	// Insert the product in the DB
 	@PostMapping
 	public Product createProduct(@RequestBody Product product) {
 		return productRepository.save(product);
+	}
+	
+	// Update the product in the DB
+	@DeleteMapping("/{id}")
+	public ResponseEntity<Void> deleteProduct(@PathVariable Long id) {
+		Product product = productRepository.findById(id).orElseThrow(() -> new RuntimeException("Product not found"));
+		productRepository.delete(product);
+		return ResponseEntity.noContent().build();
 	}
 	
 	@DeleteMapping("/{id}")
