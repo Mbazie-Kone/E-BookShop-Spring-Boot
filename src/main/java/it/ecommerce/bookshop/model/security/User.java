@@ -20,6 +20,8 @@ public class User implements Serializable {
 	private String username;
 	
 	private String password;
+	
+	private String role;
 
 	public String getUsername() {
 		return username;
