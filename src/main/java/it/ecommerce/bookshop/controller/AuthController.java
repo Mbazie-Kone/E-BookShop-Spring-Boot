@@ -30,6 +30,6 @@ public class AuthController {
 	@PostMapping("/login")
 	public ResponseEntity<?> login(@RequestBody Map<String, String> user) {
 		User loggedInUser = authService.login(user.get("username"), user.get("password"));
+		return ResponseEntity.ok(loggedInUser);
 	}
-	
 }
