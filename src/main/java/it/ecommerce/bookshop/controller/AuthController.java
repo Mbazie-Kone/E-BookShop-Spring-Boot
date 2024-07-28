@@ -33,7 +33,7 @@ public class AuthController {
 		return productRepository.save(product);
 	}
 	
-	@PostMapping
+	@PostMapping("/{id}")
 	public ResponseEntity<Void> deleteProduct(@PathVariable Long id) {
 		Product product = productRepository.findById(id).orElseThrow(() -> new RuntimeException("Product not found"));
 		productRepository.delete(product);
