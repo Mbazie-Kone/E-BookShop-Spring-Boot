@@ -3,6 +3,11 @@ package it.mbaziekone.book_e_commerce.service.impl;
 import java.util.Set;
 import java.util.UUID;
 
+import it.mbaziekone.book_e_commerce.model.Customer;
+import it.mbaziekone.book_e_commerce.model.Order;
+import it.mbaziekone.book_e_commerce.model.OrderItem;
+import it.mbaziekone.book_e_commerce.model.dto.Purchase;
+import it.mbaziekone.book_e_commerce.model.dto.PurchaseResponse;
 import it.mbaziekone.book_e_commerce.service.CheckoutService;
 import jakarta.transaction.Transactional;
 
@@ -49,6 +54,12 @@ private CustomerRepository customerRepository;
 		// generate a random UUID number (UUID version-4)
 		// for details see: https://en.wikipedia.org/wiki/Universally_unique_identifier
 		return UUID.randomUUID().toString();
+	}
+
+	@Override
+	public PurchaseResponse placeOrder(Purchase purchase) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
