@@ -2,8 +2,6 @@ package it.mbaziekone.book_e_commerce.model.security;
 
 import java.io.Serializable;
 import java.util.Objects;
-
-import it.ecommerce.bookshop.model.security.User;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
