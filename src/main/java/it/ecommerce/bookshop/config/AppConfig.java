@@ -16,7 +16,7 @@ public class AppConfig {
 		 */
 		http.authorizeHttpRequests(
 				requests -> requests.anyRequest().denyAll()
-				).formLogin(Customizer.withDefaults());
+				).formLogin(Customizer.withDefaults()).httpBasic(Customizer.withDefaults());
 		
 		return http.build();
 	}
