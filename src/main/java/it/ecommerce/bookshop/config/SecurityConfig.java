@@ -11,31 +11,33 @@ import org.springframework.security.web.SecurityFilterChain;
 @Configuration
 public class SecurityConfig {
 
+	@Bean
+	SecurityFilterChain defaultSecurityFilterChain(HttpSecurity http) throws Exception {
+		/**
+		 * Configuration to deny all the requests
+		 */
+		http.authorizeHttpRequests(requests -> requests.anyRequest().denyAll()).formLogin(Customizer.withDefaults())
+				.httpBasic(Customizer.withDefaults());
+
+		return http.build();
+	}
+
 	/*
 	 * @Bean SecurityFilterChain defaultSecurityFilterChain(HttpSecurity http)
 	 * throws Exception {
 	 *//**
-		 * Configuration to deny all the requests
+		 * Configuration to permit all the requests
 		 *//*
-			 * http.authorizeHttpRequests( requests -> requests.anyRequest().denyAll()
-			 * ).formLogin(Customizer.withDefaults()).httpBasic(Customizer.withDefaults());
+			 * http.authorizeHttpRequests(requests ->
+			 * requests.anyRequest().permitAll()).formLogin(Customizer.withDefaults())
+			 * .httpBasic(Customizer.withDefaults());
 			 * 
 			 * return http.build(); }
 			 */
 
 	@Bean
-	SecurityFilterChain defaultSecurityFilterChain(HttpSecurity http) throws Exception {
-		/**
-		 * Configuration to permit all the requests
-		 */
-		http.authorizeHttpRequests(requests -> requests.anyRequest().permitAll()
-				).formLogin(Customizer.withDefaults()).httpBasic(Customizer.withDefaults());
-
-		return http.build();
-	}
-
-	@Bean
 	PasswordEncoder passwordEncoder() {
 		return new BCryptPasswordEncoder();
 	}
+
 }
