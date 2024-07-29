@@ -18,4 +18,10 @@ public class DemoRestController {
 	public String deniedRestController() {
 		return "Hello DeniedAll!";
 	}
+	
+	@GetMapping("/authe")
+	@ResponseBody
+	public String autheRestController() {
+		return "Hello Authe!";
+	}
 }
