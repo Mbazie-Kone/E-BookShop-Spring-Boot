@@ -14,8 +14,11 @@ public class AuthServiceImpl implements AuthService {
 	@Autowired
 	private UserRepository userRepository;
 	
-	@Autowired
-	private PasswordEncoder passwordEncoder;
+	private final PasswordEncoder passwordEncoder;
+	
+	public AuthServiceImpl(PasswordEncoder passwordEncoder) {
+		this.passwordEncoder = passwordEncoder;
+	}
 	
 	@Override
 	public User signup(String username, String password) {
