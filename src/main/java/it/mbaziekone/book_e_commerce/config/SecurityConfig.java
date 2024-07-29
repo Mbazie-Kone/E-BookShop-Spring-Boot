@@ -27,7 +27,7 @@ public class SecurityConfig {
 		/**
 		 * Configuration to permit all the requests
 		 */
-		http.authorizeHttpRequests((requests) -> requests.anyRequest().permitAll()).formLogin(Customizer.withDefaults())
+		http.authorizeHttpRequests(( requests ) -> requests.anyRequest().permitAll()).formLogin(Customizer.withDefaults())
 				.httpBasic(Customizer.withDefaults());
 
 		return http.build();
