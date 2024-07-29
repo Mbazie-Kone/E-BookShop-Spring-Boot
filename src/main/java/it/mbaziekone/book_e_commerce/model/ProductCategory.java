@@ -6,8 +6,6 @@ import java.util.Set;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import it.ecommerce.bookshop.model.Product;
-import it.ecommerce.bookshop.model.ProductCategory;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
