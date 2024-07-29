@@ -2,7 +2,6 @@ package it.ecommerce.bookshop.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.core.userdetails.User;
@@ -21,11 +20,7 @@ public class SecurityConfig {
 	SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 		http.authorizeHttpRequests(
 				authorize -> authorize.requestMatchers
-				("/public/**", "/login","/error").permitAll().anyRequest().authenticated()).formLogin(formLogin -> formLogin
-		                .loginPage("/login")
-		                .permitAll()
-		            )
-		            .rememberMe(Customizer.withDefaults());
+				("/public/**", "/login","/error").permitAll().anyRequest().authenticated());
 
 		return http.build();
 	}
