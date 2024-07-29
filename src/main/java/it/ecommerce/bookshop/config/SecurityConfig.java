@@ -2,6 +2,7 @@ package it.ecommerce.bookshop.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.core.userdetails.User;
@@ -17,15 +18,19 @@ import org.springframework.security.web.SecurityFilterChain;
 public class SecurityConfig {
 
 	@Bean
-	public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+	SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 		http.authorizeHttpRequests(
-				authorize -> authorize.requestMatchers("/api/auth/**").permitAll().anyRequest().authenticated());
+				authorize -> authorize.requestMatchers("/api/auth/**").permitAll().anyRequest().authenticated()).formLogin(formLogin -> formLogin
+		                .loginPage("/login")
+		                .permitAll()
+		            )
+		            .rememberMe(Customizer.withDefaults());
 
 		return http.build();
 	}
 
 	@Bean
-	public UserDetailsService userDetailsService(PasswordEncoder passwordEncoder) {
+	UserDetailsService userDetailsService(PasswordEncoder passwordEncoder) {
 		UserDetails user = User.builder().username("user").password(passwordEncoder.encode("password")).roles("USER")
 				.build();
 
@@ -36,7 +41,7 @@ public class SecurityConfig {
 	}
 
 	@Bean
-	public PasswordEncoder passwordEncoder() {
+	PasswordEncoder passwordEncoder() {
 		return new BCryptPasswordEncoder();
 	}
 }
