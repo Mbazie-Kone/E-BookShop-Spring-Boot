@@ -15,7 +15,7 @@ import it.mbaziekone.book_e_commerce.service.CheckoutService;
 @RequestMapping("/api/checkout")
 public class CheckoutController {
 	
-private CheckoutService checkoutService;
+	private CheckoutService checkoutService;
 	
 	public CheckoutController(CheckoutService checkoutService) {
 		this.checkoutService = checkoutService;

@@ -3,6 +3,8 @@ package it.mbaziekone.book_e_commerce.service.impl;
 import java.util.Set;
 import java.util.UUID;
 
+import org.springframework.stereotype.Service;
+
 import it.mbaziekone.book_e_commerce.model.Customer;
 import it.mbaziekone.book_e_commerce.model.Order;
 import it.mbaziekone.book_e_commerce.model.OrderItem;
@@ -12,6 +14,7 @@ import it.mbaziekone.book_e_commerce.repository.CustomerRepository;
 import it.mbaziekone.book_e_commerce.service.CheckoutService;
 import jakarta.transaction.Transactional;
 
+@Service
 public class CheckoutServiceImpl implements CheckoutService {
 	
 	private CustomerRepository customerRepository;
