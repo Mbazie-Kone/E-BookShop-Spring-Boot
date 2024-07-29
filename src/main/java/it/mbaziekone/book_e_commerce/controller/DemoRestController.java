@@ -12,4 +12,10 @@ public class DemoRestController {
 	public String demoRestController() {
 		return "Hello World!";
 	}
+	
+	@GetMapping("/denied")
+	@ResponseBody
+	public String deniedRestController() {
+		return "Hello World!";
+	}
 }
