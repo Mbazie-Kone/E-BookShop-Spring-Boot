@@ -8,13 +8,18 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 
+import jakarta.annotation.security.PermitAll;
+
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig {
 	
-	
+	@Bean
 	public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+		http.cors().and().csrf().disable().authorizeRequests().antMatchers("/api/auth/**")
+		permitAll().anyRequest().authenticated();
 		
+		return http.build();
 	}
 	
 	@Bean
