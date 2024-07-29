@@ -8,12 +8,13 @@ import it.mbaziekone.book_e_commerce.model.Order;
 import it.mbaziekone.book_e_commerce.model.OrderItem;
 import it.mbaziekone.book_e_commerce.model.dto.Purchase;
 import it.mbaziekone.book_e_commerce.model.dto.PurchaseResponse;
+import it.mbaziekone.book_e_commerce.repository.CustomerRepository;
 import it.mbaziekone.book_e_commerce.service.CheckoutService;
 import jakarta.transaction.Transactional;
 
 public class CheckoutServiceImpl implements CheckoutService {
 	
-private CustomerRepository customerRepository;
+	private CustomerRepository customerRepository;
 	
 	public CheckoutServiceImpl(CustomerRepository customerRepository) {
 		this.customerRepository = customerRepository;
