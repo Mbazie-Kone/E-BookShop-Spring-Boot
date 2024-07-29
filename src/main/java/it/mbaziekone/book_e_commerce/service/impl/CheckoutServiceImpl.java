@@ -56,11 +56,4 @@ public class CheckoutServiceImpl implements CheckoutService {
 		// for details see: https://en.wikipedia.org/wiki/Universally_unique_identifier
 		return UUID.randomUUID().toString();
 	}
-
-	@Override
-	public PurchaseResponse placeOrder(Purchase purchase) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 }
