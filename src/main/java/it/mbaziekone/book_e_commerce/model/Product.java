@@ -1,5 +1,6 @@
 package it.mbaziekone.book_e_commerce.model;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 import java.util.Objects;
@@ -22,7 +23,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "products")
-public class Product {
+public class Product implements Serializable {
 	
 private static final long serialVersionUID = 1L;
 	
