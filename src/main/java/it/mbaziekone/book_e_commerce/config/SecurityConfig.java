@@ -24,10 +24,11 @@ public class SecurityConfig {
 
 	@Bean
 	SecurityFilterChain defaultSecurityFilterChain(HttpSecurity http) throws Exception {
-		/**
-		 * Configuration to permit all the requests
-		 */
-		http.authorizeHttpRequests(( requests ) -> requests.anyRequest().permitAll()).formLogin(Customizer.withDefaults())
+		
+		http.authorizeHttpRequests(( requests ) -> requests
+				.requestMatchers("/denied").authenticated()
+				.requestMatchers("/demo").permitAll()
+				).formLogin(Customizer.withDefaults())
 				.httpBasic(Customizer.withDefaults());
 
 		return http.build();
