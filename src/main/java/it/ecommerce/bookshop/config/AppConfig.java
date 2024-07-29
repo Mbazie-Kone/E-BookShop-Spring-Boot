@@ -14,8 +14,8 @@ public class AppConfig {
 		/**
 		 * Configuration to deny all the requests
 		 */
-		http.authorizeHttpRequests((requests) -> requests
-					.requestMatchers("/").permitAll()
+		http.authorizeHttpRequests(
+				requests -> requests.anyRequest().denyAll())
 					.anyRequest().authenticated())
 		.formLogin(Customizer.withDefaults()).httpBasic(Customizer.withDefaults());
 		
