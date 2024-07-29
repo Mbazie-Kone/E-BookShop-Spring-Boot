@@ -3,6 +3,11 @@ package it.mbaziekone.book_e_commerce.model.dto;
 import java.util.Objects;
 import java.util.Set;
 
+import it.mbaziekone.book_e_commerce.model.Address;
+import it.mbaziekone.book_e_commerce.model.Customer;
+import it.mbaziekone.book_e_commerce.model.Order;
+import it.mbaziekone.book_e_commerce.model.OrderItem;
+
 public class Purchase {
 	
 private Customer customer;
