@@ -1,5 +1,7 @@
 package it.mbaziekone.book_e_commerce.model;
 
-public class Customer {
+import java.io.Serializable;
+
+public class Customer implements Serializable {
 
 }

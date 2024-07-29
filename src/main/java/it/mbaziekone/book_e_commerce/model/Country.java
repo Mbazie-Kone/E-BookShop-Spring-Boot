@@ -1,5 +1,7 @@
 package it.mbaziekone.book_e_commerce.model;
 
-public class Country {
+import java.io.Serializable;
+
+public class Country implements Serializable {
 
 }
