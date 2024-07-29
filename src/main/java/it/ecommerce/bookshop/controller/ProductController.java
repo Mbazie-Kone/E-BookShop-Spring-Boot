@@ -47,6 +47,9 @@ public class ProductController {
 		product.setImageUrl(productDetails.getImageUrl());
 		product.setActive(productDetails.isActive());
 		product.setUnitsInStock(productDetails.getUnitsInStock());
+		product.setDateCreated(productDetails.getDateCreated());
+		product.setLastUpdate(productDetails.getLastUpdate());
+		product.setCategory(productDetails.getCategory());
 		
 		return ResponseEntity.ok(productRepository.save(product));
 	}
