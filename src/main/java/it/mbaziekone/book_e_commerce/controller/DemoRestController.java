@@ -10,12 +10,12 @@ public class DemoRestController {
 	@GetMapping("/demo")
 	@ResponseBody
 	public String demoRestController() {
-		return "Hello World!";
+		return "Hello PermitAll!";
 	}
 	
 	@GetMapping("/denied")
 	@ResponseBody
 	public String deniedRestController() {
-		return "Hello World!";
+		return "Hello DeniedAll!";
 	}
 }
