@@ -11,6 +11,9 @@ public class AppConfig {
 	
 	@Bean
 	SecurityFilterChain defaultSecurityFilterChain(HttpSecurity http) throws Exception {
+		/**
+		 * Configuration to deny all the requests
+		 */
 		http.authorizeHttpRequests((requests) -> requests
 					.requestMatchers("/").permitAll()
 					.anyRequest().authenticated())
@@ -18,4 +21,13 @@ public class AppConfig {
 		
 		return http.build();
 	}
+	
+	/*
+	 * @Bean SecurityFilterChain defaultSecurityFilterChain(HttpSecurity http)
+	 * throws Exception { http.authorizeHttpRequests((requests) -> requests
+	 * .requestMatchers("/").permitAll() .anyRequest().authenticated())
+	 * .formLogin(Customizer.withDefaults()).httpBasic(Customizer.withDefaults());
+	 * 
+	 * return http.build(); }
+	 */
 }
