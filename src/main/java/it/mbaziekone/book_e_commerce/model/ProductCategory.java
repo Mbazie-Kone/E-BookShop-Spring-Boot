@@ -1,5 +1,6 @@
 package it.mbaziekone.book_e_commerce.model;
 
+import java.io.Serializable;
 import java.util.Objects;
 import java.util.Set;
 
@@ -18,7 +19,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "product_categories")
-public class ProductCategory {
+public class ProductCategory implements Serializable {
 	
 private static final long serialVersionUID = 1L;
 	
