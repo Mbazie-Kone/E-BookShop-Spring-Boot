@@ -14,12 +14,9 @@ public class AuthServiceImpl implements AuthService {
 	@Autowired
 	private UserRepository userRepository;
 	
-	private final PasswordEncoder passwordEncoder;
-	
-	public AuthServiceImpl(PasswordEncoder passwordEncoder) {
-		this.passwordEncoder = passwordEncoder;
-	}
-	
+	@Autowired
+	private PasswordEncoder passwordEncoder;
+		
 	@Override
 	public User signup(String username, String password) {
 		if(userRepository.findByUsername(username).isPresent()) {
