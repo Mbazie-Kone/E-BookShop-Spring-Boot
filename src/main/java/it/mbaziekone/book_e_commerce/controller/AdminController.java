@@ -19,7 +19,7 @@ public class AdminController {
 	@PostMapping("/insert")
 	public String createProduct() {
 		
-		return "index";
+		return "insert";
 	}
 	
 }
