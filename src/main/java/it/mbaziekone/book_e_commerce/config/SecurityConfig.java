@@ -26,9 +26,7 @@ public class SecurityConfig {
 	SecurityFilterChain defaultSecurityFilterChain(HttpSecurity http) throws Exception {
 		
 		http.authorizeHttpRequests(( requests ) -> requests
-				.requestMatchers("/authe").authenticated()
-				.requestMatchers("/demo").permitAll()
-				.requestMatchers("/denied").denyAll()
+				.anyRequest().authenticated()
 				).formLogin(Customizer.withDefaults())
 				.httpBasic(Customizer.withDefaults());
 
