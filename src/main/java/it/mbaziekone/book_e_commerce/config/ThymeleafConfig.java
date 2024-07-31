@@ -11,7 +11,7 @@ public class ThymeleafConfig {
 	
 	@Bean
 	SpringResourceTemplateResolver templateResolver() {
-		
+		SpringResourceTemplateResolver springResourceTemplateResolver = new SpringResourceTemplateResolver();
 	}
 	
 	@Bean	
