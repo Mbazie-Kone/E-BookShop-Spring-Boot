@@ -5,6 +5,6 @@ import org.thymeleaf.spring6.view.ThymeleafViewResolver;
 
 public class WebConfig implements WebMvcConfigurer {
 	
-	ThymeleafViewResolver resolver 
+	ThymeleafViewResolver resolver = new ThymeleafViewResolver()
 
 }
