@@ -26,7 +26,7 @@ public class ThymeleafConfig {
 	
 	@Bean
 	SpringTemplateEngine springTemplateEngine() {
-		
+		SpringTemplateEngine templateEngine = new SpringTemplateEngine();
 	}
 	
 	@Bean	
