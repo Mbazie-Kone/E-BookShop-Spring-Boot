@@ -21,4 +21,10 @@ public class AdminController {
 		return "insertForm";
 	}
 	
+	@GetMapping("/bootstrap")
+	public String getFooter() {
+		
+		return "footer";
+	}
+	
 }
