@@ -11,7 +11,8 @@ public class AdminController {
 	
 	@GetMapping
 	public String index() {
-		return "I'm Index";
+		
+		return "adminPortal";
 	}
 	
 	@GetMapping("/products")
