@@ -15,7 +15,7 @@ public class AdminController {
 		return "I'm Index";
 	}
 	
-	@GetMapping("/insert")
+	@GetMapping("/products")
 	public String findAllProducts() {
 		
 		return "insertForm";
