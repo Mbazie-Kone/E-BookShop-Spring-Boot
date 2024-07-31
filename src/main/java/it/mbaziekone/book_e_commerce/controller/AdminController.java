@@ -1,6 +1,7 @@
 package it.mbaziekone.book_e_commerce.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -16,7 +17,7 @@ public class AdminController {
 	}
 	
 	@GetMapping("/products")
-	public String findAllProducts() {
+	public String findAllProducts(Model model) {
 		
 		return "insertForm";
 	}
