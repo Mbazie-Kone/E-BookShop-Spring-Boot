@@ -33,9 +33,9 @@ public class ThymeleafConfig {
 	ThymeleafViewResolver thymeleafViewResolver() {
 		
 		ThymeleafViewResolver resolver = new ThymeleafViewResolver();
-		resolver.setTemplateEngine(TemplateEngine());
+		resolver.setTemplateEngine(springTemplateEngine());
 		resolver.setCharacterEncoding("UTF-8");
 		
 		return resolver;
-	}
+	}	
 }
