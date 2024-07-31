@@ -13,6 +13,7 @@ public class ThymeleafConfig {
 	SpringResourceTemplateResolver templateResolver() {
 		SpringResourceTemplateResolver templateResolver = new SpringResourceTemplateResolver();
 		templateResolver.setPrefix("classpath:/templates/");
+		templateResolver.setSuffix(".html");
 	}
 	
 	@Bean	
