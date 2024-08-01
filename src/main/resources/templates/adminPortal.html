@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" layout:decorate="~{layouts/main}">
-	<div th:replace="~{fragments/bootstrap :: bootstrap-component}"></div>
 	<head>
 		<title>adminPortal</title>
 	</head>
 	<body>
-		<div>
+		<div layout:fragment="content">
 			<h1>Administrator Page</h1>
 		</div>	
 	</body>
