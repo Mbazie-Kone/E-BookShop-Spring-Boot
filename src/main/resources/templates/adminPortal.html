@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" layout:decorate="~{layouts/main}">
+<html xmlns:th="http://www.thymeleaf.org">
 	<head>
 	</head>
 	<body>
-		<div layout:fragment="content">
-			<h1>Administrator Page</h1>
-		</div>	
+		<div th:replace="~{fragments/bootstrap :: block-bootstrap}"></div>
+		<h1>Administrator Page</h1>
 	</body>
 </html>
