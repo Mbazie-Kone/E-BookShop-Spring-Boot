@@ -35,7 +35,6 @@ public class ThymeleafConfig {
 	
 	@Bean	
 	ThymeleafViewResolver thymeleafViewResolver() {
-		
 		ThymeleafViewResolver resolver = new ThymeleafViewResolver();
 		resolver.setTemplateEngine(springTemplateEngine());
 		resolver.setCharacterEncoding("UTF-8");
