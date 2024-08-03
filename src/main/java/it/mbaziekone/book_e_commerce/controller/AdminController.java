@@ -14,10 +14,4 @@ public class AdminController {
 		return "adminPortal";
 	}
 	
-	@GetMapping("/products")
-	public String findAllProducts() {
-		
-		return "insertForm";
-	}
-	
 }
