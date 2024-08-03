@@ -16,7 +16,7 @@ public class SecurityConfig {
 		http
 			.authorizeHttpRequests((requests) ->
 			requests.requestMatchers("/public/**", "/login", "/error").permitAll()
-			.anyRequest().authenticated()).formLogin().loginPage("/adminPortal.html").defaultSuccessUrl("/", true)
+			.anyRequest().authenticated()).formLogin().loginPage("/loginAdmin.html").defaultSuccessUrl("/", true)
 			
 	}
 
