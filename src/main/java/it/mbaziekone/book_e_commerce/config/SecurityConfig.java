@@ -12,7 +12,7 @@ public class SecurityConfig {
 	SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 		http.authorizeHttpRequests(authorize -> authorize.anyRequest().authenticated())
 				.formLogin((login) -> login.loginPage("/loginAdmin").loginProcessingUrl("/perform_login")
-						.defaultSuccessUrl("/admin", true).failureUrl("/login?error=true"))
+						.defaultSuccessUrl("/admin", true).failureUrl("/loginAdmin?error=true"))
 				.logout(logout -> logout.logoutUrl("/perform_logout").deleteCookies("JSESSIONID")
 						.logoutSuccessUrl("/loginAdmin?logout=true"));
 
