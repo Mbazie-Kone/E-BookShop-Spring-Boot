@@ -10,19 +10,28 @@ import org.springframework.security.web.SecurityFilterChain;
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig {
-	
+
 	@Bean
 	SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        http
-            .authorizeHttpRequests((requests) ->
-            requests.requestMatchers("/public/**", "/login", "/error").permitAll()
-            .anyRequest().authenticated()).formLogin(login -> login.loginPage("/loginAdmin")
-            .loginProcessingUrl("/perform_login")
-            .defaultSuccessUrl("/", true)
-            .failureUrl("/login?error=true")).httpBasic(Customizer.withDefaults());
-			
-			return http.build();
+		http.authorizeHttpRequests((requests) -> requests.anyRequest().permitAll())
+				.formLogin(login -> login.loginPage("/loginAdmin").loginProcessingUrl("/perform_login")
+						.defaultSuccessUrl("/", true).failureUrl("/login?error=true"))
+				.httpBasic(Customizer.withDefaults());
+
+		return http.build();
 	}
+
+	/*
+	 * @Bean SecurityFilterChain securityFilterChain(HttpSecurity http) throws
+	 * Exception { http .authorizeHttpRequests((requests) ->
+	 * requests.requestMatchers("/public/**", "/login", "/error").permitAll()
+	 * .anyRequest().authenticated()).formLogin(login ->
+	 * login.loginPage("/loginAdmin") .loginProcessingUrl("/perform_login")
+	 * .defaultSuccessUrl("/", true)
+	 * .failureUrl("/login?error=true")).httpBasic(Customizer.withDefaults());
+	 * 
+	 * return http.build(); }
+	 */
 
 	/*
 	 * @Bean SecurityFilterChain defaultSecurityFilterChain(HttpSecurity http)
