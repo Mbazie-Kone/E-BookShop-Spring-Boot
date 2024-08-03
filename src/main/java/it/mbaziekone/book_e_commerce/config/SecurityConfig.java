@@ -13,7 +13,10 @@ public class SecurityConfig {
 	
 	@Bean
 	SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-		
+		http
+			.authorizeHttpRequests((requests) ->
+			requests.requestMatchers("/public/**", "/login/", "/error"))
+			
 	}
 
 	/*
