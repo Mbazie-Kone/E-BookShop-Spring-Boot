@@ -10,6 +10,11 @@ import org.springframework.security.web.SecurityFilterChain;
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig {
+	
+	@Bean
+	SecurityFilterChain securityFilterChain() {
+		
+	}
 
 	/*
 	 * @Bean SecurityFilterChain defaultSecurityFilterChain(HttpSecurity http)
@@ -24,14 +29,14 @@ public class SecurityConfig {
 			 * return http.build(); }
 			 */
 
-	@Bean
-	SecurityFilterChain defaultSecurityFilterChain(HttpSecurity http) throws Exception {
-		
-		http.authorizeHttpRequests(( requests ) -> requests
-				.anyRequest().authenticated()
-				).formLogin(Customizer.withDefaults())
-				.httpBasic(Customizer.withDefaults());
-
-		return http.build();
-	}
+	/*
+	 * @Bean SecurityFilterChain defaultSecurityFilterChain(HttpSecurity http)
+	 * throws Exception {
+	 * 
+	 * http.authorizeHttpRequests(( requests ) -> requests
+	 * .anyRequest().authenticated() ).formLogin(Customizer.withDefaults())
+	 * .httpBasic(Customizer.withDefaults());
+	 * 
+	 * return http.build(); }
+	 */
 }
