@@ -1,6 +1,5 @@
 package it.mbaziekone.book_e_commerce.config;
 
-import org.springframework.boot.autoconfigure.info.ProjectInfoProperties.Build;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.Customizer;
@@ -14,11 +13,13 @@ public class SecurityConfig {
 	
 	@Bean
 	SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-		http
-			.authorizeHttpRequests((requests) ->
-			requests.requestMatchers("/public/**", "/login", "/error").permitAll()
-			.anyRequest().authenticated()).formLogin().loginPage("/loginAdmin.html").defaultSuccessUrl("perform_login", true)
-			.failureUrl("/login?error=true")
+        http
+            .authorizeHttpRequests((requests) ->
+            requests.requestMatchers("/public/**", "/login", "/error").permitAll()
+            .anyRequest().authenticated()).formLogin(login -> login.loginPage("/loginAdmin.html")
+            .loginProcessingUrl("/perform_login")
+            .defaultSuccessUrl("/", true)
+            .failureUrl("/login?error=true")).httpBasic(Customizer.withDefaults());
 			
 			return http.build();
 	}
