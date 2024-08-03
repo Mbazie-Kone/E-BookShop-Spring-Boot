@@ -2,7 +2,6 @@ package it.mbaziekone.book_e_commerce.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.web.SecurityFilterChain;
@@ -15,23 +14,10 @@ public class SecurityConfig {
 	SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 		http.authorizeHttpRequests((requests) -> requests.anyRequest().permitAll())
 				.formLogin(login -> login.loginPage("/loginAdmin").loginProcessingUrl("/perform_login")
-						.defaultSuccessUrl("/", true).failureUrl("/login?error=true"))
-				.httpBasic(Customizer.withDefaults());
+						.defaultSuccessUrl("/", true).failureUrl("/login?error=true"));
 
 		return http.build();
 	}
-
-	/*
-	 * @Bean SecurityFilterChain securityFilterChain(HttpSecurity http) throws
-	 * Exception { http .authorizeHttpRequests((requests) ->
-	 * requests.requestMatchers("/public/**", "/login", "/error").permitAll()
-	 * .anyRequest().authenticated()).formLogin(login ->
-	 * login.loginPage("/loginAdmin") .loginProcessingUrl("/perform_login")
-	 * .defaultSuccessUrl("/", true)
-	 * .failureUrl("/login?error=true")).httpBasic(Customizer.withDefaults());
-	 * 
-	 * return http.build(); }
-	 */
 
 	/*
 	 * @Bean SecurityFilterChain defaultSecurityFilterChain(HttpSecurity http)
