@@ -1,5 +1,6 @@
 package it.mbaziekone.book_e_commerce.config;
 
+import org.springframework.boot.autoconfigure.info.ProjectInfoProperties.Build;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.Customizer;
@@ -19,7 +20,7 @@ public class SecurityConfig {
 			.anyRequest().authenticated()).formLogin().loginPage("/loginAdmin.html").defaultSuccessUrl("perform_login", true)
 			.failureUrl("/login?error=true")
 			
-			return http;
+			return http.build();
 	}
 
 	/*
