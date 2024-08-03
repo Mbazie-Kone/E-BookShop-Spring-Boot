@@ -12,8 +12,8 @@ public class SecurityConfig {
 
 	@Bean
 	SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-		http.authorizeHttpRequests((requests) -> requests.anyRequest().permitAll())
-				.formLogin(login -> login.loginPage("/loginAdmin").loginProcessingUrl("/perform_login")
+		http.authorizeHttpRequests((requests) -> requests.anyRequest().authenticated())
+				.formLogin((login) -> login.loginPage("/loginAdmin").loginProcessingUrl("/perform_login")
 						.defaultSuccessUrl("/", true).failureUrl("/login?error=true"));
 
 		return http.build();
