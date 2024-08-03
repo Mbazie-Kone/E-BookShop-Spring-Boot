@@ -10,7 +10,9 @@ public class SecurityConfig {
 
 	@Bean
 	SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-		http.authorizeHttpRequests(authorize -> authorize.anyRequest().authenticated())
+		http.authorizeHttpRequests(authorize -> authorize
+				.requestMatchers("/public/**", "/login", "/error").permitAll()
+				.anyRequest().authenticated())
 				.formLogin(login -> login.loginPage("/login").loginProcessingUrl("/perform_login")
 						.defaultSuccessUrl("/admin", true).failureUrl("/login?error=true"))
 				.logout(logout -> logout.logoutUrl("/perform_logout").deleteCookies("JSESSIONID")
