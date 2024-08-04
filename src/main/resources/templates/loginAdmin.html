@@ -12,10 +12,10 @@
 	                    <div class="card-header text-bg-primary text-center">Login to continue</div>
 	                    <div class="card-body">
 	                    	<div th:if="${param.error}">
-									<p style="color:red;">Invalid username or password.</p>
+								<p style="color:red;">Invalid username or password.</p>
 							</div>
 							<div th:if="${param.logout}">
-								    <p style="color:green;">You have been logged out.</p>
+								<p style="color:green;">You have been logged out.</p>
 							</div>
 	                        <form th:action="@{/loginAdmin}" method="post">
 	                            <div class="form-floating mb-3">
