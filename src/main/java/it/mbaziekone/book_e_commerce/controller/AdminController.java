@@ -19,4 +19,5 @@ public class AdminController {
 
 		return "loginAdmin";
 	}
+	
 }
