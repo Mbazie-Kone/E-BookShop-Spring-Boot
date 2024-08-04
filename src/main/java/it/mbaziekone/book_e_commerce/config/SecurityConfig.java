@@ -14,7 +14,5 @@ public class SecurityConfig {
 	SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 
 		return http.build();
-	}
-
-	
+	}	
 }
