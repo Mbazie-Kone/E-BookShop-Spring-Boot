@@ -11,7 +11,7 @@ public class AdminController {
 	@GetMapping("/loginAdmin")
 	public String dashboard() {
 
-		
+		return "adminPortal";
 	}
 	
 }
