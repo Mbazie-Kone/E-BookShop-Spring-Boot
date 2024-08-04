@@ -21,10 +21,6 @@ public class SecurityConfig {
 				.formLogin(form -> form
 						.loginPage("/loginAdmin")
 						.permitAll())
-				.logout(logout -> logout
-						.logoutUrl("perform_logout")
-						.deleteCookies("JSESSIONID")
-						.logoutSuccessUrl("/logout?logout=true"))
 				.build();
 	}	
 }
