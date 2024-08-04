@@ -18,6 +18,7 @@ public class SecurityConfig {
 						.loginPage("/loginAdmin")
 						.permitAll())
 				.authorizeHttpRequests(auth -> auth
+						.requestMatchers(null)
 						.anyRequest()
 						.authenticated())
 				.build();
