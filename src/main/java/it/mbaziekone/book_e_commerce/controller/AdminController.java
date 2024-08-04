@@ -9,9 +9,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class AdminController {
 	
 	@GetMapping("/loginAdmin")
-	public String dashboard() {
+	public String login() {
 
 		return "loginAdmin";
+	}
+	
+	@GetMapping
+	public String dashboard() {
+		
+		return "adminPortal";
 	}
 	
 }
