@@ -15,10 +15,13 @@ public class SecurityConfig {
 
 		return http
 				.authorizeHttpRequests(auth -> auth
-						//.requestMatchers("/").permitAll() give access to others pages
+						.requestMatchers("/public/**", "/login", "/error").permitAll()
 						.anyRequest().authenticated())
 				.formLogin(form -> form
 						.loginPage("/loginAdmin")
+						.loginProcessingUrl("/perform_login")
+						.defaultSuccessUrl("/",true)
+						.failureUrl("/login?error=true")
 						.permitAll())
 				.build();
 	}	
