@@ -17,7 +17,7 @@
 							<div th:if="${param.logout}">
 								<p style="color:green;">You have been logged out.</p>
 							</div>
-	                        <form th:action="@{/loginAdmin}" method="post">
+	                        <form th:action="@{/perform_login}" method="post">
 	                            <div class="form-floating mb-3">
 	                                <input type="text" class="form-control" id="username" name="username" placeholder="johndoe" autofocus required>
 	                                <label for="username">Username</label>
