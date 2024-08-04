@@ -15,6 +15,7 @@ public class SecurityConfig {
 
 		return http
 				.formLogin(form -> form.loginPage("/loginAdmin").permitAll())
+				.authorizeHttpRequests(auth -> auth.anyRequest().authenticated())
 				.build();
 	}	
 }
