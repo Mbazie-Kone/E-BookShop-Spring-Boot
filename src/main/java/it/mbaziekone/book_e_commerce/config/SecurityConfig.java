@@ -14,13 +14,20 @@ public class SecurityConfig {
 	SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 
 		return http
-				.formLogin(form -> form
-						.loginPage("/loginAdmin")
-						.permitAll())
 				.authorizeHttpRequests(auth -> auth
 						// .requestMatchers("/").permitAll() if we have to give access to other pages
 						.anyRequest()
 						.authenticated())
+				.formLogin(form -> form
+						.loginPage("/loginAdmin")
+						.loginProcessingUrl("/perform_login")
+						.defaultSuccessUrl("/",true)
+						.failureUrl("/login?error=true")
+						.permitAll())
+				.logout(logout -> logout
+						.logoutUrl("perform_logout")
+						.deleteCookies("JSESSIONID")
+						.logoutSuccessUrl("/logout?logout=true"))
 				.build();
 	}	
 }
