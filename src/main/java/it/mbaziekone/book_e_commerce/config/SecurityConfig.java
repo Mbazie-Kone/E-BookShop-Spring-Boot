@@ -14,7 +14,7 @@ public class SecurityConfig {
 	SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 
 		return http
-				.formLogin(form -> form)
+				.formLogin(form -> form.loginPage("loginAdmin"))
 				.build();
 	}	
 }
