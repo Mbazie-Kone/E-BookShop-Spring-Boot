@@ -12,7 +12,7 @@ import jakarta.servlet.http.HttpServletResponse;
 @Controller
 public class AdminController {
 	
-	@GetMapping("/")
+	@GetMapping("/dashboard")
 	public String dashboard() {
 		
 		return "adminPortal";
