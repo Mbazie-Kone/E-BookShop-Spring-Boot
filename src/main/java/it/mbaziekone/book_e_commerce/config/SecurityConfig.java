@@ -27,11 +27,11 @@ public class SecurityConfig {
 						.loginPage("/loginAdmin")
 						.loginProcessingUrl("/perform_login")
 						.defaultSuccessUrl("/dashboard",true)
-						.failureUrl("/login?error=true")
+						.failureUrl("/loginAdmin?error=true")
 						.permitAll())
 				.logout(logout -> logout
 						.logoutUrl("perform_logout")
-						.logoutSuccessUrl("/login?logout=true")
+						.logoutSuccessUrl("/loginAdmin?logout=true")
 						.deleteCookies("JSESSIONID")
 						.invalidateHttpSession(true)
 						.permitAll()
