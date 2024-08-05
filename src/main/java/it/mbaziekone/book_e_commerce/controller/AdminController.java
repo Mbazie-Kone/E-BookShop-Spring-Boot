@@ -2,6 +2,7 @@ package it.mbaziekone.book_e_commerce.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class AdminController {
@@ -17,5 +18,8 @@ public class AdminController {
 
 		return "loginAdmin";
 	}
+	
+	@PostMapping("/perform_logout")
+	public String logout
 	
 }
