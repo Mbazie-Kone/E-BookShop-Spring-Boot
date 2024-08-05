@@ -30,7 +30,7 @@ public class AdminController {
 			new SecurityContextLogoutHandler().logout(request, response, authentication);	
 		}
 		
-		return "redirect:/login?logout=true";
+		return "redirect:/loginAdmin?logout=true";
 	}
 	
 }
