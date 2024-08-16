@@ -7,4 +7,6 @@ import jakarta.persistence.Entity;
 @Entity
 public class Catalog implements Serializable {
 
+	private static final long serialVersionUID = 1L;
+
 }
