@@ -36,15 +36,16 @@
 	                            </thead>
 	                            <tbody>
 	                                <tr th:each="product : ${listProducts}">
-	                                    <td th:text="${product.id}"></td>
-	                                    <td th:text="${product.active}"></td>
-	                                    <td th:text="${product.dateCreated}"></td>
+	                                    <td th:number="${product.id}"></td>
+	                                    <td th:number="${product.active}"></td>
+	                                    <td th:date="${product.dateCreated}"></td>
 	                                    <td th:text="${product.description}"></td>
 	                                    <td th:text="${product.imageUrl}"></td>
-	                                    <td th:text="${product.name}"></td>
-	                                    <td th:text="${product.id}"></td>
-	                                    <td th:text="${catalog.name}"></td>
-	                                    <td th:text="${catalog.description}"></td>
+	                                    <td th:date="${product.lastUpdate}"></td>
+	                                    <td th:text="${product.sku}"></td>
+	                                    <td th:number="${product.unitPrice}"></td>
+	                                    <td th:text="${product.unitsInStock}"></td>
+	                                    <td th:number="${product.category}"></td>
 	                                    <td>
 	                                        <a th:href="@{/admin/catalogs/showFormForUpdate/{id}(id=${catalog.id})}" class="btn btn-warning btn-sm">Update</a>
 	                                        <a th:href="@{/admin/catalogs/deleteCatalog/{id}(id=${catalog.id})}" class="btn btn-danger btn-sm">Delete</a>
