@@ -33,6 +33,7 @@ public class ProductController {
 	
 	
 	public String saveProduct(@ModelAttribute("product") Product product) {
-		
+		productService.saveProduct(product);
+		return "redirect:/admin/products";
 	}
 }
