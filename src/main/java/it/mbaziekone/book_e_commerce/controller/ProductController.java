@@ -6,6 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import it.mbaziekone.book_e_commerce.model.Product;
 import it.mbaziekone.book_e_commerce.service.ProductService;
 
 @Controller
@@ -23,6 +24,8 @@ public class ProductController {
 	
 	@GetMapping("/showNewCatalogForm")
 	public String showProductForm(Model model) {
-		
+		Product product = new Product();
+		model.addAttribute("product", product);
+		return "admin/new_product";
 	}
 }
