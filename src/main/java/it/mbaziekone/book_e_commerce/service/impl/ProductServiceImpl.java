@@ -25,9 +25,10 @@ public class ProductServiceImpl implements ProductService {
 	}
 	
 	public void deleteProduct(Long id) {
-		Product product = new Product();
-		Optional<Product> optional = productRepository.findById(id)
-		productRepository
+		Optional<Product> optional = productRepository.findById(id);
+		if(optional != null) {
+			productRepository.deleteById(id);
+		}
 	}
 
 }
