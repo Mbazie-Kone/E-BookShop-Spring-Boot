@@ -1,6 +1,7 @@
 package it.mbaziekone.book_e_commerce.service.impl;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,6 +22,12 @@ public class ProductServiceImpl implements ProductService {
 	
 	public void saveProduct(Product product) {
 		productRepository.save(product);
+	}
+	
+	public void deleteProduct(Long id) {
+		Product product = new Product();
+		Optional<Product> optional = productRepository.findById(id)
+		productRepository
 	}
 
 }
