@@ -24,18 +24,12 @@ public class ProductServiceImpl implements ProductService {
 		productRepository.save(product);
 	}
 	
-	public void updateProduct(Product product) {
-		Optional<Product> optional = productRepository.findById(product.getId());
-		if(optional != null) {
-			productRepository.save(product);
-		}
+	public Product getProductById(Long id) {
+		Optional<Product> optional = productRepository.findById(id);
+		return optional.orElseThrow(() -> new RuntimeException("The product not exist :: " + id));
 	}
 	
 	public void deleteProduct(Long id) {
-		Optional<Product> optional = productRepository.findById(id);
-		if(optional != null) {
-			productRepository.deleteById(id);
-		}
+		productRepository.deleteById(id);	
 	}
-
 }
