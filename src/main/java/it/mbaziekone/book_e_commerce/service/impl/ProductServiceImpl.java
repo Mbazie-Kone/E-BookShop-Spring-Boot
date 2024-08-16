@@ -25,7 +25,10 @@ public class ProductServiceImpl implements ProductService {
 	}
 	
 	public void updateProduct(Product product) {
-		
+		Optional<Product> optional = productRepository.findById(product.getId());
+		if(optional != null) {
+			productRepository.save(product);
+		}
 	}
 	
 	public void deleteProduct(Long id) {
