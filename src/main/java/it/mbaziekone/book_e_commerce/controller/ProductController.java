@@ -15,7 +15,8 @@ public class ProductController {
 	private ProductService productService;
 	
 	public String viewProductsPage(Model model) {
-		
+		model.addAttribute("listProducts", productService.getAllCatalogs());
+		return "admin/products";
 	}
 
 }
