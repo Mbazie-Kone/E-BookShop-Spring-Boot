@@ -13,7 +13,7 @@ import it.mbaziekone.book_e_commerce.model.Product;
 import it.mbaziekone.book_e_commerce.service.ProductService;
 
 @Controller
-@RequestMapping("/admin/products")
+@RequestMapping("/adminPortal")
 public class ProductController {
 	
 	@Autowired
@@ -23,7 +23,7 @@ public class ProductController {
 	public String viewProductsPage(Model model) {
 		model.addAttribute("listProducts", productService.getAllCatalogs());
 		
-		return "admin/products"; //This is the view that contains the dashboard layout
+		return "adminPortal"; //This is the view that contains the dashboard layout
 	}
 	
 	@GetMapping("/showNewCatalogForm")
@@ -31,14 +31,14 @@ public class ProductController {
 		Product product = new Product();
 		model.addAttribute("product", product);
 		
-		return "admin/newProduct";
+		return "adminPortal/newProduct";
 	}
 	
 	@PostMapping("/saveProduct")
 	public String saveProduct(@ModelAttribute("product") Product product) {
 		productService.saveProduct(product);
 		
-		return "redirect:/admin/products";
+		return "redirect:/adminPortal";
 	}
 	
 	@GetMapping("/showFormForUpdate/{id}")
@@ -46,13 +46,13 @@ public class ProductController {
 		Product product = productService.getProductById(id);
 		model.addAttribute("product", product);
 		
-		return "admin/updateProduct";	
+		return "adminPortal/updateProduct";	
 	}
 	
 	@GetMapping("/deleteProduct/{id}")
 	public String deleteProduct(@PathVariable(value = "id") long id) {
 		productService.deleteProduct(id);
 		
-		return "redirect:/admin/products";
+		return "redirect:/adminPortal";
 	}
 }
