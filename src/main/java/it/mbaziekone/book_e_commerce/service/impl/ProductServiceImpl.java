@@ -26,7 +26,7 @@ public class ProductServiceImpl implements ProductService {
 	
 	public Product getProductById(Long id) {
 		Optional<Product> optional = productRepository.findById(id);
-		return optional.orElseThrow(() -> new RuntimeException("The product not exist :: " + id));
+		return optional.orElseThrow(() -> new RuntimeException("Product not found for ID :: " + id));
 	}
 	
 	public void deleteProduct(Long id) {
