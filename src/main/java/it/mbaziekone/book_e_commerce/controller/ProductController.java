@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -21,6 +22,7 @@ public class ProductController {
 	@GetMapping
 	public String viewProductsPage(Model model) {
 		model.addAttribute("listProducts", productService.getAllCatalogs());
+		
 		return "admin/products"; //This is the view that contains the dashboard layout
 	}
 	
@@ -28,12 +30,22 @@ public class ProductController {
 	public String showProductForm(Model model) {
 		Product product = new Product();
 		model.addAttribute("product", product);
-		return "admin/new_product";
+		
+		return "admin/newProduct";
 	}
 	
 	@PostMapping("/saveProduct")
 	public String saveProduct(@ModelAttribute("product") Product product) {
 		productService.saveProduct(product);
+		
 		return "redirect:/admin/products";
+	}
+	
+	@GetMapping("/showFormForUpdate/{id}")
+	public String showFormForUpdate(@PathVariable(value = "id") long id, Model model) {
+		Product product = productService.getProductById(id);
+		model.addAttribute("product", product);
+		
+		return "admin/updateProduct";	
 	}
 }
