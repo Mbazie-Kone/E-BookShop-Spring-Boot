@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<html xmlns:th="https://www.thymeleaf.org" lang="en">
 	<head>
 		<title>Dash board</title>
 	</head>
@@ -7,10 +7,7 @@
 		<!-- header -->
 		<div th:replace="~{fragments/adminHeader :: block-adminHeader}"></div>
 		<!-- header -->
-		<!-- side bar -->
-		<div th:replace="~{fragments/adminLeftSideNav :: block-adminLeftSideNav}"></div>
-		<!-- side bar -->
-		<!-- body -->
+		<!-- main -->
 		<div class="container">
 			<div class="row">
 				<div class="col">
@@ -18,7 +15,7 @@
 				</div>
 			</div>
 		</div>
-		<!-- body -->
+		<!-- main -->
 		<!-- footer -->
 		<div th:replace="~{fragments/adminFooter :: block-adminFooter}"></div>
 		<!-- footer -->
