@@ -44,7 +44,7 @@
 	                                    <td th:date="${product.lastUpdate}"></td>
 	                                    <td th:text="${product.sku}"></td>
 	                                    <td th:number="${product.unitPrice}"></td>
-	                                    <td th:text="${product.unitsInStock}"></td>
+	                                    <td th:number="${product.unitsInStock}"></td>
 	                                    <td th:number="${product.category}"></td>
 	                                    <td>
 	                                        <a th:href="@{/admin/catalogs/showFormForUpdate/{id}(id=${catalog.id})}" class="btn btn-warning btn-sm">Update</a>
