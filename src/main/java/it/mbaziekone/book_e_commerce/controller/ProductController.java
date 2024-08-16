@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import it.mbaziekone.book_e_commerce.model.Product;
@@ -30,8 +31,7 @@ public class ProductController {
 		return "admin/new_product";
 	}
 	
-	
-	
+	@PostMapping("/saveProduct")
 	public String saveProduct(@ModelAttribute("product") Product product) {
 		productService.saveProduct(product);
 		return "redirect:/admin/products";
