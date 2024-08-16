@@ -13,7 +13,7 @@ import it.mbaziekone.book_e_commerce.model.Product;
 import it.mbaziekone.book_e_commerce.service.ProductService;
 
 @Controller
-@RequestMapping("/adminPortal")
+@RequestMapping("/dashboard")
 public class ProductController {
 	
 	@Autowired

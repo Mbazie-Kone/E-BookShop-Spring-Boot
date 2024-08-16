@@ -12,12 +12,6 @@ import jakarta.servlet.http.HttpServletResponse;
 @Controller
 public class AdminController {
 	
-	@GetMapping("/dashboard")
-	public String dashboard() {
-		
-		return "adminPortal";
-	}
-	
 	@GetMapping("/loginAdmin")
 	public String login() {
 
