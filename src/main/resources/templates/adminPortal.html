@@ -8,13 +8,41 @@
 		<div th:replace="~{fragments/adminHeader :: block-adminHeader}"></div>
 		<!-- header -->
 		<!-- main -->
-		<div class="container">
-			<div class="row">
-				<div class="col">
-				
-				</div>
-			</div>
-		</div>
+		<main class="container mt-5">
+	        <div class="row">
+	            <section class="col-md-9 mx-auto">
+	                <div class="card">
+	                    <div class="card-header">
+	                        <h5 class="card-title">Products List</h5>
+	                        <a href="/admin/catalogs/showNewCatalogForm" class="btn btn-success">Add new product</a>
+	                    </div>
+	                    <div class="card-body">
+	                        <table class="table table-striped">
+	                            <thead>
+	                                <tr>
+	                                    <th>ID</th>
+	                                    <th>Nome Catalogo</th>
+	                                    <th>Descrizione</th>
+	                                    <th>Azioni</th>
+	                                </tr>
+	                            </thead>
+	                            <tbody>
+	                                <tr th:each="catalog : ${listCatalogs}">
+	                                    <td th:text="${catalog.id}"></td>
+	                                    <td th:text="${catalog.name}"></td>
+	                                    <td th:text="${catalog.description}"></td>
+	                                    <td>
+	                                        <a th:href="@{/admin/catalogs/showFormForUpdate/{id}(id=${catalog.id})}" class="btn btn-warning btn-sm">Update</a>
+	                                        <a th:href="@{/admin/catalogs/deleteCatalog/{id}(id=${catalog.id})}" class="btn btn-danger btn-sm">Delete</a>
+	                                    </td>
+	                                </tr>
+	                            </tbody>
+	                        </table>
+	                    </div>
+	                </div>
+	            </section>
+	        </div>
+    	</main>
 		<!-- main -->
 		<!-- footer -->
 		<div th:replace="~{fragments/adminFooter :: block-adminFooter}"></div>
