@@ -16,7 +16,7 @@ public class ProductController {
 	
 	public String viewProductsPage(Model model) {
 		model.addAttribute("listProducts", productService.getAllCatalogs());
-		return "admin/products";
+		return "admin/products"; //This is the view that contains the dashboard layout
 	}
 
 }
