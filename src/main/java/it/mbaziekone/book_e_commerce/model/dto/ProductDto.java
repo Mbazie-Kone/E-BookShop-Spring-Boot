@@ -18,4 +18,9 @@ public class ProductDto {
 	private BigDecimal unitPrice;
 	
 	private MultipartFile imageFilename;
+	
+	@NotEmpty(message = "The active data is required")
+	private boolean active;
+	
+	
 }
