@@ -4,11 +4,13 @@ import java.math.BigDecimal;
 
 import org.springframework.web.multipart.MultipartFile;
 
+import jakarta.validation.constraints.NotEmpty;
+
 public class ProductDto {
 	
 	private String sku;
 	
-	
+	@NotEmpty()
 	private String name;
 	
 	private String description;
