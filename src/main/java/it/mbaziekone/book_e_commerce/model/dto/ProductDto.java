@@ -16,6 +16,7 @@ public class ProductDto {
 	
 	private String description;
 	
+	@NotEmpty(message = "The unit price is required")
 	private BigDecimal unitPrice;
 	
 	private MultipartFile imageFilename;
@@ -26,6 +27,8 @@ public class ProductDto {
 	private int unitsInStock;
 	
 	private Date dateCreate;
+	
+	private Date lastUpdate;
 	
 	
 }
