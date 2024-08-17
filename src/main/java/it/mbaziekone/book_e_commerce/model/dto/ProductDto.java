@@ -10,7 +10,7 @@ public class ProductDto {
 	
 	private String sku;
 	
-	@NotEmpty()
+	@NotEmpty(message = "The name is required")
 	private String name;
 	
 	private String description;
