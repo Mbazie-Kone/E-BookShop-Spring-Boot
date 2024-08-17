@@ -24,7 +24,7 @@
 	                                    <th>Active</th>
 	                                    <th>Date Created</th>
 	                                    <th>Description</th>
-	                                    <th>Image URL</th>
+	                                    <th>Image</th>
 	                                    <th>Last Update</th>
 	                                    <th>Name</th>
 	                                    <th>SKU</th>
@@ -40,7 +40,9 @@
 	                                    <td th:text="${product.active}"></td>
 	                                    <td th:text="${product.dateCreated}"></td>
 	                                    <td th:text="${product.description}"></td>
-	                                    <td th:text="${product.imageUrl}"></td>
+	                                    <td>
+	                                    	<img th:src="@{'/images/' + ${product.imageUrl}}" alt="..." width="100">
+	                                    </td>
 	                                    <td th:text="${product.lastUpdate}"></td>
 	                                    <td th:text="${product.name}"></td>
 	                                    <td th:text="${product.sku}"></td>
