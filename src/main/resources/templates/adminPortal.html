@@ -45,8 +45,8 @@
 	                                    <td th:text="${product.name}"></td>
 	                                    <td th:text="${product.sku}"></td>
 	                                    <td th:text="${product.unitPrice}"></td>
-	                                    <td th:number="${product.unitsInStock}"></td>
-	                                    <td th:number="${product.category}"></td>
+	                                    <td th:text="${product.unitsInStock}"></td>
+	                                    <td th:text="${product.category}"></td>
 	                                    <td>
 	                                        <a th:href="@{adminPortal/updateProduct/showFormForUpdate/{id}(id=${product.id})}" class="btn btn-warning btn-sm">Update</a>
 	                                        <a th:href="@{/adminPortal/deleteProduct/{id}(id=${product.id})}" class="btn btn-danger btn-sm">Delete</a>
