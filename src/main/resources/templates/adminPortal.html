@@ -38,13 +38,13 @@
 	                                <tr th:each="product : ${listProducts}">
 	                                    <td th:text="${product.id}"></td>
 	                                    <td th:text="${product.active}"></td>
-	                                    <td th:date="${product.dateCreated}"></td>
+	                                    <td th:text="${product.dateCreated}"></td>
 	                                    <td th:text="${product.description}"></td>
 	                                    <td th:text="${product.imageUrl}"></td>
 	                                    <td th:date="${product.lastUpdate}"></td>
 	                                    <td th:text="${product.name}"></td>
 	                                    <td th:text="${product.sku}"></td>
-	                                    <td th:number="${product.unitPrice}"></td>
+	                                    <td th:text="${product.unitPrice}"></td>
 	                                    <td th:number="${product.unitsInStock}"></td>
 	                                    <td th:number="${product.category}"></td>
 	                                    <td>
