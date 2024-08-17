@@ -24,6 +24,7 @@ public class ProductDto {
 	@NotEmpty(message = "The active data is required")
 	private boolean active;
 	
+	@NotEmpty(message = "The units in stock data is required")
 	private int unitsInStock;
 	
 	private Date dateCreate;
