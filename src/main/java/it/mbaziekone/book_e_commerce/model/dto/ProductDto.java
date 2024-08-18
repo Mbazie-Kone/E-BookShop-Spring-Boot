@@ -19,7 +19,7 @@ public class ProductDto {
 	@NotEmpty(message = "The unit price is required")
 	private BigDecimal unitPrice;
 	
-	private MultipartFile imageFilename;
+	private MultipartFile imageFileName;
 	
 	@NotEmpty(message = "The active data is required")
 	private boolean active;
@@ -30,6 +30,77 @@ public class ProductDto {
 	private Date dateCreate;
 	
 	private Date lastUpdate;
-	
+
+	public String getSku() {
+		return sku;
+	}
+
+	public void setSku(String sku) {
+		this.sku = sku;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public BigDecimal getUnitPrice() {
+		return unitPrice;
+	}
+
+	public void setUnitPrice(BigDecimal unitPrice) {
+		this.unitPrice = unitPrice;
+	}
+
+	public MultipartFile getImageFileName() {
+		return imageFileName;
+	}
+
+	public void setImageFileName(MultipartFile imageFileName) {
+		this.imageFileName = imageFileName;
+	}
+
+	public boolean isActive() {
+		return active;
+	}
+
+	public void setActive(boolean active) {
+		this.active = active;
+	}
+
+	public int getUnitsInStock() {
+		return unitsInStock;
+	}
+
+	public void setUnitsInStock(int unitsInStock) {
+		this.unitsInStock = unitsInStock;
+	}
+
+	public Date getDateCreate() {
+		return dateCreate;
+	}
+
+	public void setDateCreate(Date dateCreate) {
+		this.dateCreate = dateCreate;
+	}
+
+	public Date getLastUpdate() {
+		return lastUpdate;
+	}
+
+	public void setLastUpdate(Date lastUpdate) {
+		this.lastUpdate = lastUpdate;
+	}
 	
 }
