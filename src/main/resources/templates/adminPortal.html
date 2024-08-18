@@ -50,9 +50,11 @@
 	                                    <td th:text="${product.unitPrice}"></td>
 	                                    <td th:text="${product.unitsInStock}"></td>
 	                                    <td>
-	                                        <a th:href="@{adminPortal/updateProduct/showFormForUpdate/{id}(id=${product.id})}" class="btn btn-warning btn-sm">Update</a>
-	                                        <a th:href="@{/adminPortal/deleteProduct/{id}(id=${product.id})}" 
-	                                        class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')">Delete</a>
+	                                    	<div class="btn-group" role="group">
+		                                        <a th:href="@{adminPortal/updateProduct/showFormForUpdate/{id}(id=${product.id})}" class="btn btn-warning btn-sm">Update</a>
+		                                        <a th:href="@{/adminPortal/deleteProduct/{id}(id=${product.id})}" 
+		                                        class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')">Delete</a>
+	                                        </div>
 	                                    </td>
 	                                 </tr>
 	                            </tbody>
