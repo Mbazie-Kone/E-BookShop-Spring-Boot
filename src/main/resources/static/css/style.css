@@ -66,7 +66,10 @@ aside h4 {
     background-color: #f8f9fa;
 }
 
-.table tbody td {
+.table tbody td .btn-group {
+	display: flex;
+	justify-content: center;
+	gap: 0.5rem;
     text-align: center;
     vertical-align: middle;
 }
