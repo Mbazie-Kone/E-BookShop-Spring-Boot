@@ -56,10 +56,15 @@ aside h4 {
 }
 
 /* Tables */
+.table tbody td {
+	text-align: center;
+    vertical-align: middle
+}
 .table thead th {
     background-color: #007bff;
     color: white;
     text-align: center;
+    vertical-align: middle
 }
 
 .table tbody tr:hover {
