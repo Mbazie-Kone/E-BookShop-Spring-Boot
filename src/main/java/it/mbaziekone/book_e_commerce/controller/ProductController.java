@@ -31,7 +31,7 @@ public class ProductController {
 		Product product = new Product();
 		model.addAttribute("product", product);
 		
-		return "adminPortal/newProduct";
+		return "addProduct";
 	}
 	
 	@PostMapping("/saveProduct")
