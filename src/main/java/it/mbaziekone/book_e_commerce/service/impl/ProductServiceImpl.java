@@ -13,7 +13,7 @@ import it.mbaziekone.book_e_commerce.service.ProductService;
 @Service
 public class ProductServiceImpl implements ProductService {
 	
-	private static final String UPLOAD_DIR = "";
+	private static final String UPLOAD_DIR = "front-end/src/assets/images/";
 	
 	@Autowired
 	private ProductRepository productRepository;
