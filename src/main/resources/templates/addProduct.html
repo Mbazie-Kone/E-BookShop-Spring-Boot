@@ -21,9 +21,9 @@
 	        			</div>
 	        		</div>
 	        		<div class="card-body">
-	        			<form th:action="@{/saveProduct}" th:object="${productDto}" method="post">
+	        			<form th:action="@{/saveProduct}" th:object="${productDto}" method="post" enctype="multipart/form-data)">
 	        				<div class="form-group mb-3">
-	        					<label for="image">Image</label>
+	        					<label for="image">Product Image</label>
 	        					<input type="file" class="form-control" id="image" th:field="*{imagePath}">
 	        				</div>
 	        			</form>
