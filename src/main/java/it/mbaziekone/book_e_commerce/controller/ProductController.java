@@ -47,10 +47,10 @@ public class ProductController {
 			e.printStackTrace();
 			model.addAttribute("message", "Error!");
 			
-			return "redirect:/dashboard";
+			return "addProduct";
 		}
 		
-		return "adminPortal";
+		return "redirect:/dashboard";
 	}
 	
 	@GetMapping("/showFormForUpdate/{id}")
