@@ -52,7 +52,7 @@ public class ProductController {
 		
 		String originalFileName = image.getOriginalFilename();
 		String filePath = UPLOAD_DIR + originalFileName;
-		Path path = Paths
+		Path path = Paths.get(filePath);
 		
 		productService.saveProduct(product);
 		
