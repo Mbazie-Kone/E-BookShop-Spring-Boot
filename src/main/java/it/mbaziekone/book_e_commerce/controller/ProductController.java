@@ -45,6 +45,7 @@ public class ProductController {
 			model.addAttribute("message", "Product added");
 		} catch (IOException e) {
 			e.printStackTrace();
+			model.addAttribute("product", product);
 			model.addAttribute("message", "Error!");
 			
 			return "addProduct";
@@ -58,7 +59,7 @@ public class ProductController {
 		Product product = productService.getProductById(id);
 		model.addAttribute("product", product);
 		
-		return "adminPortal/updateProduct";	
+		return "updateProduct";	
 	}
 	
 	@GetMapping("/deleteProduct/{id}")
