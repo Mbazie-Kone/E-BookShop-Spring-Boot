@@ -68,6 +68,7 @@ public class ProductController {
 		product.setUnitsInStock(productDto.getUnitsInStock());
 		product.setDateCreated(productDto.getDateCreate());
 		product.setLastUpdate(productDto.getLastUpdate());
+		product.setCategory(productDto.getCategory());
 		
 		productService.saveProduct(product);
 		

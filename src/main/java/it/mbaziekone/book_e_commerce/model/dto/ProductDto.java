@@ -3,6 +3,7 @@ package it.mbaziekone.book_e_commerce.model.dto;
 import java.math.BigDecimal;
 import java.util.Date;
 
+import it.mbaziekone.book_e_commerce.model.ProductCategory;
 import jakarta.validation.constraints.NotEmpty;
 
 public class ProductDto {
@@ -28,7 +29,7 @@ public class ProductDto {
 	private Date lastUpdate;
 	
 	@NotEmpty(message = "The product category is required")
-	private int category;
+	private ProductCategory category;
 
 	public String getSku() {
 		return sku;
@@ -94,11 +95,11 @@ public class ProductDto {
 		this.lastUpdate = lastUpdate;
 	}
 	
-	public int getCategory() {
+	public ProductCategory getCategory() {
 		return category;
 	}
 
-	public void setCategory(int category) {
+	public void setCategory(ProductCategory category) {
 		this.category = category;
 	}
 }
