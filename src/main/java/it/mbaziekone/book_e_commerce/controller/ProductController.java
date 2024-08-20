@@ -46,6 +46,8 @@ public class ProductController {
 		} catch (IOException e) {
 			e.printStackTrace();
 			model.addAttribute("message", "Error!");
+			
+			return "redirect:/dashboard";
 		}
 		
 		return "adminPortal";
