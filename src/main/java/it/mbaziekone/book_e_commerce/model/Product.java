@@ -38,7 +38,7 @@ private static final long serialVersionUID = 1L;
 	private BigDecimal unitPrice;
 	
 	@Column(name = "image_url")
-	private String imageUrl;
+	private String imagePath;
 	
 	private boolean active;
 	
@@ -98,11 +98,11 @@ private static final long serialVersionUID = 1L;
 	}
 
 	public String getImageUrl() {
-		return imageUrl;
+		return imagePath;
 	}
 
-	public void setImageUrl(String imageUrl) {
-		this.imageUrl = imageUrl;
+	public void setImageUrl(String imagePath) {
+		this.imagePath = imagePath;
 	}
 
 	public boolean isActive() {
@@ -143,35 +143,6 @@ private static final long serialVersionUID = 1L;
 
 	public void setCategory(ProductCategory category) {
 		this.category = category;
-	}
-
-	@Override
-	public int hashCode() {
-		return Objects.hash(active, dateCreated, description, id, imageUrl, lastUpdate, name, sku, unitPrice,
-				unitsInStock);
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Product other = (Product) obj;
-		return active == other.active && Objects.equals(dateCreated, other.dateCreated)
-				&& Objects.equals(description, other.description) && Objects.equals(id, other.id)
-				&& Objects.equals(imageUrl, other.imageUrl) && Objects.equals(lastUpdate, other.lastUpdate)
-				&& Objects.equals(name, other.name) && Objects.equals(sku, other.sku)
-				&& Objects.equals(unitPrice, other.unitPrice) && unitsInStock == other.unitsInStock;
-	}
-
-	@Override
-	public String toString() {
-		return "Product [id=" + id + ", sku=" + sku + ", name=" + name + ", description=" + description + ", unitPrice="
-				+ unitPrice + ", imageUrl=" + imageUrl + ", active=" + active + ", unitsInStock=" + unitsInStock
-				+ ", dateCreated=" + dateCreated + ", lastUpdate=" + lastUpdate + ", category=" + category + "]";
 	}
 
 }
