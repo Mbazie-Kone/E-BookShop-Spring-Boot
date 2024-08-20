@@ -66,7 +66,8 @@ public class ProductController {
 		product.setUnitPrice(productDto.getUnitPrice());
 		product.setActive(productDto.isActive());
 		product.setUnitsInStock(productDto.getUnitsInStock());
-		product.setUnitPrice(productDto.getUnitPrice());
+		product.setDateCreated(productDto.getDateCreate());
+		product.setLastUpdate(productDto.getLastUpdate());
 		
 		productService.saveProduct(product);
 		
