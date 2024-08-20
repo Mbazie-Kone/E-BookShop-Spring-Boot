@@ -31,7 +31,7 @@ public class ProductDto {
 	private Date lastUpdate;
 	
 	@NotEmpty(message = "The product category is required")
-	private ProductCategory category;
+	private int category;
 
 	public String getSku() {
 		return sku;
@@ -105,11 +105,11 @@ public class ProductDto {
 		this.lastUpdate = lastUpdate;
 	}
 	
-	public ProductCategory getCategory() {
+	public int getCategory() {
 		return category;
 	}
 
-	public void setCategory(ProductCategory category) {
+	public void setCategory(int category) {
 		this.category = category;
 	}
 }
