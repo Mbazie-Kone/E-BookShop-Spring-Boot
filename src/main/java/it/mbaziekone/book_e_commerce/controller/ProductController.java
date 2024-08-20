@@ -1,5 +1,7 @@
 package it.mbaziekone.book_e_commerce.controller;
 
+import java.io.File;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -39,6 +41,7 @@ public class ProductController {
 	
 	@PostMapping("/saveProduct")
 	public String saveProduct(@ModelAttribute("product") Product product) {
+		File uploadDir = new File(UPLOAD_DIR); 
 		productService.saveProduct(product);
 		
 		return "redirect:/adminPortal";
