@@ -45,7 +45,7 @@ public class ProductController {
 	}
 	
 	@PostMapping("/saveProduct")
-	public String saveProduct(@ModelAttribute("product") Product product, MultipartFile image) throws IOException {
+	public String saveProduct(@ModelAttribute("productDto") ProductDto productDto, MultipartFile image) throws IOException {
 		File uploadDir = new File(UPLOAD_DIR);
 		if(!uploadDir.exists()) {
 			uploadDir.mkdirs();
@@ -55,6 +55,8 @@ public class ProductController {
 		String filePath = UPLOAD_DIR + originalFileName;
 		Path path = Paths.get(filePath);
 		Files.write(path, image.getBytes());
+		
+		product.setName(prod);
 		
 		productService.saveProduct(product);
 		
