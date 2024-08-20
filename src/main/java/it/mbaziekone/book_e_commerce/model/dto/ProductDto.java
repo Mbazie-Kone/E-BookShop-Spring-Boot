@@ -3,6 +3,8 @@ package it.mbaziekone.book_e_commerce.model.dto;
 import java.math.BigDecimal;
 import java.util.Date;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import it.mbaziekone.book_e_commerce.model.ProductCategory;
 import jakarta.validation.constraints.NotEmpty;
 
@@ -24,8 +26,10 @@ public class ProductDto {
 	@NotEmpty(message = "The units in stock data is required")
 	private int unitsInStock;
 	
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date dateCreate;
 	
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date lastUpdate;
 	
 	@NotEmpty(message = "The product category is required")

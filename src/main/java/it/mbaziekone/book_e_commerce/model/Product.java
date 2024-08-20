@@ -6,6 +6,8 @@ import java.util.Date;
 
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
+import org.springframework.format.annotation.DateTimeFormat;
+
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -46,10 +48,12 @@ private static final long serialVersionUID = 1L;
 	
 	@Column(name = "date_created")
 	@CreationTimestamp
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date dateCreated;
 	
 	@Column(name = "last_update")
 	@UpdateTimestamp
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date lastUpdate;
 	
 	@ManyToOne
