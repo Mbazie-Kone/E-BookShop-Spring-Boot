@@ -21,10 +21,10 @@
 	        			</div>
 	        		</div>
 	        		<div class="card-body">
-	        			<form th:action="@{/saveProduct}" th:object="${product}" method="post">
+	        			<form th:action="@{/saveProduct}" th:object="${productDto}" method="post">
 	        				<div class="form-group mb-3">
 	        					<label for="image">Image</label>
-	        					<input type="image" class="form-control" id="image" th:field="*{imageUrl}">
+	        					<input type="image" class="form-control" id="image" th:field="*{imageFileName}">
 	        				</div>
 	        			</form>
 	        		</div>

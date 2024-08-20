@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import it.mbaziekone.book_e_commerce.model.Product;
+import it.mbaziekone.book_e_commerce.model.dto.ProductDto;
 import it.mbaziekone.book_e_commerce.service.ProductService;
 
 @Controller
@@ -28,8 +29,8 @@ public class ProductController {
 	
 	@GetMapping("/showNewCatalogForm")
 	public String showProductForm(Model model) {
-		Product product = new Product();
-		model.addAttribute("product", product);
+		ProductDto productDto = new ProductDto();
+		model.addAttribute("productDto", productDto);
 		
 		return "addProduct";
 	}
