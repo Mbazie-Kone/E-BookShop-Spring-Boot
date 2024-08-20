@@ -41,7 +41,10 @@ public class ProductController {
 	
 	@PostMapping("/saveProduct")
 	public String saveProduct(@ModelAttribute("product") Product product) {
-		File uploadDir = new File(UPLOAD_DIR); 
+		File uploadDir = new File(UPLOAD_DIR);
+		if(!uploadDir.exists()) {
+			uploadDir.mkdirs();
+		}
 		productService.saveProduct(product);
 		
 		return "redirect:/adminPortal";
