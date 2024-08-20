@@ -45,7 +45,7 @@ public class ProductController {
 	}
 	
 	@PostMapping("/saveProduct")
-	public String saveProduct(@ModelAttribute("productDto") ProductDto productDto, MultipartFile image) throws IOException {
+	public String addProduct(@ModelAttribute("productDto") ProductDto productDto, MultipartFile image) throws IOException {
 		
 		
 		return "adminPortal";
