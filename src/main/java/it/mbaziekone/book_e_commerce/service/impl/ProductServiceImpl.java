@@ -13,7 +13,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import it.mbaziekone.book_e_commerce.model.Product;
-import it.mbaziekone.book_e_commerce.model.dto.ProductDto;
 import it.mbaziekone.book_e_commerce.repository.ProductRepository;
 import it.mbaziekone.book_e_commerce.service.ProductService;
 
@@ -41,19 +40,17 @@ public class ProductServiceImpl implements ProductService {
 		Path path = Paths.get(filePath);
 		Files.write(path, image.getBytes());
 		
-		ProductDto productDto = new ProductDto();
-		
-		product.setSku(productDto.getSku());
-		product.setName(productDto.getName());
-		product.setDescription(productDto.getDescription());
-		product.setUnitPrice(productDto.getUnitPrice());
+		product.setSku();
+		product.setName();
+		product.setDescription();
+		product.setUnitPrice();
 		product.setImageUrl("/assets/images" + originalFileName);
-		product.setUnitPrice(productDto.getUnitPrice());
-		product.setActive(productDto.isActive());
-		product.setUnitsInStock(productDto.getUnitsInStock());
-		product.setDateCreated(productDto.getDateCreate());
-		product.setLastUpdate(productDto.getLastUpdate());
-		product.setCategory(productDto.getCategory());
+		product.setUnitPrice();
+		product.setActive();
+		product.setUnitsInStock();
+		product.setDateCreated();
+		product.setLastUpdate());
+		product.setCategory();
 		
 		productRepository.save(product);
 	}
