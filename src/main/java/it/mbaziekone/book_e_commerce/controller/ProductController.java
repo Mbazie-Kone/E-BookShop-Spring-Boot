@@ -24,7 +24,7 @@ import it.mbaziekone.book_e_commerce.service.ProductService;
 @RequestMapping("/dashboard")
 public class ProductController {
 	
-	private static final String UPLOAD_DIR = "front-end/src/assets/images/";
+	
 	
 	@Autowired
 	private ProductService productService;
@@ -46,33 +46,9 @@ public class ProductController {
 	
 	@PostMapping("/saveProduct")
 	public String saveProduct(@ModelAttribute("productDto") ProductDto productDto, MultipartFile image) throws IOException {
-		File uploadDir = new File(UPLOAD_DIR);
-		if(!uploadDir.exists()) {
-			uploadDir.mkdirs();
-		}
 		
-		String originalFileName = image.getOriginalFilename();
-		String filePath = UPLOAD_DIR + originalFileName;
-		Path path = Paths.get(filePath);
-		Files.write(path, image.getBytes());
 		
-		Product product = new Product();
-		
-		product.setSku(productDto.getSku());
-		product.setName(productDto.getName());
-		product.setDescription(productDto.getDescription());
-		product.setUnitPrice(productDto.getUnitPrice());
-		product.setImageUrl("/assets/images" + originalFileName);
-		product.setUnitPrice(productDto.getUnitPrice());
-		product.setActive(productDto.isActive());
-		product.setUnitsInStock(productDto.getUnitsInStock());
-		product.setDateCreated(productDto.getDateCreate());
-		product.setLastUpdate(productDto.getLastUpdate());
-		product.setCategory(productDto.getCategory());
-		
-		productService.saveProduct(product);
-		
-		return "redirect:/dashboard/adminPortal";
+		return "adminPortal";
 	}
 	
 	@GetMapping("/showFormForUpdate/{id}")
