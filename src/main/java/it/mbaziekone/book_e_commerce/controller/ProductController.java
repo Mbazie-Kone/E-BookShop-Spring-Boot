@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import it.mbaziekone.book_e_commerce.model.Product;
@@ -45,7 +46,7 @@ public class ProductController {
 	}
 	
 	@PostMapping("/saveProduct")
-	public String addProduct(@ModelAttribute("product") Product product, MultipartFile image, Model model){
+	public String addProduct(@ModelAttribute("product") Product product, @RequestParam("image") MultipartFile image, Model model){
 		try {
 			productService.saveProduct(product, image);
 			model.addAttribute("message", "Product added");
