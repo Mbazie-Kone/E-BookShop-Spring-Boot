@@ -14,14 +14,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import it.mbaziekone.book_e_commerce.model.Product;
-import it.mbaziekone.book_e_commerce.model.dto.ProductDto;
 import it.mbaziekone.book_e_commerce.service.ProductService;
 
 @Controller
 @RequestMapping("/dashboard")
 public class ProductController {
-	
-	
 	
 	@Autowired
 	private ProductService productService;
@@ -35,8 +32,8 @@ public class ProductController {
 	
 	@GetMapping("/showNewCatalogForm")
 	public String showProductForm(Model model) {
-		ProductDto productDto = new ProductDto();
-		model.addAttribute("productDto", productDto);
+		Product product = new Product();
+		model.addAttribute("product", product);
 		
 		return "addProduct";
 	}
