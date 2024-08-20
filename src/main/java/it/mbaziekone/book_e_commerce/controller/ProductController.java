@@ -58,7 +58,9 @@ public class ProductController {
 		
 		Product product = new Product();
 		
+		product.setSku(productDto.getSku());
 		product.setName(productDto.getName());
+		product.setDescription(productDto.getDescription());
 		
 		productService.saveProduct(product);
 		
