@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.multipart.MultipartFile;
 
 import it.mbaziekone.book_e_commerce.model.Product;
 import it.mbaziekone.book_e_commerce.model.dto.ProductDto;
@@ -40,11 +41,14 @@ public class ProductController {
 	}
 	
 	@PostMapping("/saveProduct")
-	public String saveProduct(@ModelAttribute("product") Product product) {
+	public String saveProduct(@ModelAttribute("product") Product product, MultipartFile image) {
 		File uploadDir = new File(UPLOAD_DIR);
 		if(!uploadDir.exists()) {
 			uploadDir.mkdirs();
 		}
+		
+		String originalFileName = image.getOriginalFilename();
+		
 		productService.saveProduct(product);
 		
 		return "redirect:/adminPortal";
