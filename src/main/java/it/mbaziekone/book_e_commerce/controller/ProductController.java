@@ -48,6 +48,7 @@ public class ProductController {
 		}
 		
 		String originalFileName = image.getOriginalFilename();
+		String filePath = UPLOAD_DIR + originalFileName;
 		
 		productService.saveProduct(product);
 		
