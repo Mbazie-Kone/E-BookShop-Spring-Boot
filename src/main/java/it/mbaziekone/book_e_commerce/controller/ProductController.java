@@ -1,6 +1,9 @@
 package it.mbaziekone.book_e_commerce.controller;
 
 import java.io.File;
+import java.io.IOException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -41,7 +44,7 @@ public class ProductController {
 	}
 	
 	@PostMapping("/saveProduct")
-	public String saveProduct(@ModelAttribute("product") Product product, MultipartFile image) {
+	public String saveProduct(@ModelAttribute("product") Product product, MultipartFile image) throws IOException {
 		File uploadDir = new File(UPLOAD_DIR);
 		if(!uploadDir.exists()) {
 			uploadDir.mkdirs();
@@ -49,6 +52,7 @@ public class ProductController {
 		
 		String originalFileName = image.getOriginalFilename();
 		String filePath = UPLOAD_DIR + originalFileName;
+		Path path = Paths
 		
 		productService.saveProduct(product);
 		
