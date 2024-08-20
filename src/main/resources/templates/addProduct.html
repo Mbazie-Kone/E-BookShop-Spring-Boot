@@ -23,7 +23,8 @@
 	        		<div class="card-body">
 	        			<form th:action="@{/saveProduct}" th:object="${product}" method="post">
 	        				<div class="form-group mb-3">
-	        				
+	        					<label for="image">Image</label>
+	        					<input type="image" class="form-control" id="image" th:field="*{image}">
 	        				</div>
 	        			</form>
 	        		</div>
