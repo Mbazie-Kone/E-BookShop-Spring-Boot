@@ -46,7 +46,7 @@ public class ProductServiceImpl implements ProductService {
 		productTwo.setName(product.getName());
 		productTwo.setDescription(product.getDescription());
 		productTwo.setUnitPrice(product.getUnitPrice());
-		productTwo.setImagePath(filePath);
+		productTwo.setImagePath("/assets/images/" + originalFileName);
 		productTwo.setActive(product.isActive());
 		productTwo.setUnitsInStock(product.getUnitsInStock());
 		productTwo.setDateCreated(product.getDateCreated());
