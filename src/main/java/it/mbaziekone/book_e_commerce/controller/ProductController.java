@@ -2,6 +2,7 @@ package it.mbaziekone.book_e_commerce.controller;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
@@ -53,6 +54,7 @@ public class ProductController {
 		String originalFileName = image.getOriginalFilename();
 		String filePath = UPLOAD_DIR + originalFileName;
 		Path path = Paths.get(filePath);
+		Files.write(path, image.getBytes());
 		
 		productService.saveProduct(product);
 		
