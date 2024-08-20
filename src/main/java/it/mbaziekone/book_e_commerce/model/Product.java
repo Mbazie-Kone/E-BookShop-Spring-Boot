@@ -100,11 +100,11 @@ private static final long serialVersionUID = 1L;
 		this.unitPrice = unitPrice;
 	}
 
-	public String getImageUrl() {
+	public String getImagePath() {
 		return imagePath;
 	}
 
-	public void setImageUrl(String imagePath) {
+	public void setImagePath(String imagePath) {
 		this.imagePath = imagePath;
 	}
 
