@@ -45,8 +45,12 @@ public class ProductController {
 	}
 	
 	@PostMapping("/saveProduct")
-	public String addProduct(@ModelAttribute("productDto") ProductDto productDto, MultipartFile image) throws IOException {
-		
+	public String addProduct(@ModelAttribute("productDto") ProductDto productDto, Model model){
+		try {
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
 		
 		return "adminPortal";
 	}
