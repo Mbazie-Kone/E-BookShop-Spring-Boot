@@ -3,8 +3,6 @@ package it.mbaziekone.book_e_commerce.model.dto;
 import java.math.BigDecimal;
 import java.util.Date;
 
-import org.springframework.web.multipart.MultipartFile;
-
 import jakarta.validation.constraints.NotEmpty;
 
 public class ProductDto {
@@ -19,7 +17,7 @@ public class ProductDto {
 	@NotEmpty(message = "The unit price is required")
 	private BigDecimal unitPrice;
 	
-	private MultipartFile imageFileName;
+	private String imagePath;
 	
 	@NotEmpty(message = "The active data is required")
 	private boolean active;
@@ -61,14 +59,6 @@ public class ProductDto {
 
 	public void setUnitPrice(BigDecimal unitPrice) {
 		this.unitPrice = unitPrice;
-	}
-
-	public MultipartFile getImageFileName() {
-		return imageFileName;
-	}
-
-	public void setImageFileName(MultipartFile imageFileName) {
-		this.imageFileName = imageFileName;
 	}
 
 	public boolean isActive() {
