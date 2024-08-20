@@ -72,7 +72,7 @@ public class ProductController {
 		
 		productService.saveProduct(product);
 		
-		return "redirect:/adminPortal";
+		return "redirect:/dashboard/adminPortal";
 	}
 	
 	@GetMapping("/showFormForUpdate/{id}")
