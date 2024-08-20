@@ -45,9 +45,9 @@ public class ProductController {
 	}
 	
 	@PostMapping("/saveProduct")
-	public String addProduct(@ModelAttribute("productDto") ProductDto productDto, Model model){
+	public String addProduct(@ModelAttribute("product") Product product, MultipartFile image, Model model){
 		try {
-			
+			productService.saveProduct(product, image);
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
