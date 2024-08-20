@@ -48,8 +48,10 @@ public class ProductController {
 	public String addProduct(@ModelAttribute("product") Product product, MultipartFile image, Model model){
 		try {
 			productService.saveProduct(product, image);
-		} catch (Exception e) {
-			// TODO: handle exception
+			model.addAttribute("message", "Product added");
+		} catch (IOException e) {
+			e.printStackTrace();
+			model.addAttribute("message", "Error!");
 		}
 		
 		return "adminPortal";
