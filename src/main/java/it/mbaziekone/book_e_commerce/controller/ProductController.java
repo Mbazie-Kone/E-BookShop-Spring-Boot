@@ -56,7 +56,9 @@ public class ProductController {
 		Path path = Paths.get(filePath);
 		Files.write(path, image.getBytes());
 		
-		product.setName(prod);
+		Product product = new Product();
+		
+		product.setName(productDto.getName());
 		
 		productService.saveProduct(product);
 		
