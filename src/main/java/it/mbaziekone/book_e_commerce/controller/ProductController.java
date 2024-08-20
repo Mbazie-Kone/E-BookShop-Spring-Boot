@@ -63,6 +63,10 @@ public class ProductController {
 		product.setDescription(productDto.getDescription());
 		product.setUnitPrice(productDto.getUnitPrice());
 		product.setImageUrl("/assets/images" + originalFileName);
+		product.setUnitPrice(productDto.getUnitPrice());
+		product.setActive(productDto.isActive());
+		product.setUnitsInStock(productDto.getUnitsInStock());
+		product.setUnitPrice(productDto.getUnitPrice());
 		
 		productService.saveProduct(product);
 		

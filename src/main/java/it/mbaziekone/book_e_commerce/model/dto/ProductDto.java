@@ -17,8 +17,6 @@ public class ProductDto {
 	@NotEmpty(message = "The unit price is required")
 	private BigDecimal unitPrice;
 	
-	private String imagePath;
-	
 	@NotEmpty(message = "The active data is required")
 	private boolean active;
 	
@@ -62,14 +60,6 @@ public class ProductDto {
 
 	public void setUnitPrice(BigDecimal unitPrice) {
 		this.unitPrice = unitPrice;
-	}
-	
-	public String getImagePath() {
-		return imagePath;
-	}
-
-	public void setImagePath(String imagePath) {
-		this.imagePath = imagePath;
 	}
 
 	public boolean isActive() {
