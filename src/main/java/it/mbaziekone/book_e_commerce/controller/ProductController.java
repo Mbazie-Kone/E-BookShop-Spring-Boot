@@ -17,6 +17,8 @@ import it.mbaziekone.book_e_commerce.service.ProductService;
 @RequestMapping("/dashboard")
 public class ProductController {
 	
+	private static final String UPLOAD_DIR = "front-end/src/assets/images/";
+	
 	@Autowired
 	private ProductService productService;
 	

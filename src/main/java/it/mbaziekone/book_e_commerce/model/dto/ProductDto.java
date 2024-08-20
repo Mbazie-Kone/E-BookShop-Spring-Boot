@@ -3,7 +3,6 @@ package it.mbaziekone.book_e_commerce.model.dto;
 import java.math.BigDecimal;
 import java.util.Date;
 
-import it.mbaziekone.book_e_commerce.model.ProductCategory;
 import jakarta.validation.constraints.NotEmpty;
 
 public class ProductDto {
