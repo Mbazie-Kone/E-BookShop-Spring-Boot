@@ -39,11 +39,12 @@ public class ProductServiceImpl implements ProductService {
 		if(image != null && !image.isEmpty()) {
 			String originalFileName = image.getOriginalFilename();
 			String uniqueFileName = UUID.randomUUID().toString() + "_" + originalFileName;
-			String filePath = UPLOAD_DIR + uniqueFileName;
+			String safeFileName = uniqueFileName.replaceAll("[^a-zA-Z0-9\\.\\-]", "_");
+			String filePath = UPLOAD_DIR + safeFileName;
 			Path path = Paths.get(filePath);
 			try {
 				Files.write(path, image.getBytes());
-				product.setImagePath("images/" + uniqueFileName);
+				product.setImagePath("images/" + safeFileName);
 			} catch (IOException e) {
 				e.printStackTrace();
 				throw new RuntimeException("Error when save file " + uniqueFileName, e);
