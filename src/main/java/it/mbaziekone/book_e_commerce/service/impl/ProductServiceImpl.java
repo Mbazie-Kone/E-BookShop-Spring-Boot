@@ -64,7 +64,9 @@ public class ProductServiceImpl implements ProductService {
 	}
 	
 	public void deleteProduct(Long id) {
+		
 		Product product = getProductById(id);
+		String imagePath = product.getImagePath();
 		productRepository.deleteById(id);	
 	}
 }
