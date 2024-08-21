@@ -43,7 +43,8 @@ public class ProductServiceImpl implements ProductService {
 		try {
 			Files.write(path, image.getBytes());
 		} catch (IOException e) {
-			// TODO: handle exception
+			e.printStackTrace();
+			throw new RuntimeException("Error when save file " + uniqueFileName, e);
 		}
 		
 		
