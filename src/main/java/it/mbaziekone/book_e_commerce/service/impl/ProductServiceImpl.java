@@ -42,7 +42,7 @@ public class ProductServiceImpl implements ProductService {
 		Path path = Paths.get(filePath);
 		try {
 			Files.write(path, image.getBytes());
-		} catch (Exception e) {
+		} catch (IOException e) {
 			// TODO: handle exception
 		}
 		
