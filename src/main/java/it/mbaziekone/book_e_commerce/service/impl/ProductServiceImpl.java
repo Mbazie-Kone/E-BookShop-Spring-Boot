@@ -9,6 +9,8 @@ import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
@@ -22,6 +24,8 @@ import jakarta.transaction.Transactional;
 public class ProductServiceImpl implements ProductService {
 	
 	private static final String UPLOAD_DIR = "/src/main/resources/static/images/";
+	
+	private static final Logger logger = LoggerFactory.getLogger(ProductServiceImpl.class);
 	
 	@Autowired
 	private ProductRepository productRepository;
@@ -82,7 +86,8 @@ public class ProductServiceImpl implements ProductService {
 			try {
 				Files.deleteIfExists(path);
 			} catch (IOException e) {
-				e.printStackTrace();
+				logger.error("Could not delete file: " + imagePath, e);
+	            throw new RuntimeException("Error deleting image file: " + imagePath, e);
 			}
 		}
 		
