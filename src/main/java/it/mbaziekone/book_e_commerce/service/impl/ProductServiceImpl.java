@@ -51,6 +51,7 @@ public class ProductServiceImpl implements ProductService {
 			}
 		}
 		
+		/*
 		product.setSku(product.getSku());
 		product.setName(product.getName());
 		product.setDescription(product.getDescription());
@@ -60,6 +61,7 @@ public class ProductServiceImpl implements ProductService {
 		product.setDateCreated(product.getDateCreated());
 		product.setLastUpdate(product.getLastUpdate());
 		product.setCategory(product.getCategory());
+		 */
 		
 		productRepository.save(product);
 	}
