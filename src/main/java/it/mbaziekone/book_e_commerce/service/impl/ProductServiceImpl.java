@@ -7,6 +7,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -36,7 +37,8 @@ public class ProductServiceImpl implements ProductService {
 		}
 		
 		String originalFileName = image.getOriginalFilename();
-		String filePath = UPLOAD_DIR + originalFileName;
+		String uniqueFileName = UUID.randomUUID().toString() + "_" + originalFileName;
+		String filePath = UPLOAD_DIR + uniqueFileName;
 		Path path = Paths.get(filePath);
 		Files.write(path, image.getBytes());
 		
