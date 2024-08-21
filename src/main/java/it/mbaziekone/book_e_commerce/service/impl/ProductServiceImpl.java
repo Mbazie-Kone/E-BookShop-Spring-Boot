@@ -67,6 +67,8 @@ public class ProductServiceImpl implements ProductService {
 		
 		Product product = getProductById(id);
 		String imagePath = product.getImagePath();
+		Path path = Paths.get(UPLOAD_DIR + imagePath);
+		
 		productRepository.deleteById(id);	
 	}
 }
