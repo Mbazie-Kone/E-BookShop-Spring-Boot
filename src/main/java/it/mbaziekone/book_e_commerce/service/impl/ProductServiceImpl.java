@@ -48,7 +48,7 @@ public class ProductServiceImpl implements ProductService {
 		productTwo.setName(product.getName());
 		productTwo.setDescription(product.getDescription());
 		productTwo.setUnitPrice(product.getUnitPrice());
-		product.setImagePath("images/" + uniqueFileName);
+		//product.setImagePath("images/" + uniqueFileName);
 		productTwo.setActive(product.isActive());
 		productTwo.setUnitsInStock(product.getUnitsInStock());
 		productTwo.setDateCreated(product.getDateCreated());
@@ -74,6 +74,6 @@ public class ProductServiceImpl implements ProductService {
 			e.printStackTrace();
 		}
 		
-		productRepository.deleteById(id);	
+		productRepository.deleteById(id);
 	}
 }
