@@ -36,23 +36,24 @@ public class ProductServiceImpl implements ProductService {
 			uploadDir.mkdirs();
 		}
 		
-		String originalFileName = image.getOriginalFilename();
-		String uniqueFileName = UUID.randomUUID().toString() + "_" + originalFileName;
-		String filePath = UPLOAD_DIR + uniqueFileName;
-		Path path = Paths.get(filePath);
-		try {
-			Files.write(path, image.getBytes());
-		} catch (IOException e) {
-			e.printStackTrace();
-			throw new RuntimeException("Error when save file " + uniqueFileName, e);
+		if(image != null && !image.isEmpty()) {
+			String originalFileName = image.getOriginalFilename();
+			String uniqueFileName = UUID.randomUUID().toString() + "_" + originalFileName;
+			String filePath = UPLOAD_DIR + uniqueFileName;
+			Path path = Paths.get(filePath);
+			try {
+				Files.write(path, image.getBytes());
+				product.setImagePath("images/" + uniqueFileName);
+			} catch (IOException e) {
+				e.printStackTrace();
+				throw new RuntimeException("Error when save file " + uniqueFileName, e);
+			}
 		}
-		
 		
 		product.setSku(product.getSku());
 		product.setName(product.getName());
 		product.setDescription(product.getDescription());
 		product.setUnitPrice(product.getUnitPrice());
-		product.setImagePath("images/" + uniqueFileName);
 		product.setActive(product.isActive());
 		product.setUnitsInStock(product.getUnitsInStock());
 		product.setDateCreated(product.getDateCreated());
