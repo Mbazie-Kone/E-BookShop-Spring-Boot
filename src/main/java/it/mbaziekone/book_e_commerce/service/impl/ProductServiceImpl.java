@@ -19,7 +19,7 @@ import it.mbaziekone.book_e_commerce.service.ProductService;
 @Service
 public class ProductServiceImpl implements ProductService {
 	
-	private static final String UPLOAD_DIR = "public/images/";
+	private static final String UPLOAD_DIR = "images/";
 	
 	@Autowired
 	private ProductRepository productRepository;
@@ -46,7 +46,7 @@ public class ProductServiceImpl implements ProductService {
 		productTwo.setName(product.getName());
 		productTwo.setDescription(product.getDescription());
 		productTwo.setUnitPrice(product.getUnitPrice());
-		productTwo.setImagePath("/public/images/" + originalFileName);
+		productTwo.setImagePath("/images/" + originalFileName);
 		productTwo.setActive(product.isActive());
 		productTwo.setUnitsInStock(product.getUnitsInStock());
 		productTwo.setDateCreated(product.getDateCreated());
