@@ -71,11 +71,13 @@ public class ProductServiceImpl implements ProductService {
 		
 		Product product = getProductById(id);
 		String imagePath = product.getImagePath();
-		Path path = Paths.get(UPLOAD_DIR + imagePath.replace("images/", ""));
-		try {
-			Files.deleteIfExists(path);
-		} catch (IOException e) {
-			e.printStackTrace();
+		if(imagePath != null && !imagePath.isEmpty()) {
+			Path path = Paths.get(UPLOAD_DIR + imagePath.replace("images/", ""));
+			try {
+				Files.deleteIfExists(path);
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
 		}
 		
 		productRepository.deleteById(id);
