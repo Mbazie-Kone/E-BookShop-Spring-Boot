@@ -73,7 +73,7 @@ public class ProductServiceImpl implements ProductService {
 		Product product = getProductById(id);
 		String imagePath = product.getImagePath();
 		if(imagePath != null && !imagePath.isEmpty()) {
-			Path path = Paths.get(UPLOAD_DIR + imagePath.replace("images/", ""));
+			Path path = Paths.get(UPLOAD_DIR + new File(imagePath).getName());
 			try {
 				Files.deleteIfExists(path);
 			} catch (IOException e) {
