@@ -42,20 +42,18 @@ public class ProductServiceImpl implements ProductService {
 		Path path = Paths.get(filePath);
 		Files.write(path, image.getBytes());
 		
-		Product productTwo = new Product();
-		
-		productTwo.setSku(product.getSku());
-		productTwo.setName(product.getName());
-		productTwo.setDescription(product.getDescription());
-		productTwo.setUnitPrice(product.getUnitPrice());
+		product.setSku(product.getSku());
+		product.setName(product.getName());
+		product.setDescription(product.getDescription());
+		product.setUnitPrice(product.getUnitPrice());
 		//product.setImagePath("images/" + uniqueFileName);
-		productTwo.setActive(product.isActive());
-		productTwo.setUnitsInStock(product.getUnitsInStock());
-		productTwo.setDateCreated(product.getDateCreated());
-		productTwo.setLastUpdate(product.getLastUpdate());
-		productTwo.setCategory(product.getCategory());
+		product.setActive(product.isActive());
+		product.setUnitsInStock(product.getUnitsInStock());
+		product.setDateCreated(product.getDateCreated());
+		product.setLastUpdate(product.getLastUpdate());
+		product.setCategory(product.getCategory());
 		
-		productRepository.save(productTwo);
+		productRepository.save(product);
 	}
 	
 	public Product getProductById(Long id) {
