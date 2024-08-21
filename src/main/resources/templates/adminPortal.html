@@ -39,7 +39,7 @@
 	                                <tr th:each="product : ${listProducts}">
 	                                    <td th:text="${product.id}"></td>
 	                                    <td>
-	                                    	<img th:if="${product.imagePath != null}" th:src="@{${product.imagePath}}" alt="Product Image" width="100" class="img-thumbnail">
+	                                    	<img th:src="@{${product.imagePath}}" alt="Product Image" width="100" class="img-thumbnail">
 	                                    </td>
 	                                    <td th:text="${product.active}"></td>
 	                                    <td th:text="${product.dateCreated}"></td>
