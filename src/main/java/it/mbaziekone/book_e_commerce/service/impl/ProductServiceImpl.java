@@ -22,75 +22,61 @@ import jakarta.transaction.Transactional;
 
 @Service
 public class ProductServiceImpl implements ProductService {
-	
+
 	private static final String UPLOAD_DIR = "/src/main/resources/static/images/";
-	
+
 	private static final Logger logger = LoggerFactory.getLogger(ProductServiceImpl.class);
-	
+
 	@Autowired
 	private ProductRepository productRepository;
-	
+
 	public List<Product> getAllCatalogs() {
 		return productRepository.findAll();
 	}
-	
+
 	public void saveProduct(Product product, MultipartFile image) throws IOException {
-		
+
 		File uploadDir = new File(UPLOAD_DIR);
-		if(!uploadDir.exists()) {
+		if (!uploadDir.exists()) {
 			uploadDir.mkdirs();
 		}
-		
-		if(image != null && !image.isEmpty()) {
-			String originalFileName = image.getOriginalFilename();
-			String uniqueFileName = UUID.randomUUID().toString() + "_" + originalFileName;
-			String safeFileName = uniqueFileName.replaceAll("[^a-zA-Z0-9\\.\\-]", "_");
-			String filePath = UPLOAD_DIR + safeFileName;
-			Path path = Paths.get(filePath);
-			try {
-				Files.write(path, image.getBytes());
-				product.setImagePath("images/" + safeFileName);
-			} catch (IOException e) {
-				e.printStackTrace();
-				throw new RuntimeException("Error when save file " + uniqueFileName, e);
-			}
+
+		String originalFileName = image.getOriginalFilename();
+		String uniqueFileName = UUID.randomUUID().toString() + "_" + originalFileName;
+		String safeFileName = uniqueFileName.replaceAll("[^a-zA-Z0-9\\.\\-]", "_");
+		String filePath = UPLOAD_DIR + safeFileName;
+		Path path = Paths.get(filePath);
+		try {
+			Files.write(path, image.getBytes());
+			product.setImagePath("images/" + safeFileName);
+		} catch (IOException e) {
+			e.printStackTrace();
+			throw new RuntimeException("Error when save file " + uniqueFileName, e);
 		}
-		
-		/*
-		product.setSku(product.getSku());
-		product.setName(product.getName());
-		product.setDescription(product.getDescription());
-		product.setUnitPrice(product.getUnitPrice());
-		product.setActive(product.isActive());
-		product.setUnitsInStock(product.getUnitsInStock());
-		product.setDateCreated(product.getDateCreated());
-		product.setLastUpdate(product.getLastUpdate());
-		product.setCategory(product.getCategory());
-		 */
-		
+
 		productRepository.save(product);
 	}
-	
+
 	public Product getProductById(Long id) {
 		Optional<Product> optional = productRepository.findById(id);
 		return optional.orElseThrow(() -> new RuntimeException("Product not found for ID :: " + id));
 	}
-	
+
 	@Transactional
 	public void deleteProduct(Long id) {
-		
+
 		Product product = getProductById(id);
 		String imagePath = product.getImagePath();
-		if(imagePath != null && !imagePath.isEmpty()) {
+		if (imagePath != null && !imagePath.isEmpty()) {
 			Path path = Paths.get(UPLOAD_DIR + new File(imagePath).getName());
 			try {
 				Files.deleteIfExists(path);
 			} catch (IOException e) {
 				logger.error("Could not delete file: " + imagePath, e);
-	            throw new RuntimeException("Error deleting image file: " + imagePath, e);
+				throw new RuntimeException("Error deleting image file: " + imagePath, e);
 			}
 		}
-		
+
 		productRepository.deleteById(id);
 	}
 }
