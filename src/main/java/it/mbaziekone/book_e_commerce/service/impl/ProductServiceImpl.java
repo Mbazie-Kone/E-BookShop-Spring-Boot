@@ -64,6 +64,7 @@ public class ProductServiceImpl implements ProductService {
 	}
 	
 	public void deleteProduct(Long id) {
+		Product product = getProductById(id);
 		productRepository.deleteById(id);	
 	}
 }
