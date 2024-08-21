@@ -16,6 +16,7 @@ import org.springframework.web.multipart.MultipartFile;
 import it.mbaziekone.book_e_commerce.model.Product;
 import it.mbaziekone.book_e_commerce.repository.ProductRepository;
 import it.mbaziekone.book_e_commerce.service.ProductService;
+import jakarta.transaction.Transactional;
 
 @Service
 public class ProductServiceImpl implements ProductService {
@@ -71,6 +72,7 @@ public class ProductServiceImpl implements ProductService {
 		return optional.orElseThrow(() -> new RuntimeException("Product not found for ID :: " + id));
 	}
 	
+	@Transactional
 	public void deleteProduct(Long id) {
 		
 		Product product = getProductById(id);
