@@ -40,7 +40,12 @@ public class ProductServiceImpl implements ProductService {
 		String uniqueFileName = UUID.randomUUID().toString() + "_" + originalFileName;
 		String filePath = UPLOAD_DIR + uniqueFileName;
 		Path path = Paths.get(filePath);
-		Files.write(path, image.getBytes());
+		try {
+			Files.write(path, image.getBytes());
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		
 		
 		product.setSku(product.getSku());
 		product.setName(product.getName());
