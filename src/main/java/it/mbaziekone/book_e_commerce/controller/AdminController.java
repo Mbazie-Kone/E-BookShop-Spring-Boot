@@ -33,8 +33,9 @@ public class AdminController {
 	
 	@PostMapping("/register")
 	public String registerUser(@ModelAttribute("user") Admin admin, Model model) {
+		// Check if the user name is already taken
 		if(adminRepository.findByUsername(admin.getUsername())!= null) {
-			model.addAttribute("Error!", "The username is used");
+			model.addAttribute("Error!", "Username already in use");
 		}
 		
 		return "register";
