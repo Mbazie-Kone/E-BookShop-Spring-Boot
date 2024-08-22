@@ -2,6 +2,7 @@ package it.mbaziekone.book_e_commerce.service.impl;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -23,7 +24,11 @@ public class CustomUserDetailsService implements UserDetailsService {
 			throw new UsernameNotFoundException("User not found");
 		}
 		
-		return null;
+		return User.builder()
+				.username(admin.getUsername())
+				.password(admin.getPassword())
+				.roles(admin.getRole())
+				.build();
 	}
 
 }
