@@ -43,12 +43,13 @@ public class AdminController {
 		// Encode the password
 		admin.setPassword(passwordEncoder.encode(admin.getPassword()));
 		
-		//
+		// Set a default role
 		admin.setRole("USER");
 		
 		// Save the user in the database
 		adminRepository.save(admin);
 		
+		// Redirect to the login page
 		return "redirect:/loginAdmin";
 		
 	}
