@@ -43,6 +43,12 @@ public class AdminController {
 		// Encode the password
 		admin.setPassword(passwordEncoder.encode(admin.getPassword()));
 		
+		//
+		admin.setRole("USER");
+		
+		// Save the user in the database
+		adminRepository.save(admin);
+		
 	}
 	
 	@GetMapping("/loginAdmin")
