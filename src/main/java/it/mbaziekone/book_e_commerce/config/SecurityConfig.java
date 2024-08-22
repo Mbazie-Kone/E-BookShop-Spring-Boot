@@ -20,7 +20,7 @@ public class SecurityConfig {
 
 		return http
 				.authorizeHttpRequests(auth -> auth
-						.requestMatchers("/public/**", "/login", "/register", "/error").permitAll()
+						.requestMatchers("/public/**", "/login", "/registerAdmin", "/error").permitAll()
 						.anyRequest().authenticated())
 				.formLogin(form -> form
 						.loginPage("/loginAdmin")
