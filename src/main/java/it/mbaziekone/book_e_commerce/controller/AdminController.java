@@ -36,9 +36,13 @@ public class AdminController {
 		// Check if the user name is already taken
 		if(adminRepository.findByUsername(admin.getUsername())!= null) {
 			model.addAttribute("Error!", "Username already in use");
+			
+			return "register";
 		}
 		
-		return "register";
+		// Encode the password
+		admin.setPassword(passwordEncoder.encode(admin.getPassword()));
+		
 	}
 	
 	@GetMapping("/loginAdmin")
