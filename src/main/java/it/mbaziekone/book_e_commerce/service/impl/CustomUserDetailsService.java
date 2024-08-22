@@ -13,7 +13,7 @@ import it.mbaziekone.book_e_commerce.repository.AdminRepository;
 public class CustomUserDetailsService implements UserDetailsService {
 	
 	@Autowired
-	AdminRepository adminRepository;
+	private AdminRepository adminRepository;
 
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
