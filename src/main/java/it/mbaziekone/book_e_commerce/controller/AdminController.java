@@ -34,7 +34,7 @@ public class AdminController {
 	@PostMapping("/register")
 	public String registerUser(@ModelAttribute("user") Admin admin, Model model) {
 		if(adminRepository.findByUsername(admin.getUsername())!= null) {
-			model.addAttribute("Error")
+			model.addAttribute("Error!", "The username is used");
 		}
 		
 		return "register";
