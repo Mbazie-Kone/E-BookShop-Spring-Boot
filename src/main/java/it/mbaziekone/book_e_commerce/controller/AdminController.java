@@ -49,6 +49,8 @@ public class AdminController {
 		// Save the user in the database
 		adminRepository.save(admin);
 		
+		return "redirect:/loginAdmin";
+		
 	}
 	
 	@GetMapping("/loginAdmin")
