@@ -28,7 +28,7 @@ public class AdminController {
 	public String showRegistrationForm(Model model) {
 		model.addAttribute("user", new Admin());
 		
-		return "register";
+		return "registerAdmin";
 	}
 	
 	@PostMapping("/register")
@@ -37,7 +37,7 @@ public class AdminController {
 		if(adminRepository.findByUsername(admin.getUsername())!= null) {
 			model.addAttribute("Error!", "Username already in use");
 			
-			return "register";
+			return "registerAdmin";
 		}
 		
 		// Encode the password
