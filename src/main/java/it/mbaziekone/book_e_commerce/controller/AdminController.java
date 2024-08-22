@@ -1,7 +1,6 @@
 package it.mbaziekone.book_e_commerce.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.jpa.repository.query.EqlParser.New_valueContext;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
@@ -24,7 +23,7 @@ public class AdminController {
 	@Autowired
 	private PasswordEncoder passwordEncoder;
 	
-	
+	@GetMapping("/register")
 	public String showRegistrationForm(Model model) {
 		model.addAttribute("user", new Admin());
 		
