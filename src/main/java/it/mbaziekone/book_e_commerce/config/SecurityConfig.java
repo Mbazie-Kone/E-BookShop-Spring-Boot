@@ -30,7 +30,7 @@ public class SecurityConfig {
 						.failureUrl("/loginAdmin?error=true")
 						.permitAll())
 				.logout(logout -> logout
-						.logoutUrl("perform_logout")
+						.logoutUrl("/perform_logout")
 						.logoutSuccessUrl("/loginAdmin?logout=true")
 						.deleteCookies("JSESSIONID")
 						.invalidateHttpSession(true)
