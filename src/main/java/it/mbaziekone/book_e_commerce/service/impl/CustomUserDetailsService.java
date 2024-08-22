@@ -7,6 +7,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
+import it.mbaziekone.book_e_commerce.model.security.Admin;
 import it.mbaziekone.book_e_commerce.repository.AdminRepository;
 
 @Service
@@ -17,6 +18,7 @@ public class CustomUserDetailsService implements UserDetailsService {
 
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+		Admin admin = adminRepository.findByUsername(username);
 		
 		return null;
 	}
