@@ -1,5 +1,7 @@
 package it.mbaziekone.book_e_commerce.model.security;
 
+import java.io.Serializable;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -9,8 +11,10 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "administrators")
-public class Admin {
+public class Admin implements Serializable {
 	
+	private static final long serialVersionUID = 1L;
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
