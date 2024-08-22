@@ -20,5 +20,8 @@ public class Admin {
 	
 	@Column(nullable = false, name = "pass_word")
 	private String password;
+	
+	@Column(nullable = false)
+	private String role;
 
 }
