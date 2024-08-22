@@ -7,6 +7,7 @@ import org.springframework.security.web.authentication.logout.SecurityContextLog
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import it.mbaziekone.book_e_commerce.model.security.Admin;
@@ -28,6 +29,11 @@ public class AdminController {
 		model.addAttribute("user", new Admin());
 		
 		return "register";
+	}
+	
+	
+	public String registerUser(@ModelAttribute("user") Admin admin, Model model) {
+		
 	}
 	
 	@GetMapping("/loginAdmin")
