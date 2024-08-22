@@ -14,9 +14,9 @@
     	<!-- Main Form -->
 	    <div class="container">
 	        <div class="row justify-content-center">
-	            <div class="col-md-4 m-5">
+	            <div class="col-md-5 m-6">
 	                <div class="card shadow-lg mt-5">
-	                    <div class="card-header text-bg-primary text-center">Login to continue</div>
+	                    <div class="card-header text-bg-dark text-center">Login to continue</div>
 	                    <div class="card-body p-md-5">
 	                        <form th:action="@{/perform_login}" method="post">
 		                        <div th:if="${param.error}">
@@ -43,7 +43,7 @@
 	                                </button>
 	                            </div>
 	                            <div class="mt-3">
-	                            	<p>Don't have an administrator account?<a href="http://localhost:8080/register">Register</a>.</p>
+	                            	<p>Don't have an administrator account? <a href="http://localhost:8080/register">Sign up</a>.</p>
 	                            </div>
 	                        </form>
 	                    </div>
