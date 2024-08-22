@@ -2,8 +2,8 @@
 <html xmlns:th="https://www.thymeleaf.org" lang="en">
 	<head>
 		<title>Dash board</title>
+		<div th:replace="~{fragments/bootstrap :: block-bootstrap}"></div>
 	</head>
-	<div th:replace="~{fragments/bootstrap :: block-bootstrap}"></div>
 	<body class="bg-light">
 		<!-- header and navigation bar -->
 		<div th:replace="~{fragments/adminHeader :: block-adminHeader}"></div>

@@ -5,10 +5,13 @@
 		<div th:replace="~{fragments/bootstrap :: block-bootstrap}"></div>
 	</head>
 	<body class="bg-light">
+		<!-- Header -->
 		<header class="bg-dark text-white text-center p-4">
 	        <h1>Administration Registration</h1>
 	        <p>Manage the catalogs of computer science books</p>
     	</header>
+    	<!-- Header -->
+    	<!-- Main Form -->
 		<div class="container">
 			<div class="row justify-content-center">
 				<div class="col-md-6">
@@ -22,6 +25,10 @@
 				</div>
 			</div>
 		</div>
+		<!-- Main Form -->
+		<!-- footer -->
+		<div th:replace="~{fragments/adminFooter :: block-adminFooter}"></div>
+		<!-- footer -->
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 	</body>
 </html>
