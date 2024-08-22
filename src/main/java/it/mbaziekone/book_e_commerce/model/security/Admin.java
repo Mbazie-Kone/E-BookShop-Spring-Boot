@@ -27,6 +27,12 @@ public class Admin {
 	public Admin() {
 		
 	}
+
+	public Admin(String username, String password, String role) {
+		this.username = username;
+		this.password = password;
+		this.role = role;
+	}
 	
 	
 
