@@ -31,9 +31,10 @@ public class AdminController {
 		return "register";
 	}
 	
-	
+	@PostMapping("/register")
 	public String registerUser(@ModelAttribute("user") Admin admin, Model model) {
 		
+		return "register";
 	}
 	
 	@GetMapping("/loginAdmin")
