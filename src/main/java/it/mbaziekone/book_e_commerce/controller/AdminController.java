@@ -35,7 +35,7 @@ public class AdminController {
 	public String registerUser(@ModelAttribute("user") Admin admin, Model model) {
 		// Check if the user name is already taken
 		if(adminRepository.findByUsername(admin.getUsername())!= null) {
-			model.addAttribute("Error!", "Username already in use");
+			model.addAttribute("error!", "Username already in use");
 			
 			return "registerAdmin";
 		}
@@ -60,7 +60,7 @@ public class AdminController {
 		return "loginAdmin";
 	}
 	
-	@PostMapping("/perform_logout")
+	@GetMapping("/perform_logout")
 	public String logout(HttpServletRequest request, HttpServletResponse response, Authentication authentication) {
 		if(authentication != null) {
 			new SecurityContextLogoutHandler().logout(request, response, authentication);	
