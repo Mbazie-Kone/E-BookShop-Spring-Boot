@@ -1,5 +1,5 @@
 package it.mbaziekone.book_e_commerce.service.impl;
-
+	
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +24,7 @@ public class CustomUserDetailsService implements UserDetailsService {
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		Admin admin = adminRepository.findByUsername(username);
 		if(admin == null) {
+			LOGGER.error("User not found with username: "+ username);
 			throw new UsernameNotFoundException("User not found");
 		}
 		
