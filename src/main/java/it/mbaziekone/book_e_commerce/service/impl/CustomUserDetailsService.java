@@ -1,6 +1,7 @@
 package it.mbaziekone.book_e_commerce.service.impl;
 
-
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -13,6 +14,8 @@ import it.mbaziekone.book_e_commerce.repository.AdminRepository;
 
 @Service
 public class CustomUserDetailsService implements UserDetailsService {
+	
+	private static final Logger LOGGER = LoggerFactory.getLogger(CustomUserDetailsService.class);
 	
 	@Autowired
 	private AdminRepository adminRepository;
@@ -27,7 +30,7 @@ public class CustomUserDetailsService implements UserDetailsService {
 		return User.builder()
 				.username(admin.getUsername())
 				.password(admin.getPassword())
-				.roles(admin.getRole())
+				.roles("ROLE_" + admin.getRole())
 				.build();
 	}
 
