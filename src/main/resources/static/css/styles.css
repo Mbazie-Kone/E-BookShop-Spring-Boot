@@ -133,3 +133,14 @@ footer a {
 footer a:hover {
     color: #0056b3;
 }
+
+.brand-gradient {
+	background: #121FCF;
+	background: linear-gradient(to right, #121FCF 0%, #48C176 100%);
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+.vr {
+	color: white;
+}
