@@ -18,10 +18,10 @@
 			        	<!-- side bar -->
 			        	<div class="col-md-6 mx-auto">
 			        		<div class="card shadow-lg mt-5">
-			        			<div class="card-header">
+			        			<div class="card-header text-bg-dark text-center">
 			        				<h5 class="card-title">Add new product</h5>
 			        			</div>
-				        		<div class="card-body">
+				        		<div class="card-body p-md-5">
 				        			<form th:action="@{/dashboard/saveProduct}" th:object="${product}" method="post" enctype="multipart/form-data">
 				        				<div class="form-group mb-3">
 				        					<label for="name">Product Name:</label>
