@@ -4,7 +4,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
@@ -16,8 +15,7 @@ import it.mbaziekone.book_e_commerce.service.impl.CustomUserDetailsService;
 public class SecurityConfig {
 	
 	@Bean
-	UserDetailsService userDetailsService() {
-		
+	CustomUserDetailsService customUserDetailsService() {
 		return new CustomUserDetailsService();
 	}
 	
