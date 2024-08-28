@@ -21,7 +21,7 @@
 			        			<div class="card-header d-flex justify-content-between align-items-center text-bg-dark">
 			        				<h5 class="card-title">Add new product</h5>
 			        			</div>
-				        		<div class="card-body p-md-5">
+				        		<div class="card-body">
 				        			<form th:action="@{/dashboard/saveProduct}" th:object="${product}" method="post" enctype="multipart/form-data">
 				        				<div class="form-group mb-3">
 				        					<label for="name">Product Name:</label>
@@ -72,6 +72,7 @@
 			    </div>
 			</div>
 			<!-- main -->
+			<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 		</div>
 		<!-- footer -->
 		<div th:replace="~{fragments/adminFooter :: block-adminFooter}"></div>
