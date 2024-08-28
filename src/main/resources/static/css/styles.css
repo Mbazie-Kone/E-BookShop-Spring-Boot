@@ -9,19 +9,19 @@
 .table tbody td .btn-group {
     display: flex;
     justify-content: center;
-    gap: 0.5rem; /* Spazio tra i pulsanti */
+    gap: 0.5rem; /* Space between the buttons */
 }
 
 .table tbody td .btn {
-    min-width: 80px; /* Imposta una larghezza minima per una migliore allineamento */
+    min-width: 80px; /* Set a minimum width for better alignment */
     text-align: center;
 }
 
 /* Center the table values */
 .table tbody td,
 .table thead th {
-    text-align: center;  /* Centra il testo orizzontalmente */
-    vertical-align: middle;  /* Centra il testo verticalmente */
+    text-align: center;  /* Center the text horizontally */
+    vertical-align: middle;  /* Center the text vertically */
 }
 
 /* Tables */
