@@ -21,55 +21,54 @@
 			        			<div class="card-header">
 			        				<h5 class="card-title">Add new product</h5>
 			        			</div>
-			        		
-			        		<div class="card-body">
-			        			<form th:action="@{/dashboard/saveProduct}" th:object="${product}" method="post" enctype="multipart/form-data">
-			        				<div class="form-group mb-3">
-			        					<label for="name">Product Name:</label>
-			        					<input type="text" class="form-control" id="name" name="name">
-			        				</div>
-			        				<div class="form-group mb-3">
-			        					<label for="sku">Product SKU:</label>
-			        					<input type="text" class="form-control" id="sku" name="sku">
-			        				</div>
-			        				<div class="form-group mb-3">
-			        					<label for="active">Product Active:</label>
-			        					<input type="number" class="form-control" id="active" name="active">
-			        				</div>
-			        				<div class="form-group mb-3">
-			        					<label for="units">Units In Stock:</label>
-			        					<input type="number" class="form-control" id="units" name="unitsInStock">
-			        				</div>
-			        				<div class="form-group mb-3">
-			        					<label for="date">Date Created:</label>
-			        					<input type="date" class="form-control" id="date" name="dateCreate" value="2024-08-08">
-			        				</div>
-			        				<div class="form-group mb-3">
-			        					<label for="last">Last Update:</label>
-			        					<input type="date" class="form-control" id="last" name="lastUpdate" value="2024-08-08">
-			        				</div>
-			        				<div class="form-group mb-3">
-						                <label for="description">Description:</label>
-						                <textarea class="form-control" id="description" name="description" rows="3"></textarea>
-		            				</div>
-		            				<div class="form-group mb-3">
-						                <label for="price">Price:</label>
-						                <input type="number" step="0.01" class="form-control" id="price" name="unitPrice">
-						            </div>
-						            <div class="form-group mb-3">
-						                <label for="category">Product Category:</label>
-						                <input type="number" class="form-control" id="category" name="category">
-						            </div>
-			        				<div class="form-group mb-3">
-			        					<label for="image">Product Image:</label>
-			        					<input type="file" id="image" name="image" class="form-control">
-			        				</div>
-			        				<button type="submit" class="btn btn-primary">Save Product</button>
-			        			</form>
-			        		</div>
-			        	</div>
+				        		<div class="card-body">
+				        			<form th:action="@{/dashboard/saveProduct}" th:object="${product}" method="post" enctype="multipart/form-data">
+				        				<div class="form-group mb-3">
+				        					<label for="name">Product Name:</label>
+				        					<input type="text" class="form-control" id="name" name="name">
+				        				</div>
+				        				<div class="form-group mb-3">
+				        					<label for="sku">Product SKU:</label>
+				        					<input type="text" class="form-control" id="sku" name="sku">
+				        				</div>
+				        				<div class="form-group mb-3">
+				        					<label for="active">Product Active:</label>
+				        					<input type="number" class="form-control" id="active" name="active">
+				        				</div>
+				        				<div class="form-group mb-3">
+				        					<label for="units">Units In Stock:</label>
+				        					<input type="number" class="form-control" id="units" name="unitsInStock">
+				        				</div>
+				        				<div class="form-group mb-3">
+				        					<label for="date">Date Created:</label>
+				        					<input type="date" class="form-control" id="date" name="dateCreate" value="2024-08-08">
+				        				</div>
+				        				<div class="form-group mb-3">
+				        					<label for="last">Last Update:</label>
+				        					<input type="date" class="form-control" id="last" name="lastUpdate" value="2024-08-08">
+				        				</div>
+				        				<div class="form-group mb-3">
+							                <label for="description">Description:</label>
+							                <textarea class="form-control" id="description" name="description" rows="3"></textarea>
+			            				</div>
+			            				<div class="form-group mb-3">
+							                <label for="price">Price:</label>
+							                <input type="number" step="0.01" class="form-control" id="price" name="unitPrice">
+							            </div>
+							            <div class="form-group mb-3">
+							                <label for="category">Product Category:</label>
+							                <input type="number" class="form-control" id="category" name="category">
+							            </div>
+				        				<div class="form-group mb-3">
+				        					<label for="image">Product Image:</label>
+				        					<input type="file" id="image" name="image" class="form-control">
+				        				</div>
+				        				<button type="submit" class="btn btn-primary">Save Product</button>
+				        			</form>
+				        		</div>
+				        	</div>
+			    		</div>
 			    	</div>
-			    </div>
 			    </div>
 			    <!-- main -->
 			    </div>
