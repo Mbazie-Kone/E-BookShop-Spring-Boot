@@ -16,18 +16,6 @@ import it.mbaziekone.book_e_commerce.service.impl.CustomUserDetailsService;
 public class SecurityConfig {
 	
 	@Bean
-	UserDetailsService userDetailsService() {
-		
-		return new CustomUserDetailsService();
-	}
-	
-	@Bean
-	PasswordEncoder passwordEncoder() {
-		
-		return new BCryptPasswordEncoder();
-	}
-	
-	@Bean
 	SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 
 		return http
@@ -48,6 +36,18 @@ public class SecurityConfig {
 						.permitAll()
 				)
 				.build();
+	}
+	
+	@Bean
+	UserDetailsService userDetailsService() {
+		
+		return new CustomUserDetailsService();
+	}
+	
+	@Bean
+	PasswordEncoder passwordEncoder() {
+		
+		return new BCryptPasswordEncoder();
 	}
 	
 }
