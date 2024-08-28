@@ -44,7 +44,7 @@ public class AdminController {
 		admin.setPassword(passwordEncoder.encode(admin.getPassword()));
 		
 		// Set a default role
-		admin.setRole("ROLE_USER");
+		admin.setRole("USER");
 		
 		// Save the user in the database
 		adminRepository.save(admin);
