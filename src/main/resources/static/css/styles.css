@@ -5,7 +5,7 @@
     align-items: center;
 }
 
-/* Pulsanti nella tabella */
+/* Buttons in the table */
 .table tbody td .btn-group {
     display: flex;
     justify-content: center;
@@ -17,7 +17,7 @@
     text-align: center;
 }
 
-/* Centrare i valori della tabella */
+/* Center the table values */
 .table tbody td,
 .table thead th {
     text-align: center;  /* Centra il testo orizzontalmente */
@@ -70,7 +70,7 @@
     box-shadow: none;
 }
 
-/* Pulsanti */
+/* Buttons */
 .btn-primary {
     background-color: #007bff;
     border-color: #007bff;
@@ -111,7 +111,7 @@
     border-color: #bd2130;
 }
 
-/* Piè di Pagina */
+/* Footer */
 footer {
     background-color: #343a40;
     color: #f8f9fa;
