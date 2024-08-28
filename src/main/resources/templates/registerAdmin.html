@@ -1,8 +1,25 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="https://www.thymeleaf.org">
 	<head>
-		<title>Sign Up</title>
 		<div th:replace="~{fragments/bootstrap :: block-bootstrap}"></div>
+		<title>Sign Up</title>
+		<style>
+			html, body {
+				height: 100%;
+				margin: 0;
+				padding: 0;
+			}
+			
+			.wrapper {
+				min-height: 100%;
+				display: flex;
+				flex-direction: column;	
+			}
+			
+			.content {
+				flex: 1;
+			}
+		</style>
 	</head>
 	<body class="bg-light">
 		<!-- Header -->
