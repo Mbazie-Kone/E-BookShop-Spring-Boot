@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html xmlns:th="https://www.thymeleaf.org" lang="en">
-	<div th:replace="~{fragments/bootstrap :: block-bootstrap}"></div>	
+	<div th:replace="~{fragments/bootstrap :: block-bootstrap}"></div>
+	<head>
+		<link href="style.css" rel="stylesheet">
+	</head>	
 	<body class="bg-light">
 		<div class="wrapper">
 			<!-- Header -->
 			<header class="bg-dark text-white text-center p-4">
-		        <h1>Administrator Login</h1>
+		        <h1 class="demo">Administrator Login</h1>
 		        <p>Manage the catalogs of computer science books</p>
 	    	</header>
 	    	<!-- Header -->
