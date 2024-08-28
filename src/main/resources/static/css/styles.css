@@ -1,3 +1,9 @@
+ html, body {
+ 	height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
 /* Card Header */
 .card-header {
     display: flex;
@@ -144,3 +150,17 @@ footer a:hover {
 .vr {
 	color: white;
 }
+
+
+
+        /* Il contenitore principale copre l'intera altezza */
+        .wrapper {
+            min-height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Il corpo della pagina deve espandersi per riempire lo spazio */
+        .content {
+            flex: 1;
+        }
