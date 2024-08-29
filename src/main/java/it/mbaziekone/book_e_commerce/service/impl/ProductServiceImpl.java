@@ -21,7 +21,7 @@ import jakarta.transaction.Transactional;
 @Service
 public class ProductServiceImpl implements ProductService {
 
-	private static final String UPLOAD_DIR = "src/main/resources/static/images/";
+	private static final String UPLOAD_DIR = "images/";
 
 	@Autowired
 	private ProductRepository productRepository;
