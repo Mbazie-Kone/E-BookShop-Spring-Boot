@@ -203,7 +203,7 @@ footer a:hover {
     flex-direction: column;
 }
 
-/* Il corpo della pagina deve espandersi per riempire lo spazio */
+/* The body of the page should expand to fill the space */
 .content {
 	flex: 1;
 }
