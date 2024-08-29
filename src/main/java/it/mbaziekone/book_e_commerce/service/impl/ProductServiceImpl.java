@@ -23,9 +23,7 @@ import jakarta.transaction.Transactional;
 @Service
 public class ProductServiceImpl implements ProductService {
 
-	private static final String UPLOAD_DIR = "/src/main/resources/static/images/";
-
-	private static final Logger logger = LoggerFactory.getLogger(ProductServiceImpl.class);
+	private static final String UPLOAD_DIR = "src/main/resources/static/images/";
 
 	@Autowired
 	private ProductRepository productRepository;
