@@ -196,7 +196,7 @@ footer a:hover {
 	color: white;
 }
 
-/* Il contenitore principale copre l'intera altezza */
+/* The main container covers the full height */
 .wrapper {
 	min-height: 100%;
     display: flex;
