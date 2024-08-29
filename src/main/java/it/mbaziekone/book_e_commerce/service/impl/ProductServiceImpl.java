@@ -9,8 +9,6 @@ import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
@@ -46,7 +44,7 @@ public class ProductServiceImpl implements ProductService {
 		Path path = Paths.get(filePath);
 		try {
 			Files.write(path, image.getBytes());
-			product.setImagePath("images/" + safeFileName);
+			product.setImagePath("/images/" + safeFileName);
 		} catch (IOException e) {
 			e.printStackTrace();
 			throw new RuntimeException("Error when save file " + uniqueFileName, e);
