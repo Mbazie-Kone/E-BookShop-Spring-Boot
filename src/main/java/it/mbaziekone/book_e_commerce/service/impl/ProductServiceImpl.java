@@ -70,7 +70,6 @@ public class ProductServiceImpl implements ProductService {
 			try {
 				Files.deleteIfExists(path);
 			} catch (IOException e) {
-				logger.error("Could not delete file: " + imagePath, e);
 				throw new RuntimeException("Error deleting image file: " + imagePath, e);
 			}
 		}
