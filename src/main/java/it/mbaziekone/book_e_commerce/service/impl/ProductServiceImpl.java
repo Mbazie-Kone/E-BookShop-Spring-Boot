@@ -44,7 +44,7 @@ public class ProductServiceImpl implements ProductService {
 		Path path = Paths.get(filePath);
 		try {
 			Files.write(path, image.getBytes());
-			product.setImagePath("src/main/resources/static/images/" + safeFileName);
+			product.setImagePath("/images/" + safeFileName);
 		} catch (IOException e) {
 			e.printStackTrace();
 			throw new RuntimeException("Error when save file " + uniqueFileName, e);
