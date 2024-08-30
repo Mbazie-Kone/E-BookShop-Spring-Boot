@@ -14,6 +14,8 @@ public class DataRestConfig implements RepositoryRestConfigurer {
 
 		HttpMethod[] theUnsupportedActions = {HttpMethod.PUT, HttpMethod.POST, HttpMethod.DELETE};
 		
+		// Disable HTTP methods for product: PUT, POST and DELETE
+		
 		RepositoryRestConfigurer.super.configureRepositoryRestConfiguration(config, cors);
 	}
 	
