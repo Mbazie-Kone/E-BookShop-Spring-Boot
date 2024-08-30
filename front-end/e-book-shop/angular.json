@@ -36,7 +36,7 @@
               {
                 "glob": "**/*",
                 "input": "../../images",
-                "output": ""
+                "output": "/assets/images/"
               }
             ],
             "styles": [
