@@ -7,6 +7,7 @@ import org.springframework.http.HttpMethod;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 
 import it.mbaziekone.book_e_commerce.model.Product;
+import it.mbaziekone.book_e_commerce.model.ProductCategory;
 
 @Configuration
 public class DataRestConfig implements RepositoryRestConfigurer {
@@ -21,10 +22,14 @@ public class DataRestConfig implements RepositoryRestConfigurer {
 			.forDomainType(Product.class)
 			.withItemExposure((metdata, httpMethods) -> httpMethods.disable(theUnsupportedActions))
 			.withCollectionExposure((metdata, httpMethods) -> httpMethods.disable(theUnsupportedActions));
+		
+		// Disable HTTP methods for productCategory: PUT, POST and DELETE
+				config.getExposureConfiguration()
+					.forDomainType(ProductCategory.class)
+					.withItemExposure((metdata, httpMethods) -> httpMethods.disable(theUnsupportedActions))
+					.withCollectionExposure((metdata, httpMethods) -> httpMethods.disable(theUnsupportedActions));
 
 		
 		RepositoryRestConfigurer.super.configureRepositoryRestConfiguration(config, cors);
 	}
-	
-	
 }
