@@ -13,6 +13,7 @@ public class ThymeleafConfig {
 	
 	private static final String TEMPLATE_PREFIX = "classpath:/templates/";
 	private static final String TEMPLATE_SUFFIX = ".html";
+	private static final String CHARACTER_ENCODING = "UTF-8";
 	
 	@Bean
 	SpringResourceTemplateResolver templateResolver() {
@@ -20,7 +21,7 @@ public class ThymeleafConfig {
 		templateResolver.setPrefix(TEMPLATE_PREFIX);
 		templateResolver.setSuffix(TEMPLATE_SUFFIX);
 		templateResolver.setTemplateMode(TemplateMode.HTML);
-		templateResolver.setCharacterEncoding("UTF-8");
+		templateResolver.setCharacterEncoding(CHARACTER_ENCODING);
 		
 		return templateResolver;
 
