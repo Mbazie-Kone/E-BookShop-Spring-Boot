@@ -12,12 +12,13 @@ import org.thymeleaf.templatemode.TemplateMode;
 public class ThymeleafConfig {
 	
 	private static final String TEMPLATE_PREFIX = "classpath:/templates/";
+	private static final String TEMPLATE_SUFFIX = ".html";
 	
 	@Bean
 	SpringResourceTemplateResolver templateResolver() {
 		SpringResourceTemplateResolver templateResolver = new SpringResourceTemplateResolver();
 		templateResolver.setPrefix(TEMPLATE_PREFIX);
-		templateResolver.setSuffix(".html");
+		templateResolver.setSuffix(TEMPLATE_SUFFIX);
 		templateResolver.setTemplateMode(TemplateMode.HTML);
 		templateResolver.setCharacterEncoding("UTF-8");
 		
