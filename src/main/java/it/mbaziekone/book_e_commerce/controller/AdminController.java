@@ -1,6 +1,5 @@
 package it.mbaziekone.book_e_commerce.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
@@ -22,7 +21,6 @@ public class AdminController {
 	
 	private final PasswordEncoder passwordEncoder;
 	
-	@Autowired
 	public AdminController(AdminRepository adminRepository, PasswordEncoder passwordEncoder) {
 		this.adminRepository = adminRepository;
 		this.passwordEncoder = passwordEncoder;
