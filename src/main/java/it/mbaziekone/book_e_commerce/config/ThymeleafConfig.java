@@ -22,6 +22,7 @@ public class ThymeleafConfig {
 		templateResolver.setSuffix(TEMPLATE_SUFFIX);
 		templateResolver.setTemplateMode(TemplateMode.HTML);
 		templateResolver.setCharacterEncoding(CHARACTER_ENCODING);
+		templateResolver.setCacheable(false);
 		
 		return templateResolver;
 
@@ -41,7 +42,7 @@ public class ThymeleafConfig {
 	ThymeleafViewResolver thymeleafViewResolver() {
 		ThymeleafViewResolver resolver = new ThymeleafViewResolver();
 		resolver.setTemplateEngine(springTemplateEngine());
-		resolver.setCharacterEncoding("UTF-8");
+		resolver.setCharacterEncoding(CHARACTER_ENCODING);
 		
 		return resolver;
 	}	
