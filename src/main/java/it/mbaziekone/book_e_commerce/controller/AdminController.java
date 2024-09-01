@@ -18,11 +18,15 @@ import jakarta.servlet.http.HttpServletResponse;
 @Controller
 public class AdminController {
 	
-	@Autowired
-	private AdminRepository adminRepository;
+	private final AdminRepository adminRepository;
+	
+	private final PasswordEncoder passwordEncoder;
 	
 	@Autowired
-	private PasswordEncoder passwordEncoder;
+	public AdminController(AdminRepository adminRepository, PasswordEncoder passwordEncoder) {
+		this.adminRepository = adminRepository;
+		this.passwordEncoder = passwordEncoder;
+	}
 	
 	@GetMapping("/register")
 	public String showRegistrationForm(Model model) {
