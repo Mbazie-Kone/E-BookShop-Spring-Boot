@@ -60,7 +60,7 @@ public class AdminController {
 		return "loginAdmin";
 	}
 	
-	@GetMapping("/perform_logout")
+	@PostMapping("/perform_logout")
 	public String logout(HttpServletRequest request, HttpServletResponse response, Authentication authentication) {
 		if(authentication != null) {
 			new SecurityContextLogoutHandler().logout(request, response, authentication);	
