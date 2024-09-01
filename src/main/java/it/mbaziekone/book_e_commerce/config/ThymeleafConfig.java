@@ -43,6 +43,7 @@ public class ThymeleafConfig {
 		ThymeleafViewResolver resolver = new ThymeleafViewResolver();
 		resolver.setTemplateEngine(springTemplateEngine());
 		resolver.setCharacterEncoding(CHARACTER_ENCODING);
+		resolver.setOrder(1);
 		
 		return resolver;
 	}	
