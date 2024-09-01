@@ -52,14 +52,15 @@
 	    	<!-- Main Form -->
 	    	<div class="content">
 				<div class="container">
-					<div th:if="${error}" class="alert alert-danger">
-						<span th:text="${error}"></span>
-					</div>
+					
 					<div class="row justify-content-center">
 						<div class="col-md-5 m-5">
 							<div class="card shadow-lg mt-5">
 								<div class="card-header text-bg-dark text-center">Sign Up</div>
 								<div class="card-body p-md-5">
+									<div th:if="${error}" class="alert alert-danger">
+										<span th:text="${error}"></span>
+									</div>
 									<form th:action="@{/register}" th:object="${user}" method="post">
 										<div class="form-floating mb-3">		
 											<input class="form-control" type="text" id="username" name="username" 
