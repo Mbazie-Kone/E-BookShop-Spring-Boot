@@ -43,13 +43,7 @@ public class ProductController {
 	}
 	
 	@PostMapping("/saveProduct")
-	public String addProduct(@Valid @ModelAttribute("product") Product product, 
-			BindingResult bindingResult, @RequestParam("image") MultipartFile image, Model model){
-		
-		if(bindingResult.hasErrors()) {
-			
-			return "addProduct";
-		}
+	public String addProduct(@ModelAttribute("product") Product product, @RequestParam("image") MultipartFile image, Model model){
 		
 		try {
 			productService.saveProduct(product, image);
@@ -74,13 +68,7 @@ public class ProductController {
 	}
 	
 	@PostMapping("/updateProduct")
-	public String updateProduct(@Valid @ModelAttribute("product") Product product, 
-			BindingResult bindingResult, @RequestParam("image") MultipartFile image, Model model) {
-		
-		if(bindingResult.hasErrors()) {
-			
-			return "updateProduct";
-		}
+	public String updateProduct(@Valid @ModelAttribute("product") Product product, @RequestParam("image") MultipartFile image, Model model) {
 		
 		try {
 			productService.saveProduct(product, image);
