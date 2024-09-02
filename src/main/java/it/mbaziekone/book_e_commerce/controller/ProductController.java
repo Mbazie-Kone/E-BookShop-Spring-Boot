@@ -15,6 +15,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import it.mbaziekone.book_e_commerce.model.Product;
 import it.mbaziekone.book_e_commerce.service.ProductService;
+import jakarta.validation.Valid;
 
 @Controller
 @RequestMapping("/dashboard")
@@ -39,7 +40,7 @@ public class ProductController {
 	}
 	
 	@PostMapping("/saveProduct")
-	public String addProduct(@ModelAttribute("product") Product product, @RequestParam("image") MultipartFile image, Model model){
+	public String addProduct(@Valid @ModelAttribute("product") Product product, @RequestParam("image") MultipartFile image, Model model){
 		try {
 			productService.saveProduct(product, image);
 			model.addAttribute("message", "Product added");
