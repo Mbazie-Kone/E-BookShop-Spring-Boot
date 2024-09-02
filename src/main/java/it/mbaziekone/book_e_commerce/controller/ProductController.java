@@ -38,7 +38,6 @@ public class ProductController {
 	public String showProductForm(Model model) {
 		Product product = new Product();
 		model.addAttribute("product", product);
-		model.addAttribute("message", "Error!");
 		
 		return "addProduct";
 	}
