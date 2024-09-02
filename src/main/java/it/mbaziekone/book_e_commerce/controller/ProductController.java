@@ -77,6 +77,13 @@ public class ProductController {
 			
 			return "updateProduct";
 		}
+		
+		try {
+			productService.saveProduct(product, image);
+			model.addAttribute("message", "Product updated successfully.");
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 	
 	@GetMapping("/deleteProduct/{id}")
