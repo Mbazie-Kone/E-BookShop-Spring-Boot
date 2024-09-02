@@ -5,6 +5,7 @@ import java.io.IOException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -40,7 +41,8 @@ public class ProductController {
 	}
 	
 	@PostMapping("/saveProduct")
-	public String addProduct(@Valid @ModelAttribute("product") Product product, @RequestParam("image") MultipartFile image, Model model){
+	public String addProduct(@Valid @ModelAttribute("product") Product product, 
+			BindingResult bindingResult, @RequestParam("image") MultipartFile image, Model model){
 		try {
 			productService.saveProduct(product, image);
 			model.addAttribute("message", "Product added");
