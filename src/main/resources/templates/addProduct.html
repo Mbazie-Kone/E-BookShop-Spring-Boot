@@ -37,10 +37,7 @@
 				        					<label for="sku">Product SKU:</label>
 				        					<input type="text" class="form-control" id="sku" name="sku" th:field="*{sku}" required>
 				        				</div>
-				        				<div class="form-group mb-3">
-				        					<label for="active">Product Active:</label>
-				        					<input type="number" class="form-control" id="active" name="active" th:field="*{active}" required>
-				        				</div>
+				        				
 				        				<div class="form-group mb-3">
 				        					<label for="units">Units In Stock:</label>
 				        					<input type="number" class="form-control" id="units" name="unitsInStock" th:field="*{unitsInStock}" required>
@@ -54,10 +51,6 @@
 				        					<input type="date" class="form-control" id="last" name="lastUpdate" value="2024-08-08">
 				        				</div>
 				        				<div class="form-group mb-3">
-							                <label for="description">Description:</label>
-							                <textarea class="form-control" id="description" name="description" rows="3"></textarea>
-			            				</div>
-			            				<div class="form-group mb-3">
 							                <label for="price">Price:</label>
 							                <input type="number" step="0.01" class="form-control" id="price" name="unitPrice">
 							            </div>
@@ -65,6 +58,14 @@
 							                <label for="category">Product Category:</label>
 							                <input type="number" class="form-control" id="category" name="category">
 							            </div>
+				        				<div class="form-group mb-3">
+							                <label for="description">Description:</label>
+							                <textarea class="form-control" id="description" name="description" rows="3"></textarea>
+			            				</div>
+			            				<div class="form-group mb-3">
+				        					<label for="active">Product Active:</label>
+				        					<input type="number" class="form-control" id="active" name="active" th:field="*{active}" required>
+				        				</div>
 				        				<div class="form-group mb-3">
 				        					<label for="image">Product Image:</label>
 				        					<input type="file" id="image" name="image" class="form-control">
