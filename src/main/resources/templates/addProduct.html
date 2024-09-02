@@ -39,7 +39,7 @@
 				        					<label for="sku">Product SKU:</label>
 				        					<input type="text" class="form-control" id="sku" name="sku"
 				        					th:field="*{sku}" placeholder="Enter product sku" required>
-				        					<div class="text-danger" th:if="${#fields.hasError('sku')}" th:errors="*{sku}"></div>
+				        					<div class="text-danger" th:if="${fields.hasError('sku')}" th:errors="*{sku}"></div>
 				        				</div>
 				        				<div class="form-group mb-3">
 				        					<label for="active">Product Active:</label>
