@@ -87,6 +87,8 @@ public class ProductController {
 			
 			return "updateProduct";
 		}
+		
+		return "redirect:/dashboard";
 	}
 	
 	@GetMapping("/deleteProduct/{id}")
