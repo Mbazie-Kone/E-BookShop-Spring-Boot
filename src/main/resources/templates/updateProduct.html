@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="https://www.thymeleaf.org" lang="en">
 	<head>
-		<title>Add new product (Admin)</title>
+		<title>Update product (Admin)</title>
 		<div th:replace="~{fragments/bootstrap :: block-bootstrap}"></div>
 	</head>
 	<body class="bg-light">
@@ -22,7 +22,7 @@
 			        	<section class="col-md-9 mx-auto">
 			        		<div class="card">
 			        			<div class="card-header d-flex justify-content-between align-items-center text-bg-dark">
-			        				<h5 class="card-title">Add new product</h5>
+			        				<h5 class="card-title">Update product</h5>
 			        			</div>
 				        		<div class="card-body">
 				        			<form th:action="@{/dashboard/saveProduct}" th:object="${product}" method="post" enctype="multipart/form-data">
