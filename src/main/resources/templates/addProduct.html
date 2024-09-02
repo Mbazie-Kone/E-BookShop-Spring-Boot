@@ -42,6 +42,7 @@
 				        				<div class="form-group mb-3">
 				        					<label for="active">Product Active:</label>
 				        					<input type="number" class="form-control" id="active" name="active" th:field="*{active}" required>
+				        					<div class="text-danger" th:if="${#fields.hasError('active')}" th:errors="*{active}"></div>
 				        				</div>
 				        				<div class="form-group mb-3">
 				        					<label for="units">Units In Stock:</label>
