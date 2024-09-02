@@ -48,9 +48,10 @@ public class ProductController {
 			
 			return "addProduct";
 		}
+		
 		try {
 			productService.saveProduct(product, image);
-			model.addAttribute("message", "Product added");
+			model.addAttribute("message", "Product added successfully");
 		} catch (IOException e) {
 			e.printStackTrace();
 			model.addAttribute("product", product);
