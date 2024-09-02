@@ -43,6 +43,11 @@ public class ProductController {
 	@PostMapping("/saveProduct")
 	public String addProduct(@Valid @ModelAttribute("product") Product product, 
 			BindingResult bindingResult, @RequestParam("image") MultipartFile image, Model model){
+		
+		if(bindingResult.hasErrors()) {
+			
+			return "addProduct";
+		}
 		try {
 			productService.saveProduct(product, image);
 			model.addAttribute("message", "Product added");
