@@ -73,6 +73,7 @@ public class ProductController {
 		return "updateProduct";	
 	}
 	
+	@PostMapping("/updateProduct")
 	public String updateProduct(@Valid @ModelAttribute("product") Product product, 
 			BindingResult bindingResult, @RequestParam("image") MultipartFile image, Model model) {
 		
