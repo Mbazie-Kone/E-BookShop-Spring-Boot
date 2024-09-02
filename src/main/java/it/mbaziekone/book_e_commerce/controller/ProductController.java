@@ -83,6 +83,9 @@ public class ProductController {
 			model.addAttribute("message", "Product updated successfully.");
 		} catch (IOException e) {
 			e.printStackTrace();
+			model.addAttribute("message", "Error updating product!");
+			
+			return "updateProduct";
 		}
 	}
 	
