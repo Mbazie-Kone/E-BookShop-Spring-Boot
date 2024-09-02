@@ -51,11 +51,10 @@ public class ProductController {
 		
 		try {
 			productService.saveProduct(product, image);
-			model.addAttribute("message", "Product added successfully");
+			model.addAttribute("message", "Product added successfully.");
 		} catch (IOException e) {
 			e.printStackTrace();
-			model.addAttribute("product", product);
-			model.addAttribute("message", "Error!");
+			model.addAttribute("message", "Error saving the product!");
 			
 			return "addProduct";
 		}
