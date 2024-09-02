@@ -70,6 +70,15 @@ public class ProductController {
 		return "updateProduct";	
 	}
 	
+	public String updateProduct(@Valid @ModelAttribute("product") Product product, 
+			BindingResult bindingResult, @RequestParam("image") MultipartFile image, Model model) {
+		
+		if(bindingResult.hasErrors()) {
+			
+			return "updateProduct";
+		}
+	}
+	
 	@GetMapping("/deleteProduct/{id}")
 	public String deleteProduct(@PathVariable(value = "id") long id) {
 		productService.deleteProduct(id);
