@@ -54,7 +54,7 @@
 			                                    <td th:text="${product.unitsInStock}"></td>
 			                                    <td>
 			                                    	<div class="btn-group" role="group">
-				                                        <a th:href="@{dashboard/updateProduct/showFormForUpdate/{id}(id=${product.id})}" class="btn btn-warning btn-sm">Update</a>
+				                                        <a th:href="@{dashboard/showFormForUpdate/{id}(id=${product.id})}" class="btn btn-warning btn-sm">Update</a>
 				                                        <a th:href="@{dashboard/deleteProduct/{id}(id=${product.id})}" 
 				                                        class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')">Delete</a>
 			                                        </div>
