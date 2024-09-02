@@ -31,16 +31,16 @@
 				        			<form th:action="@{/dashboard/saveProduct}" th:object="${product}" method="post" enctype="multipart/form-data">
 				        				<div class="form-group mb-3">
 				        					<label for="name">Product Name:</label>
-				        					<input type="text" class="form-control" id="name" name="name" th:field="*{name}" required>
+				        					<input type="text" class="form-control" id="name" name="name">
 				        				</div>
 				        				<div class="form-group mb-3">
 				        					<label for="sku">Product SKU:</label>
-				        					<input type="text" class="form-control" id="sku" name="sku" th:field="*{sku}" required>
+				        					<input type="text" class="form-control" id="sku" name="sku">
 				        				</div>
 				        				
 				        				<div class="form-group mb-3">
 				        					<label for="units">Units In Stock:</label>
-				        					<input type="number" class="form-control" id="units" name="unitsInStock" th:field="*{unitsInStock}" required>
+				        					<input type="number" class="form-control" id="units" name="unitsInStock">
 				        				</div>
 				        				<div class="form-group mb-3">
 				        					<label for="date">Date Created:</label>
@@ -60,7 +60,7 @@
 							            </div>
 							            <div class="form-group mb-3">
 				        					<label for="active">Product Active:</label>
-				        					<input type="number" class="form-control" id="active" name="active" th:field="*{active}" required>
+				        					<input type="number" class="form-control" id="active" name="active">
 				        				</div>
 				        				<div class="form-group mb-3">
 							                <label for="description">Description:</label>
