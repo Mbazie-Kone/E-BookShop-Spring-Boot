@@ -25,6 +25,7 @@ public class ProductController {
 	@Autowired
 	private ProductService productService;
 	
+	// Show products
 	@GetMapping
 	public String viewProductsPage(Model model) {
 		model.addAttribute("listProducts", productService.getAllCatalogs());
@@ -32,6 +33,7 @@ public class ProductController {
 		return "adminPortal"; //This is the view that contains the dashboard layout
 	}
 	
+	// Insert product
 	@GetMapping("/showNewCatalogForm")
 	public String showProductForm(Model model) {
 		Product product = new Product();
@@ -62,6 +64,7 @@ public class ProductController {
 		return "redirect:/dashboard";
 	}
 	
+	// Update product
 	@GetMapping("/showFormForUpdate/{id}")
 	public String showFormForUpdate(@PathVariable(value = "id") long id, Model model) {
 		Product product = productService.getProductById(id);
@@ -91,6 +94,7 @@ public class ProductController {
 		return "redirect:/dashboard";
 	}
 	
+	// Delete product
 	@GetMapping("/deleteProduct/{id}")
 	public String deleteProduct(@PathVariable(value = "id") long id) {
 		productService.deleteProduct(id);
