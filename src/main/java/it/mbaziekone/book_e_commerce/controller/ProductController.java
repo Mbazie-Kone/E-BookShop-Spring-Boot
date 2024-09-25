@@ -26,7 +26,7 @@ public class ProductController {
 	public String viewProductsPage(Model model) {
 		model.addAttribute("listProducts", productService.getAllCatalogs());
 		
-		return "productsAdmin"; //This is the view that contains the dashboard layout
+		return "productsAdmin"; //This is the view that contains the products table layout
 	}
 	
 	// Insert product
@@ -51,7 +51,7 @@ public class ProductController {
 			return "addProduct";
 		}
 		
-		return "redirect:/dashboard";
+		return "redirect:/productsAdmin";
 	}
 	
 	// Update product
@@ -76,7 +76,7 @@ public class ProductController {
 			return "updateProduct";
 		}
 		
-		return "redirect:/dashboard";
+		return "redirect:/productsAdmin";
 	}
 	
 	// Delete product
@@ -84,6 +84,6 @@ public class ProductController {
 	public String deleteProduct(@PathVariable(value = "id") long id) {
 		productService.deleteProduct(id);
 		
-		return "redirect:/dashboard";
+		return "redirect:/productsAdmin";
 	}
 }
