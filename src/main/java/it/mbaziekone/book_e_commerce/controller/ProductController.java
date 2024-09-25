@@ -23,7 +23,10 @@ public class ProductController {
 	
 	// Show products
 	@GetMapping("/products")
-	public String viewProductsPage(Model model) {
+	public String viewProductsPage(
+			@RequestParam(defaultValue = "0") int page, // Current page (default the first page)
+			@RequestParam(defaultValue = "5") int size, // Number of elements per page (default 5)
+			Model model) {
 		model.addAttribute("listProducts", productService.getAllCatalogs());
 		
 		return "productsAdmin"; //This is the view that contains the products table layout
