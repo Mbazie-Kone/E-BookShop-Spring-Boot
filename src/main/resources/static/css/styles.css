@@ -91,12 +91,13 @@ aside h4 {
     background-color: #f8f9fa;
 }
 
-/* Limita l'altezza della tabella */
+/* Limit the height of the table */
 .table-responsive {
-	max-height: 400px; /* Regola l'altezza in base alla tua necessità */
+	max-height: 400px; /* Adjust the height according to your need */
 	overflow-y: auto;
 }
 
+/* Make sure main doesn't force scroll */
 main.container {
 	padding-bottom: 2rem;
 }
