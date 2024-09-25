@@ -69,6 +69,7 @@
 			                        		<li th:classappend="${currentPage == 0} ? 'disabled'">
 			                        			<a class="page-link" th:href="@{/products(size=${productPage.size}, 
 			                        				page=${currentPage - 1})}" aria-label="Previous">
+			                        				<span aria-hidden="true">&laquo;</span>
 			                        			</a>
 			                        		</li>
 			                        	</ul>
