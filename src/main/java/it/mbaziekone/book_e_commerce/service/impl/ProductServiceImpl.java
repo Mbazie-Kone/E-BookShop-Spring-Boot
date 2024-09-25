@@ -10,6 +10,7 @@ import java.util.Optional;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -73,5 +74,11 @@ public class ProductServiceImpl implements ProductService {
 		}
 
 		productRepository.deleteById(id);
+	}
+
+	@Override
+	public Page<Product> getPaginatedProducts(int page, int size) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }
