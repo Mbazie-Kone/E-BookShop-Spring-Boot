@@ -11,6 +11,11 @@
     flex-direction: column;
 }
 
+/* The body of the page should expand to fill the space */
+.content {
+	flex: 1;
+}
+
 /* Header and Navbar */
 header {
     background: linear-gradient(45deg, #007bff, #6c757d);
@@ -173,7 +178,6 @@ footer {
     background-color: #343a40;
     color: #f8f9fa;
     padding: 1.5rem 0;
-    margin-top: 2rem;
     box-shadow: 0px -4px 8px rgba(0, 0, 0, 0.2);
     width: 100%;
 }
@@ -201,9 +205,4 @@ footer a:hover {
 
 .vr {
 	color: white;
-}
-
-/* The body of the page should expand to fill the space */
-.content {
-	flex: 1;
 }
