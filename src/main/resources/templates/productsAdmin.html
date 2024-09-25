@@ -41,7 +41,7 @@
 			                                </tr>
 			                            </thead>
 			                            <tbody>
-			                                <tr th:each="product : ${listProducts}">
+			                                <tr th:each="product : ${productPage.content}">
 			                                    <td th:text="${product.id}"></td>
 			                                    <td>
 			                                    	<img th:src="${product.imagePath}" alt="Product Image" width="500" class="img-thumbnail">
@@ -54,14 +54,19 @@
 			                                    <td th:text="${product.unitsInStock}"></td>
 			                                    <td>
 			                                    	<div class="btn-group" role="group">
-				                                        <a th:href="@{dashboard/showFormForUpdate/{id}(id=${product.id})}" class="btn btn-warning btn-sm">Update</a>
-				                                        <a th:href="@{dashboard/deleteProduct/{id}(id=${product.id})}" 
+				                                        <a th:href="@{showFormForUpdate/{id}(id=${product.id})}" class="btn btn-warning btn-sm">Update</a>
+				                                        <a th:href="@{deleteProduct/{id}(id=${product.id})}" 
 				                                        class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')">Delete</a>
 			                                        </div>
 			                                    </td>
 			                                 </tr>
 			                            </tbody>
 			                        </table>
+			                        
+			                        <!-- Pagination -->
+			                        <nav>
+			                        
+			                        </nav>
 			                    </div>
 			                </div>
 			            </section>
