@@ -99,7 +99,7 @@ aside h4 {
 
 /* Make sure main doesn't force scroll */
 main.container {
-	padding-bottom: 2rem;
+	padding-bottom: 2rem; /* Avoid conflict with footer */
 }
 
 /* Card */
