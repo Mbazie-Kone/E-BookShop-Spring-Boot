@@ -32,7 +32,7 @@ public class ProductController {
 		Page<Product> productPage = productService.getPaginatedProducts(page, size);
 		
 		model.addAttribute("productPage", productPage);
-		model.addAttribute("productPage", page);
+		model.addAttribute("currentPage", page);
 		model.addAttribute("totalPages", productPage.getTotalPages());
 		
 		return "productsAdmin"; //This is the view that contains the products table layout
