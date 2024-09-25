@@ -3,6 +3,7 @@ package it.mbaziekone.book_e_commerce.controller;
 import java.io.IOException;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -27,7 +28,12 @@ public class ProductController {
 			@RequestParam(defaultValue = "0") int page, // Current page (default the first page)
 			@RequestParam(defaultValue = "5") int size, // Number of elements per page (default 5)
 			Model model) {
-		model.addAttribute("listProducts", productService.getAllCatalogs());
+		
+		Page<Product> productPage = productService.getPaginatedProducts(page, size);
+		
+		model.addAttribute("productPage", productPage);
+		model.addAttribute("productPage", page);
+		model.addAttribute("totalPages", productPage.getTotalPages());
 		
 		return "productsAdmin"; //This is the view that contains the products table layout
 	}
