@@ -26,7 +26,7 @@ public class ProductController {
 	@GetMapping("/products")
 	public String viewProductsPage(
 			@RequestParam(defaultValue = "0") int page, // Current page (default the first page)
-			@RequestParam(defaultValue = "5") int size, // Number of elements per page (default 5)
+			@RequestParam(defaultValue = "4") int size, // Number of elements per page (default 4)
 			Model model) {
 		
 		Page<Product> productPage = productService.getPaginatedProducts(page, size);

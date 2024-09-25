@@ -96,7 +96,7 @@ aside h4 {
 
 /* Limit the height of the table */
 .table-responsive {
-	max-height: 400px; /* Adjust the height according to your need */
+	max-height: 60vh; /* Ensure that the table does not occupy more than 60% of the window */
 	overflow-y: auto;
 }
 
