@@ -28,7 +28,7 @@
 				        			<div th:if="${message}" class="alert alert-danger" role="alert">
 				        				<span th:text="${message}"></span>
 				        			</div>
-				        			<form th:action="@{/dashboard/saveProduct}" th:object="${product}" method="post" enctype="multipart/form-data">
+				        			<form th:action="@{/saveProduct}" th:object="${product}" method="post" enctype="multipart/form-data">
 				        				<div class="form-group mb-3">
 				        					<label for="name">Product Name:</label>
 				        					<input type="text" class="form-control" id="name" name="name">

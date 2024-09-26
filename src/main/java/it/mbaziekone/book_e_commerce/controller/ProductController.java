@@ -60,7 +60,7 @@ public class ProductController {
 			return "addProduct";
 		}
 		
-		return "redirect:/productsAdmin";
+		return "redirect:/products";
 	}
 	
 	// Update product
@@ -85,7 +85,7 @@ public class ProductController {
 			return "updateProduct";
 		}
 		
-		return "redirect:/productsAdmin";
+		return "redirect:/products";
 	}
 	
 	// Delete product
@@ -93,6 +93,6 @@ public class ProductController {
 	public String deleteProduct(@PathVariable(value = "id") long id) {
 		productService.deleteProduct(id);
 		
-		return "redirect:/productsAdmin";
+		return "redirect:/products";
 	}
 }
