@@ -2,13 +2,13 @@ html, body {
     height: 100%;
     margin: 0;
     padding: 0;
-    overflow: hidden; /* Evita scroll verticali e orizzontali */
+    overflow: hidden; /* Avoid vertical and horizontal scrolls */
 }
 
 .wrapper {
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Copre l'intera altezza della finestra */
+    min-height: 100vh; /* Covers the entire height of the window */
 }
 
 header {
@@ -27,7 +27,7 @@ header h1 {
 
 .container-fluid {
     flex: 1;
-    overflow-y: auto; /* Consente lo scroll interno per il contenuto principale */
+    overflow-y: auto; /* Allows internal scrolling for main content */
     padding-bottom: 2rem; /* Spazio per evitare sovrapposizione del footer */
 }
 
