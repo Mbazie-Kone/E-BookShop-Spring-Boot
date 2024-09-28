@@ -28,7 +28,7 @@ header h1 {
 .container-fluid {
     flex: 1;
     overflow-y: auto; /* Allows internal scrolling for main content */
-    padding-bottom: 2rem; /* Spazio per evitare sovrapposizione del footer */
+    padding-bottom: 2rem; /* Space to avoid footer overlap */
 }
 
 .sidebar {
@@ -38,7 +38,7 @@ header h1 {
 }
 
 .table-responsive {
-    max-height: 70vh; /* Assicura che la tabella non occupi più del 70% della finestra */
+    max-height: 70vh; /* Ensure that the table does not occupy more than 70% of the window */
     overflow-y: auto;
 }
 
@@ -51,7 +51,7 @@ footer {
 }
 
 .table {
-    table-layout: fixed;  /* Layout fisso per prevenire scroll orizzontale */
+    table-layout: fixed;  /* Fixed layout to prevent horizontal scroll */
     width: 100%;
 }
 
