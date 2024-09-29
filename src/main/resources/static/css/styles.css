@@ -10,6 +10,10 @@ body {
     margin: 0;
 }
 
+.container {
+    margin-top: -50px; /* Increase the value to further raise the form */
+}
+
 .header, .footer {
     background-color: #343a40;
     color: white;
