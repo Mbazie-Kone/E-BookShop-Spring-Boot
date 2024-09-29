@@ -7,16 +7,24 @@ import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
-public class ProjectConfig {
+public class ProjectConfig implements WebMvcConfigurer {
 
 	@Bean
 	WebMvcConfigurer webMvcConfigurer() {
-		return new WebMvcConfigurer() {
-			@Override
-			public void addResourceHandlers(ResourceHandlerRegistry registry) {
-				registry.addResourceHandler("/images/**").addResourceLocations("classpath:/static/images/")
-						.setCacheControl(CacheControl.noStore());
-			}
-		};
+	    return new WebMvcConfigurer() {
+	        @Override
+	        public void addResourceHandlers(ResourceHandlerRegistry registry) {
+	            registry.addResourceHandler("/favicon.ico")
+	                    .addResourceLocations("classpath:/static/")
+	                    .setCacheControl(CacheControl.noStore());
+	        }
+	    };
 	}
+
+	@Override
+    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+        registry.addResourceHandler("/images/**")
+                .addResourceLocations("classpath:/static/images/")
+                .setCacheControl(CacheControl.noCache());
+    }
 }
