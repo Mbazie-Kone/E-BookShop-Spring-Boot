@@ -39,6 +39,9 @@ public class SecurityConfig {
 						.defaultSuccessUrl("/products",true)
 						.failureUrl("/loginAdmin?error=true")
 						.permitAll())
+				 		.headers(headers -> headers
+				        .cacheControl(cache -> cache.disable()) // Disable Cache-Control Header
+				        )
 				.logout(logout -> logout
 						.logoutUrl("/perform_logout")
 						.logoutSuccessUrl("/loginAdmin?logout=true")
