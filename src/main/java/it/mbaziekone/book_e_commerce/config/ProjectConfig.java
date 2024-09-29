@@ -8,17 +8,15 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
 public class ProjectConfig {
-	
-	@Bean
-	public WebMvcConfigurer webMvcConfigurer() {
-	    return new WebMvcConfigurer() {
-	        @Override
-	        public void addResourceHandlers(ResourceHandlerRegistry registry) {
-	            registry.addResourceHandler("/images/**")
-	                    .addResourceLocations("classpath:/static/images/")
-	                    .setCacheControl(CacheControl.noStore());
-	        }
-	    };
-	}
 
+	@Bean
+	WebMvcConfigurer webMvcConfigurer() {
+		return new WebMvcConfigurer() {
+			@Override
+			public void addResourceHandlers(ResourceHandlerRegistry registry) {
+				registry.addResourceHandler("/images/**").addResourceLocations("classpath:/static/images/")
+						.setCacheControl(CacheControl.noStore());
+			}
+		};
+	}
 }
