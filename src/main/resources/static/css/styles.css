@@ -11,7 +11,11 @@ body {
 }
 
 .container {
-    margin-top: -50px; /* Increase the value to further raise the form */
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -20px; /* Increase or decrease to position the form */
 }
 
 .header, .footer {
