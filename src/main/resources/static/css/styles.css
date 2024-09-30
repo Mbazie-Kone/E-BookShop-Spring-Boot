@@ -7,7 +7,7 @@ html, body {
 .wrapper {
 	display: flex;
 	align-items: center; /* Center vertically */
-	justify-content: center; /* Centra orizzontalmente */
+	justify-content: center; /* Center horizontally */
 	flex-direction: column;
 	min-height: 100vh;
 }
@@ -33,7 +33,7 @@ footer {
 	width: 100%;
 }
 
-/* Media Query per schermi più piccoli - sotto 501px di larghezza */
+/* Media Query for smaller screens - under 501px wide */
 @media (max-width: 501px) {
     header {
         padding: 5px; /* Ridurre il padding per mantenere l'aspetto compatto */
