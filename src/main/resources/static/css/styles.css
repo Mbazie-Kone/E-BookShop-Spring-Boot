@@ -41,11 +41,11 @@ footer {
 
     main {
         padding: 10px; /* Reduce padding to avoid overflow */
-        flex-direction: column; /* Adattamento del contenuto se necessario */
+        flex-direction: column; /* Adapt content if necessary */
     }
 
     footer {
-        font-size: 0.9em; /* Ridurre la dimensione del testo per il footer */
+        font-size: 0.9em; /* Reduce text size for footer */
         padding: 5px;
     }
 }
