@@ -36,11 +36,11 @@ footer {
 /* Media Query for smaller screens - under 501px wide */
 @media (max-width: 501px) {
     header {
-        padding: 5px; /* Ridurre il padding per mantenere l'aspetto compatto */
+        padding: 5px; /* Reduce padding to maintain compact appearance */
     }
 
     main {
-        padding: 10px; /* Ridurre il padding per evitare overflow */
+        padding: 10px; /* Reduce padding to avoid overflow */
         flex-direction: column; /* Adattamento del contenuto se necessario */
     }
 
