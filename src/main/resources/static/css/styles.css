@@ -50,17 +50,17 @@ footer {
     }
 }
 
-/* Media Query per schermi sotto i 697px di altezza */
+/* Media Query for screens under 697px in height */
 @media (max-height: 697px) {
     .wrapper {
-        min-height: 90vh; /* Ridurre leggermente l'altezza per gestire spazi ristretti */
+        min-height: 90vh; /* Reduce the height slightly to accommodate tight spaces */
     }
 
     main {
-        padding: 10px; /* Ridurre il padding per fare spazio su schermi più bassi */
+        padding: 10px; /* Reduce padding to make room for shorter screens */
     }
 
     footer {
-        padding: 8px; /* Adattare leggermente il padding del footer */
+        padding: 8px; /* Adjust footer padding slightly */
     }
 }
