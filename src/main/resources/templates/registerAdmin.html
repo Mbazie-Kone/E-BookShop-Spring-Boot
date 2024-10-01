@@ -26,7 +26,8 @@
 								<input class="form-control" type="text" id="username" name="username" 
 									th:field="*{username}" th:value="*{username}" placeholder="johndoe" required>
 								<label for="username">Username</label>
-								<div id="usernameError" th:if="${#fields.hasErrors('username')}" class="badge badge-danger mt-2 d-none">
+								<div id="usernameError" th:if="${#fields.hasErrors('username')}" 
+									th:classappend="${#fields.hasErrors('username')} ? '' : 'd-none'" class="badge badge-danger mt-2">
 									<span th:errors="*{username}"></span>
 								</div>
 							</div>
@@ -34,7 +35,8 @@
 					            <input class="form-control" type="password" id="password"
 					                 th:field="*{password}" placeholder="Password" name="password" required>
 					            <label for="password">Password</label>
-					            <div id="passwordError" th:if="${#fields.hasErrors('password')}" class="badge badge-danger mt-2 d-none">
+					            <div id="passwordError" th:if="${#fields.hasErrors('password')}" 
+					            	th:classappend="${#fields.hasErrors('username')} ? '' : 'd-none'" class="badge badge-danger mt-2">
 									<span th:errors="*{password}"></span>
 								</div>
 		                    </div>
