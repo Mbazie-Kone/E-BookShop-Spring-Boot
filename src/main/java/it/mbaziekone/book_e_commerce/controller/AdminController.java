@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import it.mbaziekone.book_e_commerce.model.security.Admin;
 import it.mbaziekone.book_e_commerce.repository.AdminRepository;
@@ -34,10 +35,16 @@ public class AdminController {
 	}
 	
 	@PostMapping("/register")
-	public String registerUser(@ModelAttribute("user") Admin admin, Model model) {
+	public String registerUser(@ModelAttribute("user") Admin admin, @RequestParam String password, 
+			@RequestParam String confirmPassword, Model model) {
 		// Check if the user name is already taken
 		if(adminRepository.findByUsername(admin.getUsername())!= null) {
 			model.addAttribute("error", "Username already in use");
+			
+			return "registerAdmin";
+		}
+		if(!password.equals(confirmPassword)) {
+			model.addAttribute("errorPassword", true);
 			
 			return "registerAdmin";
 		}
