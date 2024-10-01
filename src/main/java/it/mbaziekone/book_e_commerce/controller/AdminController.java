@@ -38,12 +38,12 @@ public class AdminController {
 	public String registerUser(@ModelAttribute("user") Admin admin, @RequestParam String password, 
 			@RequestParam String confirmPassword, Model model) {
 		// Check if the user name is already taken
-		if(adminRepository.findByUsername(admin.getUsername())!= null) {
+		if(adminRepository.findByUsername(admin.getUsername())!= null ) {
 			model.addAttribute("error", "Username already in use");
 			
 			return "registerAdmin";
 		}
-		if(!password.equals(confirmPassword)) {
+		else if(!password.equals(confirmPassword)) {
 			model.addAttribute("errorPassword", true);
 			
 			return "registerAdmin";
