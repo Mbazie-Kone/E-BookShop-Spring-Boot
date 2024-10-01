@@ -28,10 +28,6 @@ public class Admin implements Serializable {
 	@Size(min = 8, message = "Password must be at least 8 characters long")
 	private String password;
 	
-	@Column(nullable = false, name = "confirm_password")
-	@Size(min = 8, message = "Password must be at least 8 characters long")
-	private String confirmPassword;
-	
 	@Column(nullable = false)	
 	private String role;
 
@@ -69,12 +65,4 @@ public class Admin implements Serializable {
 		this.role = role;
 	}
 
-	public String getConfirmPassword() {
-		return confirmPassword;
-	}
-
-	public void setConfirmPassword(String confirmPassword) {
-		this.confirmPassword = confirmPassword;
-	}
-	
 }
