@@ -26,6 +26,9 @@
 									th:field="*{username}" th:value="*{username}" placeholder="johndoe" required>
 								<label for="username">Username</label>
 							</div>
+							<div th:if="${prova}">
+								<p style="color: red; text-align: center;">prova</p>
+							</div>
 							<div class="form-floating mb-3">
 					            <input class="form-control" type="password" id="password" name="password"
 					                 th:field="*{password}" placeholder="Password" required>
