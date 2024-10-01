@@ -5,8 +5,20 @@
 		<div th:replace="~{fragments/bootstrap :: block-bootstrap}"></div>
 	</head>
 	<body>
-	
-		<div class="table-responsive">
+		<div class="wrapper">
+		
+			<!-- Header -->
+			<div class="w-100">
+				<div th:replace="~{fragments/adminHeader :: block-adminHeader}"></div>
+			</div>
+			<!-- Header -->
+			
+			<!-- Navbar -->
+			<div class="w-100">
+				<div th:replace="~{fragments/adminNavBar :: block-adminNavBar}"></div>
+			</div>
+			<!-- Navbar -->
+			
 			<table class="table table-striped">
 				<thead>
 					<tr>
