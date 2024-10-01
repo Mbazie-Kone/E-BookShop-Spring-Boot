@@ -47,7 +47,7 @@ public class AdminController {
 		
 		// Check if the user name is already taken
 		if(adminRepository.findByUsername(admin.getUsername())!= null ) {
-			model.addAttribute("error", "Username already in use");
+			model.addAttribute("error", true);
 			
 			return "registerAdmin";
 		}
