@@ -41,7 +41,7 @@ public class AdminController {
 			@RequestParam String confirmPassword, Model model) {
 		
 		if(bindingResult.hasErrors()) {
-			model.addAttribute("prova", true);
+			model.addAttribute("validError", true);
 			
 			return "registerAdmin";
 		}
