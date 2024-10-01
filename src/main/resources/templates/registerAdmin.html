@@ -26,7 +26,7 @@
 									th:field="*{username}" th:value="*{username}" placeholder="johndoe" required>
 								<label for="username">Username</label>
 								<div id="passwordError" th:if="${#fields.hasError('password')}" class="badge badge-danger mt-2 d-none">
-									<span></span>
+									<span th:errors="*{password}"></span>
 								</div>
 							</div>
 							<div class="form-floating mb-3">
