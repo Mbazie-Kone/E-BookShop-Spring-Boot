@@ -13,7 +13,12 @@ document.addEventListener("DOMContentLoaded", function() {
 	function showDialog(errorDiv, title) {
 		let errorMessage = errorDiv.textContent.trim();
 		if(errorMessage) {
-			alert(`${title}: ${errorMessage}`);
+			Swal.fire({
+				title: title,
+			    text: errorMessage,
+			    icon: 'error',
+			    confirmButtonText: 'OK'
+			});
 		}
 	}
 	
