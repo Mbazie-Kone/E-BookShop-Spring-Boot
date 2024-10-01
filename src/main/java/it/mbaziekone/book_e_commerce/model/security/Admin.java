@@ -28,6 +28,7 @@ public class Admin implements Serializable {
 	@Size(min = 8, message = "Password must be at least 8 characters long")
 	private String password;
 	
+	@Column(nullable = false, name = "confirm_password")
 	@Size(min = 8, message = "Password must be at least 8 characters long")
 	private String confirmPassword;
 	
