@@ -20,7 +20,7 @@
 			    		<h4>Sign Up</h4>
 			    	</div>
 			    	<div class="card-body p-md-4">
-						<form th:action="@{/register}" th:object="${user}" method="post">
+						<form th:action="@{/register}" th:object="${user}" method="post" id="registrationForm">
 							<div class="form-floating mb-3">		
 								<input class="form-control" type="text" id="username" name="username" 
 									th:field="*{username}" th:value="*{username}" placeholder="johndoe" required>
