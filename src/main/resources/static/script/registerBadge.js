@@ -10,4 +10,11 @@ document.addEventListener("DOMContentLoaded", function() {
 			showDialog(passwordErrorDiv, "Error in password field")
 	}
 	
-})
+	function showDialog(errorDiv, title) {
+		let errorMessage = errorDiv.textContent.trim();
+		if(errorMessage) {
+			alert(`${title}: ${errorMessage}`);
+		}
+	}
+	
+});
