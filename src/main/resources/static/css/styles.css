@@ -46,18 +46,18 @@ main {
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
 }
 
-.btn-primary {
+.btn-success {
     background-color: #6a11cb;
     border: none;
     transition: background-color 0.3s ease, transform 0.2s;
 }
 
-.btn-primary:hover {
+.btn-success:hover {
     background-color: #0056b3;
     transform: scale(1.05);
 }
 
-.btn-primary:active {
+.btn-success:active {
     background-color: #004b93;
     transform: scale(1.02);
 }
