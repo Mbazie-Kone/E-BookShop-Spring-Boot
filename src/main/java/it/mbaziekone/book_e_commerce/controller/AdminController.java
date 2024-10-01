@@ -50,10 +50,10 @@ public class AdminController {
 		}
 		
 		// Encode the password
-		admin.setPassword(passwordEncoder.encode(admin.getPassword()));
+		admin.setPassword(passwordEncoder.encode(password));
 		
 		// Set a default role
-		admin.setRole("USER");
+		admin.setRole("ADMIN");
 		
 		// Save the user in the database
 		adminRepository.save(admin);
