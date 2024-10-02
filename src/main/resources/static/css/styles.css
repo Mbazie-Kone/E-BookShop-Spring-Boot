@@ -48,6 +48,12 @@ main {
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
 }
 
+.card-header {
+	border: none;
+    margin: 0;
+    box-shadow: none;
+}
+
 .btn-success {
     background-color: #6a11cb;
     border: none;
