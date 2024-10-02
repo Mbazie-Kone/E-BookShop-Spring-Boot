@@ -52,6 +52,7 @@ main {
     background-color: #6a11cb;
     border: none;
     transition: background-color 0.3s ease, transform 0.2s;
+    width: 80%;
 }
 
 .btn-success:hover {
