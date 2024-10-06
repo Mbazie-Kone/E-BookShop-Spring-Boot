@@ -20,42 +20,52 @@
 				<div th:replace="~{fragments/adminSideBar :: block-adminSideBar}"></div>
 				<!-- SideBar -->
 				
-				<table class="table table-striped">
-					<thead>
-						<tr>
-							<th>ID</th>
-							<th>Image</th>
-							<th>Active</th>
-							<th>Date Created</th>
-							<th>Name</th>
-							<th>SKU</th>
-							<th>Price</th>
-							<th>Units In Stock</th>
-							<th>Action</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr th:each="product : ${productPage.content}">
-							<td th:text="${product.id}"></td>
-							<td><img th:src="${product.imagePath}" alt="Product Image"
-								width="500" class="img-thumbnail"></td>
-							<td th:text="${product.active}"></td>
-							<td th:text="${product.dateCreated}"></td>
-							<td th:text="${product.name}"></td>
-							<td th:text="${product.sku}"></td>
-							<td th:text="${product.unitPrice}"></td>
-							<td th:text="${product.unitsInStock}"></td>
-							<td>
-								<div class="btn-group" role="group">
-									<a th:href="@{showFormForUpdate/{id}(id=${product.id})}"
-										class="btn btn-warning btn-sm">Update</a> <a
-										th:href="@{deleteProduct/{id}(id=${product.id})}"
-										class="btn btn-danger btn-sm"
-										onclick="return confirm('Are you sure?')">Delete</a>
-								</div>
-							</td>
-						</tr>
-					</tbody>
+				<!-- Main Content -->
+				<div class="col-md-9 py-4">
+					<div class="card">
+						<div class="card-header d-flex justify-content-between align-items-center">
+							<h5>Products</h5>
+							<button type="button">
+								<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
+								  <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2"/>
+								</svg>
+							</button>
+							<tr>
+								<th>ID</th>
+								<th>Image</th>
+								<th>Active</th>
+								<th>Date Created</th>
+								<th>Name</th>
+								<th>SKU</th>
+								<th>Price</th>
+								<th>Units In Stock</th>
+								<th>Action</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr th:each="product : ${productPage.content}">
+								<td th:text="${product.id}"></td>
+								<td><img th:src="${product.imagePath}" alt="Product Image"
+									width="500" class="img-thumbnail"></td>
+								<td th:text="${product.active}"></td>
+								<td th:text="${product.dateCreated}"></td>
+								<td th:text="${product.name}"></td>
+								<td th:text="${product.sku}"></td>
+								<td th:text="${product.unitPrice}"></td>
+								<td th:text="${product.unitsInStock}"></td>
+								<td>
+									<div class="btn-group" role="group">
+										<a th:href="@{showFormForUpdate/{id}(id=${product.id})}"
+											class="btn btn-warning btn-sm">Update</a> <a
+											th:href="@{deleteProduct/{id}(id=${product.id})}"
+											class="btn btn-danger btn-sm"
+											onclick="return confirm('Are you sure?')">Delete</a>
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					
+					
 					<!-- Pagination -->
 				</table>
 				<nav aria-label="Page navigation">
@@ -81,6 +91,8 @@
 					</ul>
 				</nav>
 				<!-- Pagination -->
+				
+				<!-- Main Content -->
 			</div>
 		</div>
 		<script
