@@ -1,15 +1,15 @@
 <div th:fragment="block-adminSideBar">
-	<nav class="col-md-2 d-none d-md-block bg-light sidebar">
+	<div class="col-md-3 bg-light sidebar py-4">
 		<div class="position-sticky pt-3">
-		    <h4>Options</h4>
-		   	<ul class="nav flex-column">
-		    	<li class="nav-item">
-		    		<a class="nav-link active" href="/products">Products List</a>
+		    <h5>Options</h5>
+		   	<ul class="list-group">
+		    	<li class="list-group-item">
+		    		<a class="nav-link active" th:href="@{/products}">Products List</a>
 		    	</li>
-		        <li class="nav-item">
-		        	<a class="nav-link" href="/categories">Products Category</a>
+		        <li class="list-group-item">
+		        	<a class="nav-link" href="#">Products Category</a>
 		        </li>
 		    </ul>
 	    </div>
-	</nav>
+	</div>
 </div>
