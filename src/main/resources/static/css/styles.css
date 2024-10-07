@@ -39,6 +39,9 @@ header, footer {
     transition: background-color 0.3s, border-color 0.3s;
 }
 
+/*
+Improve the appearance of the pagination buttons by adding rounded corners and a shadow.
+*/
 .pagination .page-link {
     border-radius: 50%;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
