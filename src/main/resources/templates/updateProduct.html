@@ -1,84 +1,11 @@
 <!DOCTYPE html>
 <html xmlns:th="https://www.thymeleaf.org" lang="en">
-	<head>
-		<title>Update product (Admin)</title>
+	<head>	
 		<div th:replace="~{fragments/bootstrap :: block-bootstrap}"></div>
+		<title>Update product (Admin)</title>
 	</head>
-	<body class="bg-light">
-		<div class="wrapper">
-			<!-- header -->
-			<div th:replace="~{fragments/adminHeader :: block-adminHeader}"></div>
-			<!-- header -->
-			<!-- navbar -->
-			<div th:replace="~{fragments/adminNavBar :: block-adminNavBar}"></div>
-			<!-- navbar -->
-			<!-- main -->
-			<div class="content">
-				<main class="container mt-5">
-			        <div class="row">
-			        	<!-- side bar -->
-			        	<div th:replace="~{fragments/adminSideBar :: block-adminSideBar}"></div>
-			        	<!-- side bar -->
-			        	<section class="col-md-9 mx-auto">
-			        		<div class="card">
-			        			<div class="card-header d-flex justify-content-between align-items-center text-bg-dark">
-			        				<h5 class="card-title">Update product</h5>
-			        			</div>
-				        		<div class="card-body">
-				        			<form th:action="@{/productsAdmin/updateProduct}" th:object="${product}" method="post" enctype="multipart/form-data">
-				        				<div class="form-group mb-3">
-				        					<label for="name">Product Name:</label>
-				        					<input type="text" class="form-control" id="name" name="name" th:field="*{name}">
-				        				</div>
-				        				<div class="form-group mb-3">
-				        					<label for="sku">Product SKU:</label>
-				        					<input type="text" class="form-control" id="sku" name="sku" th:field="*{sku}">
-				        				</div>
-				        				<div class="form-group mb-3">
-				        					<label for="units">Units In Stock:</label>
-				        					<input type="number" class="form-control" id="units" name="unitsInStock" th:field="*{unitsInStock}">
-				        				</div>
-				        				<div class="form-group mb-3">
-				        					<label for="date">Date Created:</label>
-				        					<input type="date" class="form-control" id="date" name="dateCreate">
-				        				</div>
-				        				<div class="form-group mb-3">
-				        					<label for="last">Last Update:</label>
-				        					<input type="date" class="form-control" id="last" name="lastUpdate">
-				        				</div>
-				        				<div class="form-group mb-3">
-							                <label for="price">Price:</label>
-							                <input type="number" step="0.01" class="form-control" id="price" name="unitPrice" th:field="*{unitPrice}">
-							            </div>
-							            <div class="form-group mb-3">
-							                <label for="category">Product Category:</label>
-							                <input type="number" class="form-control" id="category" name="category" th:field="*{category}">
-							            </div>
-							            <div class="form-group mb-3">
-				        					<label for="active">Product Active:</label>
-				        					<input type="number" class="form-control" id="active" name="active" th:field="*{active}">
-				        				</div>
-				        				<div class="form-group mb-3">
-							                <label for="description">Description:</label>
-							                <textarea class="form-control" id="description" name="description" rows="3" th:field="*{description}"></textarea>
-			            				</div>
-				        				<div class="form-group mb-3">
-				        					<label for="image">Product Image:</label>
-				        					<input type="file" id="image" name="image" class="form-control">
-				        				</div>
-				        				<button type="submit" class="btn btn-primary">Update Product</button>
-				        			</form>
-				        		</div>
-				        	</div>
-				        </section>
-			    	</div>
-			    </main>
-			  </div>
-			<!-- main -->
-		</div>
-		<!-- footer -->
-		<div th:replace="~{fragments/adminFooter :: block-adminFooter}"></div>
-		<!-- footer -->
+	<body>
+		<h1>Hello World!</h1>
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 	</body>
 </html>
