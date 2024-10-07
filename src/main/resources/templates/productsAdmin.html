@@ -49,8 +49,9 @@
 								<tbody th:each="product : ${productPage.content}">
 									<tr>
 										<td th:text="${product.id}"></td>
-										<td><img th:src="${product.imagePath}" alt="Product Image"
-											width="90" class="img-thumbnail"></td>
+										<td>
+											<img th:src="${product.imagePath}" alt="Product Image" width="90" class="img-thumbnail">
+										</td>
 										<td th:text="${product.active}"></td>
 										<td th:text="${product.dateCreated}"></td>
 										<td th:text="${product.name}"></td>
@@ -59,11 +60,13 @@
 										<td th:text="${product.unitsInStock}"></td>
 										<td>
 											<div class="btn-group" role="group">
-												<a th:href="@{showFormForUpdate/{id}(id=${product.id})}"
-													class="btn btn-warning btn-sm">Update</a> <a
-													th:href="@{deleteProduct/{id}(id=${product.id})}"
-													class="btn btn-danger btn-sm"
-													onclick="return confirm('Are you sure?')">Delete</a>
+												<a th:href="@{showFormForUpdate/{id}(id=${product.id})}" class="btn btn-warning btn-sm">
+													Update
+												</a>
+												<a th:href="@{deleteProduct/{id}(id=${product.id})}" class="btn btn-danger btn-sm"
+													onclick="return confirm('Are you sure?')">
+													Delete
+												</a>
 											</div>
 										</td>
 									</tr>
@@ -96,6 +99,10 @@
 					</div>
 				</div>
 				<!-- Main Content -->
+				
+				<!-- Footer -->
+				<div th:replace="~{fragments/adminFooter :: block-adminFooter}"></div>
+				<!-- Footer -->
 				
 			</div>
 		</div>
