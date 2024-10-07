@@ -21,3 +21,12 @@ header, footer {
     border-radius: 8px;
 }
 
+.table-striped tbody tr:nth-of-type(even) {
+    background-color: #f2f2f2;
+}
+
+.btn-success:hover {
+    background-color: #0056b3;
+    border-color: #004085;
+    transition: background-color 0.3s, border-color 0.3s;
+}
