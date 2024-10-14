@@ -1,0 +1,7 @@
+.btn-success:hover {
+    background-color: rgb(3, 25, 3);
+}
+
+.card-header {
+    background: linear-gradient(to right, #08183f, #6eefe8);
+}
