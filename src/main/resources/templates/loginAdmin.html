@@ -14,12 +14,12 @@
 						<div class="card-body">
 							<form th:action="@{/perform_login}" method="post">
 								<div class="form-floating mb-3">
-									<input>
-									<label></label>
+									<input type="text" class="form-control" id="user_name" placeholder="johndoe" autofocus>
+									<label for="user_name">Username</label>
 								</div>
 								<div class="form-floating mb-3">
 									<input type="password" class="form-control" id="pass_word" placeholder="***">
-									<label></label>
+									<label for="pass_word">Password</label>
 								</div>
 							</form>
 						</div>
