@@ -8,8 +8,8 @@
 			<div class="row justify-content-center">
 				<div class="col-md-4">
 					<div class="card shadow-lg mt-5">
-						<div class="card-header text-bg-info text-center">
-							Login to continue
+						<div class="card-header text-bg-secondary text-center p-3">
+							<strong>Login to continue</strong>
 						</div>
 						<div class="card-body">
 							<form th:action="@{/perform_login}" method="post">
@@ -31,11 +31,11 @@
 										Sign in
 									</button>
 								</div>
-								<div th:if="${param.error}" class="alert alert-danger mt-3">
-									<p class="login-failed">Invalid credentials, please try again.</p>
+								<div th:if="${param.error}" class="alert alert-danger d-grid mt-3">
+									<p class="login-failed d-flex justify-content-center align-items-center">Invalid credentials, please try again.</p>
 								</div>
-								<div th:if="${param.logout}" class="alert alert-success mt-3">
-									<p class="logout-ok">Logout successfully.</p>
+								<div th:if="${param.logout}" class="alert alert-success d-grid mt-3">
+									<p class="logout-ok d-flex justify-content-center align-items-center">Logout successfully.</p>
 								</div>
 								<div class="mt-3">
 									<p>Don't have an account yet? <a th:href="@{/register}">Sign Up</a></p>
