@@ -12,6 +12,16 @@
 							Login to continue
 						</div>
 						<div class="card-body">
+							<form th:action="@{/perform_login}" method="post">
+								<div class="form-floating mb-3">
+									<input>
+									<label></label>
+								</div>
+								<div class="form-floating mb-3">
+									<input type="password" class="form-control" id="pass_word" placeholder="***">
+									<label></label>
+								</div>
+							</form>
 						</div>
 					</div>
 				</div>
