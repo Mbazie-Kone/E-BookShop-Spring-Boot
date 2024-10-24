@@ -1,3 +1,7 @@
 .large-icon {
 	font-size: 15px;
 }
+
+.logo-gradient {
+	background: linear-gradient(to up, #ff7e5f, #feb47b);
+}
