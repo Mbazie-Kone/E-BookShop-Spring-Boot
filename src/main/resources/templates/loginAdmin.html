@@ -3,7 +3,7 @@
 	<head th:replace="~{fragments/bootstrap :: block-bootstrap}">
 		<title>Login (Admin)</title>
 	</head>
-	<body>
+	<body class="body">
 		<div class="container">
 			<div class="row justify-content-center">
 				<div class="col-md-4">
@@ -14,11 +14,11 @@
 						<div class="card-body">
 							<form th:action="@{/perform_login}" method="post">
 								<div class="form-floating mb-3">
-									<input type="text" class="form-control" id="user_name" placeholder="johndoe" autofocus>
+									<input type="text" class="form-control" id="user_name" name="username" placeholder="johndoe" autofocus>
 									<label for="user_name">Username</label>
 								</div>
 								<div class="form-floating mb-3">
-									<input type="password" class="form-control" id="pass_word" placeholder="***">
+									<input type="password" class="form-control" id="pass_word" name="password" placeholder="***">
 									<label for="pass_word">Password</label>
 								</div>
 								<div class="form-check mb-3">
