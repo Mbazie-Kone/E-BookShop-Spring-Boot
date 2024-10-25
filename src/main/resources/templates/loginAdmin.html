@@ -32,10 +32,10 @@
 									</button>
 								</div>
 								<div th:if="${param.error}" class="alert alert-danger d-grid mt-3">
-									<p class="login-failed d-flex justify-content-center align-items-center">Invalid credentials, please try again.</p>
+									<p class="login-failed">Invalid credentials, please try again.</p>
 								</div>
 								<div th:if="${param.logout}" class="alert alert-success d-grid mt-3">
-									<p class="logout-ok d-flex justify-content-center align-items-center">Logout successfully.</p>
+									<p class="logout-ok">Logout successfully.</p>
 								</div>
 								<div class="mt-3 text-center">
 									<p>Don't have an account yet? <a th:href="@{/register}">Sign Up</a></p>
