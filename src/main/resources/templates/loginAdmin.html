@@ -78,7 +78,10 @@
 										</div>
 										<div th:if="${errorPassword}" class="alert alert-danger mt-3">
 											<p style="color: red; text-align: center;">The passwords do not match. Try again.</p>
-										</div>		
+										</div>
+										<div th:if="${validError}" class="alert alert-danger mt-3">
+											<p style="color: red; text-align: center;">The username must be at least 8 characters</p>
+										</div>
 									</form>
 								</div>
 								<div class="modal-footer">
