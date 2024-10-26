@@ -1,6 +1,8 @@
 package it.mbaziekone.book_e_commerce.controller;
 
+import org.springframework.data.jpa.repository.query.EqlParser.New_valueContext;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.stereotype.Controller;
@@ -33,9 +35,9 @@ public class AdminController {
 	public String registerUser(@Valid @ModelAttribute("user") Admin admin, BindingResult bindingResult, @RequestParam String password, 
 			@RequestParam String confirmPassword, Model model) {
 		
-		
-		if(bindingResult.hasErrors()) { 
+		if(bindingResult.hasErrors()) {
 			model.addAttribute("validError", true);
+			model.addAttribute("")
 			
 			return "registerAdmin";
 		}
@@ -67,7 +69,9 @@ public class AdminController {
 	}
 	
 	@GetMapping("/loginAdmin")
-	public String login() {
+	public String login(Model model) {
+		model.addAttribute("user", new Admin());
+		model.addAttribute("newUser", new Admin());
 
 		return "loginAdmin";
 	}
