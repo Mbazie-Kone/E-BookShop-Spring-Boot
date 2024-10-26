@@ -29,32 +29,21 @@ public class AdminController {
 		this.passwordEncoder = passwordEncoder;
 	}
 	
-	@GetMapping("/register") public String showRegistrationForm(Model model) {
-	model.addAttribute("user", new Admin());
-	  
-	 return "registerAdmin"; }
-	 
-	
 	@PostMapping("/register")
 	public String registerUser(@Valid @ModelAttribute("user") Admin admin, BindingResult bindingResult, @RequestParam String password, 
 			@RequestParam String confirmPassword, Model model) {
 		
 		if(bindingResult.hasErrors()) {
 			model.addAttribute("validError", true);
-			
-			return "registerAdmin";
 		}
 		
 		// Check if the user name is already taken
 		if(adminRepository.findByUsername(admin.getUsername())!= null ) {
 			model.addAttribute("error", true);
-			
-			return "registerAdmin";
 		}
 		else if(!password.equals(confirmPassword)) {
 			model.addAttribute("errorPassword", true);
 			
-			return "registerAdmin";
 		}
 		
 		// Encode the passwords
