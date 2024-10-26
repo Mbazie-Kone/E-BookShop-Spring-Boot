@@ -40,16 +40,23 @@ public class AdminController {
 	public String registerUser(@Valid @ModelAttribute("user") Admin admin, BindingResult bindingResult, @RequestParam String password, 
 			@RequestParam String confirmPassword, Model model) {
 		
-		if(bindingResult.hasErrors()) {
-			model.addAttribute("validError", true);
-		}
 		
+		if(bindingResult.hasErrors()) { 
+			model.addAttribute("validError", true);
+			
+			return "registerAdmin";
+		}
+		 
 		// Check if the user name is already taken
 		if(adminRepository.findByUsername(admin.getUsername())!= null ) {
 			model.addAttribute("error", true);
+			
+			return "registerAdmin";
 		}
 		else if(!password.equals(confirmPassword)) {
-			model.addAttribute("errorPassword", true);	
+			model.addAttribute("errorPassword", true);
+			
+			return "registerAdmin";
 		}
 		
 		// Encode the passwords
