@@ -6,6 +6,10 @@
 	font-size: 20px;
 }
 
+.large-icon-xl {
+	font-size: 40px;
+}
+
 .login-failed {
 	color: red;
 }
