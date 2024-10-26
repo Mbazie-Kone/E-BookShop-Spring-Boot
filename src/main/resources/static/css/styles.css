@@ -15,10 +15,10 @@
 }
 
 .link-button {
-	background: none;
-	border: none;
-	color: blue;
-	cursor: pointer;
-	font: inherit;
-	padding: 0;
+	background: none; /* Remove button background */
+	border: none; /* Remove the border */
+	color: blue; /* Text color (you can change according to your preferences) */
+	cursor: pointer; /* Change cursor when hovering over text */
+	font: inherit; /* Keep font style from context */
+	padding: 0; /* Remove any padding */
 }
