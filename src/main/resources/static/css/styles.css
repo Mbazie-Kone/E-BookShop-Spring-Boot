@@ -13,3 +13,12 @@
 .logout-ok {
 	color: green;
 }
+
+.link-button {
+	background: none;
+	border: none;
+	color: blue;
+	cursor: pointer;
+	font: inherit;
+	padding: 0;
+}
