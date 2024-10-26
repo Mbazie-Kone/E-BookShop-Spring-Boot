@@ -60,19 +60,18 @@
 										<div class="form-floating mb-3">
 											<span class="glyphicon glyphicon-user"></span>
 											<input type="text" class="form-control" id="reg_username" th:field="*{username}" 
-											placeholder="johndoe" name="username" autofocus required>
+											placeholder="johndoe" autofocus required>
 											<label for="reg_username">Username</label>
 										</div>
 										<div class="form-floating mb-3">
 											<span class="glyphicon glyphicon-eye-open"></span>
 											<input type="password" class="form-control" id="reg_password" 
-											th:field="*{password}" name="password" placeholder="****" required>
-											<label for="reg_username">Password</label>
+											th:field="*{password}" placeholder="****" required>
+											<label for="reg_password">Password</label>
 										</div>
 										<div class="form-floating mb-3">
 											<span class="glyphicon glyphicon-eye-open"></span>
-											<input type="password" class="form-control" id="reg_confirmPassword" 
-											name="confirmPassword" placeholder="****" required>
+											<input type="password" class="form-control" id="reg_confirmPassword" placeholder="****" required>
 											<label for="reg_confirmPassword">Confirm password</label>
 										</div>
 										<button type="submit" class="btn btn-success btn-block">Sign up</button>
