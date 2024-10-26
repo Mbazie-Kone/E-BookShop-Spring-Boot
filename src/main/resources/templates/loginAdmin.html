@@ -59,7 +59,8 @@
 									<form th:action="@{/register}" th:object="${user}" method="post">
 										<div class="form-floating mb-3">
 											<span class="glyphicon glyphicon-user"></span>
-											<input type="text" class="form-control" id="reg_username" placeholder="johndoe" autofocus required>
+											<input type="text" class="form-control" id="reg_username" placeholder="johndoe"
+											th:field="*{username}" th:value="*{username}" autofocus required>
 											<label for="reg_username">Username</label>
 										</div>
 										<div class="form-floating mb-3">
