@@ -47,19 +47,19 @@
 					</div>
 					
 					<!-- Registration modal -->
-					<div class="modal fade" id="registrationModal" role="dialog">
+					<div class="modal fade" id="registrationModal" tabindex="-1" role="dialog">
 						<div class="modal-dialog">
 							<!-- Modal content -->
 							<div class="modal-content">
 								<div class="modal-header text-center">
-									<button type="button" class="btn-close" data-dismiss="modal">&times;></button>
+									<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 									<h4><span class="glyphicon glyphicon-lock"> Create account</span></h4>	
 								</div>
 								<div class="modal-body text-center">
 									<form th:action="@{/register}" th:object="${user}" method="post">
 										<div class="form-floating mb-3">
 											<span class="glyphicon glyphicon-user"></span>
-											<input type="text" class="form-control" id="reg_username" th:field="*{username}" th:value="*{username}" 
+											<input type="text" class="form-control" id="reg_username" th:field="*{username}" 
 											placeholder="johndoe" autofocus required>
 											<label for="reg_username">Username</label>
 										</div>
@@ -104,7 +104,6 @@
 		
 		<!-- Scripts -->
 		<script src="/javascript/javaScripts.js"></script>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3/jquery.min.js"></script>
 		<div th:replace="~{fragments/javaScript :: block-javascript}"></div>
 		<!-- Scripts -->
 					
