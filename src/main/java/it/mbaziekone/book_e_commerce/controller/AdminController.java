@@ -29,12 +29,11 @@ public class AdminController {
 		this.passwordEncoder = passwordEncoder;
 	}
 	
-	/*
-	 * @GetMapping("/register") public String showRegistrationForm(Model model) {
-	 * model.addAttribute("user", new Admin());
-	 * 
-	 * return "registerAdmin"; }
-	 */
+	@GetMapping("/register") public String showRegistrationForm(Model model) {
+	model.addAttribute("user", new Admin());
+	  
+	 return "registerAdmin"; }
+	 
 	
 	@PostMapping("/register")
 	public String registerUser(@Valid @ModelAttribute("user") Admin admin, BindingResult bindingResult, @RequestParam String password, 
