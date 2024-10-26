@@ -8,7 +8,6 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import jakarta.validation.constraints.Size;
 
 @Entity
 @Table(name = "administrators")
@@ -21,11 +20,9 @@ public class Admin implements Serializable {
 	private Long id;
 	
 	@Column(nullable = false, unique = true, name = "user_name")
-	@Size(min = 6, message = "Username must be at least 6 characters long")
 	private String username;
 	
 	@Column(nullable = false, name = "pass_word")
-	@Size(min = 8, message = "Password must be at least 8 characters long")
 	private String password;
 	
 	@Column(nullable = false)	
