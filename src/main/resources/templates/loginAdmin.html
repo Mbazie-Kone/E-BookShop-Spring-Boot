@@ -67,9 +67,26 @@
 											<input type="password" class="form-control" id="reg_password" placeholder="****" required>
 											<label for="reg_username">Password</label>
 										</div>
-										<button type="submit" class="btn btn-success btn-block">Sign up</button>		
+										<div class="form-floating mb-3">
+											<span class="glyphicon glyphicon-eye-open"></span>
+											<input type="password" class="form-control" id="reg_confirmPassword" placeholder="****" required>
+											<label for="reg_confirmPassword">Confirm password</label>
+										</div>
+										<button type="submit" class="btn btn-success btn-block">Sign up</button>
+										<div th:if="${error}" class="alert alert-danger mt-3">
+											<p style="color: red; text-align: center;">Username already in use</p>
+										</div>
+										<div th:if="${errorPassword}" class="alert alert-danger mt-3">
+											<p style="color: red; text-align: center;">The passwords do not match. Try again.</p>
+										</div>		
 									</form>
 								</div>
+								<div class="modal-footer">
+						        	<button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal">
+						        		<span class="glyphicon glyphicon-remove"></span> 
+						        		Cancel
+						        	</button>
+						        </div>
 							</div>
 							<!-- Modal content -->
 						</div>
