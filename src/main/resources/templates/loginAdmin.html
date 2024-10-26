@@ -65,14 +65,14 @@
 							        	<div class="input-group mb-3">
 								        	<span class="input-group-text"><i class="bi bi-lock-fill"></i></span>
 								        	<div class="form-floating">
-									        	<input type="password" class="form-control" id="reg_password" placeholder="****">
+									        	<input type="password" th:field="*{password}" class="form-control" id="reg_password" placeholder="****">
 									        	<label for="reg_password">Password</label>
 								        	</div>
 							        	</div>
 							        	<div class="input-group mb-3">
 							        		<span class="input-group-text"><i class="bi bi-lock-fill"></i></span>
 								        	<div class="form-floating">
-									        	<input type="password" th:field="*{password}" class="form-control" id="confirmPassword" placeholder="****">
+									        	<input type="password" class="form-control" id="confirmPassword" placeholder="****">
 									        	<label for="confirmPassword">Confirm password</label>
 								        	</div>
 							        	</div>
