@@ -1,1 +1,5 @@
-$(document).read
+$(document).ready(function() {
+	$("#modalBtn").click(function(){
+		
+	});
+});
