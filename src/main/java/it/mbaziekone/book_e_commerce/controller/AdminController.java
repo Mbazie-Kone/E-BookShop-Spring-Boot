@@ -1,8 +1,6 @@
 package it.mbaziekone.book_e_commerce.controller;
 
-import org.springframework.data.jpa.repository.query.EqlParser.New_valueContext;
 import org.springframework.security.core.Authentication;
-import org.springframework.security.core.userdetails.User;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.stereotype.Controller;
@@ -32,26 +30,26 @@ public class AdminController {
 	}
 	
 	@PostMapping("/register")
-	public String registerUser(@Valid @ModelAttribute("user") Admin admin, BindingResult bindingResult, @RequestParam String password, 
+	public String registerUser(@Valid Admin admin, BindingResult bindingResult, @RequestParam String password, 
 			@RequestParam String confirmPassword, Model model) {
 		
 		if(bindingResult.hasErrors()) {
 			model.addAttribute("validError", true);
-			model.addAttribute("")
+			model.addAttribute("user", new Admin());
 			
-			return "registerAdmin";
+			return "loginAdmin";
 		}
 		 
 		// Check if the user name is already taken
 		if(adminRepository.findByUsername(admin.getUsername())!= null ) {
 			model.addAttribute("error", true);
 			
-			return "registerAdmin";
+			return "loginAdmin";
 		}
 		else if(!password.equals(confirmPassword)) {
 			model.addAttribute("errorPassword", true);
 			
-			return "registerAdmin";
+			return "loginAdmin";
 		}
 		
 		// Encode the passwords

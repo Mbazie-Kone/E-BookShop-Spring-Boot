@@ -54,11 +54,11 @@
 							    	<h4 class="modal-title">Registration form</h4>
 							    </div>
 							    <div class="modal-body">
-							        <form action="@{/register}" method="post">
+							        <form action="@{/register}" th:object="${admin}" method="post">
 							        	<div class="input-group mb-3">
 							        		<span class="input-group-text"><i class="bi bi-person-fill"></i></span>
 								        	<div class="form-floating">
-									        	<input type="text" class="form-control" id="reg_username" placeholder="johndoe" autofocus>
+									        	<input type="text" th:field="*{username}" class="form-control" id="reg_username" placeholder="johndoe" autofocus>
 									        	<label for="reg_username">Username</label>
 								        	</div>
 							        	</div>
@@ -72,7 +72,7 @@
 							        	<div class="input-group mb-3">
 							        		<span class="input-group-text"><i class="bi bi-lock-fill"></i></span>
 								        	<div class="form-floating">
-									        	<input type="password" class="form-control" id="confirmPassword" placeholder="****">
+									        	<input type="password" th:field="*{password}" class="form-control" id="confirmPassword" placeholder="****">
 									        	<label for="confirmPassword">Confirm password</label>
 								        	</div>
 							        	</div>
