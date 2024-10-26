@@ -29,6 +29,13 @@ public class AdminController {
 		this.passwordEncoder = passwordEncoder;
 	}
 	
+	@GetMapping("/register")
+	public String showRegistrationForm(Model model) {
+		model.addAttribute("user", new Admin());
+		
+		return "register";
+	}
+	
 	@PostMapping("/register")
 	public String registerUser(@Valid @ModelAttribute("user") Admin admin, BindingResult bindingResult, @RequestParam String password, 
 			@RequestParam String confirmPassword, Model model) {
@@ -42,8 +49,7 @@ public class AdminController {
 			model.addAttribute("error", true);
 		}
 		else if(!password.equals(confirmPassword)) {
-			model.addAttribute("errorPassword", true);
-			
+			model.addAttribute("errorPassword", true);	
 		}
 		
 		// Encode the passwords
