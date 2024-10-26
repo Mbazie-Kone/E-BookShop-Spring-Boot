@@ -2,8 +2,9 @@
 <html xmlns:th="https://www.thymeleaf.org" lang="en">
 	<head th:replace="~{fragments/bootstrap :: block-bootstrap}">
 		<title>Login (Admin)</title>
+		<link rel="stylesheet" href="/css/modalStyle.css">
 	</head>
-	<body class="body">
+	<body>
 		<div class="container">
 			<div class="row justify-content-center">
 				<div class="col-md-4">
@@ -48,8 +49,9 @@
 					<!-- Registration modal -->
 					<div class="modal fade" id="registrationModal" role="dialog">
 						<div class="modal-dialog">
+							<!-- Modal content -->
 							<div class="modal-content">
-								<div class="modal-header">
+								<div class="modal-header modal-custom">
 									<h5 class="modal-title" id="registrationModalLabel">Sign up</h5>
 									<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 								</div>
