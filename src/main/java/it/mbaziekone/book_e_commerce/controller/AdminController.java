@@ -28,8 +28,11 @@ public class AdminController {
 	}
 	
 	@PostMapping("/register")
-	public String registerUser(@ModelAttribute("user") Admin admin, @RequestParam String password, 
-			@RequestParam String confirmPassword, Model model) {
+	public String registerUser(@ModelAttribute("user") Admin admin, 
+							   @RequestParam String username, 
+							   @RequestParam String password, 
+							   @RequestParam String confirmPassword, 
+							   Model model) {
 		
 		// Check if the user name is already taken
 		if(adminRepository.findByUsername(admin.getUsername())!= null ) {
