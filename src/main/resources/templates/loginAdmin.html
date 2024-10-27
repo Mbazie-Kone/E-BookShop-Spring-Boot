@@ -32,9 +32,6 @@
 										Sign in
 									</button>
 								</div>
-								<div th:if="${fieldError}" class="alert alert-danger mt-3">
-									<p class="text-center">Null.</p>
-								</div>
 								<div th:if="${param.error}" class="alert alert-danger mt-3">
 									<p class="login-failed text-center">Invalid credentials, please try again.</p>
 								</div>
@@ -84,6 +81,9 @@
 												<i class="bi bi-person-plus-fill large-icon"></i>
 												Sign up
 											</button>
+										</div>
+										<div th:if="${fieldError}" class="alert alert-danger mt-3">
+											<p class="text-center">Null.</p>
 										</div>
 										<div th:if="${error}" class="alert alert-danger mt-3">
 											<p style="color: red; text-align: center;">Username already in use</p>

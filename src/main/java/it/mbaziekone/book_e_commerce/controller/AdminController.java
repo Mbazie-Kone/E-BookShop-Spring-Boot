@@ -34,10 +34,10 @@ public class AdminController {
 							   @RequestParam String password, 
 							   @RequestParam String confirmPassword, 
 							   Model model) {
-		model.addAttribute("user", new Admin());
 		
 		if (bindingResult.hasErrors()) {
 	        model.addAttribute("bindingErrors", bindingResult.getAllErrors());
+	        
 	        return "loginAdmin";
 	    }
 		
