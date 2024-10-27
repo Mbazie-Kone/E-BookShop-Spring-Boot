@@ -31,12 +31,6 @@ public class AdminController {
 	public String registerUser(@ModelAttribute("user") Admin admin, @RequestParam String password, 
 			@RequestParam String confirmPassword, Model model) {
 		
-		/*
-		 * if(bindingResult.hasErrors()) { model.addAttribute("validError", true);
-		 * model.addAttribute("user", new Admin());
-		 * 
-		 * return "loginAdmin"; }
-		 */
 		// Check if the user name is already taken
 		if(adminRepository.findByUsername(admin.getUsername())!= null ) {
 			model.addAttribute("error", true);
@@ -64,10 +58,14 @@ public class AdminController {
 	}
 	
 	@GetMapping("/loginAdmin")
-	public String login(Model model) {
-		model.addAttribute("user", new Admin());
-		model.addAttribute("newUser", new Admin());
-
+	public String login(@RequestParam String username, @RequestParam String password, Model model) {
+		
+		if(username.equals(null) || password.equals(null) ) {
+			model.addAttribute("fieldError", true);
+			
+			return "loginAdmin";
+		}
+		
 		return "loginAdmin";
 	}
 	
