@@ -15,11 +15,11 @@
 						<div class="card-body">
 							<form th:action="@{/perform_login}" method="post">
 								<div class="form-floating mb-3">
-									<input type="text" class="form-control" id="user_name" name="username" placeholder="johndoe" autofocus>
+									<input type="text" class="form-control" id="user_name" name="username" th:field="*{username}" placeholder="johndoe" autofocus>
 									<label for="user_name">Username</label>
 								</div>
 								<div class="form-floating mb-3">
-									<input type="password" class="form-control" id="pass_word" name="password" placeholder="***">
+									<input type="password" class="form-control" id="pass_word" name="password" th:field="*{password}" placeholder="***">
 									<label for="pass_word">Password</label>
 								</div>
 								<div class="form-check mb-3">
