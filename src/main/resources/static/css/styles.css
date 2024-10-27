@@ -9,6 +9,11 @@
 	font-size: 20px;
 }
 
+.large-add-icon {
+	font-size: 50px;
+}
+
+
 .login-failed {
 	color: red;
 }
