@@ -41,8 +41,8 @@ public class AdminController {
 	        return "loginAdmin";
 	    }
 		
-		if(password == null) {
-			model.addAttribute("fieldError", true);
+		if(password.equals(null)) {
+			model.addAttribute("passwordNull", true);
 			
 			return "loginAdmin";
 		}
