@@ -15,11 +15,11 @@
 						<div class="card-body">
 							<form th:action="@{/perform_login}" method="post">
 								<div class="form-floating mb-3">
-									<input type="text" class="form-control" id="user_name" name="username" th:field="*{username}" placeholder="johndoe" autofocus>
+									<input type="text" class="form-control" id="user_name" name="username" placeholder="johndoe" autofocus>
 									<label for="user_name">Username</label>
 								</div>
 								<div class="form-floating mb-3">
-									<input type="password" class="form-control" id="pass_word" name="password" th:field="*{password}" placeholder="***">
+									<input type="password" class="form-control" id="pass_word" name="password" placeholder="***">
 									<label for="pass_word">Password</label>
 								</div>
 								<div class="form-check mb-3">
@@ -61,21 +61,21 @@
 							        	<div class="input-group mb-3">
 							        		<span class="input-group-text"><i class="bi bi-person-fill"></i></span>
 								        	<div class="form-floating">
-									        	<input type="text" class="form-control" id="reg_username" name="username" placeholder="johndoe">
+									        	<input type="text" class="form-control" id="reg_username" placeholder="johndoe">
 									        	<label for="reg_username">Username</label>
 								        	</div>
 							        	</div>
 							        	<div class="input-group mb-3">
 								        	<span class="input-group-text"><i class="bi bi-lock-fill"></i></span>
 								        	<div class="form-floating">
-									        	<input type="password" class="form-control" id="reg_password" name="password" placeholder="****">
+									        	<input type="password" class="form-control" id="reg_password" placeholder="****">
 									        	<label for="reg_password">Password</label>
 								        	</div>
 							        	</div>
 							        	<div class="input-group mb-3">
 							        		<span class="input-group-text"><i class="bi bi-lock-fill"></i></span>
 								        	<div class="form-floating">
-									        	<input type="password" class="form-control" id="confirmPassword" name="confirmPassword" placeholder="****">
+									        	<input type="password" class="form-control" id="confirmPassword" placeholder="****">
 									        	<label for="confirmPassword">Confirm password</label>
 								        	</div>
 							        	</div>
