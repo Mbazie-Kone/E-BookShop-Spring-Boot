@@ -1,5 +1,8 @@
 .body {
-	font-family: cursive, sans-serif;
+	font-family: "Roboto", sans-serif;
+	font-style: normal;
+	height: 100vh;
+	background-image: linear-gradient(to top, #e3f1f2, #eaf3f7, #f1f5f9, #f7f8fa, #fbfbfb);
 }
 
 .large-icon {
