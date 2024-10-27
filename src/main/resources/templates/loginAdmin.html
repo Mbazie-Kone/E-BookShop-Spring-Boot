@@ -32,6 +32,9 @@
 										Sign in
 									</button>
 								</div>
+								<div th:if="${fieldError}" class="alert alert-danger d-grid mt-3">
+									<p class="text-center">Null.</p>
+								</div>
 								<div th:if="${param.error}" class="alert alert-danger d-grid mt-3">
 									<p class="login-failed text-center">Invalid credentials, please try again.</p>
 								</div>

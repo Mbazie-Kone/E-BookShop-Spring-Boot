@@ -61,7 +61,9 @@ public class AdminController {
 	}
 	
 	@GetMapping("/loginAdmin")
-	public String login(@RequestParam String username, @RequestParam String password, Model model) {
+	public String login(@RequestParam String username, 
+			            @RequestParam String password, 
+			            Model model) {
 		
 		if(username == null || password == null ) {
 			model.addAttribute("fieldError", true);
