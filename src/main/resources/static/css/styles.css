@@ -34,8 +34,13 @@
 	}
 }
 
-/* Card */
+.logo-gradient {
+	background-image: linear-gradient(to bottom, )
+}
 
-.fixed- {
-	width: 1383.52px;
+.fixed-footer {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	padding: 10px 0;
 }

@@ -57,7 +57,7 @@
 										<td th:text="${product.unitPrice}"></td>
 										<td th:text="${product.unitsInStock}"></td>
 										<td>
-											<div class="btn-group d-flex justify-content-center align-items-center" role="group">
+											<div class="btn-group d-flex justify-content-center align-items-center gap-2" role="group">
 												<a th:href="@{showFormForUpdate/{id}(id=${product.id})}" class="btn btn-warning btn-sm">
 													Update
 												</a>
@@ -100,7 +100,7 @@
 				</div>
 				<!-- Main Content -->
 				
-				<div  class="d-flex justify-content-center align-items-center">
+				<div  class="fixed-footer text-center">
 					<!-- Footer -->
 					<div th:replace="~{fragments/adminFooter :: block-adminFooter}"></div>
 					<!-- Footer -->
