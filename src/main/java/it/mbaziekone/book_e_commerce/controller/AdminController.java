@@ -60,7 +60,7 @@ public class AdminController {
 	@GetMapping("/loginAdmin")
 	public String login(@RequestParam String username, @RequestParam String password, Model model) {
 		
-		if(username.equals(null) || password.equals(null) ) {
+		if(username == null || password == null ) {
 			model.addAttribute("fieldError", true);
 			
 			return "loginAdmin";
