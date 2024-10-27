@@ -41,6 +41,12 @@ public class AdminController {
 	        return "loginAdmin";
 	    }
 		
+		if(password == null) {
+			model.addAttribute("fieldError", true);
+			
+			return "loginAdmin";
+		}
+		
 		// Check if the user name is already taken
 		if(adminRepository.findByUsername(admin.getUsername())!= null ) {
 			model.addAttribute("error", true);
