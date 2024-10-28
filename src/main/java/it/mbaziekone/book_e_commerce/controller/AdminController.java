@@ -28,6 +28,12 @@ public class AdminController {
 		this.passwordEncoder = passwordEncoder;
 	}
 	
+	@GetMapping("/dashboard")
+	public String dashPage() {
+		
+		return "dashboardAdmin";
+	}
+	
 	@PostMapping("/register")
 	public String registerUser(@ModelAttribute("user") Admin admin,
 							   BindingResult bindingResult, 
