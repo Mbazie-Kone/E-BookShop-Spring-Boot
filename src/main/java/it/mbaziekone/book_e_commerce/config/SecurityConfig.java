@@ -34,7 +34,7 @@ public class SecurityConfig {
 						.requestMatchers("/public/**", "/register", "/api/**", "/css/**", "/js/**", "/images/**").permitAll()
 						.anyRequest().authenticated())
 				.formLogin(form -> form
-						.loginPage("/dashboardAdmin")
+						.loginPage("/loginAdmin")
 						.loginProcessingUrl("/perform_login")
 						.defaultSuccessUrl("/dashboard",true)
 						.failureUrl("/loginAdmin?error=true")
