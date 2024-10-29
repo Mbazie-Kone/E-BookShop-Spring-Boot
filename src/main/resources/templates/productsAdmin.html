@@ -51,10 +51,10 @@
 										<td>
 											<div class="d-grid">
 												<div class="d-flex justify-content-center align-items-center gap-2">
-													<a th:href="@{showFormForUpdate/{id}(id=${product.id})}" class="btn btn-warning btn-sm">
+													<a href="#" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="update-product">
 														Update
 													</a>
-													<a th:href="@{deleteProduct/{id}(id=${product.id})}" class="btn btn-danger btn-sm"
+													<a th:href="@{deleteProduct/{id}(id=${product.id})}" class="btn btn-danger"
 														onclick="return confirm('Are you sure?')">
 														Delete
 													</a>
