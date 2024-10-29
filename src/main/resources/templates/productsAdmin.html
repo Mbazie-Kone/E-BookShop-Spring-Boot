@@ -54,8 +54,7 @@
 													<a href="#" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="update-product">
 														Update
 													</a>
-													<a th:href="@{deleteProduct/{id}(id=${product.id})}" class="btn btn-danger"
-														onclick="return confirm('Are you sure?')">
+													<a href="#" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="delete-product">
 														Delete
 													</a>
 												</div>
@@ -100,6 +99,10 @@
 				<!-- Footer -->
 	
 			</div>
+			
+		<!-- Add product modal -->
+		
+		<!-- Add product modal -->
 			
 		<!-- Bootstrap Javascript -->
 		<div th:replace="~{fragments/bootstrapJavascript :: block-bootstrapJavascript}"></div>
