@@ -17,7 +17,7 @@
 					<div class="card fixed-dim mt-5">
 						<div class="card-header d-flex justify-content-between align-items-center">
 							<h5>Products</h5>
-							<a>
+							<a href="#" data-bs-toggle="modal" data-bs-target="#add-product">
 								<i class="bi bi-plus-square-fill large-add-icon"></i>
 							</a>
 						</div>
@@ -49,14 +49,16 @@
 										<td th:text="${product.unitPrice}"></td>
 										<td th:text="${product.unitsInStock}"></td>
 										<td>
-											<div class="btn-group d-flex justify-content-center align-items-center gap-2" role="group">
-												<a th:href="@{showFormForUpdate/{id}(id=${product.id})}" class="btn btn-warning btn-sm">
-													Update
-												</a>
-												<a th:href="@{deleteProduct/{id}(id=${product.id})}" class="btn btn-danger btn-sm"
-													onclick="return confirm('Are you sure?')">
-													Delete
-												</a>
+											<div class="d-grid">
+												<div class="d-flex justify-content-center align-items-center gap-2">
+													<a th:href="@{showFormForUpdate/{id}(id=${product.id})}" class="btn btn-warning btn-sm">
+														Update
+													</a>
+													<a th:href="@{deleteProduct/{id}(id=${product.id})}" class="btn btn-danger btn-sm"
+														onclick="return confirm('Are you sure?')">
+														Delete
+													</a>
+												</div>
 											</div>
 										</td>
 									</tr>
