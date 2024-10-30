@@ -105,12 +105,12 @@
 			<div class="modal-dialog modal-dialog-centered">
 				<div class="modal-content">
 					<div class="modal-header text-bg-white">
-						<div class="modal-title">Add product</div>
+						<div class="modal-title">Add new product</div>
 						<button type="button" class="btn-close btn-close-danger" data-bs-dismiss="modal" aria-label="Close"></button>
 					</div>
 					<div class="modal-body">
-						<form action="#" method="post">
-							<input class="form"></input>
+						<form th:action="@{/saveProduct}" th:object="${product}" method="post" enctype="multipart/form-data">
+							<input type=text class="form-control"></input>
 							<input class=""></input>
 						</form>
 					</div>
