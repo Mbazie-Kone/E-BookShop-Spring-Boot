@@ -55,3 +55,7 @@
 .mouse-on:hover {
 	color: blue;
 }
+
+.button-a {
+	background-color: green;
+}
