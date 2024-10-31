@@ -110,10 +110,14 @@
 					</div>
 					<div class="modal-body">
 						<form th:action="@{/saveProduct}" th:object="${product}" method="post" enctype="multipart/form-data">
-							<div class="mb-3 row">
-								<label for="productName" class="col-sm-2 col-form-label">Product name:</label>
-								<div class="col-sm-10">
-									<input type="text" class="form-control" id="productName">
+							<div class="container">
+								<div class="row">
+									<div class="col-md-12">
+										<div class="d-grid align-items-center">
+											<label for="productName" class="form-label">Product name:</label>
+											<input type="text" class="form-control" id="productName">
+										</div>
+									</div>
 								</div>
 							</div>
 						</form>
