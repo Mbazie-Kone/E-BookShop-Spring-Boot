@@ -9,7 +9,7 @@
 				<div class="col-md-4">
 					<div class="card shadow-lg mt-5 card-dim">
 						<div class="card-header text-bg-secondary text-center p-3">	
-							<h4><i class="bi bi-lock-fill"></i> Login to continue</h4>
+							<h5><i class="bi bi-lock-fill"></i> Login to continue</h5>
 						</div>
 						<div class="card-body">
 							<form th:action="@{/perform_login}" method="post">
@@ -50,7 +50,7 @@
 						<div class="modal-dialog">
 		    				<div class="modal-content">
 							    <div class="modal-header text-bg-secondary d-flex justify-content-center align-items-center">
-							    	<h4 class="modal-title">Registration form</h4>
+							    	<h5 class="modal-title">Registration Form</h5>
 							    </div>
 							    <div class="modal-body">
 							        <form action="@{/register}" th:object="${user}" method="post">
