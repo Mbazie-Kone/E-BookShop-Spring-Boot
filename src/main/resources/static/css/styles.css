@@ -64,3 +64,7 @@
 .input-group-text {
 	width: 120px;
 }
+
+.btn-font-size {
+	font-size: 1px !important;
+}
