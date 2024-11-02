@@ -59,23 +59,26 @@
 							        		<span class="input-group-text"><i class="bi bi-person-fill"></i></span>
 								        	<div class="form-floating">
 									        	<input type="text" class="form-control" id="reg_username" name="username" placeholder="johndoe" 
-									        		   th:field="*{username}">
+									        		   th:field="*{username}" required>
 									        	<label for="reg_username">Username</label>
+									        	<div class="invalid-feedback d-block" th:if="${#fields.hasErrors('username')}" th:errors="*{username}"></div>
 								        	</div>
 							        	</div>
 							        	<div class="input-group mb-3">
 								        	<span class="input-group-text"><i class="bi bi-lock-fill"></i></span>
 								        	<div class="form-floating">
 									        	<input type="password" class="form-control" name="password" id="reg_password" placeholder="****" 
-									        		   th:field="*{password}">
+									        		   th:field="*{password}" required>
 									        	<label for="reg_password">Password</label>
 								        	</div>
 							        	</div>
 							        	<div class="input-group mb-3">
 							        		<span class="input-group-text"><i class="bi bi-lock-fill"></i></span>
 								        	<div class="form-floating">
-									        	<input type="password" class="form-control" id="confirmPassword" name="confirmPassword" placeholder="****">
+									        	<input type="password" class="form-control" id="confirmPassword" name="confirmPassword" 
+									        		   placeholder="****" required>
 									        	<label for="confirmPassword">Confirm password</label>
+									        	<div class="invalid-feedback d-block" th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></div>
 								        	</div>
 							        	</div>
 							        	<div class="d-grid">
@@ -99,7 +102,7 @@
 		</div>
 		
 		<!-- Scripts -->
-		<div th:replace="~{fragments/javaScript :: block-javascript}"></div>
+		<div th:replace="~{fragments/bootstrapJavascript :: block-bootstrapJavascript}"></div>
 		<!-- Scripts -->
 					
 	</body>
