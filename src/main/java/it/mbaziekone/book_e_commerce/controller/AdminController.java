@@ -60,6 +60,7 @@ public class AdminController {
 	@GetMapping("/loginAdmin")
 	public String login(Model model) {
 		model.addAttribute("user", new Admin());
+		model.addAttribute("showRegistrationModal", false);
 		
 		return "loginAdmin";
 	}
