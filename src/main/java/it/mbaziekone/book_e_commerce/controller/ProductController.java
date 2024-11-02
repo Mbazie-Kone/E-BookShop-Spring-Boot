@@ -70,16 +70,12 @@ public class ProductController {
 	}
 	
 	// Update product
-	@GetMapping("/showFormForUpdate/{id}")
-	public String showFormForUpdate(@PathVariable(value = "id") long id, Model model) {
-		Product product = productService.getProductById(id);
-		model.addAttribute("product", product);
+	@PostMapping("/updateProduct/{id}")
+	public String updateProduct(@ModelAttribute("product") Product product, @PathVariable(value = "id") long id, 
+								@RequestParam("image") MultipartFile image, Model model) {
 		
-		return "updateProduct";	
-	}
-	
-	@PostMapping("/updateProduct")
-	public String updateProduct(@ModelAttribute("product") Product product, @RequestParam("image") MultipartFile image, Model model) {
+		product = productService.getProductById(id);
+		model.addAttribute("product", product);
 		
 		try {
 			productService.saveProduct(product, image);
@@ -88,7 +84,7 @@ public class ProductController {
 			e.printStackTrace();
 			model.addAttribute("message", "Error updating product!");
 			
-			return "updateProduct";
+			return "products";
 		}
 		
 		return "redirect:/products";

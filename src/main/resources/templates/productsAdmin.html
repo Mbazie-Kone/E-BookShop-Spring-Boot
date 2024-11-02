@@ -53,7 +53,7 @@
 											<td>
 												<div class="d-grid">
 													<div class="d-flex justify-content-center align-items-center gap-2">
-														<a href="#" class="btn btn-warning btn-font-size" data-bs-toggle="modal" data-bs-target="#update-product">
+														<a th:href="@{/updateProduct/(id=${product.id})}" class="btn btn-warning btn-font-size" data-bs-toggle="modal" data-bs-target="#update-product">
 															Update
 														</a>
 														<a href="#" class="btn btn-danger btn-font-size" data-bs-toggle="modal" data-bs-target="#delete-product">
