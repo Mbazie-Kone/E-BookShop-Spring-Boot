@@ -15,6 +15,7 @@ import it.mbaziekone.book_e_commerce.model.security.Admin;
 import it.mbaziekone.book_e_commerce.repository.AdminRepository;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.validation.Valid;
 
 @Controller
 public class AdminController {
@@ -35,14 +36,14 @@ public class AdminController {
 	}
 	
 	@PostMapping("/register")
-	public String registerUser(@ModelAttribute("user") Admin admin,
+	public String registerUser(@Valid @ModelAttribute("user") Admin admin,
 							   BindingResult bindingResult, 
 							   @RequestParam String password, 
 							   @RequestParam String confirmPassword, 
 							   Model model) {
 		
 		if (bindingResult.hasErrors()) {
-	        model.addAttribute("bindingErrors", bindingResult.getAllErrors());
+	        model.addAttribute("showRegisterModal", true);
 	        
 	        return "loginAdmin";
 	    }
