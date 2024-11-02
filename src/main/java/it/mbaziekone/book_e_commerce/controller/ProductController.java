@@ -41,14 +41,6 @@ public class ProductController {
 	}
 	
 	// Insert product
-	@GetMapping("/showNewCatalogForm")
-	public String showProductForm(Model model) {
-		Product product = new Product();
-		model.addAttribute("product", product);
-		
-		return "productsAdmin";
-	}
-	
 	@PostMapping("/saveProduct")
 	public String addProduct(@Valid @ModelAttribute("product") Product product, @RequestParam("image") MultipartFile image, 
 							 BindingResult result, Model model){

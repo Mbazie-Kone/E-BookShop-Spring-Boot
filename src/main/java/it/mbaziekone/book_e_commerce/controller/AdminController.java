@@ -75,7 +75,6 @@ public class AdminController {
 		// Save the user in the database
 		adminRepository.save(admin);
 		
-		// Redirect to the login page
 		return "success";
 	}
 	

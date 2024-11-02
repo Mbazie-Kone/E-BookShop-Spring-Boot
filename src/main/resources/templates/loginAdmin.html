@@ -40,13 +40,13 @@
 							</form>
 							<div class="mt-3 text-center">
 								Don't have an account yet?
-								<button type="button" class="link-button" data-bs-toggle="modal" data-bs-target="#myModal">Sign up</button>
+								<button type="button" class="link-button" data-bs-toggle="modal" data-bs-target="#registerModal">Sign up</button>
 							</div>
 						</div>
 					</div>
 					
 					<!-- Modal -->
-					<div class="modal fade" data-bs-backdrop="static" tabindex="-1" aria-hidden="true" id="myModal">
+					<div class="modal fade" data-bs-backdrop="static" tabindex="-1" aria-hidden="true" id="registerModal">
 						<div class="modal-dialog">
 		    				<div class="modal-content">
 							    <div class="modal-header text-bg-secondary d-flex justify-content-center align-items-center">
@@ -57,14 +57,16 @@
 							        	<div class="input-group mb-3">
 							        		<span class="input-group-text"><i class="bi bi-person-fill"></i></span>
 								        	<div class="form-floating">
-									        	<input type="text" class="form-control" id="reg_username" name="username" placeholder="johndoe">
+									        	<input type="text" class="form-control" id="reg_username" name="username" placeholder="johndoe" 
+									        		   th:field="*{username}">
 									        	<label for="reg_username">Username</label>
 								        	</div>
 							        	</div>
 							        	<div class="input-group mb-3">
 								        	<span class="input-group-text"><i class="bi bi-lock-fill"></i></span>
 								        	<div class="form-floating">
-									        	<input type="password" class="form-control" name="password" id="reg_password" placeholder="****">
+									        	<input type="password" class="form-control" name="password" id="reg_password" placeholder="****" 
+									        		   th:field="*{password}">
 									        	<label for="reg_password">Password</label>
 								        	</div>
 							        	</div>
@@ -82,9 +84,6 @@
 											</button>
 										</div>
 										<div th:if="${passwordNull}" class="alert alert-danger mt-3">
-											<p style="color: red; text-align: center;">Null.</p>
-										</div>
-										<div th:if="${usernameNull}" class="alert alert-danger mt-3">
 											<p style="color: red; text-align: center;">Null.</p>
 										</div>
 										<div th:if="${error}" class="alert alert-danger mt-3">
