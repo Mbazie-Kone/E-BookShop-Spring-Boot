@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html xmlns:th="https://www.thymeleaf.org" lang="en">
-	<head th:replace="~{fragments/bootstrap :: block-bootstrap}">
+	<head th:insert="~{fragments/bootstrap :: block-bootstrap}">
 		<title>Administrator (Admin)</title>
 	</head>
 	<body class="body">
@@ -64,6 +64,7 @@
 									</tr>
 								</tbody>
 							</table>
+						</div>
 						<div class="card-footer d-flex justify-content-center align-items-center">
 						
 							<!-- Pagination -->
@@ -87,19 +88,18 @@
 								</ul>
 							</nav>
 							<!-- Pagination -->
-							
+		
 						</div>	
-						</div>
-					</div>
 					</div>
 				</div>
 				<!-- Main Content -->
-				
-				<!-- Footer -->
-				<div th:replace="~{fragments/adminFooter :: block-adminFooter}"></div>
-				<!-- Footer -->
-	
 			</div>
+				
+			<!-- Footer -->
+			<div th:replace="~{fragments/adminFooter :: block-adminFooter}"></div>
+			<!-- Footer -->
+	
+		</div>
 			
 		<!-- Add product modal -->
 		<div class="modal fade" id="add-product" data-bs-backdrop="static" tabindex="-1" aria-hidden="true" style="backdrop-filter: blur(5px);">
@@ -112,6 +112,7 @@
 						<button type="button" class="btn-close btn-close-danger" data-bs-dismiss="modal" aria-label="Close"></button>
 					</div>
 					<div class="modal-body">
+						<div class="container">
 						<form th:action="@{/saveProduct}" th:object="${product}" method="post" enctype="multipart/form-data">
 							<div class="input-group mb-3">
 				        		<span class="input-group-text btn-font-size input-group-text-modify">Name</span>
@@ -159,6 +160,7 @@
 				        		<button type="submit" class="btn btn-success">Add Product</button>
 				        	</div>
 						</form>
+						</div>
 					</div>
 				</div>
 			</div>
