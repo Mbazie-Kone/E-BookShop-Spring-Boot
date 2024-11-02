@@ -37,11 +37,7 @@ public class AdminController {
 	}
 	
 	@PostMapping("/register")
-	public String registerUser(@Valid @ModelAttribute("user") Admin admin,
-							   BindingResult bindingResult,
-							   @RequestParam String password, 
-							   @RequestParam String confirmPassword, 
-							   Model model) {
+	public String registerUser(@Valid @ModelAttribute("user") Admin admin, BindingResult bindingResult, @RequestParam String password, Model model) {
 		
 		if(bindingResult.hasErrors()) {
 			model.addAttribute("showRegistrationModal", true);
