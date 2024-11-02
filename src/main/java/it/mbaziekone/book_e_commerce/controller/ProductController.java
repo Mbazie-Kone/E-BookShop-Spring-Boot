@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -15,6 +16,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import it.mbaziekone.book_e_commerce.model.Product;
 import it.mbaziekone.book_e_commerce.service.ProductService;
+import jakarta.validation.Valid;
 
 @Controller
 public class ProductController {
@@ -39,8 +41,20 @@ public class ProductController {
 	}
 	
 	// Insert product
+	@GetMapping("/showNewCatalogForm")
+	public String showProductForm(Model model) {
+		Product product = new Product();
+		model.addAttribute("product", product);
+		
+		return "productsAdmin";
+	}
+	
 	@PostMapping("/saveProduct")
-	public String addProduct(@ModelAttribute("product") Product product, @RequestParam("image") MultipartFile image, Model model){
+	public String addProduct(@Valid @ModelAttribute("product") Product product, @RequestParam("image") MultipartFile image, 
+							 BindingResult result, Model model){
+		if(result.hasErrors()) {
+			model.addAttribute("product", product);
+		}
 		
 		try {
 			productService.saveProduct(product, image);
@@ -49,7 +63,7 @@ public class ProductController {
 			e.printStackTrace();
 			model.addAttribute("message", "Error saving the product!");
 			
-			return "addProduct";
+			return "productsAdmin";
 		}
 		
 		return "redirect:/products";
