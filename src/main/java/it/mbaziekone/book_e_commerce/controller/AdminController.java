@@ -1,5 +1,6 @@
 package it.mbaziekone.book_e_commerce.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import it.mbaziekone.book_e_commerce.model.security.Admin;
 import it.mbaziekone.book_e_commerce.repository.AdminRepository;
+import it.mbaziekone.book_e_commerce.service.AdminService;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.validation.Valid;
@@ -20,12 +22,12 @@ import jakarta.validation.Valid;
 @Controller
 public class AdminController {
 	
-	private final AdminRepository adminRepository;
+	@Autowired
+	private AdminService adminService;
 	
 	private final PasswordEncoder passwordEncoder;
 	
-	public AdminController(AdminRepository adminRepository, PasswordEncoder passwordEncoder) {
-		this.adminRepository = adminRepository;
+	public AdminController(PasswordEncoder passwordEncoder) {
 		this.passwordEncoder = passwordEncoder;
 	}
 	
