@@ -28,17 +28,8 @@ public class Admin implements Serializable {
 	@NotEmpty(message = "Password cannot be empty")
 	private String password;
 	
-	@Column(nullable = false)	
+	@Column(nullable = false)
 	private String role;
-
-	/*
-	 * public Admin() {
-	 * 
-	 * }
-	 * 
-	 * public Admin(String username, String password, String role) { this.username =
-	 * username; this.password = password; this.role = role; }
-	 */
 
 	public String getUsername() {
 		return username;
