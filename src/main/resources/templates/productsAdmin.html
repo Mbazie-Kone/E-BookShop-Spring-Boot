@@ -14,7 +14,7 @@
 				
 				<!-- Main Content -->
 				<div class="col-md-9 mt-5">
-					<div class="card fixed-dim mt-5">
+					<div class="card mt-5">
 						<div class="card-header d-flex justify-content-between align-items-center">
 							<h5>Products</h5>
 							<a type="button" class="btn btn-success" href="addProduct" data-bs-toggle="modal" data-bs-target="#add-product">
@@ -23,47 +23,49 @@
 							</a>
 						</div>
 						<div class="card-body">
-							<table class="table table-striped">
-								<thead>
-									<tr>
-										<th>ID</th>
-										<th>Image</th>
-										<th>Active</th>
-										<th>Date Created</th>
-										<th>Name</th>
-										<th>SKU</th>
-										<th>Price</th>
-										<th>Units In Stock</th>
-										<th>Action</th>
-									</tr>
-								</thead>
-								<tbody th:each="product : ${productPage.content}">
-									<tr>
-										<td th:text="${product.id}"></td>
-										<td>
-											<img th:src="${product.imagePath}" alt="Product Image" width="90" class="img-thumbnail">
-										</td>
-										<td th:text="${product.active}"></td>
-										<td th:text="${product.dateCreated}"></td>
-										<td th:text="${product.name}"></td>
-										<td th:text="${product.sku}"></td>
-										<td th:text="${product.unitPrice}"></td>
-										<td th:text="${product.unitsInStock}"></td>
-										<td>
-											<div class="d-grid">
-												<div class="d-flex justify-content-center align-items-center gap-2">
-													<a href="#" class="btn btn-warning btn-font-size" data-bs-toggle="modal" data-bs-target="#update-product">
-														Update
-													</a>
-													<a href="#" class="btn btn-danger btn-font-size" data-bs-toggle="modal" data-bs-target="#delete-product">
-														Delete
-													</a>
+							<div class="table-responsive">
+								<table class="table">
+									<thead>
+										<tr>
+											<th>ID</th>
+											<th>Image</th>
+											<th>Active</th>
+											<th>Date Created</th>
+											<th>Name</th>
+											<th>SKU</th>
+											<th>Price</th>
+											<th>Units In Stock</th>
+											<th>Action</th>
+										</tr>
+									</thead>
+									<tbody th:each="product : ${productPage.content}">
+										<tr>
+											<td th:text="${product.id}"></td>
+											<td>
+												<img th:src="${product.imagePath}" alt="Product Image" width="90" class="img-thumbnail">
+											</td>
+											<td th:text="${product.active}"></td>
+											<td th:text="${product.dateCreated}"></td>
+											<td th:text="${product.name}"></td>
+											<td th:text="${product.sku}"></td>
+											<td th:text="${product.unitPrice}"></td>
+											<td th:text="${product.unitsInStock}"></td>
+											<td>
+												<div class="d-grid">
+													<div class="d-flex justify-content-center align-items-center gap-2">
+														<a href="#" class="btn btn-warning btn-font-size" data-bs-toggle="modal" data-bs-target="#update-product">
+															Update
+														</a>
+														<a href="#" class="btn btn-danger btn-font-size" data-bs-toggle="modal" data-bs-target="#delete-product">
+															Delete
+														</a>
+													</div>
 												</div>
-											</div>
-										</td>
-									</tr>
-								</tbody>
-							</table>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
 						</div>
 						<div class="card-footer d-flex justify-content-center align-items-center">
 						
