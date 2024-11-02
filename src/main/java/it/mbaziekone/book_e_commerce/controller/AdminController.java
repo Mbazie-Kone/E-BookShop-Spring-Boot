@@ -42,7 +42,7 @@ public class AdminController {
 							   @RequestParam String confirmPassword, 
 							   Model model) {
 		
-		if (bindingResult.hasErrors()) {
+		if(bindingResult.hasErrors()) {
 	        model.addAttribute("showRegisterModal", true);
 	        
 	        return "loginAdmin";
@@ -76,8 +76,7 @@ public class AdminController {
 		adminRepository.save(admin);
 		
 		// Redirect to the login page
-		return "redirect:/loginAdmin";
-		
+		return "success";
 	}
 	
 	@GetMapping("/loginAdmin")
