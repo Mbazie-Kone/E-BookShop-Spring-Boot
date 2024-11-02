@@ -47,7 +47,7 @@
 					
 					<!-- Modal -->
 					<div class="modal fade" th:classappend="${showRegistrationModal} ? 'show' : ''" data-bs-backdrop="static" tabindex="-1" 
-								aria-hidden="true" id="registerModal">
+								th:aria-hidden="${!showRegistrationModal}" id="registerModal" aria-labelledby="registrationModalLabel">
 						<div class="modal-dialog">
 		    				<div class="modal-content">
 							    <div class="modal-header text-bg-secondary d-flex justify-content-center align-items-center">
