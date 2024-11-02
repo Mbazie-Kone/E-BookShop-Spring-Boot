@@ -49,24 +49,6 @@ public class AdminController {
 			return "loginAdmin";
 		}
 		
-		if(password.isEmpty() || admin.getUsername().isEmpty()) {
-			model.addAttribute("passwordNull", true);
-			
-			return "loginAdmin";
-		}
-		
-		// Check if the user name is already taken
-		if(adminService.findByUsername(admin.getUsername())!= null ) {
-			model.addAttribute("error", true);
-			
-			return "loginAdmin";
-		}
-		else if(!password.equals(confirmPassword)) {
-			model.addAttribute("errorPassword", true);
-			
-			return "loginAdmin";
-		}
-		
 		// Encode the passwords
 		admin.setPassword(passwordEncoder.encode(password));
 		
@@ -76,7 +58,7 @@ public class AdminController {
 		// Save the user in the database
 		adminService.saveAdmin(admin);
 		
-		return "success";
+		return "redirect:/loginAdmin?success";
 	}
 	
 	@GetMapping("/loginAdmin")
