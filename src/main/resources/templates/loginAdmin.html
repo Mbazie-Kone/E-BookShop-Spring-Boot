@@ -51,7 +51,7 @@
 						<div class="modal-dialog">
 		    				<div class="modal-content">
 							    <div class="modal-header text-bg-secondary d-flex justify-content-center align-items-center">
-							    	<h5 class="modal-title">Registration Form</h5>
+							    	<h5 class="modal-title" id="registrationModalLabel">Registration Form</h5>
 							    </div>
 							    <div class="modal-body">
 							        <form th:action="@{/register}" th:object="${user}" method="post">
@@ -78,18 +78,6 @@
 									        	<label for="confirmPassword">Confirm password</label>
 								        	</div>
 							        	</div>
-							        	<div th:if="${passwordNull}" class="alert alert-danger mt-3">
-											<p style="color: red; text-align: center;">Null.</p>
-										</div>
-										<div th:if="${error}" class="alert alert-danger mt-3">
-											<p style="color: red; text-align: center;">Username already in use</p>
-										</div>
-										<div th:if="${errorPassword}" class="alert alert-danger mt-3">
-											<p style="color: red; text-align: center;">The passwords do not match. Try again.</p>
-										</div>
-										<div th:if="${validError}" class="alert alert-danger mt-3">
-											<p style="color: red; text-align: center;">The username must be at least 8 characters</p>
-										</div>
 							        	<div class="d-grid">
 											<button type="submit" class="btn btn-success d-flex justify-content-center align-items-center gap-2">
 												<i class="bi bi-person-plus-fill large-icon"></i>
