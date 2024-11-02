@@ -38,18 +38,18 @@ public class AdminController {
 	
 	@PostMapping("/register")
 	public String registerUser(@Valid @ModelAttribute("user") Admin admin,
-							   BindingResult bindingResult, 
+							   BindingResult bindingResult,
 							   @RequestParam String password, 
 							   @RequestParam String confirmPassword, 
 							   Model model) {
 		
 		if(bindingResult.hasErrors()) {
-			model.addAttribute("formError", true);
+			model.addAttribute("showRegistrationModal", true);
 			
 			return "loginAdmin";
 		}
 		
-		if(password.equals(null)) {
+		if(password.isEmpty() || admin.getUsername().isEmpty()) {
 			model.addAttribute("passwordNull", true);
 			
 			return "loginAdmin";
