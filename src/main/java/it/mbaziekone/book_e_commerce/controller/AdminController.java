@@ -43,6 +43,9 @@ public class AdminController {
 							   @RequestParam String confirmPassword, 
 							   Model model) {
 		
+		if(bindingResult.hasErrors()) {
+			
+		}
 		
 		if(password.equals(null)) {
 			model.addAttribute("passwordNull", true);
