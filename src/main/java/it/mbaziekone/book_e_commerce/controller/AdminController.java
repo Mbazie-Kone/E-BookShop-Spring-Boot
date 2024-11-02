@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import it.mbaziekone.book_e_commerce.model.security.Admin;
-import it.mbaziekone.book_e_commerce.repository.AdminRepository;
 import it.mbaziekone.book_e_commerce.service.AdminService;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -38,31 +37,7 @@ public class AdminController {
 	}
 	
 	@PostMapping("/register")
-	public String registerUser(@Valid @ModelAttribute("user") Admin admin,
-							   BindingResult bindingResult, 
-							   @RequestParam String password, 
-							   @RequestParam String confirmPassword, 
-							   Model model) {
-		
-		
-		if(password.equals(null)) {
-			model.addAttribute("passwordNull", true);
-			
-			return "loginAdmin";
-		}
-		
-		// Check if the user name is already taken
-		if(adminService.findByUsername(admin.getUsername())!= null ) {
-			model.addAttribute("error", true);
-			
-			return "loginAdmin";
-		}
-		else if(!password.equals(confirmPassword)) {
-			model.addAttribute("errorPassword", true);
-			
-			return "loginAdmin";
-		}
-		
+	public String registerUser(@ModelAttribute("user") Admin admin,@RequestParam String password, Model model) {
 		// Encode the passwords
 		admin.setPassword(passwordEncoder.encode(password));
 		

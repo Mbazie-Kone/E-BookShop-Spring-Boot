@@ -83,18 +83,6 @@
 												Sign up
 											</button>
 										</div>
-										<div th:if="${passwordNull}" class="alert alert-danger mt-3">
-											<p style="color: red; text-align: center;">Null.</p>
-										</div>
-										<div th:if="${error}" class="alert alert-danger mt-3">
-											<p style="color: red; text-align: center;">Username already in use</p>
-										</div>
-										<div th:if="${errorPassword}" class="alert alert-danger mt-3">
-											<p style="color: red; text-align: center;">The passwords do not match. Try again.</p>
-										</div>
-										<div th:if="${validError}" class="alert alert-danger mt-3">
-											<p style="color: red; text-align: center;">The username must be at least 8 characters</p>
-										</div>
 							        </form>
 							    </div>
 							    <div class="modal-footer">
