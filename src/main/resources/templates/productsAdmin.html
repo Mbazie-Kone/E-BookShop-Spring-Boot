@@ -121,7 +121,7 @@
 									<form th:action="@{/saveProduct}" th:object="${product}" method="post" enctype="multipart/form-data">
 										<div class="input-group mb-3">
 							        		<span class="col-md-4 input-group-text">Name</span>
-							        		<input type="text" class="form-control" id="name" name="name">
+							        		<input type="text" class="form-control" id="name" name="name" required>
 							        	</div>
 							        	<div class="input-group mb-3">
 							        		<span class="col-md-4 input-group-text">SKU</span>
@@ -162,8 +162,10 @@
 							        		</div>
 							        	</div>
 							        	<div class="d-grid">
-							        		<button type="submit" class="col-md-10 btn btn-success">Add Product</button>
-							        		<button type="button" class="clo-md-2 btn btn-danger" data-bs-dismiss="modal">Close</button>
+							        		<div class="d-flex justify-content-center align-items-center gap-1">
+								        		<button type="submit" class="col-md-6 btn btn-success">Add Product</button>
+								        		<button type="button" class="col-md-6 btn btn-danger" data-bs-dismiss="modal">Close</button>
+							        		</div>
 							        	</div>
 									</form>
 								</div>

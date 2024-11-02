@@ -39,14 +39,6 @@ public class ProductController {
 	}
 	
 	// Insert product
-	@GetMapping("/showNewCatalogForm")
-	public String showProductForm(Model model) {
-		Product product = new Product();
-		model.addAttribute("product", product);
-		
-		return "addProduct";
-	}
-	
 	@PostMapping("/saveProduct")
 	public String addProduct(@ModelAttribute("product") Product product, @RequestParam("image") MultipartFile image, Model model){
 		
