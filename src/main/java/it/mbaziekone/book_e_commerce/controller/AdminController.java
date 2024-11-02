@@ -44,7 +44,9 @@ public class AdminController {
 							   Model model) {
 		
 		if(bindingResult.hasErrors()) {
+			model.addAttribute("formError", true);
 			
+			return "loginAdmin";
 		}
 		
 		if(password.equals(null)) {
