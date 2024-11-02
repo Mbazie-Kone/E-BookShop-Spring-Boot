@@ -17,4 +17,10 @@ public class AdminServiceImpl implements AdminService {
 	public void saveAdmin(Admin admin) {	
 		adminRepository.save(admin);
 	}
+
+	@Override
+	public Admin findByUsername(String username) {
+		
+		return adminRepository.findByUsername(username);
+	}
 }

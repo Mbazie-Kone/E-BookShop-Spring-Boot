@@ -10,7 +10,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import it.mbaziekone.book_e_commerce.model.security.Admin;
-import it.mbaziekone.book_e_commerce.repository.AdminRepository;
+import it.mbaziekone.book_e_commerce.service.AdminService;
 
 @Service
 public class CustomUserDetailsService implements UserDetailsService {
@@ -18,11 +18,11 @@ public class CustomUserDetailsService implements UserDetailsService {
 	private static final Logger LOGGER = LoggerFactory.getLogger(CustomUserDetailsService.class);
 	
 	@Autowired
-	private AdminRepository adminRepository;
+	private AdminService adminService;
 
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-		Admin admin = adminRepository.findByUsername(username);
+		Admin admin = adminService.findByUsername(username);
 		if(admin == null) {
 			LOGGER.error("User not found with username: "+ username);
 			throw new UsernameNotFoundException("User not found");

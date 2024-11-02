@@ -44,11 +44,6 @@ public class AdminController {
 							   @RequestParam String confirmPassword, 
 							   Model model) {
 		
-		if(bindingResult.hasErrors()) {
-	        model.addAttribute("showRegisterModal", true);
-	        
-	        return "loginAdmin";
-	    }
 		
 		if(password.equals(null)) {
 			model.addAttribute("passwordNull", true);
@@ -57,7 +52,7 @@ public class AdminController {
 		}
 		
 		// Check if the user name is already taken
-		if(adminRepository.findByUsername(admin.getUsername())!= null ) {
+		if(adminService.findByUsername(admin.getUsername())!= null ) {
 			model.addAttribute("error", true);
 			
 			return "loginAdmin";
@@ -75,7 +70,7 @@ public class AdminController {
 		admin.setRole("ADMIN");
 		
 		// Save the user in the database
-		adminRepository.save(admin);
+		adminService.saveAdmin(admin);
 		
 		return "success";
 	}

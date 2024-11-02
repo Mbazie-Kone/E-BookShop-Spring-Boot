@@ -5,6 +5,7 @@ import org.springframework.stereotype.Repository;
 
 import it.mbaziekone.book_e_commerce.model.security.Admin;
 
+
 @Repository
 public interface AdminRepository extends JpaRepository<Admin, Long> {
 	

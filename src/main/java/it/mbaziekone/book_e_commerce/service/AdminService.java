@@ -5,4 +5,6 @@ import it.mbaziekone.book_e_commerce.model.security.Admin;
 public interface AdminService {
 	
 	public void saveAdmin(Admin admin);
+	
+	public Admin findByUsername(String username);
 }
