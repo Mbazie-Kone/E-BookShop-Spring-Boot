@@ -42,7 +42,7 @@
 
 .logo-gradient {
 	background-image: linear-gradient(to bottom, #2f6fd0, #506edd, #726ae7, #9364ee, #b559f0);
-	-webkit-background-clip: text;
+	background-clip: text;
 	-webkit-text-fill-color: transparent;
 }
 
