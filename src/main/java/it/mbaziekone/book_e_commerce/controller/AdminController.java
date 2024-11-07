@@ -40,7 +40,6 @@ public class AdminController {
 	public String registerUser(@Valid @ModelAttribute("user") Admin admin, BindingResult bindingResult, @RequestParam String password, Model model) {
 		
 		if(bindingResult.hasErrors()) {
-			model.addAttribute("showRegistrationModal", true);
 			
 			return "loginAdmin";
 		}
@@ -60,7 +59,7 @@ public class AdminController {
 	@GetMapping("/loginAdmin")
 	public String login(Model model) {
 		model.addAttribute("user", new Admin());
-		model.addAttribute("showRegistrationModal", false);
+		model.addAttribute("pageTitle","Login (Administrator)");
 		
 		return "loginAdmin";
 	}

@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html xmlns:th="https://www.thymeleaf.org" lang="en">
-	<head th:replace="~{fragments/bootstrap :: block-bootstrap}">
-		<title>Login (Administartor)</title>
+	<head th:insert="~{fragments/bootstrap :: block-bootstrap}">
 	</head>
 	<body>
 		<div class="container">
@@ -47,7 +46,7 @@
 					
 					<!-- Modal -->
 					<div class="modal fade" th:classappend="${showRegistrationModal} ? 'show' : ''" data-bs-backdrop="static" tabindex="-1" 
-								th:aria-hidden="${!showRegistrationModal}" id="registerModal" aria-labelledby="registrationModalLabel">
+								id="registerModal" aria-labelledby="registrationModalLabel">
 						<div class="modal-dialog">
 		    				<div class="modal-content">
 							    <div class="modal-header text-bg-secondary d-flex justify-content-center align-items-center">
