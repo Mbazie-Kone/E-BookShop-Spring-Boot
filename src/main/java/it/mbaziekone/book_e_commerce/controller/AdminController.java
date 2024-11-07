@@ -6,7 +6,6 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -16,7 +15,6 @@ import it.mbaziekone.book_e_commerce.model.security.Admin;
 import it.mbaziekone.book_e_commerce.service.AdminService;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.validation.Valid;
 
 @Controller
 public class AdminController {
@@ -37,12 +35,7 @@ public class AdminController {
 	}
 	
 	@PostMapping("/register")
-	public String registerUser(@Valid @ModelAttribute("user") Admin admin, BindingResult bindingResult, @RequestParam String password, Model model) {
-		
-		if(bindingResult.hasErrors()) {
-			
-			return "loginAdmin";
-		}
+	public String registerUser(@ModelAttribute("user") Admin admin, @RequestParam String password, Model model) {
 		
 		// Encode the passwords
 		admin.setPassword(passwordEncoder.encode(password));
@@ -53,7 +46,7 @@ public class AdminController {
 		// Save the user in the database
 		adminService.saveAdmin(admin);
 		
-		return "redirect:/loginAdmin?success";
+		return "redirect:/loginAdmin";
 	}
 	
 	@GetMapping("/loginAdmin")
