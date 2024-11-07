@@ -28,16 +28,19 @@ public class AdminController {
 		this.passwordEncoder = passwordEncoder;
 	}
 	
+	// Administrator dash board
 	@GetMapping("/dashboard")
-	public String dashPage() {
+	public String dashPage(Model model) {
+		model.addAttribute("pageTitle","Dashboard (Administrator)");
 		
 		return "dashboardAdmin";
 	}
 	
+	// Administrator sign up
 	@PostMapping("/register")
-	public String registerUser(@ModelAttribute("user") Admin admin, @RequestParam String password, Model model) {
+	public String registerUser(@ModelAttribute("user") Admin admin, @RequestParam String password) {
 		
-		// Encode the passwords
+		// Encode the password
 		admin.setPassword(passwordEncoder.encode(password));
 		
 		// Set a default role
@@ -49,6 +52,7 @@ public class AdminController {
 		return "redirect:/loginAdmin";
 	}
 	
+	// Administrator Login 
 	@GetMapping("/loginAdmin")
 	public String login(Model model) {
 		model.addAttribute("user", new Admin());
@@ -57,6 +61,7 @@ public class AdminController {
 		return "loginAdmin";
 	}
 	
+	// Administrator logout
 	@PostMapping("/perform_logout")
 	public String logout(HttpServletRequest request, HttpServletResponse response, Authentication authentication) {
 		if(authentication != null) {
