@@ -36,14 +36,6 @@ body {
 	padding: 0; /* Remove any padding */
 }
 
-@media (max-width: 992.5px) {
-	.card-dim {
-		width: 296.02px;
-		height: 374.09px;
-		margin: 0 auto;
-	}
-}
-
 .logo-gradient {
 	background-image: linear-gradient(to bottom, #2f6fd0, #506edd, #726ae7, #9364ee, #b559f0);
 	background-clip: text;
