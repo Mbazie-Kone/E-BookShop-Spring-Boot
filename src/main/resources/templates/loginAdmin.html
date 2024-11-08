@@ -7,7 +7,13 @@
 			<div class="row">
 				<div class="col-12 d-flex justify-content-center bg-success">
 					<div class="bg-white p-3 text-center rounded-3 form-size">
-						<h2>Login to continue</h2>
+						<h5>Login to continue</h5>
+						<form th:action="@{/perform_login}" method="post">
+							<div class="form-floating mb-3">
+								<input type="text" class="form-control" id="user_name" name="username" placeholder="johndoe" autofocus>
+								<label for="user_name">Username</label>
+							</div>
+						</form>
 					</div>
 				</div>
 			</div>
