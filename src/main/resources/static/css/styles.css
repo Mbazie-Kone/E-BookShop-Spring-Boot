@@ -4,14 +4,18 @@ html {
 }
 
 body {
-	font-family: "Roboto", sans-serif;
-	font-style: normal;
 	font-size: 15px;
 	background-image: linear-gradient(to top, #e3f1f2, #eaf3f7, #f1f5f9, #f7f8fa, #fbfbfb);
 }
 
+/* Login form*/
 .p-6 {
 	padding: 1.5rem !important;
+}
+
+.bg-white {
+	--tw-bg-opacity: 1 !important;
+    background-color: rgb(255 255 255) !important;
 }
 
 .rounded-lg {
