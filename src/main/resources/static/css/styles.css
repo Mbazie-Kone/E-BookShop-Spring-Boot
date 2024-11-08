@@ -8,8 +8,18 @@ body {
 	background-image: linear-gradient(to top, #e3f1f2, #eaf3f7, #f1f5f9, #f7f8fa, #fbfbfb);
 }
 
+/* Form */
 .form-size {
 	width: 30rem;
+}
+
+.link-button {
+	background: none; /* Remove button background */
+	border: none; /* Remove the border */
+	color: blue; /* Text color (you can change according to your preferences) */
+	cursor: pointer; /* Change cursor when hovering over text */
+	font: inherit; /* Keep font style from context */
+	padding: 0; /* Remove any padding */
 }
 
 
@@ -60,14 +70,7 @@ body {
 	color: green;
 }
 
-.link-button {
-	background: none; /* Remove button background */
-	border: none; /* Remove the border */
-	color: blue; /* Text color (you can change according to your preferences) */
-	cursor: pointer; /* Change cursor when hovering over text */
-	font: inherit; /* Keep font style from context */
-	padding: 0; /* Remove any padding */
-}
+
 
 .logo-gradient {
 	background-image: linear-gradient(to bottom, #2f6fd0, #506edd, #726ae7, #9364ee, #b559f0);

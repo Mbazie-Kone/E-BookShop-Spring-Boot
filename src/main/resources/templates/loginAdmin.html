@@ -21,7 +21,7 @@
 									<input type="checkbox" class="form-check-input" form="remember me">
 									<label for="remember me" class="form-check-label">Remember Me</label>
 							</div>
-							<div class="d-grid">
+							<div class="d-grid mb-4">
 								<button type="submit" class="btn btn-success d-flex justify-content-center align-items-center gap-2">
 									<i class="bi bi-box-arrow-in-right large-icon"></i>
 									Sign in
@@ -32,6 +32,11 @@
 							</div>
 							<div th:if="${param.logout}" class="alert alert-success mt-3">
 								<p class="logout-ok text-center">Logout successfully.</p>
+							</div>
+							<hr class="mb-4">
+							<div class="text-center">
+								Don't have an account yet?
+								<button type="button" class="link-button" data-bs-toggle="modal" data-bs-target="#registerModal">Sign up</button>
 							</div>
 						</form>
 					</div>
