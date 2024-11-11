@@ -6,36 +6,36 @@
 	
 		<!-- Login Form  -->
 		<div class="container mt-5">
-			<div class="row">
-				<div class="col-12 d-flex justify-content-center">
-					<div class="text-bg-gray p-4 rounded-4 form-size shadow-lg">
+			<div class="row bg-success">
+				<div class="col-12 d-flex justify-content-center bg-danger h-10">
+					<div class="text-bg-gray p-4 rounded-4 shadow-lg">
 						<h4 class="mb-4 text-center">Login to continue</h4>
 						<form th:action="@{/perform_login}" method="post">
-							<div class="form-floating mb-4">
+							<div class="form-floating">
 								<input type="text" class="form-control" id="user_name" name="username" placeholder="johndoe" autofocus>
 								<label for="user_name">Username</label>
 							</div>
-							<div class="form-floating mb-4">
+							<div class="form-floating">
 								<input type="password" class="form-control" id="pass_word" name="password" placeholder="***">
 								<label for="pass_word">Password</label>
 							</div>
-							<div class="form-check mb-4">
+							<div class="form-check">
 									<input type="checkbox" class="form-check-input" form="remember me">
 									<label for="remember me" class="form-check-label">Remember Me</label>
 							</div>
-							<div class="d-grid mb-4">
+							<div class="d-grid">
 								<button type="submit" class="btn btn-success d-flex justify-content-center align-items-center gap-2">
 									<i class="bi bi-box-arrow-in-right large-icon"></i>
 									Sign in
 								</button>
 							</div>
-							<div th:if="${param.error}" class="alert alert-danger mt-3">
+							<div th:if="${param.error}" class="alert alert-danger">
 								<p class="login-failed text-center">Invalid credentials, please try again.</p>
 							</div>
-							<div th:if="${param.logout}" class="alert alert-success mt-3">
+							<div th:if="${param.logout}" class="alert alert-success">
 								<p class="logout-ok text-center">Logout successfully.</p>
 							</div>
-							<hr class="mb-4">
+							<hr class="">
 							<div class="text-center">
 								Don't have an account?
 								<button type="button" class="link-button" data-bs-toggle="modal" data-bs-target="#registerModal">Sign up</button>

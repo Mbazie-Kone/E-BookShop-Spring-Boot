@@ -9,8 +9,8 @@ body {
 }
 
 /* Form */
-.form-size {
-	width: 30rem;
+.h-10{
+	height: 2em;
 }
 
 .link-button {
