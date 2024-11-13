@@ -4,8 +4,7 @@ html {
 }
 
 body {
-	font-size: 15px;
-	background-image: linear-gradient(to top, #e3f1f2, #eaf3f7, #f1f5f9, #f7f8fa, #fbfbfb);
+	background-image: url(/images/sfondo.jpg);
 }
 
 .h-10{
