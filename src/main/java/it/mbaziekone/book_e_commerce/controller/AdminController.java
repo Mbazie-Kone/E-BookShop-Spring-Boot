@@ -57,6 +57,7 @@ public class AdminController {
 	public String login(Model model) {
 		model.addAttribute("user", new Admin());
 		model.addAttribute("pageTitle","Login (Administrator)");
+		model.addAttribute("page", "prova");
 		
 		return "loginAdmin";
 	}
