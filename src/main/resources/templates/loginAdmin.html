@@ -5,9 +5,12 @@
 	<body>
 	
 		<!-- Login Form  -->
-		<div class="container mt-5">
-			<div class="row bg-success">
-				<div class="col-12 d-flex justify-content-center bg-danger h-10">
+		<div class="container">
+			<div class="row vh-100">
+				<div class="col-12 d-flex justify-content-center align-items-center flex-column vh-100">
+					<div class="mb-4">
+						<img src="/images/logo.png" alt="logo">
+					</div>
 					<div class="text-bg-gray p-4 rounded-4 shadow-lg">
 						<h4 class="mb-4 text-center">Login to continue</h4>
 						<form th:action="@{/perform_login}" method="post">
