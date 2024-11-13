@@ -38,13 +38,18 @@
 							<div th:if="${param.logout}" class="alert alert-success mb-4">
 								<p class="logout-ok text-center">Logout successfully.</p>
 							</div>
-							<hr class="">
+							<hr>
 							<div class="text-center">
 								Don't have an account?
 								<button type="button" class="link-button" data-bs-toggle="modal" data-bs-target="#registerModal">Sign up</button>
 							</div>
 						</form>
 					</div>
+					
+					<!-- Footer -->
+					<div th:insert="~{fragments/adminLoginFooter :: block-adminFooter}"></div>
+					<!-- Footer -->
+					
 				</div>
 			</div>
 		</div>
