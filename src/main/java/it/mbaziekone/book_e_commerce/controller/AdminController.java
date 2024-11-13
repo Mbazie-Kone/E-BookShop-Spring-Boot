@@ -30,8 +30,7 @@ public class AdminController {
 	
 	// Administrator dash board
 	@GetMapping("/dashboard")
-	public String dashPage(Model model) {
-		model.addAttribute("pageTitle","Dashboard (Administrator)");
+	public String dashPage() {
 		
 		return "dashboardAdmin";
 	}
@@ -56,8 +55,6 @@ public class AdminController {
 	@GetMapping("/loginAdmin")
 	public String login(Model model) {
 		model.addAttribute("user", new Admin());
-		model.addAttribute("pageTitle","Login (Administrator)");
-		model.addAttribute("page", "prova");
 		
 		return "loginAdmin";
 	}
