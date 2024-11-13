@@ -9,14 +9,14 @@
 		<title>Login (Administrator)</title>
 	</head>
 	<body>
-	
-		<!-- Login Form  -->
 		<div class="container">
 			<div class="row vh-100">
 				<div class="col-12 d-flex justify-content-center align-items-center flex-column vh-100">
 					<div class="mb-4">
 						<img class="img-fluid" src="/images/logo.png" alt="logo">
 					</div>
+					
+					<!-- Login Form  -->
 					<div class="text-bg-light p-4 rounded-4 shadow-lg div-form-dim mb-5">
 						<h4 class="mb-4 text-center">Login to continue</h4>
 						<form th:action="@{/perform_login}" method="post">
@@ -51,6 +51,7 @@
 							</div>
 						</form>
 					</div>
+					<!-- Login Form  -->
 					
 					<!-- Footer -->
 					<div th:insert="~{fragments/adminLoginFooter :: block-adminFooter}"></div>
@@ -59,8 +60,7 @@
 				</div>
 			</div>
 		</div>
-		<!-- Login Form  -->		
-		
+				
 		<!-- Modal Form -->
 		<div class="modal fade" th:classappend="${showRegistrationModal} ? 'show' : ''" data-bs-backdrop="static" tabindex="-1" 
 								id="registerModal" aria-labelledby="registrationModalLabel">
@@ -116,7 +116,7 @@
 		
 		
 		<!-- Scripts -->
-		<div th:replace="~{fragments/bootstrapJavascript :: block-bootstrapJavascript}"></div>
+		<div th:insert="~{fragments/bootstrapJs :: block-bootstrapJs}"></div>
 		<!-- Scripts -->
 					
 	</body>
