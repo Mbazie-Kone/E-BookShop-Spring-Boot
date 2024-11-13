@@ -7,6 +7,8 @@ body {
 	background-image: url(/images/sfondo.jpg);
 	background-size: cover;
 	background-position: center center;
+	background-attachment: fixed;
+	height: 100vh;
 }
 
 .h-10{
