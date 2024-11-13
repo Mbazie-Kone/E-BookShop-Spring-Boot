@@ -11,6 +11,15 @@ body {
 	height: 100vh;
 }
 
+.div-form-dim {
+	width: 25em;
+}
+
+img {
+	width: 12em;
+	height: 12em;
+}
+
 .link-button {
 	background: none; /* Remove button background */
 	border: none; /* Remove the border */

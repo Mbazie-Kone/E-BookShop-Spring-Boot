@@ -9,33 +9,33 @@
 			<div class="row vh-100">
 				<div class="col-12 d-flex justify-content-center align-items-center flex-column vh-100">
 					<div class="mb-4">
-						<img src="/images/logo.png" alt="logo">
+						<img class="img-fluid" src="/images/logo.png" alt="logo">
 					</div>
-					<div class="text-bg-gray p-4 rounded-4 shadow-lg">
+					<div class="text-bg-light p-4 rounded-4 shadow-lg div-form-dim mb-5">
 						<h4 class="mb-4 text-center">Login to continue</h4>
 						<form th:action="@{/perform_login}" method="post">
-							<div class="form-floating">
+							<div class="form-floating mb-3">
 								<input type="text" class="form-control" id="user_name" name="username" placeholder="johndoe" autofocus>
 								<label for="user_name">Username</label>
 							</div>
-							<div class="form-floating">
+							<div class="form-floating mb-3">
 								<input type="password" class="form-control" id="pass_word" name="password" placeholder="***">
 								<label for="pass_word">Password</label>
 							</div>
-							<div class="form-check">
+							<div class="form-check mb-4">
 									<input type="checkbox" class="form-check-input" form="remember me">
 									<label for="remember me" class="form-check-label">Remember Me</label>
 							</div>
-							<div class="d-grid">
+							<div class="d-grid mb-4">
 								<button type="submit" class="btn btn-success d-flex justify-content-center align-items-center gap-2">
 									<i class="bi bi-box-arrow-in-right large-icon"></i>
 									Sign in
 								</button>
 							</div>
-							<div th:if="${param.error}" class="alert alert-danger">
+							<div th:if="${param.error}" class="alert alert-danger mb-4">
 								<p class="login-failed text-center">Invalid credentials, please try again.</p>
 							</div>
-							<div th:if="${param.logout}" class="alert alert-success">
+							<div th:if="${param.logout}" class="alert alert-success mb-4">
 								<p class="logout-ok text-center">Logout successfully.</p>
 							</div>
 							<hr class="">
