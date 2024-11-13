@@ -12,7 +12,7 @@ body {
 }
 
 .div-form-dim {
-	width: 25rem;
+	width: 25em;
 }
 
 img {
@@ -28,7 +28,20 @@ img {
 	padding: 0; /* Remove any padding */
 }
 
-
+@media (max-width: 992px) {
+	.div-form-dim {
+		width: 350px;
+		height: 350px;
+	}
+	
+	img {
+		width: 100px;
+	}
+	
+	small {
+		font-size: 12px;
+	}
+}
 
 
 
