@@ -5,6 +5,8 @@ html {
 
 body {
 	background-image: url(/images/sfondo.jpg);
+	background-size: cover;
+	background-position: center center;
 }
 
 .h-10{
