@@ -4,16 +4,16 @@ html {
 }
 
 body {
-	height: 100vh;
-	font-size: 16px;
 	background-image: url(/images/background.jpg);
 	background-size: cover;
 	background-position: center center;
 	background-attachment: fixed;
+	height: 100vh;
+	font-size: 16px;
 }
 
 h4 {
-	font-size: 30px;
+	font-size: 25px;
 }
 
 .div-form-dim {
@@ -67,7 +67,7 @@ img {
 	}
 	
 	body {
-		font-size: 12px;
+		font-size: 14px;
 	}
 	
 	h4 {
@@ -79,7 +79,7 @@ img {
 	}
 	
 	.large-icon, .button-text {
-		font-size: 12px;
+		font-size: 14px;
 	}
 	
 }
@@ -91,18 +91,18 @@ img {
 	}
 	
 	body {
-		font-size: 10px;
+		font-size: 13px;
 	}
 	
 	h4 {
-		font-size: 16px;
+		font-size: 20px;
 	}
 	
 	.div-form-dim {
-		width: 100%;
+		width: 85%;
 	}
 	
 	.large-icon, .button-text {
-		font-size: 10px;
+		font-size: 13px;
 	}
 }
