@@ -32,16 +32,16 @@
 								<input type="checkbox" class="form-check-input" form="remember me">
 								<label for="remember me" class="form-check-label">Remember Me</label>
 							</div>
-							<div class="d-grid mb-4">
+							<div class="d-grid mb-3">
 								<button type="submit" class="btn btn-success d-flex justify-content-center align-items-center gap-2">
 									<i class="bi bi-box-arrow-in-right large-icon"></i>
 									<span class="button-text">Sign In</span>
 								</button>
 							</div>
-							<div th:if="${param.error}" class="alert alert-danger text-danger mb-4 align-items-center d-flex justify-content-center">
+							<div th:if="${param.error}" class="alert alert-danger text-danger mb-3 align-items-center d-flex justify-content-center">
 								Invalid credentials, please try again.
 							</div>
-							<div th:if="${param.logout}" class="alert alert-success text-success mb-4 align-items-center d-flex justify-content-center">
+							<div th:if="${param.logout}" class="alert alert-success text-success mb-3 align-items-center d-flex justify-content-center">
 								Logout successfully.
 							</div>
 							<hr>
