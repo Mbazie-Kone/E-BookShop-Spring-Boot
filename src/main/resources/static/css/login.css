@@ -47,6 +47,10 @@ img {
 		font-size: 12px;
 	}
 	
+	h4 {
+		font-size: 20px;
+	}
+	
 	.div-form-dim {
 		width: 50%;
 	}
@@ -62,6 +66,10 @@ img {
 		font-size: 10px;
 	}
 	
+	h4 {
+		font-size: 18px;
+	}
+	
 	.div-form-dim {
 		width: 70%;
 	}
@@ -74,7 +82,11 @@ img {
 	}
 	
 	body {
-		font-size: 11px;
+		font-size: 9px;
+	}
+	
+	h4 {
+		font-size: 14px;
 	}
 	
 	.div-form-dim {
