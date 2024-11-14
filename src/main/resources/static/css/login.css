@@ -44,11 +44,11 @@ img {
 	}
 	
 	body {
-		font-size: 12px;
+		font-size: 14px;
 	}
 	
 	h4 {
-		font-size: 20px;
+		font-size: 25px;
 	}
 	
 	.div-form-dim {
@@ -56,7 +56,7 @@ img {
 	}
 	
 	.large-icon, .button-text {
-		font-size: 12px;
+		font-size: 14px;
 	}
 }
 
@@ -67,11 +67,11 @@ img {
 	}
 	
 	body {
-		font-size: 10px;
+		font-size: 12px;
 	}
 	
 	h4 {
-		font-size: 25px;
+		font-size: 20px;
 	}
 	
 	.div-form-dim {
@@ -79,7 +79,11 @@ img {
 	}
 	
 	.large-icon, .button-text {
-		font-size: 10px;
+		font-size: 12px;
+	}
+	
+	.mb-4-logo {
+		height: 55px;
 	}
 }
 
@@ -90,11 +94,11 @@ img {
 	}
 	
 	body {
-		font-size: 9px;
+		font-size: 10px;
 	}
 	
 	h4 {
-		font-size: 20px;
+		font-size: 16px;
 	}
 	
 	.div-form-dim {
@@ -102,6 +106,18 @@ img {
 	}
 	
 	.large-icon, .button-text {
-		font-size: 9px;
+		font-size: 10px;
+	}
+	
+	.mb-4 {
+		height: 10px;
+	}
+	
+	.mb-4-logo {
+		height: 40px;
+	}
+	
+	.mb-3-remember {
+		height: 20px;
 	}
 }
