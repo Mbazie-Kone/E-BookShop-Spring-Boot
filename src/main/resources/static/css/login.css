@@ -39,3 +39,14 @@ img {
 		font-size: 12px;
 	}
 }
+
+@media (max-width: 992px) {
+	
+	.container {
+		width: 65%;
+	}
+	
+	body {
+		font-size: 10px;
+	}
+}
