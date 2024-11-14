@@ -24,8 +24,8 @@ img {
 	width: 10em;
 }
 
-.large-icon {
-	
+.large-icon, .button-text {
+	font-size: 34px;
 }
 
 .link-button {
