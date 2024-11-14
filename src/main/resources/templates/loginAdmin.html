@@ -28,9 +28,9 @@
 								<input type="password" class="form-control" id="pass_word" name="password" placeholder="***">
 								<label for="pass_word">Password</label>
 							</div>
-							<div class="form-check mb-4">
-									<input type="checkbox" class="form-check-input" form="remember me">
-									<label for="remember me" class="form-check-label">Remember Me</label>
+							<div class="form-check mb-3">
+								<input type="checkbox" class="form-check-input" form="remember me">
+								<label for="remember me" class="form-check-label">Remember Me</label>
 							</div>
 							<div class="d-grid mb-4">
 								<button type="submit" class="btn btn-success d-flex justify-content-center align-items-center gap-2">
@@ -38,11 +38,11 @@
 									Sign in
 								</button>
 							</div>
-							<div th:if="${param.error}" class="alert alert-danger mb-4">
-								<p class="login-failed text-center">Invalid credentials, please try again.</p>
+							<div th:if="${param.error}" class="alert alert-danger text-red mb-4">
+								Invalid credentials, please try again.
 							</div>
 							<div th:if="${param.logout}" class="alert alert-success mb-4">
-								<p class="logout-ok text-center">Logout successfully.</p>
+								Logout successfully.
 							</div>
 							<hr>
 							<div class="text-center">
