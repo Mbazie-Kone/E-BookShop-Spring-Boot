@@ -54,6 +54,10 @@ img {
 	.div-form-dim {
 		width: 50%;
 	}
+	
+	.large-icon, .button-text {
+		font-size: 12px;
+	}
 }
 
 @media (max-width: 768px) {
@@ -67,11 +71,15 @@ img {
 	}
 	
 	h4 {
-		font-size: 18px;
+		font-size: 25px;
 	}
 	
 	.div-form-dim {
 		width: 70%;
+	}
+	
+	.large-icon, .button-text {
+		font-size: 10px;
 	}
 }
 
@@ -86,10 +94,14 @@ img {
 	}
 	
 	h4 {
-		font-size: 14px;
+		font-size: 20px;
 	}
 	
 	.div-form-dim {
 		width: 100%;
+	}
+	
+	.large-icon, .button-text {
+		font-size: 9px;
 	}
 }
