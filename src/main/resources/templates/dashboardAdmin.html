@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 	<html xmlns:th="https://www.thymeleaf.org" lang="en">
-	<head th:replace="~{fragments/bootstrap :: block-bootstrap}">
+	<head>
+		<link th:insert="~{fragments/bootstrap :: block-bootstrap}">
+		<title>Dashboard (Administrator)</title>
 	</head>
 	<body class="body">
 		
@@ -44,7 +46,7 @@
 		</div>
 		
 		<!-- Bootstrap Javascript -->
-		<div th:replace="~{fragments/bootstrapJavascript :: block-bootstrapJavascript}"></div>
+		<div th:replace="~{fragments/bootstrapJs :: block-bootstrapJs}"></div>
 		<!-- Bootstrap Javascript -->
 			
 	</body>
