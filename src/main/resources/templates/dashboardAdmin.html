@@ -2,13 +2,14 @@
 	<html xmlns:th="https://www.thymeleaf.org" lang="en">
 	<head>
 		<link th:insert="~{fragments/bootstrap :: block-bootstrap}">
+		<link th:insert="~{fragments/bootstrapIcon :: block-bootstrapIcon}">
 		<link rel="stylesheet" href="/css/dashboard.css">
 		<title>Dashboard (Administrator)</title>
 	</head>
 	<body>
 		
 		<!-- NavBar -->
-		<div th:replace="~{fragments/adminNavBar :: block-adminNavBar}"></div>
+		<div th:insert="~{fragments/adminNavBar :: block-adminNavBar}"></div>
 		<!-- NavBar -->
 		
 		<div class="container-fluid">

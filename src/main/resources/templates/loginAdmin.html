@@ -66,17 +66,17 @@
 								id="registerModal" aria-labelledby="registrationModalLabel">
 						<div class="modal-dialog">
 		    				<div class="modal-content">
-							    <div class="modal-header text-bg-secondary d-flex justify-content-center align-items-center">
-							    	<h5 class="modal-title" id="registrationModalLabel">Registration Form</h5>
+							    <div class="modal-header d-flex justify-content-center">
+							    	<h4 class="modal-title" id="registrationModalLabel">Registration Form</h4>
 							    </div>
 							    <div class="modal-body">
-							        <form th:action="@{/register}" th:object="${user}" method="post">
+							        <form th:action="@{/register}" id="signUpForm" th:object="${user}" method="post">
 							        	<div class="input-group mb-3">
 							        		<span class="input-group-text"><i class="bi bi-person-fill"></i></span>
 								        	<div class="form-floating">
 									        	<input type="text" class="form-control" id="reg_username" name="username" placeholder="johndoe" 
-									        		   th:field="*{username}" required>
-									        	<label for="reg_username">Username</label>
+									        		   th:field="*{username}">
+									        	<label for="reg_username" class="form-label">Username</label>
 									        	<div class="invalid-feedback d-block" th:if="${#fields.hasErrors('username')}" th:errors="*{username}"></div>
 								        	</div>
 							        	</div>

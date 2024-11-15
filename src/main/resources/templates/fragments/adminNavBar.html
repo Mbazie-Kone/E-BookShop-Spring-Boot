@@ -1,7 +1,7 @@
 <div th:fragment="block-adminNavBar">
-	<nav class="navbar navbar-expand-lg bg-body-tertiary shadow mb-3">
+	<nav class="navbar navbar-expand-lg bg-body-tertiary shadow">
 		<div class="container-fluid">
-			<span class="logo-gradient">MBE-C</span>
+			<span class="logo-gradient">KMB/></span>
 			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
 			aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
@@ -24,7 +24,7 @@
 				<ul class="navbar-nav ms-auto">
 					<li class="nav-item">
 						<a th:href="@{/perform_logout}" onclick="event.preventDefault(); document.getElementById('logout-form').submit()">
-							<i class="bi bi-box-arrow-right large-icon"></i>
+							<i class="bi bi-box-arrow-right"></i>
 						</a>
 						<form id="logout-form" th:action="@{/perform_logout}" method="get" style="display: none;"></form>
 					</li>
