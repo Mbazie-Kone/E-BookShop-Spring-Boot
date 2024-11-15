@@ -15,6 +15,7 @@ public class AdminServiceImpl implements AdminService {
 	@Autowired
 	private AdminRepository adminRepository;
 	
+	@Autowired
 	private PasswordEncoder passwordEncoder;
 
 	@Override

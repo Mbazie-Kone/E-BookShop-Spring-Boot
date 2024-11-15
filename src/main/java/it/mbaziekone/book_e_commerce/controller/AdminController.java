@@ -2,7 +2,6 @@ package it.mbaziekone.book_e_commerce.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,7 +9,6 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import it.mbaziekone.book_e_commerce.model.dto.AdminDto;
 import it.mbaziekone.book_e_commerce.model.security.Admin;
@@ -24,13 +22,7 @@ public class AdminController {
 	
 	@Autowired
 	private AdminService adminService;
-	
-	private final PasswordEncoder passwordEncoder;
-	
-	public AdminController(PasswordEncoder passwordEncoder) {
-		this.passwordEncoder = passwordEncoder;
-	}
-	
+
 	// Administrator dash board
 	@GetMapping("/dashboard")
 	public String dashPage(Model model) {
@@ -42,17 +34,13 @@ public class AdminController {
 	
 	// Administrator sign up
 	@PostMapping("/register")
-	public String registerUser(@Valid @ModelAttribute("user") AdminDto adminDto, 
-							   @RequestParam String password, BindingResult bindingResult, Model model) {
+	public String registerUser(@Valid @ModelAttribute("user") AdminDto adminDto, BindingResult bindingResult, Model model) {
 		
 		if(bindingResult.hasErrors()) {
 			model.addAttribute("hasErrors", true);
 			
 			return "loginAdmin";
 		}
-		
-		// Set a default role
-		admin.setRole("ADMIN");
 		
 		// Save the user in the database
 		adminService.saveAdmin(adminDto);
