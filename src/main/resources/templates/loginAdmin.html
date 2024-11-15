@@ -77,7 +77,9 @@
 									        	<input type="text" class="form-control" id="reg_username" name="username" placeholder="johndoe" 
 									        		   th:field="*{username}">
 									        	<label for="reg_username" class="form-label">Username</label>
-									        	<div th:if="${#fields.hasErrors('username')}" class="text-danger" th:errors="*{username}"></div>
+									        	<div th:if="${#fields.hasErrors('username')}" class="text-danger" 
+									        		th:text="${#fields.hasErrors('username')}">
+									        	</div>
 								        	</div>
 							        	</div>
 							        	<div class="input-group mb-3">
@@ -86,6 +88,9 @@
 									        	<input type="password" class="form-control" name="password" id="reg_password" placeholder="****" 
 									        		   th:field="*{password}" required>
 									        	<label for="reg_password">Password</label>
+									        	<div th:if="${#fields.hasErrors('password')}" class="text-danger" 
+									        		th:text="${#fields.hasErrors('password')}">
+									        	</div>
 								        	</div>
 							        	</div>
 							        	<div class="input-group mb-3">
