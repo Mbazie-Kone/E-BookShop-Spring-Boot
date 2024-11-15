@@ -32,7 +32,9 @@ public class AdminController {
 	
 	// Administrator dash board
 	@GetMapping("/dashboard")
-	public String dashPage() {
+	public String dashPage(Model model) {
+		
+		model.addAttribute("hasErrors", false);
 		
 		return "dashboardAdmin";
 	}
@@ -41,6 +43,12 @@ public class AdminController {
 	@PostMapping("/register")
 	public String registerUser(@Valid @ModelAttribute("user") Admin admin, 
 							   @RequestParam String password, BindingResult bindingResult, Model model) {
+		
+		if(bindingResult.hasErrors()) {
+			model.addAttribute("hasErrors", true);
+			
+			return "loginAdmin";
+		}
 		
 		// Encode the password
 		admin.setPassword(passwordEncoder.encode(password));
