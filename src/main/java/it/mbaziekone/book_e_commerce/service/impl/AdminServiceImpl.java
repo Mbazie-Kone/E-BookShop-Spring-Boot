@@ -15,7 +15,7 @@ public class AdminServiceImpl implements AdminService {
 	@Autowired
 	private AdminRepository adminRepository;
 	
-	private final PasswordEncoder passwordEncoder = null;
+	private PasswordEncoder passwordEncoder;
 
 	@Override
 	public void saveAdmin(AdminDto adminDto) {
