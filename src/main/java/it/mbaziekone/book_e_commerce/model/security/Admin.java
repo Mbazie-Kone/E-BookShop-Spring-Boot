@@ -8,7 +8,6 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import jakarta.validation.constraints.NotEmpty;
 
 @Entity
 @Table(name = "administrators")
@@ -21,11 +20,9 @@ public class Admin implements Serializable {
 	private Long id;
 	
 	@Column(nullable = false, unique = true, name = "user_name")
-	@NotEmpty(message = "Username cannot be empty")
 	private String username;
 	
 	@Column(nullable = false, name = "pass_word")
-	@NotEmpty(message = "Password cannot be empty")
 	private String password;
 	
 	@Column(nullable = false)
