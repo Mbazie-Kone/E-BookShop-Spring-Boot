@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import it.mbaziekone.book_e_commerce.model.dto.AdminDto;
 import it.mbaziekone.book_e_commerce.model.security.Admin;
 import it.mbaziekone.book_e_commerce.service.AdminService;
 import jakarta.servlet.http.HttpServletRequest;
@@ -41,7 +42,7 @@ public class AdminController {
 	
 	// Administrator sign up
 	@PostMapping("/register")
-	public String registerUser(@Valid @ModelAttribute("user") Admin admin, 
+	public String registerUser(@Valid @ModelAttribute("user") AdminDto adminDto, 
 							   @RequestParam String password, BindingResult bindingResult, Model model) {
 		
 		if(bindingResult.hasErrors()) {
@@ -50,14 +51,11 @@ public class AdminController {
 			return "loginAdmin";
 		}
 		
-		// Encode the password
-		admin.setPassword(passwordEncoder.encode(password));
-		
 		// Set a default role
 		admin.setRole("ADMIN");
 		
 		// Save the user in the database
-		adminService.saveAdmin(admin);
+		adminService.saveAdmin(adminDto);
 		
 		return "redirect:/loginAdmin";
 	}
