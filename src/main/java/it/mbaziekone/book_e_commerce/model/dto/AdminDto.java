@@ -11,8 +11,6 @@ public class AdminDto {
 	@NotEmpty(message = "Password is required")
 	@Size(min = 12, message = "Password must be at least 12 caracters long")
 	private String password;
-	
-	private String role;
 
 	public String getUsername() {
 		return username;
@@ -30,11 +28,4 @@ public class AdminDto {
 		this.password = password;
 	}
 
-	public String getRole() {
-		return role;
-	}
-
-	public void setRole(String role) {
-		this.role = role;
-	}
 }
