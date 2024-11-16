@@ -72,8 +72,8 @@ function validateInput(input) {
 		input.classList.remove("is-valid");
 		input.classList.add("is-invalid");
 		
-		// Use server-side error message if present
-		if(errorElement.textContent === "") {
+		// Fallback to generic error message only if server-side message is not present
+		if(errorElement && errorElement.textContent.trim() === "") {
 			errorElement.textContent = "Invalid input"; // Generic fallback
 		}
 	}
