@@ -82,7 +82,7 @@
 									th:classappend="${#fields.hasErrors('username')} ? 'is-invalid' : ''">
 									
 								<!-- Error message -->
-								<div class="invalid-feedback" th:if="${#fields.hasErrors('username')}" th:text="${#fields.hasErrors('username')}"></div>
+								<div class="invalid-feedback" th:if="${#fields.hasErrors('username')}" th:text="${#fields.errors('username')}"></div>
 								<!-- Error message -->
 									
 							</div>
@@ -97,7 +97,7 @@
 									th:classappend="${#fields.hasErrors('password')} ? 'is-invalid' : ''">
 									
 								<!-- Error message -->
-								<div class="invalid-feedback" th:if="${#fields.hasErrors('password')}" th:text="${#fields.hasErrors('password')}"></div>
+								<div class="invalid-feedback" th:if="${#fields.hasErrors('password')}" th:text="${#fields.errors('password')}"></div>
 								<!-- Error message -->
 									
 							</div>
@@ -111,7 +111,7 @@
 								th:classappend="${#fields.hasErrors('confirmPassword')} ? 'is-invalid' : ''">
 								
 								<!-- Error message -->
-								<div class="invalid-feedback" th:if="${#fields.hasErrors('confirmPassword')}" th:text="${#fields.hasErrors('confirmPassword')}"></div>
+								<div class="invalid-feedback" th:if="${#fields.hasErrors('confirmPassword')}" th:text="${#fields.errors('confirmPassword')}"></div>
 								<!-- Error message -->
 								
 							</div>       	
