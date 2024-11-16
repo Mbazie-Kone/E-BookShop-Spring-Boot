@@ -35,6 +35,7 @@ public class AdminController {
 		
 		if(bindingResult.hasErrors()) {
 			model.addAttribute("showRegisterModal", true);
+			model.addAttribute("hasErrors", true);
 			
 			return "loginAdmin";
 		}
@@ -49,6 +50,7 @@ public class AdminController {
 	@GetMapping("/loginAdmin")
 	public String login(Model model) {
 		model.addAttribute("user", new AdminDto()); // Empty object for binding
+		model.addAttribute("hasErrors", false);
 		
 		return "loginAdmin";
 	}
