@@ -1,3 +1,24 @@
+document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById("signUpForm");
+    const inputs = form.querySelectorAll("input");
+
+    inputs.forEach(input => {
+        input.addEventListener("input", function () {
+            validateInput(input);
+        });
+
+        input.addEventListener("blur", function () {
+            validateInput(input);
+        });
+    });
+	
+	form.addEventListener("submit", function (event) {
+	    if (!form.checkValidity()) {
+	        event.preventDefault(); // Block the submission of the form if it is invalid
+	    }
+	});
+});
+
 function validateInput(input) {
 	const errorElement = document.getElementById(`${input.id}Error`); // Error message exists
 	if(input.validity.valid) {
