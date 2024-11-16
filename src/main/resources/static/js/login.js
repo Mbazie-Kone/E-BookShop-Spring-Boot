@@ -13,8 +13,10 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 	
 	form.addEventListener("submit", function (event) {
+		let isValid = true;
 	    if (!form.checkValidity()) {
 	        event.preventDefault(); // Block the submission of the form if it is invalid
+			form.querySelector(":invalid").focus();
 			isValid = false;
 	    }
 		
@@ -26,6 +28,10 @@ document.addEventListener("DOMContentLoaded", function () {
 		    document.getElementById("confirmPasswordError").textContent = "Passwords do not match.";
 		    document.getElementById("confirmPassword").classList.add("is-invalid");
 		    isValid = false;
+		}else {
+			document.getElementById("confirmPassword").classList.remove("is-invalid");
+			document.getElementById("confirmPassword").classList.add("is-valid");
+			document.getElementById("confirmPasswordError").textContent = "";
 		}
 		
 		return isValid;
