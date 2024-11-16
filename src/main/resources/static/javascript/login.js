@@ -4,5 +4,13 @@ function validateInput(input) {
 		input.classList.remove("is-invalid");
 		input.classList.add("is-valid");
 		errorElement.textContent = ""; // Remove the error message
+	}else {
+		input.classList.remove("is-valid");
+		input.classList.add("is-invalid");
+	}
+	
+	// Use server-side error message if present
+	if(errorElement.textContent === "") {
+		errorElement.textContent = "Invalid input"; // Generic fallback
 	}
 }
