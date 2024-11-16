@@ -85,7 +85,7 @@
 									<div class="invalid-feedback" th:if="${#fields.hasErrors('username')}" th:text="${#fields.hasErrors('username')}"></div>
 									<!-- Error message -->
 									
-								</div>
+							</div>
 							<div class="input-group mb-3">
 								<span class="input-group-text"><i class="bi bi-lock-fill"></i></span>
 								<label for="reg_password">Password</label>
@@ -96,19 +96,18 @@
 									th:field="*{password}"
 									th:classappend="${#fields.hasErrors('password')} ? 'is-invalid' : ''">
 									
-									<!-- Error message -->
-									<div class="invalid-feedback" th:if="${#fields.hasErrors('password')}" th:text="${#fields.hasErrors('password')}"></div>
-									<!-- Error message -->
+								<!-- Error message -->
+								<div class="invalid-feedback" th:if="${#fields.hasErrors('password')}" th:text="${#fields.hasErrors('password')}"></div>
+								<!-- Error message -->
 									
-								</div>
-								<div th:if="${#fields.hasErrors('password')}" class="text-danger" th:text="${#fields.hasErrors('password')}"></div>
 							</div>
 							<div class="input-group mb-3">
 								<span class="input-group-text"><i class="bi bi-lock-fill"></i></span>
-								<div class="form-floating">
-									<input type="password" class="form-control" id="confirmPassword" name="confirmPassword" placeholder="****">
-									<label for="confirmPassword">Confirm password</label>
-								</div>
+								<label for="confirmPassword">Confirm password</label>
+								<input type="password" 
+								class="form-control" 
+								id="confirmPassword">
+		
 							</div>       	
 							<div class="d-grid">
 								<button type="submit" class="btn btn-success d-flex justify-content-center align-items-center gap-2">
