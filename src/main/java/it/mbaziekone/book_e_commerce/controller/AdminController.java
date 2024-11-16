@@ -27,8 +27,6 @@ public class AdminController {
 	@GetMapping("/dashboard")
 	public String dashPage(Model model) {
 		
-		model.addAttribute("hasErrors", false);
-		
 		return "dashboardAdmin";
 	}
 	
@@ -64,6 +62,5 @@ public class AdminController {
 		}
 		
 		return "redirect:/loginAdmin?logout=true";
-	}
-	
+	}	
 }
