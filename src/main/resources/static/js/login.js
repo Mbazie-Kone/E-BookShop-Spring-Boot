@@ -12,7 +12,9 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
         input.addEventListener("blur", function () {
-            validateInput(input);
+			if(formSubmitted) {
+				validateInput(input);
+			}
         });
     });
 	
