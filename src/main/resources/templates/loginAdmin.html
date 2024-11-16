@@ -5,7 +5,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link th:insert="~{fragments/bootstrap :: block-bootstrap}">
 		<link th:insert="~{fragments/bootstrapIcon :: block-bootstrapIcon}">
-		<link rel="stylesheet" href="/css/login.css">
+		<link th:href="@{/css/login.css}" rel="stylesheet">
 		<title>Login (Administrator)</title>
 	</head>
 	<body>
@@ -21,16 +21,16 @@
 						<h4 class="mb-4 text-center">Login To Continue</h4>
 						<form th:action="@{/perform_login}" method="post">
 							<div class="form-floating mb-3">
-								<input type="text" class="form-control" id="user_name" name="username" placeholder="john Doe" autofocus>
-								<label for="user_name">Username</label>
+								<input type="text" class="form-control" id="userName" name="username" placeholder="john Doe" autofocus>
+								<label for="userName">Username</label>
 							</div>
 							<div class="form-floating mb-3">
-								<input type="password" class="form-control" id="pass_word" name="password" placeholder="***">
-								<label for="pass_word">Password</label>
+								<input type="password" class="form-control" id="passWord" name="password" placeholder="***">
+								<label for="passWord">Password</label>
 							</div>
 							<div class="form-check mb-3">
-								<input type="checkbox" class="form-check-input" form="remember me">
-								<label for="remember me" class="form-check-label">Remember Me</label>
+								<input type="checkbox" class="form-check-input" id="rememberMe">
+								<label for="rememberMe" class="form-check-label">Remember Me</label>
 							</div>
 							<div class="d-grid mb-3">
 								<button type="submit" class="btn btn-success d-flex justify-content-center align-items-center gap-2">
