@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import it.mbaziekone.book_e_commerce.model.dto.AdminDto;
-import it.mbaziekone.book_e_commerce.model.security.Admin;
 import it.mbaziekone.book_e_commerce.service.AdminService;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -49,7 +48,7 @@ public class AdminController {
 	// Administrator Login 
 	@GetMapping("/loginAdmin")
 	public String login(Model model) {
-		model.addAttribute("user", new Admin());
+		model.addAttribute("user", new AdminDto()); // Empty object for binding
 		
 		return "loginAdmin";
 	}
