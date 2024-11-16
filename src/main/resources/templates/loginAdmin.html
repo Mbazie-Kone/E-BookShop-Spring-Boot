@@ -128,7 +128,7 @@
 		</div>
 		<!-- Modal Form -->
 		
-		<script src="/javascript/login.js"></script>		
+		<script th:src="@{/js/login.js?v=${T(java.lang.System).currentTimeMillis()}}"></script>
 				
 		<!-- Bootstrap Scripts -->
 		<div th:insert="~{fragments/bootstrapJs :: block-bootstrapJs}"></div>
