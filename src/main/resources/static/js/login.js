@@ -30,12 +30,17 @@ document.addEventListener("DOMContentLoaded", function () {
 			isValid = false;
 	    }
 		
-		// Check that the passwords match
+		// Check that the passwords match and confirm password is not empty
 		const password = document.getElementById("reg_password").value;
 		const confirmPassword = document.getElementById("confirmPassword").value;
-
-		if (password !== confirmPassword) {
-			event.preventDefault(); // Blocca l'invio se le password non corrispondono
+		
+		if(!confirmPassword) {
+			event.preventDefault();
+			document.getElementById("confirmPasswordError").textContent = "Confirm Password cannot be empty.";
+			document.getElementById("confirmPassword").classList.add("is-invalid");
+			isValid = false;
+		}else if (password !== confirmPassword) {
+			event.preventDefault();
 		    document.getElementById("confirmPasswordError").textContent = "Passwords do not match.";
 		    document.getElementById("confirmPassword").classList.add("is-invalid");
 		    isValid = false;
@@ -52,12 +57,17 @@ document.addEventListener("DOMContentLoaded", function () {
 	});
 });
 
+// Function to validate a single input
 function validateInput(input) {
 	const errorElement = document.getElementById(`${input.id}Error`); // Error message exists
+	
+	// Preserve server-side error messages if present
 	if(input.validity.valid) {
 		input.classList.remove("is-invalid");
 		input.classList.add("is-valid");
-		errorElement.textContent = ""; // Remove the error message
+		if(errorElement && !errorElement.getAttribute("data-server-error")) {
+			errorElement.textContent = ""; // Remove client-side error message
+		}
 	}else {
 		input.classList.remove("is-valid");
 		input.classList.add("is-invalid");
