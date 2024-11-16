@@ -79,8 +79,8 @@
 									id="reg_username"
 									placeholder="Username"
 									th:field="*{username}"
-									aria-describedby="usernameError"
-									th:classappend="${#fields.hasErrors('username')} ? 'is-invalid' : ''">
+									aria-describedby="usernameError">
+									<!-- th:classappend="${#fields.hasErrors('username')} ? 'is-invalid' : 'is-valid'"-->
 									
 								<!-- Server-side error message -->
 								<div class="invalid-feedback" id="usernameError" th:if="${#fields.hasErrors('username')}" 
@@ -96,8 +96,8 @@
 									id="reg_password"
 									placeholder="Password"
 									th:field="*{password}"
-									aria-describedby="passwordError"
-									th:classappend="${#fields.hasErrors('password')} ? 'is-invalid' : ''">
+									aria-describedby="passwordError">
+									<!--  th:classappend="${#fields.hasErrors('password')} ? 'is-invalid' : 'is-valid'"-->
 									
 								<!-- Server-side error message -->
 								<div class="invalid-feedback" id="passwordError" th:if="${#fields.hasErrors('password')}" 
@@ -112,8 +112,8 @@
 								       id="confirmPassword"
 								       placeholder="Confirm Password"
 								       th:field="*{confirmPassword}"
-								       aria-describedby="confirmPasswordError"
-								       th:classappend="${#fields.hasErrors('confirmPassword')} ? 'is-invalid' : ''">
+								       aria-describedby="confirmPasswordError">
+								       <!-- th:classappend="${#fields.hasErrors('confirmPassword')} ? 'is-invalid' : 'is-valid'"-->
 
 								<!-- Server-side error message -->
 								<div class="invalid-feedback" id="confirmPasswordError" th:if="${#fields.hasErrors('confirmPassword')}" 
