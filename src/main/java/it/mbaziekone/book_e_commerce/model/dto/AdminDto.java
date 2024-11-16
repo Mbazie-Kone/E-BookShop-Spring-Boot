@@ -13,14 +13,14 @@ public class AdminDto {
 	@NotBlank(message = "The password cannot be empty")
 	@Size(min = 8, message = "Password must be at least 8 caracters long")
 	@Pattern(regexp = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=!]).{8,}$",
-		message = "The password must contain at least one uppercase letter, one lowercase letter, one number, and one special character (@#$%^&+=!)"
+		message = "The password must contain at least one uppercase letter, one lowercase letter, one number, and one special character"
 	)
 	private String password;
 	
 	@NotBlank(message = "The confirm password cannot be empty")
 	@Size(min = 8, message = "Confirm password must be at least 8 caracters long")
 	@Pattern(regexp = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=!]).{8,}$",
-		message = "The password must contain at least one uppercase letter, one lowercase letter, one number, and one special character (@#$%^&+=!)"
+		message = "The password must contain at least one uppercase letter, one lowercase letter, one number, and one special character"
 	)
 	private String confirmPassword;
 
