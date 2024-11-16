@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     const form = document.getElementById("signUpForm");
     const inputs = form.querySelectorAll("input");
+	let formSubmitted = false; // Indicates whether the form has been submitted at least once
 
     inputs.forEach(input => {
         input.addEventListener("input", function () {
