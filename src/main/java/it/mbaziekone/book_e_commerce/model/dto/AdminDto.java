@@ -11,6 +11,10 @@ public class AdminDto {
 	@NotEmpty(message = "Password is required")
 	@Size(min = 12, message = "Password must be at least 12 caracters long")
 	private String password;
+	
+	@NotEmpty(message = "Confirm password is required")
+	@Size(min = 12, message = "Confirm password must be at least 12 caracters long")
+	private String confirmPassword;
 
 	public String getUsername() {
 		return username;
