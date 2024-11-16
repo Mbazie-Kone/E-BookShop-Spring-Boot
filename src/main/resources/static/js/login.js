@@ -41,10 +41,10 @@ function validateInput(input) {
 	}else {
 		input.classList.remove("is-valid");
 		input.classList.add("is-invalid");
-	}
-	
-	// Use server-side error message if present
-	if(errorElement.textContent === "") {
-		errorElement.textContent = "Invalid input"; // Generic fallback
+		
+		// Use server-side error message if present
+		if(errorElement.textContent === "") {
+			errorElement.textContent = "Invalid input"; // Generic fallback
+		}
 	}
 }
