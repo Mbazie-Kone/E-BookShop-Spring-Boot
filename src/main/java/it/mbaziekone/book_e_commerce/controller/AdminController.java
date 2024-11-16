@@ -24,7 +24,7 @@ public class AdminController {
 
 	// Administrator dash board
 	@GetMapping("/dashboard")
-	public String dashPage(Model model) {
+	public String dashPage() {
 		
 		return "dashboardAdmin";
 	}
@@ -34,7 +34,7 @@ public class AdminController {
 	public String registerUser(@Valid @ModelAttribute("user") AdminDto adminDto, BindingResult bindingResult, Model model) {
 		
 		if(bindingResult.hasErrors()) {
-			//model.addAttribute("hasErrors", true);
+			model.addAttribute("showRegisterModal", true);
 			
 			return "loginAdmin";
 		}
