@@ -6,7 +6,9 @@ document.addEventListener("DOMContentLoaded", function () {
 	// Add input and blur events to the form elements
     inputs.forEach(input => {
         input.addEventListener("input", function () {
-            validateInput(input);
+			if(formSubmitted) {
+				validateInput(input);
+			}
         });
 
         input.addEventListener("blur", function () {
