@@ -81,9 +81,9 @@
 									th:field="*{username}"
 									th:classappend="${#fields.hasErrors('username')} ? 'is-invalid' : ''">
 									
-									<!-- Error message -->
-									<div class="invalid-feedback" th:if="${#fields.hasErrors('username')}" th:text="${#fields.hasErrors('username')}"></div>
-									<!-- Error message -->
+								<!-- Error message -->
+								<div class="invalid-feedback" th:if="${#fields.hasErrors('username')}" th:text="${#fields.hasErrors('username')}"></div>
+								<!-- Error message -->
 									
 							</div>
 							<div class="input-group mb-3">
@@ -107,7 +107,6 @@
 								<input type="password" 
 								class="form-control" 
 								id="confirmPassword">
-		
 							</div>       	
 							<div class="d-grid">
 								<button type="submit" class="btn btn-success d-flex justify-content-center align-items-center gap-2">
