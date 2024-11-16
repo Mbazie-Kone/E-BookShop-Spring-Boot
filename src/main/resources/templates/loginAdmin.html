@@ -63,7 +63,7 @@
 		
 		<!-- Modal Form -->
 		<div class="modal fade" data-bs-backdrop="static" tabindex="-1" id="registerModal" aria-labelledby="registrationModalLabel"
-			th:attr="data-show=${showRegisterModal}">
+				data-show="[[${hasErrors}]]">
 			<div class="modal-dialog">
 		    	<div class="modal-content rounded-4 p-2">
 					<div class="modal-header d-flex justify-content-center">
