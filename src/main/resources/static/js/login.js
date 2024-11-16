@@ -35,3 +35,14 @@ function validateInput(input) {
 		errorElement.textContent = "Invalid input"; // Generic fallback
 	}
 }
+
+document.getElementById("signUpForm").addEventListener("submit", function (event) {
+    const password = document.getElementById("reg_password").value;
+    const confirmPassword = document.getElementById("confirmPassword").value;
+
+    if (password !== confirmPassword) {
+        event.preventDefault();
+        document.getElementById("confirmPasswordError").textContent = "Passwords do not match.";
+        document.getElementById("confirmPassword").classList.add("is-invalid");
+    }
+});
