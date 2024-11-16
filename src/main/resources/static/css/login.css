@@ -41,6 +41,10 @@ img {
 	padding: 0; /* Remove any padding */
 }
 
+.register-icon-dim {
+	font-size: 23px;
+}
+
 @media (max-width: 992px) {
 	
 	.container {
