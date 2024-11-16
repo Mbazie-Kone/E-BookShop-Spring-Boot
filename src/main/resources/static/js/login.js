@@ -18,7 +18,9 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 	
+	// Submit management
 	form.addEventListener("submit", function (event) {
+		formSubmitted = true; // The form has now been submitted
 		let isValid = true;
 	    if (!form.checkValidity()) {
 	        event.preventDefault(); // Block the submission of the form if it is invalid
