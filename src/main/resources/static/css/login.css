@@ -45,6 +45,10 @@ img {
 	font-size: 21px;
 }
 
+.modal-input-text-placeholder {
+	font-size: 16px;
+}
+
 @media (max-width: 992px) {
 	
 	.container {
@@ -77,6 +81,10 @@ img {
 	
 	.register-icon-dim {
 		font-size: 18px;
+	}
+	
+	.modal-input-text-placeholder {
+		font-size: 14px;
 	}
 }
 
@@ -114,6 +122,10 @@ img {
 		font-size: 15px;
 	}
 	
+	.modal-input-text-placeholder {
+		font-size: 13px;
+	}
+	
 }
 
 @media (max-width: 453.33px) {
@@ -147,6 +159,10 @@ img {
 	}
 	
 	.register-icon-dim {
+		font-size: 13px;
+	}
+	
+	.modal-input-text-placeholder {
 		font-size: 13px;
 	}
 }
