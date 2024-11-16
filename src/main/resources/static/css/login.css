@@ -42,7 +42,7 @@ img {
 }
 
 .register-icon-dim {
-	font-size: 23px;
+	font-size: 21px;
 }
 
 @media (max-width: 992px) {
@@ -73,6 +73,10 @@ img {
 	
 	.mb-logo {
 		height: 70px;
+	}
+	
+	.register-icon-dim {
+		font-size: 18px;
 	}
 }
 
@@ -106,6 +110,10 @@ img {
 		height: 60px;
 	}
 	
+	.register-icon-dim {
+		font-size: 15px;
+	}
+	
 }
 
 @media (max-width: 453.33px) {
@@ -136,5 +144,9 @@ img {
 	
 	.mb-logo {
 		height: 50px;
+	}
+	
+	.register-icon-dim {
+		font-size: 13px;
 	}
 }
