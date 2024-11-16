@@ -2,6 +2,7 @@ package it.mbaziekone.book_e_commerce.model.dto;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 
 public class AdminDto {
@@ -11,10 +12,16 @@ public class AdminDto {
 	
 	@NotBlank(message = "The password cannot be empty")
 	@Size(min = 8, message = "Password must be at least 8 caracters long")
+	@Pattern(regexp = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=!]).{8,}$",
+		message = "The password must contain at least one uppercase letter, one lowercase letter, one number, and one special character (@#$%^&+=!)"
+	)
 	private String password;
 	
 	@NotBlank(message = "The confirm password cannot be empty")
 	@Size(min = 8, message = "Confirm password must be at least 8 caracters long")
+	@Pattern(regexp = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=!]).{8,}$",
+		message = "The password must contain at least one uppercase letter, one lowercase letter, one number, and one special character (@#$%^&+=!)"
+	)
 	private String confirmPassword;
 
 	public String getUsername() {
