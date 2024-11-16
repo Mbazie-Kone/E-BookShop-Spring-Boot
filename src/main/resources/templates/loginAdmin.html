@@ -82,7 +82,8 @@
 									aria-describedby="usernameError">
 									
 								<!-- Server-side error message -->
-								<div class="invalid-feedback" id="usernameError" th:if="${#fields.hasErrors('username')}" th:text="${#fields.errors('username')}"></div>
+								<div class="invalid-feedback" id="usernameError" th:if="${#fields.hasErrors('username')}" th:text="${#fields.errors('username')}"
+									data-server-error="true"></div>
 								<!-- Server-side error message -->
 									
 							</div>
@@ -98,7 +99,8 @@
 									aria-describedby="passwordError">
 									
 								<!-- Server-side error message -->
-								<div class="invalid-feedback" id="passwordError" th:if="${#fields.hasErrors('password')}" th:text="${#fields.errors('password')}"></div>
+								<div class="invalid-feedback" id="passwordError" th:if="${#fields.hasErrors('password')}" th:text="${#fields.errors('password')}"
+									data-server-error="true"></div>
 								<!-- Server-side error message -->
 									
 							</div>
@@ -113,7 +115,8 @@
 								       aria-describedby="confirmPasswordError">
 
 								<!-- Server-side error message -->
-								<div class="invalid-feedback" id="confirmPasswordError" th:if="${#fields.hasErrors('confirmPassword')}" th:text="${#fields.errors('confirmPassword')}"></div>
+								<div class="invalid-feedback" id="confirmPasswordError" th:if="${#fields.hasErrors('confirmPassword')}" 
+									th:text="${#fields.errors('confirmPassword')}" data-server-error="true"></div>
 								<!-- Server-side error message -->
 								
 							</div>       	
