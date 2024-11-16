@@ -22,12 +22,15 @@ document.addEventListener("DOMContentLoaded", function () {
 	form.addEventListener("submit", function (event) {
 		formSubmitted = true; // The form has now been submitted
 		let isValid = true;
+		
+		// General validity check
 	    if (!form.checkValidity()) {
 	        event.preventDefault(); // Block the submission of the form if it is invalid
 			form.querySelector(":invalid").focus();
 			isValid = false;
 	    }
 		
+		// Check that the passwords match
 		const password = document.getElementById("reg_password").value;
 		const confirmPassword = document.getElementById("confirmPassword").value;
 
@@ -41,6 +44,9 @@ document.addEventListener("DOMContentLoaded", function () {
 			document.getElementById("confirmPassword").classList.add("is-valid");
 			document.getElementById("confirmPasswordError").textContent = "";
 		}
+		
+		// Perform visual validation for each field
+		inputs.forEach(input => validateInput(input));
 		
 		return isValid;
 	});
