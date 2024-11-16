@@ -15,7 +15,20 @@ document.addEventListener("DOMContentLoaded", function () {
 	form.addEventListener("submit", function (event) {
 	    if (!form.checkValidity()) {
 	        event.preventDefault(); // Block the submission of the form if it is invalid
+			isValid = false;
 	    }
+		
+		const password = document.getElementById("reg_password").value;
+		const confirmPassword = document.getElementById("confirmPassword").value;
+
+		if (password !== confirmPassword) {
+			event.preventDefault(); // Blocca l'invio se le password non corrispondono
+		    document.getElementById("confirmPasswordError").textContent = "Passwords do not match.";
+		    document.getElementById("confirmPassword").classList.add("is-invalid");
+		    isValid = false;
+		}
+		
+		return isValid;
 	});
 });
 
@@ -35,14 +48,3 @@ function validateInput(input) {
 		errorElement.textContent = "Invalid input"; // Generic fallback
 	}
 }
-
-document.getElementById("signUpForm").addEventListener("submit", function (event) {
-    const password = document.getElementById("reg_password").value;
-    const confirmPassword = document.getElementById("confirmPassword").value;
-
-    if (password !== confirmPassword) {
-        event.preventDefault();
-        document.getElementById("confirmPasswordError").textContent = "Passwords do not match.";
-        document.getElementById("confirmPassword").classList.add("is-invalid");
-    }
-});

@@ -34,7 +34,7 @@ public class AdminController {
 	public String registerUser(@Valid @ModelAttribute("user") AdminDto adminDto, BindingResult bindingResult, Model model) {
 		
 		if(bindingResult.hasErrors()) {
-			model.addAttribute("hasErrors", true);
+			//model.addAttribute("hasErrors", true);
 			
 			return "loginAdmin";
 		}
