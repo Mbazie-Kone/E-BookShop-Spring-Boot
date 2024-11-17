@@ -14,3 +14,7 @@ img {
 .mouse-on:hover {
 	color: blue;
 }
+
+.icon-size {
+	font-size: 25px;
+}

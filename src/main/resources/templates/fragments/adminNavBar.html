@@ -9,7 +9,7 @@
 				<span class="navbar-toggler-icon"></span>
 			</button>
 			<div class="collapse navbar-collapse" id="navbarNav">
-				<div class="vr mx-3"></div>
+				<div class="vr mx-3 d-none d-lg-block"></div>
 				<ul class="navbar-nav">
 					<li class="nav-item">
 						<a class="nav-link active mouse-on" aria-current="page" th:href="@{/dashboard}">Dashboard</a>
@@ -27,7 +27,7 @@
 				<ul class="navbar-nav ms-auto">
 					<li class="nav-item">
 						<a th:href="@{/perform_logout}" onclick="event.preventDefault(); document.getElementById('logout-form').submit()">
-							<i class="bi bi-box-arrow-right"></i>
+							<i class="bi bi-box-arrow-right icon-size"></i>
 						</a>
 						<form id="logout-form" th:action="@{/perform_logout}" method="get" style="display: none;"></form>
 					</li>
