@@ -10,3 +10,7 @@ body {
 img {
 	width: 6em;
 }
+
+.mouse-on:hover {
+	color: blue;
+}
