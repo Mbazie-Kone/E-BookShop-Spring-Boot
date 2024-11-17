@@ -8,18 +8,18 @@ document.addEventListener("DOMContentLoaded", function() {
 	const modalElement = document.getElementById("registerModal");
 	const registrationForm = document.getElementById("signUpForm");
 
-	// Evento per il pulsante di chiusura del Modal
+	// Event for the Modal close button
 	modalElement.addEventListener("hidden.bs.modal", function() {
-		// Resetta il form
+		// Reset the form
 		registrationForm.reset();
 
-		// Nasconde gli errori di validazione
+		// Hides validation errors
 		const errorElements = modalElement.querySelectorAll(".text-danger");
 		errorElements.forEach(errorElement => {
-			errorElement.textContent = ""; // Rimuove il contenuto degli errori
+			errorElement.textContent = ""; // Removes error content
 		});
 
-		// Rimuove le classi di errore dai campi (opzionale)
+		// Remove error classes from fields (optional)
 		const inputElements = registrationForm.querySelectorAll(".form-control");
 		inputElements.forEach(inputElement => {
 			inputElement.classList.remove("is-invalid");
