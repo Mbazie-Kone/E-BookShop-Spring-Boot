@@ -1,12 +1,15 @@
 <div th:fragment="block-adminNavBar">
 	<nav class="navbar navbar-expand-lg bg-body-tertiary shadow">
 		<div class="container-fluid">
-			<img src="/images/logo.png" alt="logo">
+			<div class="p-2" style="margin-left: 25px;">
+				<img src="/images/logo.png" alt="logo">
+			</div>
 			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
 			aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
 			<div class="collapse navbar-collapse" id="navbarNav">
+				<div class="vr mx-5"></div>
 				<ul class="navbar-nav">
 					<li class="nav-item">
 						<a class="nav-link active mouse-on" aria-current="page" th:href="@{/dashboard}">Dashboard</a>
