@@ -20,7 +20,7 @@ new Chart("demoChart", {
   options: {
     title: {
       display: true,
-      text: "World Wide Wine Production 2018"
+      text: "E-book 2024 KMB"
     }
   }
 });
