@@ -1,5 +1,7 @@
 package it.mbaziekone.book_e_commerce.controller.rest;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -28,6 +30,10 @@ public class ChartRestController {
 		// Calculate the data for the graph
 		Map<ProductCategory, Long> categoryCounts = products.stream()
 				.collect(Collectors.groupingBy(Product::getCategory, Collectors.counting()));
+		
+		Map<String, Object> response = new HashMap<>();
+		response.put("labels", new ArrayList<>(categoryCounts.keySet()));
+		response.put("labels", new ArrayList<>(categoryCounts.values()));
 	}
 	
  }
