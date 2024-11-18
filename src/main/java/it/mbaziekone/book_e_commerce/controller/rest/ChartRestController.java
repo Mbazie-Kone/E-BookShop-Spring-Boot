@@ -1,8 +1,15 @@
 package it.mbaziekone.book_e_commerce.controller.rest;
 
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
+
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import it.mbaziekone.book_e_commerce.model.Product;
+import it.mbaziekone.book_e_commerce.model.ProductCategory;
 import it.mbaziekone.book_e_commerce.repository.ProductRepository;
 
 @RestController
@@ -14,4 +21,13 @@ public class ChartRestController {
 	public ChartRestController(ProductRepository productRepository) {
 		this.productRepository = productRepository;
 	}
-}
+	
+	public ResponseEntity<Map<String, Object>> getDonutChartData() {
+		List<Product> products = productRepository.findAll();
+		
+		// Calculate the data for the graph
+		Map<ProductCategory, Long> categoryCounts = products.stream()
+				.collect(Collectors.groupingBy(Product::getCategory, Collectors.counting()));
+	}
+	
+ }
