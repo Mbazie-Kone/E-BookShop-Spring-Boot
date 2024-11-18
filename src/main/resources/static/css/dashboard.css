@@ -22,3 +22,8 @@ img {
 .navbar-hamburger {
 	font-size: 15px;
 }
+
+.charts {
+	width: 100%;
+	max-width: 600px;
+}

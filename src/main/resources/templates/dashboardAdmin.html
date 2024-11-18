@@ -25,24 +25,27 @@
 					<div class="row">
 						<div class="col">
 							<div class="p-4 rounded-2 bg-light shadow">
-							
+								<canvas id="demoChart" class="charts"></canvas>
 							</div>
 						</div>
 						<div class="col">
 							<div class="p-4 rounded-2 bg-light shadow">
-							
+								<canvas id="demoChart" class="charts"></canvas>
 							</div>
 						</div>
 						<div class="col">
 							<div class="p-4 rounded-2 bg-light shadow">
-							
+								<canvas id="demoChart" class="charts"></canvas>
 							</div>
 						</div>
 					</div>	
 				</div>
 			</div>
 		</div>
+		
 		<!-- Scripts -->
+		<script th:src="@{/js/dashboardCharts.js}"></script>
+		
 		<div th:replace="~{fragments/charts :: block-charts}"></div>
 		<div th:replace="~{fragments/bootstrapJs :: block-bootstrapJs}"></div>
 		<!-- Scripts-->
