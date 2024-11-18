@@ -12,46 +12,20 @@
 		<div th:insert="~{fragments/adminNavBar :: block-adminNavBar}"></div>
 		<!-- NavBar -->
 		
-		<div class="container-fluid">
+		<div class="container-fluid mt-3">
 			<div class="row bg-primary g-2">
-				<div class="col">
+				<div class="col bg-danger">
 				
 					<!-- Sidebar -->
 					<div th:insert="~{fragments/adminSideBar :: block-adminSideBar}"></div>
 					<!-- Sidebar -->
 					
-					<div class="card text-bg-primary shadow text-center">
-						<div class="card-header">
-							Products
-						</div>
-						<div class="card-body">
-							<span class="fs-1">254+</span>
-						</div>
-						<a th:href="@{/products}" class="card-footer small text-decoration-none text-white">
-							view products list
-						</a>
-					</div>
 				</div>
-				<div class="col-md-3 mt-5">
-					<div class="card text-bg-primary shadow text-center">
-						<div class="card-header">
-							Product category
-						</div>
-						<div class="card-body">
-							<span class="fs-1">5+</span>
-						</div>
-						<a href="#" class="card-footer small text-decoration-none text-white">
-							view product category list
-						</a>
-					</div>
+				<div class="col bg-success">
+					
 				</div>
 			</div>
-			
-			<!-- Footer -->
-			<div th:replace="~{fragments/adminFooter :: block-adminFooter}"></div>
-			<!-- Footer -->
 		</div>
-		
 		<!-- Scripts -->
 		<div th:replace="~{fragments/charts :: block-charts}"></div>
 		<div th:replace="~{fragments/bootstrapJs :: block-bootstrapJs}"></div>
