@@ -21,7 +21,29 @@ async function initializeDonutChart() {
 					'rgba(255, 206, 86, 0.5)',
 					'rgba(75, 192, 192, 0.5)'
 				],
+				borderColor: [
+					'rgba(255, 99, 132, 1)',
+					'rgba(54, 162, 235, 1)',
+					'rgba(255, 206, 86, 1)',
+					'rgba(75, 192, 192, 1)'
+				],
+				borderWidth: 1	
 			}]
+		},
+		options: {
+			responsive: true,
+			plugins: {
+				legend: {
+					position: 'top',
+				},
+				tooltip: {
+					callbacks: {
+						label: function(tooltipItem) {
+							return tooltipItem.label + ': '+ tooltipItem.raw;
+						}
+					}
+				}
+			}
 		}
-	})
+	});
 }
