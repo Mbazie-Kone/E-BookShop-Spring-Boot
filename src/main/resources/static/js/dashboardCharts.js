@@ -47,3 +47,6 @@ async function initializeDonutChart() {
 		}
 	});
 }
+
+// Initialize the chart when the page is ready
+document.addEventListener('DOMContentLoaded', initializeDonutChart);
