@@ -1,5 +1,11 @@
 package it.mbaziekone.book_e_commerce.controller.rest;
 
-public class ChartRestController {
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
+@RestController
+@RequestMapping("/api/chart")
+public class ChartRestController {
+	
+	
 }
