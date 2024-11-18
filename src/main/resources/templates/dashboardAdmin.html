@@ -46,8 +46,8 @@
 		<!-- Scripts -->
 		<script th:src="@{/js/dashboardCharts.js}"></script>
 		
-		<div th:replace="~{fragments/charts :: block-charts}"></div>
-		<div th:replace="~{fragments/bootstrapJs :: block-bootstrapJs}"></div>
+		<div th:insert="~{fragments/charts :: block-charts}"></div>
+		<div th:insert="~{fragments/bootstrapJs :: block-bootstrapJs}"></div>
 		<!-- Scripts-->
 			
 	</body>
