@@ -34,6 +34,8 @@ public class ChartRestController {
 		Map<String, Object> response = new HashMap<>();
 		response.put("labels", new ArrayList<>(categoryCounts.keySet()));
 		response.put("labels", new ArrayList<>(categoryCounts.values()));
+		
+		return ResponseEntity.ok(response);
 	}
 	
  }
