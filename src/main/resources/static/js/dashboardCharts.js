@@ -90,6 +90,12 @@ async function initializaAvailabilityChart() {
 			plugins: {
 				legend: {
 					position: 'left',
+					align: 'start',
+					labels: {
+						boxWidth: 20, // Width of the box next to the legend
+						padding: 10 // Spacing between elements
+						},
+					}
 				},
 				tooltip: {
 					callbacks: {
