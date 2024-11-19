@@ -64,3 +64,9 @@ async function fetchAvailabilityChartData() {
 	
 	return response.json();
 }
+
+// Function to initialize the availability graph
+async function initializaAvailabilityChart() {
+	const data = await fetchAvailabilityChartData();
+	const ctx = document.getElementById('availabilityChart').getContext('2d');
+}
