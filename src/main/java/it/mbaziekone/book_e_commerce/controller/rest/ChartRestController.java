@@ -39,6 +39,7 @@ public class ChartRestController {
 		response.put("labels", categoryCounts.keySet().stream()
 				.map(ProductCategory::getCategoryName)
 				.collect(Collectors.toList()));
+		
 		response.put("values", new ArrayList<>(categoryCounts.values()));
 		
 		return ResponseEntity.ok(response);
