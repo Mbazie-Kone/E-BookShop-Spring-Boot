@@ -53,3 +53,14 @@ async function initializeDonutChart() {
 
 // Initialize the chart when the page is ready
 document.addEventListener('DOMContentLoaded', initializeDonutChart);
+
+
+// Function to retrieve availability dataFunction to retrieve availability data
+async function fetchAvailabilityChartData() {
+	const response = await fetch('api/chart/availability-data');
+	if(!response.ok) {
+		console.error(`Error retrieving data: ${response.statusText}`);
+	}
+	
+	return response.json();
+}
