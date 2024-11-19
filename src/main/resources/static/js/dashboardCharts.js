@@ -90,28 +90,28 @@ async function initializaAvailabilityChart() {
 			plugins: {
 				legend: {
 					position: 'left',
-					align: 'start',
+					align: 'start', // Align the legend to the left
 					labels: {
 						boxWidth: 20, // Width of the box next to the legend
 						padding: 10 // Spacing between elements
-						},
 					}
-				},
-				tooltip: {
-					callbacks: {
-						label: function(tooltipItem) {
-							const total = data.values.reduce((acc, val) => acc + val, 0);
-							const value = data.values[tooltipItem.dataIndex];
-							const percentage = ((value / total) * 100).toFixed(2);
+				}
+			},
+			tooltip: {
+				callbacks: {
+					label: function(tooltipItem) {
+						const total = data.values.reduce((acc, val) => acc + val, 0);
+						const value = data.values[tooltipItem.dataIndex];
+						const percentage = ((value / total) * 100).toFixed(2);
 							
-							return `${tooltipItem.label}: ${value} (${percentage}%)`;
-						}
+						return `${tooltipItem.label}: ${value} (${percentage}%)`;
 					}
 				}
 			}
 		}
 	});
 }
+
 
 // Initialize the availability graph
 document.addEventListener('DOMContentLoaded', () => {
