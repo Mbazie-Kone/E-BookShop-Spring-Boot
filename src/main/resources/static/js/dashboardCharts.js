@@ -9,7 +9,7 @@ async function initializeDonutChart() {
 	const data = await fetchDonutChartData();
 	const ctx = document.getElementById('donutChart').getContext('2d');
 	new Chart(ctx, {
-		type: 'doughnut',
+		type: 'doughnut', // Can be 'doughnut', 'pie', etc.
 		data: {
 			labels: data.labels,
 			datasets: [{
@@ -34,7 +34,7 @@ async function initializeDonutChart() {
 			responsive: true,
 			plugins: {
 				legend: {
-					position: 'top',
+					position: 'left',
 				},
 				tooltip: {
 					callbacks: {
@@ -42,6 +42,7 @@ async function initializeDonutChart() {
 							const total = data.values.reduce((acc, val) => acc + val, 0);
 							const value = data.values[tooltipItem.dataIndex];
 							const percentage = ((value / total) * 100).toFixed(2);
+							
 							return `${tooltipItem.label}: ${value} (${percentage}%)`;
 						}
 					}
@@ -67,7 +68,7 @@ async function initializaAvailabilityChart() {
 	const data = await fetchAvailabilityChartData();
 	const ctx = document.getElementById('availabilityChart').getContext('2d');
 	new Chart(ctx, {
-		type: 'pie',
+		type: 'pie', // Can be 'doughnut', 'pie', etc.
 		data: {
 			labels: data.labels, // dynamic labels
 			datasets: [{
@@ -88,7 +89,7 @@ async function initializaAvailabilityChart() {
 			responsive: true,
 			plugins: {
 				legend: {
-					position: 'top',
+					position: 'left',
 				},
 				tooltip: {
 					callbacks: {
