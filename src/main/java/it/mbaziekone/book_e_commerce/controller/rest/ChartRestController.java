@@ -47,6 +47,7 @@ public class ChartRestController {
 	}
 	
 	// Product availability chart
+	@GetMapping("/availability-data")
 	public ResponseEntity<Map<String, Object>> getAvailabilityChartData() {
 		List<Product> products = productRepository.findAll();
 		
