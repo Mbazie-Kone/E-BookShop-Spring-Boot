@@ -45,4 +45,8 @@ public class ChartRestController {
 		return ResponseEntity.ok(response);
 	}
 	
+	public ResponseEntity<Map<String, Object>> getAvailabilityChartData() {
+		
+	}
+	
  }
