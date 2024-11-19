@@ -47,4 +47,9 @@ private static final long serialVersionUID = 1L;
 		this.categoryName = categoryName;
 	}
 
+	@Override
+	public String toString() {
+		return "ProductCategory [id=" + id + ", categoryName=" + categoryName + ", products=" + products + "]";
+	}
+
 }
