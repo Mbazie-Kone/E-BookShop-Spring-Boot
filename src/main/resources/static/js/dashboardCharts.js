@@ -51,9 +51,6 @@ async function initializeDonutChart() {
 	});
 }
 
-// Initialize the chart when the page is ready
-document.addEventListener('DOMContentLoaded', initializeDonutChart);
-
 
 // Function to retrieve availability dataFunction to retrieve availability data
 async function fetchAvailabilityChartData() {
@@ -110,4 +107,8 @@ async function initializaAvailabilityChart() {
 }
 
 // Initialize the availability graph
+document.addEventListener('DOMContentLoaded', () => {
+	initializeDonutChart();
+	initializaAvailabilityChart();
+});
 
