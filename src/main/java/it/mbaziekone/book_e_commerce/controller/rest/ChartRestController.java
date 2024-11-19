@@ -7,6 +7,7 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -24,6 +25,7 @@ public class ChartRestController {
 		this.productRepository = productRepository;
 	}
 	
+	@GetMapping("/donut-data")
 	public ResponseEntity<Map<String, Object>> getDonutChartData() {
 		List<Product> products = productRepository.findAll();
 		
@@ -33,7 +35,7 @@ public class ChartRestController {
 		
 		Map<String, Object> response = new HashMap<>();
 		response.put("labels", new ArrayList<>(categoryCounts.keySet()));
-		response.put("labels", new ArrayList<>(categoryCounts.values()));
+		response.put("values", new ArrayList<>(categoryCounts.values()));
 		
 		return ResponseEntity.ok(response);
 	}
