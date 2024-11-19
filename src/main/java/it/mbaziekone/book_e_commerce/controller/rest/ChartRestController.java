@@ -48,7 +48,9 @@ public class ChartRestController {
 	
 	// Product availability chart
 	public ResponseEntity<Map<String, Object>> getAvailabilityChartData() {
+		List<Product> products = productRepository.findAll();
 		
+		long availableCount = products.stream().filter(Product::isActive)
 	}
 	
  }
