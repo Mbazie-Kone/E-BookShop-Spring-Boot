@@ -50,7 +50,16 @@ public class ChartRestController {
 	public ResponseEntity<Map<String, Object>> getAvailabilityChartData() {
 		List<Product> products = productRepository.findAll();
 		
-		long availableCount = products.stream().filter(Product::isActive)
+		// Calculate the data for the graph
+		long availableCount = products.stream().filter(Product::isActive).count();
+		long unavailableCount = products.size() - availableCount;
+		
+		Map<String, Object> response = new HashMap<>();
+		
+		response.put("labels", List.of("Available", "Unavailable"));
+		response.put("values", List.of(availableCount, unavailableCount));
+		
+		return ResponseEntity.ok(response);
 	}
 	
  }
