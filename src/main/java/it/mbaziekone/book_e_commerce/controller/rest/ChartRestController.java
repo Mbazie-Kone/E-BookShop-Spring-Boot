@@ -34,7 +34,11 @@ public class ChartRestController {
 				.collect(Collectors.groupingBy(Product::getCategory, Collectors.counting()));
 		
 		Map<String, Object> response = new HashMap<>();
-		response.put("labels", new ArrayList<>(categoryCounts.keySet()));
+		
+		// Convert keys to readable strings
+		response.put("labels", categoryCounts.keySet().stream()
+				.map(ProductCategory::getCategoryName)
+				.collect(Collectors.toList()));
 		response.put("values", new ArrayList<>(categoryCounts.values()));
 		
 		return ResponseEntity.ok(response);
