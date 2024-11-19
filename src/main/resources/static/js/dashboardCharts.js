@@ -99,10 +99,15 @@ async function initializaAvailabilityChart() {
 							const total = data.values.reduce((acc, val) => acc + val, 0);
 							const value = data.values[tooltipItem.dataIndex];
 							const percentage = ((value / total) * 100).toFixed(2);
+							
+							return `${tooltipItem.label}: ${value} (${percentage}%)`;
 						}
 					}
 				}
 			}
 		}
-	})
+	});
 }
+
+// Initialize the availability graph
+
