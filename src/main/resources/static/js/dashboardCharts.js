@@ -69,4 +69,18 @@ async function fetchAvailabilityChartData() {
 async function initializaAvailabilityChart() {
 	const data = await fetchAvailabilityChartData();
 	const ctx = document.getElementById('availabilityChart').getContext('2d');
+	new Chart(ctx, {
+		type: 'pie',
+		data: {
+			labels: data.labels, // dynamic labels
+			datasets: [{
+				label: 'Product Availability',
+				data: data.values, // Dynamic values
+				backgroundColor: [
+					'rgba(75, 192, 192, 0.5)', // Color for "Available"
+					'rgba(255, 99, 132, 0.5)'  // Color for "Not Available"
+				]
+			}]
+		}
+	})
 }
