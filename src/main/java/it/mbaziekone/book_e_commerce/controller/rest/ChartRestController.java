@@ -25,6 +25,7 @@ public class ChartRestController {
 		this.productRepository = productRepository;
 	}
 	
+	// Product category chart
 	@GetMapping("/donut-data")
 	public ResponseEntity<Map<String, Object>> getDonutChartData() {
 		List<Product> products = productRepository.findAll();
@@ -45,6 +46,7 @@ public class ChartRestController {
 		return ResponseEntity.ok(response);
 	}
 	
+	// Product availability chart
 	public ResponseEntity<Map<String, Object>> getAvailabilityChartData() {
 		
 	}
