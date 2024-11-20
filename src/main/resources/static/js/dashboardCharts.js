@@ -97,6 +97,14 @@ async function initializaAvailabilityChart() {
 					}
 				}
 			},
+			layout: {
+				padding: {
+					top: 10,
+					left: 0,
+					right: 0,
+					bottom: 0	
+				}
+			},
 			tooltip: {
 				callbacks: {
 					label: function(tooltipItem) {
