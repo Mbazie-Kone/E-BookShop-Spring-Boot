@@ -1,10 +1,11 @@
 // Function to retrieve data from the backend
 async function fetchDonutChartData() {
 	const response = await fetch('api/chart/donut-data');
+	
 	return response.json();
 }
 
-//  Function to initialize the Donut Chart
+// Function to initialize the Donut Chart
 async function initializeDonutChart() {
 	const data = await fetchDonutChartData();
 	const ctx = document.getElementById('donutChart').getContext('2d');
@@ -27,7 +28,7 @@ async function initializeDonutChart() {
 					'rgba(255, 206, 86, 1)',
 					'rgba(75, 192, 192, 1)'
 				],
-				borderWidth: 1	
+				borderWidth: 1
 			}]
 		},
 		options: {
@@ -35,6 +36,11 @@ async function initializeDonutChart() {
 			plugins: {
 				legend: {
 					position: 'left',
+					align: 'start',
+					labels: {
+						boxWidth: 20,
+						padding: 10
+					}
 				},
 				tooltip: {
 					callbacks: {
@@ -59,7 +65,7 @@ async function fetchAvailabilityChartData() {
 	if(!response.ok) {
 		console.error(`Error retrieving data: ${response.statusText}`);
 	}
-	
+
 	return response.json();
 }
 
@@ -102,7 +108,7 @@ async function initializaAvailabilityChart() {
 					top: 10,
 					left: 0,
 					right: 0,
-					bottom: 0	
+					bottom: 0
 				}
 			},
 			tooltip: {
@@ -111,7 +117,7 @@ async function initializaAvailabilityChart() {
 						const total = data.values.reduce((acc, val) => acc + val, 0);
 						const value = data.values[tooltipItem.dataIndex];
 						const percentage = ((value / total) * 100).toFixed(2);
-							
+						
 						return `${tooltipItem.label}: ${value} (${percentage}%)`;
 					}
 				}
