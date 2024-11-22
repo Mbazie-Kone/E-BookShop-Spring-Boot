@@ -50,6 +50,10 @@
 		font-size: 14px;
 	}
 	
+	.login-logo {
+		width: 7em;
+	}
+	
 	.mb-logo {
 		height: 70px;
 	}
@@ -71,6 +75,10 @@
 	
 	.large-icon, .button-text {
 		font-size: 13px;
+	}
+	
+	.login-logo {
+		width: 6em;
 	}
 	
 	.mb-logo {
@@ -95,6 +103,10 @@
 	
 	.large-icon, .button-text {
 		font-size: 13px;
+	}
+	
+	.login-logo {
+		width: 6em;
 	}
 	
 	.mb-logo {
