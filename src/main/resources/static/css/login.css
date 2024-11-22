@@ -42,28 +42,12 @@
 
 @media (max-width: 992px) {
 	
-	.container {
-		width: 100%;
-	}
-	
-	body {
-		font-size: 14px;
-	}
-	
-	h4 {
-		font-size: 22px;
-	}
-	
 	.div-form-dim {
 		width: 50%;
 	}
 	
 	.large-icon, .button-text {
 		font-size: 14px;
-	}
-	
-	img {
-		width: 8em;
 	}
 	
 	.mb-logo {
@@ -81,28 +65,12 @@
 
 @media (max-width: 768px) {
 	
-	.container {
-		width: 100%;
-	}
-	
-	body {
-		font-size: 13px;
-	}
-	
-	h4 {
-		font-size: 20px;
-	}
-	
 	.div-form-dim {
 		width: 60%;
 	}
 	
 	.large-icon, .button-text {
 		font-size: 13px;
-	}
-	
-	img {
-		width: 7em;
 	}
 	
 	.mb-logo {
@@ -121,28 +89,12 @@
 
 @media (max-width: 453.33px) {
 	
-	.container {
-		width: 100%;
-	}
-	
-	body {
-		font-size: 13px;
-	}
-	
-	h4 {
-		font-size: 18px;
-	}
-	
 	.div-form-dim {
 		width: 85%;
 	}
 	
 	.large-icon, .button-text {
 		font-size: 13px;
-	}
-	
-	img {
-		width: 6em;
 	}
 	
 	.mb-logo {
