@@ -4,9 +4,11 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link th:rinsert="~{fragments/bootstrap :: block-bootstrap}">
-		<title>Product (Administrator)</title>
+		<link th:insert="~{fragments/bootstrapIcon :: block-bootstrapIcon}">
+		<link th:href="@{/css/product.css}" rel="stylesheet">
+		<title>Products (Administrator)</title>
 	</head>
-	<body class="body">
+	<body>
 	
 		<!-- NavBar -->
 		<div th:insert="~{fragments/adminNavBar :: block-adminNavBar}"></div>
