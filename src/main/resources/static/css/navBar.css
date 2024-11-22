@@ -1,0 +1,15 @@
+img {
+	width: 6em;
+}
+
+.mouse-on:hover {
+	color: blue;
+}
+
+.icon-size {
+	font-size: 25px;
+}
+
+.navbar-hamburger {
+	font-size: 15px;
+}
