@@ -1,0 +1,14 @@
+.card-body {
+	height: 550px;
+    width: 100%; 
+    overflow: auto;
+}
+
+.table-container {
+	max-height: 580px;
+    max-width: 100%;
+}
+
+.div-dim {
+	width: 25em;
+}
