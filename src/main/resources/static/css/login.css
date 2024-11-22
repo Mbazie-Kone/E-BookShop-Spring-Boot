@@ -12,10 +12,6 @@ html {
 	font-size: 16px;
 }
 
-h4 {
-	font-size: 25px;
-}
-
 .mb-logo {
 	height: 80px;
 }
@@ -24,7 +20,7 @@ h4 {
 	width: 22em;
 }
 
-img {
+.login-logo {
 	width: 9em;
 }
 
