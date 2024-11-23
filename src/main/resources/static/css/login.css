@@ -19,7 +19,7 @@
 	width: 9em;
 }
 
-.large-icon, .button-text {
+.large-icon {
 	font-size: 16px;
 }
 
@@ -46,7 +46,7 @@
 		width: 50%;
 	}
 	
-	.large-icon, .button-text {
+	.large-icon {
 		font-size: 14px;
 	}
 	
@@ -73,7 +73,7 @@
 		width: 60%;
 	}
 	
-	.large-icon, .button-text {
+	.large-icon {
 		font-size: 13px;
 	}
 	
@@ -101,7 +101,7 @@
 		width: 85%;
 	}
 	
-	.large-icon, .button-text {
+	.large-icon {
 		font-size: 13px;
 	}
 	
