@@ -24,6 +24,10 @@ footer {
 	font-size: 16px;
 }
 
+.elements-font-size {
+	font-size: 16px;
+}
+
 /* Media Queries */
 
 @media (max-width: 992px) {
@@ -44,6 +48,9 @@ footer {
 		font-size: 14px;
 	}
 	
+	.elements-font-size {
+		font-size: 14px;
+	}
 }
 
 @media (max-width: 768px) {
@@ -64,6 +71,9 @@ footer {
 		font-size: 13px;
 	}
 	
+	.elements-font-size {
+		font-size: 13px;
+	}	
 }
 
 @media (max-width: 453.33px) {
@@ -84,4 +94,7 @@ footer {
 		font-size: 13px;
 	}
 	
+	.elements-font-size {
+		font-size: 13px;
+	}
 }
