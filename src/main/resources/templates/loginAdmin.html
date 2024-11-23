@@ -80,7 +80,6 @@
 									id="reg_username"
 									placeholder="Username"
 									th:field="*{username}"
-									autofocus
 									aria-describedby="usernameError"
 									th:classappend="${#fields.hasErrors('username')} ? 'is-invalid' : ''">
 									
@@ -140,6 +139,7 @@
 		<!-- Modal Form -->
 		
 		<script th:src="@{/js/login.js}"></script>
+		<script th:src="@{/js/modalInputAutofocus.js}"></script>
 				
 		<!-- Bootstrap Scripts -->
 		<div th:insert="~{fragments/bootstrapJs :: block-bootstrapJs}"></div>
