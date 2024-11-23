@@ -80,6 +80,7 @@
 									id="reg_username"
 									placeholder="Username"
 									th:field="*{username}"
+									autofocus
 									aria-describedby="usernameError"
 									th:classappend="${#fields.hasErrors('username')} ? 'is-invalid' : ''">
 									
