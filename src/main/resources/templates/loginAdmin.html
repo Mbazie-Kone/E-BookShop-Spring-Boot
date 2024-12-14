@@ -8,27 +8,25 @@
 	</head>
 	<body>
 		<div class="content">
-			<div class="mb-logo">
-				<img class="img-fluid login-logo" src="/images/logo.png" alt="logo">
+			<div>
+				<img src="/images/logo.png" alt="logo">
 			</div>
 	
 			<!-- Login Form  -->
-			<div class="text-bg-light p-4 rounded-4 shadow-lg div-form-dim mb-4">
-				<h4 class="mb-4 text-center">Login To Continue</h4>
+			<div>
+				<h4>Login To Continue</h4>
 				<form th:action="@{/perform_login}" method="post">
-					<div class="form-floating mb-3">
-						<input type="text" class="form-control" id="userName"
-							name="username" placeholder="john Doe" autofocus> <label
-							for="userName">Username</label>
+					<div>
+						<input type="text" id="userName" name="username" placeholder="john Doe" autofocus>
+						<label for="userName">Username</label>
 					</div>
-					<div class="form-floating mb-3">
-						<input type="password" class="form-control" id="passWord"
-							name="password" placeholder="***"> <label for="passWord">Password</label>
+					<div>
+						<input type="password" class="form-control" id="passWord" name="password" placeholder="***">
+						<label for="passWord">Password</label>
 					</div>
-					<div class="form-check mb-3">
-						<input type="checkbox" class="form-check-input" id="rememberMe">
-						<label for="rememberMe" class="form-check-label">Remember
-							Me</label>
+					<div>
+						<input type="checkbox" id="rememberMe">
+						<label for="rememberMe">Remember Me</label>
 					</div>
 					<div class="d-grid mb-3">
 						<button type="submit"
