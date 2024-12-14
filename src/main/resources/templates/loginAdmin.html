@@ -8,10 +8,9 @@
 	</head>
 	<body>
 		<div class="content">
-			<div>
+			<div class="container">
 				<img src="/images/logo.png" alt="logo">
-			</div>
-	
+			
 			<!-- Login Form  -->
 			<div>
 				<h4>Login To Continue</h4>
@@ -52,23 +51,19 @@
 			<!-- Footer -->
 	
 		</div>
-	
+		</div>
 		<!-- Modal Form -->
-		<div class="modal fade" data-bs-backdrop="static" tabindex="-1"
-			id="registerModal" aria-labelledby="registrationModalLabel"
-			th:attr="data-show=${showRegisterModal}">
-			<div class="modal-dialog">
-				<div class="modal-content rounded-4 p-2">
-					<div class="modal-header d-flex justify-content-center">
-						<h4 class="modal-title" id="registrationModalLabel">Registration
+		<div data-bs-backdrop="static" tabindex="-1" id="registerModal" aria-labelledby="registrationModalLabel" th:attr="data-show=${showRegisterModal}">
+			<div>
+				<div>
+					<div>
+						<h4 id="registrationModalLabel">Registration
 							Form</h4>
 					</div>
-					<div class="modal-body">
-						<form th:action="@{/register}" id="signUpForm" th:object="${user}"
-							method="post">
-							<div class="input-group mb-3">
-								<span class="input-group-text icons-dim"><i
-									class="bi bi-person-fill"></i></span> <input type="text"
+					<div>
+						<form th:action="@{/register}" id="signUpForm" th:object="${user}" method="post">
+							<div >
+								<span><i class="bi bi-person-fill"></i></span> <input type="text"
 									class="form-control modal-input-text-placeholder p-3"
 									id="reg_username" placeholder="Username" th:field="*{username}"
 									aria-describedby="usernameError"
@@ -123,7 +118,7 @@
 						</form>
 					</div>
 					<div class="modal-footer">
-						<button type="button" class="btn btn-danger btn-font-size"
+						<button type="button"
 							data-bs-dismiss="modal">Close</button>
 					</div>
 				</div>

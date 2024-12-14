@@ -1,3 +1,7 @@
 body {
 	background: url(/images/background.jpg) no-repeat right bottom/cover fixed;
 }
+
+.container {
+	display: flex;
+}
