@@ -1,141 +1,143 @@
 <!DOCTYPE html>
 <html xmlns:th="https://www.thymeleaf.org" lang="en">
-	<head>
-		<meta charset="utf-8">
-		<link th:insert="~{fragments/css :: block-css}">
-		<title>Login (Administrator)</title>
-	</head>
-	<body>
-		<div>
-			<div>
-				<div>
-					<div class="mb-logo">
-						<img class="img-fluid login-logo" src="/images/logo.png" alt="logo">
-					</div>
-					
-					<!-- Login Form  -->
-					<div class="text-bg-light p-4 rounded-4 shadow-lg div-form-dim mb-4">
-						<h4 class="mb-4 text-center">Login To Continue</h4>
-						<form th:action="@{/perform_login}" method="post">
-							<div class="form-floating mb-3">
-								<input type="text" class="form-control" id="userName" name="username" placeholder="john Doe" autofocus>
-								<label for="userName">Username</label>
-							</div>
-							<div class="form-floating mb-3">
-								<input type="password" class="form-control" id="passWord" name="password" placeholder="***">
-								<label for="passWord">Password</label>
-							</div>
-							<div class="form-check mb-3">
-								<input type="checkbox" class="form-check-input" id="rememberMe">
-								<label for="rememberMe" class="form-check-label">Remember Me</label>
-							</div>
-							<div class="d-grid mb-3">
-								<button type="submit" class="btn btn-success d-flex justify-content-center align-items-center gap-2">
-									<i class="bi bi-box-arrow-in-right icons-dim"></i>
-									<span class="btn-font-size">Sign In</span>
-								</button>
-							</div>
-							<div th:if="${param.error}" class="alert alert-danger text-danger mb-3 align-items-center d-flex justify-content-center">
-								Invalid credentials, please try again.
-							</div>
-							<div th:if="${param.logout}" class="alert alert-success text-success mb-3 align-items-center d-flex justify-content-center">
-								Logout successfully.
-							</div>
-							<hr>
-							<div class="text-center">
-								Don't have an account?
-								<button type="button" class="link-button" data-bs-toggle="modal" data-bs-target="#registerModal">Sign Up</button>
-							</div>
-						</form>
-					</div>
-					<!-- Login Form  -->
-					
-					<!-- Footer -->
-					<div th:insert="~{fragments/adminFooter :: block-adminFooter}"></div>
-					<!-- Footer -->
-					
-				</div>
-			</div>
+<head>
+<meta charset="utf-8">
+<link th:insert="~{fragments/css :: block-css}">
+<title>Login (Administrator)</title>
+</head>
+<body>
+	<div class="content">
+		<div class="mb-logo">
+			<img class="img-fluid login-logo" src="/images/logo.png" alt="logo">
 		</div>
-		
-		<!-- Modal Form -->
-		<div class="modal fade" data-bs-backdrop="static" tabindex="-1" id="registerModal" aria-labelledby="registrationModalLabel"
-			th:attr="data-show=${showRegisterModal}">
-			<div class="modal-dialog">
-		    	<div class="modal-content rounded-4 p-2">
-					<div class="modal-header d-flex justify-content-center">
-						<h4 class="modal-title" id="registrationModalLabel">Registration Form</h4>
-					</div>
-					<div class="modal-body">
-						<form th:action="@{/register}" id="signUpForm" th:object="${user}" method="post">
-							<div class="input-group mb-3">
-								<span class="input-group-text icons-dim"><i class="bi bi-person-fill"></i></span>
-								<input 
-									type="text" 
-									class="form-control modal-input-text-placeholder p-3"
-									id="reg_username"
-									placeholder="Username"
-									th:field="*{username}"
-									aria-describedby="usernameError"
-									th:classappend="${#fields.hasErrors('username')} ? 'is-invalid' : ''">
-									
-								<!-- Server-side error message -->
-								<div class="invalid-feedback" id="usernameError" th:if="${#fields.hasErrors('username')}" 
-									th:text="${#fields.errors('username')}" data-server-error="true"></div>
-								<!-- Server-side error message -->
-									
-							</div>
-							<div class="input-group mb-3">
-								<span class="input-group-text icons-dim"><i class="bi bi-lock-fill"></i></span>
-								<input 
-									type="password" 
-									class="form-control modal-input-text-placeholder p-3" 
-									id="reg_password"
-									placeholder="Password"
-									th:field="*{password}"
-									aria-describedby="passwordError"
-									th:classappend="${#fields.hasErrors('password')} ? 'is-invalid' : ''">
-									
-								<!-- Server-side error message -->
-								<div class="invalid-feedback" id="passwordError" th:if="${#fields.hasErrors('password')}" 
-									th:text="${#fields.errors('password')}" data-server-error="true"></div>
-								<!-- Server-side error message -->
-									
-							</div>
-							<div class="input-group mb-3">
-								<span class="input-group-text icons-dim"><i class="bi bi-lock-fill"></i></span>
-								<input type="password" 
-									   class="form-control modal-input-text-placeholder p-3"
-								       id="confirmPassword"
-								       placeholder="Confirm Password"
-								       th:field="*{confirmPassword}"
-								       aria-describedby="confirmPasswordError"
-								       th:classappend="${#fields.hasErrors('confirmPassword')} ? 'is-invalid' : ''">
 
-								<!-- Server-side error message -->
-								<div class="invalid-feedback" id="confirmPasswordError" th:if="${#fields.hasErrors('confirmPassword')}" 
-									th:text="${#fields.errors('confirmPassword')}" data-server-error="true"></div>
-								<!-- Server-side error message -->
-								
-							</div>       	
-							<div class="d-grid">
-								<button type="submit" class="btn btn-success d-flex justify-content-center align-items-center gap-2">
-									<i class="bi bi-person-plus-fill icons-dim"></i>
-									<span class="btn-font-size">Sign Up</span>
-								</button>
-							</div>       	
-						</form>
-					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-danger btn-font-size" data-bs-dismiss="modal">Close</button>
-					</div>
+		<!-- Login Form  -->
+		<div class="text-bg-light p-4 rounded-4 shadow-lg div-form-dim mb-4">
+			<h4 class="mb-4 text-center">Login To Continue</h4>
+			<form th:action="@{/perform_login}" method="post">
+				<div class="form-floating mb-3">
+					<input type="text" class="form-control" id="userName"
+						name="username" placeholder="john Doe" autofocus> <label
+						for="userName">Username</label>
+				</div>
+				<div class="form-floating mb-3">
+					<input type="password" class="form-control" id="passWord"
+						name="password" placeholder="***"> <label for="passWord">Password</label>
+				</div>
+				<div class="form-check mb-3">
+					<input type="checkbox" class="form-check-input" id="rememberMe">
+					<label for="rememberMe" class="form-check-label">Remember
+						Me</label>
+				</div>
+				<div class="d-grid mb-3">
+					<button type="submit"
+						class="btn btn-success d-flex justify-content-center align-items-center gap-2">
+						<i class="bi bi-box-arrow-in-right icons-dim"></i> <span
+							class="btn-font-size">Sign In</span>
+					</button>
+				</div>
+				<div th:if="${param.error}"
+					class="alert alert-danger text-danger mb-3 align-items-center d-flex justify-content-center">
+					Invalid credentials, please try again.</div>
+				<div th:if="${param.logout}"
+					class="alert alert-success text-success mb-3 align-items-center d-flex justify-content-center">
+					Logout successfully.</div>
+				<hr>
+				<div class="text-center">
+					Don't have an account?
+					<button type="button" class="link-button" data-bs-toggle="modal"
+						data-bs-target="#registerModal">Sign Up</button>
+				</div>
+			</form>
+		</div>
+		<!-- Login Form  -->
+
+		<!-- Footer -->
+		<div th:insert="~{fragments/adminFooter :: block-adminFooter}"></div>
+		<!-- Footer -->
+
+	</div>
+
+	<!-- Modal Form -->
+	<div class="modal fade" data-bs-backdrop="static" tabindex="-1"
+		id="registerModal" aria-labelledby="registrationModalLabel"
+		th:attr="data-show=${showRegisterModal}">
+		<div class="modal-dialog">
+			<div class="modal-content rounded-4 p-2">
+				<div class="modal-header d-flex justify-content-center">
+					<h4 class="modal-title" id="registrationModalLabel">Registration
+						Form</h4>
+				</div>
+				<div class="modal-body">
+					<form th:action="@{/register}" id="signUpForm" th:object="${user}"
+						method="post">
+						<div class="input-group mb-3">
+							<span class="input-group-text icons-dim"><i
+								class="bi bi-person-fill"></i></span> <input type="text"
+								class="form-control modal-input-text-placeholder p-3"
+								id="reg_username" placeholder="Username" th:field="*{username}"
+								aria-describedby="usernameError"
+								th:classappend="${#fields.hasErrors('username')} ? 'is-invalid' : ''">
+
+							<!-- Server-side error message -->
+							<div class="invalid-feedback" id="usernameError"
+								th:if="${#fields.hasErrors('username')}"
+								th:text="${#fields.errors('username')}" data-server-error="true"></div>
+							<!-- Server-side error message -->
+
+						</div>
+						<div class="input-group mb-3">
+							<span class="input-group-text icons-dim"><i
+								class="bi bi-lock-fill"></i></span> <input type="password"
+								class="form-control modal-input-text-placeholder p-3"
+								id="reg_password" placeholder="Password" th:field="*{password}"
+								aria-describedby="passwordError"
+								th:classappend="${#fields.hasErrors('password')} ? 'is-invalid' : ''">
+
+							<!-- Server-side error message -->
+							<div class="invalid-feedback" id="passwordError"
+								th:if="${#fields.hasErrors('password')}"
+								th:text="${#fields.errors('password')}" data-server-error="true"></div>
+							<!-- Server-side error message -->
+
+						</div>
+						<div class="input-group mb-3">
+							<span class="input-group-text icons-dim"><i
+								class="bi bi-lock-fill"></i></span> <input type="password"
+								class="form-control modal-input-text-placeholder p-3"
+								id="confirmPassword" placeholder="Confirm Password"
+								th:field="*{confirmPassword}"
+								aria-describedby="confirmPasswordError"
+								th:classappend="${#fields.hasErrors('confirmPassword')} ? 'is-invalid' : ''">
+
+							<!-- Server-side error message -->
+							<div class="invalid-feedback" id="confirmPasswordError"
+								th:if="${#fields.hasErrors('confirmPassword')}"
+								th:text="${#fields.errors('confirmPassword')}"
+								data-server-error="true"></div>
+							<!-- Server-side error message -->
+
+						</div>
+						<div class="d-grid">
+							<button type="submit"
+								class="btn btn-success d-flex justify-content-center align-items-center gap-2">
+								<i class="bi bi-person-plus-fill icons-dim"></i> <span
+									class="btn-font-size">Sign Up</span>
+							</button>
+						</div>
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-danger btn-font-size"
+						data-bs-dismiss="modal">Close</button>
 				</div>
 			</div>
 		</div>
-		<!-- Modal Form -->
-		
-		<script th:src="@{/js/login.js}"></script>
-		<script th:src="@{/js/modalInputAutofocus.js}"></script>
-					
-	</body>
+	</div>
+	<!-- Modal Form -->
+
+	<script th:src="@{/js/login.js}"></script>
+	<script th:src="@{/js/modalInputAutofocus.js}"></script>
+
+</body>
 </html>
