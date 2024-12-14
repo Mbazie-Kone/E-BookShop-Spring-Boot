@@ -2,10 +2,7 @@
 <html xmlns:th="https://www.thymeleaf.org" lang="en">
 	<head>
 		<meta charset="utf-8">
-		<link rel="stylesheet" th:href="@{/css/normalize.css}">
-		<link rel="stylesheet" th:href="@{/css/reset.css}">
-		<link rel="stylesheet" th:href="@{/css/general.css}">
-		<link rel="stylesheet" th:href="@{/css/login.css}">
+		<link th:insert="~{fragments/css :: block-css}">
 		<title>Login (Administrator)</title>
 	</head>
 	<body class="login-body">
