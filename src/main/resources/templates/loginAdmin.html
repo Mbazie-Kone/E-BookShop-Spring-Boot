@@ -28,24 +28,20 @@
 						<input type="checkbox" id="rememberMe">
 						<label for="rememberMe">Remember Me</label>
 					</div>
-					<div class="d-grid mb-3">
-						<button type="submit"
-							class="btn btn-success d-flex justify-content-center align-items-center gap-2">
-							<i class="bi bi-box-arrow-in-right icons-dim"></i> <span
-								class="btn-font-size">Sign In</span>
+					<div>
+						<button type="submit">
+						<span>Sign In</span>
 						</button>
 					</div>
-					<div th:if="${param.error}"
-						class="alert alert-danger text-danger mb-3 align-items-center d-flex justify-content-center">
+					<div th:if="${param.error}">
 						Invalid credentials, please try again.</div>
-					<div th:if="${param.logout}"
-						class="alert alert-success text-success mb-3 align-items-center d-flex justify-content-center">
-						Logout successfully.</div>
+					<div th:if="${param.logout}">
+						Logout successfully.
+					</div>
 					<hr>
-					<div class="text-center">
+					<div>
 						Don't have an account?
-						<button type="button" class="link-button" data-bs-toggle="modal"
-							data-bs-target="#registerModal">Sign Up</button>
+						<button type="button" data-bs-toggle="modal" data-bs-target="#registerModal">Sign Up</button>
 					</div>
 				</form>
 			</div>
