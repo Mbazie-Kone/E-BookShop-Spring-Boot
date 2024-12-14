@@ -2,9 +2,6 @@
 <html xmlns:th="https://www.thymeleaf.org" lang="en">
 	<head>
 		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link th:insert="~{fragments/bootstrap :: block-bootstrap}">
-		<link th:insert="~{fragments/bootstrapIcon :: block-bootstrapIcon}">
 		<link th:href="@{/css/general.css}" rel="stylesheet">
 		<link th:href="@{/css/login.css}" rel="stylesheet">
 		<title>Login (Administrator)</title>
@@ -140,10 +137,6 @@
 		
 		<script th:src="@{/js/login.js}"></script>
 		<script th:src="@{/js/modalInputAutofocus.js}"></script>
-				
-		<!-- Bootstrap Scripts -->
-		<div th:insert="~{fragments/bootstrapJs :: block-bootstrapJs}"></div>
-		<!-- Bootstrap Scripts -->
 					
 	</body>
 </html>
