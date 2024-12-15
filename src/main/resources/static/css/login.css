@@ -12,9 +12,10 @@ body {
 }
 
 .login-logo {
-	width: 150px;
+	width: 20%;
 }
 
 .form {
 	background-color: lightgray;
+	padding: 10px;
 }
