@@ -13,15 +13,13 @@
 			
 			<!-- Login Form  -->
 			<div class="form">
-				<h5>Login to continue</h5>
+				<h5 class="form-title">Login to continue</h5>
 				<form th:action="@{/perform_login}" method="post">
 					<div>
 						<input type="text" id="userName" name="username" placeholder="john Doe" autofocus>
-						<label for="userName">Username</label>
 					</div>
 					<div>
 						<input type="password" class="form-control" id="passWord" name="password" placeholder="***">
-						<label for="passWord">Password</label>
 					</div>
 					<div>
 						<input type="checkbox" id="rememberMe">
