@@ -2,8 +2,13 @@ body {
 	background: url(/images/background.jpg) no-repeat right bottom / cover fixed;
 }
 
+.login-content {
+	max-width: 2560px;
+	margin: 15% auto;
+	width: 100%;
+}
+
 .container {
-	background-color: red;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
