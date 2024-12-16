@@ -50,5 +50,8 @@ h6 {
 	width: 100%;
 	height: 100%;
 	background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+	justify-content: center;
+	align-items: center;
+	z-index: 1000; /* Make sure it is above the other elements */
 }
 /* MODALS */
