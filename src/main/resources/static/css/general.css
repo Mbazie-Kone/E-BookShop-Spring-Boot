@@ -31,3 +31,19 @@ h5 {
 h6 {
   font-size: 1rem;
 }
+/* BUTTONS */
+
+.btn {
+	width: 2em;
+	background-color: gray;
+}
+
+/* BUTTONS */
+
+/* MODALS */
+
+.modal {
+	/* display: none; Hide the default Modal */
+	position: fixed;
+}
+/* MODALS */

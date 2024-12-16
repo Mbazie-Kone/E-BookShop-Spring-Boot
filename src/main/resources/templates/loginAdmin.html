@@ -26,7 +26,7 @@
 						<label for="rememberMe">Remember Me</label>
 					</div>
 					<div>
-						<button type="submit">
+						<button type="submit" class="btn success-btn">
 						<span>Sign In</span>
 						</button>
 					</div>
@@ -38,7 +38,7 @@
 					<hr>
 					<div>
 						Don't have an account?
-						<button type="button" data-bs-toggle="modal" data-bs-target="#registerModal">Sign Up</button>
+						<button id="signUpModalBtn">Sign Up</button>
 					</div>
 				</form>
 			</div>
@@ -50,8 +50,9 @@
 	
 		</div>
 		</div>
+		
 		<!-- Modal Form -->
-		<div data-bs-backdrop="static" tabindex="-1" id="registerModal" aria-labelledby="registrationModalLabel" th:attr="data-show=${showRegisterModal}">
+		<div id="modal" class="modal" th:attr="data-show=${showRegisterModal}">
 			<div>
 				<div>
 					<div>
