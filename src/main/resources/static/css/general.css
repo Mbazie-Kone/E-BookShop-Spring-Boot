@@ -54,4 +54,16 @@ h6 {
 	align-items: center;
 	z-index: 1000; /* Make sure it is above the other elements */
 }
+
+.modal-content {
+	background-color: #fff;
+	padding: 20px;
+	border-radius: 8px;
+	width: 400px;
+	max-width: 90%;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+	text-align: center;
+	position: relative;
+}
+
 /* MODALS */
